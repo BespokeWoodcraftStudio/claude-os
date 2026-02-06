@@ -19,15 +19,21 @@ We help B2B tech companies grow through content. Content is the atomic unit. Web
 
 | Directory | Purpose | When to Use |
 |-----------|---------|-------------|
-| `company-context/` | Business docs: strategy, ICP, delivery model, pricing | Understanding GrowthX as a business |
+| `docs/` | **The Handbook** — Company docs, organized by function | Understanding GrowthX |
+| `docs/company/` | Mission, values, strategy, culture | Company fundamentals |
+| `docs/people/` | Onboarding, policies, careers | HR and people questions |
+| `docs/how-we-work/` | Communication, meetings, tools | How we operate |
+| `docs/business/` | Business model, ICP, customer lifecycle | Business mechanics |
+| `docs/delivery/` | Post-sales, client operations, teams | Delivery work |
+| `docs/epd/` | Engineering, Product, Design team | EPD-specific docs |
+| `docs/products/` | Product documentation (CheckThat, ContentOS, Output) | Product strategy |
+| `docs/finance/` | Board meetings, fiscal plans | Financial docs |
 | `writing-guidelines/` | Voice, tone, style rules | Any content generation |
 | `knowledge/` | Reference materials: Elements of Style, writing craft | Deep craft questions |
+| `roles/` | Executive AI personas (COO, CFO, CTO, etc.) | Decision support, task execution |
 | `outputs/` | Research deliverables, completed work | Examples of finished work |
-| `raw-transcripts/` | Unprocessed interview/meeting notes | Primary source material |
-| `prompts/` | Reusable prompt templates | Structured AI workflows |
-| `personal-context/` | Individual contributor context | Person-specific work |
-| `docs/` | Project documentation | Meta-documentation |
-| `roles/` | Executive AI personas (COO, CFO, CTO, etc.) | Decision support, task execution as a specific role |
+| `transcripts/` | Meeting notes and recordings | Primary source material |
+| `customers/` | Client-specific documentation | Client work |
 | `*/archive/` | Outdated versions of files | Historical reference only |
 
 ---
@@ -49,11 +55,15 @@ We help B2B tech companies grow through content. Content is the atomic unit. Web
 
 ## Key Files
 
+**Start here:**
+- `docs/start-here.md` - New hire entry point and handbook overview
+
 **For company understanding:**
-- `company-context/company-vision-and-strategy-v1.md` - Vision and strategy
-- `company-context/business-overview-for-onboarding-v1.md` - Business model overview
-- `company-context/ideal-customer-profile-v1.md` - ICP and qualification
-- `company-context/checkthat-product-vision-v1.md` - CheckThat product vision
+- `docs/company/vision-and-strategy.md` - Vision and strategy
+- `docs/business/overview.md` - Business model overview
+- `docs/business/ideal-customer-profile.md` - ICP and qualification
+- `docs/products/checkthat/product-vision-v1.md` - CheckThat product vision
+- `docs/products/ecosystem-strategy.md` - Multi-product strategy
 
 **For writing:**
 - `writing-guidelines/writing-style-context-v2.md` - The definitive style guide
@@ -93,7 +103,7 @@ We help B2B tech companies grow through content. Content is the atomic unit. Web
 5. Open with specifics, not vague statements
 
 **When answering questions about GrowthX:**
-1. Check `company-context/` for the authoritative answer
+1. Check `docs/` for the authoritative answer (organized by section)
 2. Quote or reference specific docs when possible
 3. If information conflicts, prefer newer docs
 

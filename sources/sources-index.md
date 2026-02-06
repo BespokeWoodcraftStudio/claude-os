@@ -18,7 +18,7 @@ Started with 200+ sources extracted from project documents and research, then cu
 
 ---
 
-## Newsletters & Blogs (30)
+## Newsletters & Blogs (31)
 
 Regular reading that compounds over time.
 
@@ -36,6 +36,7 @@ Regular reading that compounds over time.
 | 8 | **SaaStr** | Jason Lemkin | SaaS scaling; hiring; metrics |
 | 9 | **MKT1** | Emily Kramer | B2B marketing frameworks |
 | 10 | **Growth Memo** | Kevin Indig | SEO + AI strategy |
+| 11 | **A Smart Bear** | Jason Cohen | Two unicorns (one bootstrapped, one funded); PMF, pricing, strategy |
 
 ### AI & Technology Newsletters
 

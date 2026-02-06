@@ -1,0 +1,169 @@
+# README Maintenance
+
+Every directory with 3+ files MUST have a README.md. Keep READMEs updated after major changes.
+
+---
+
+## When to Create a README
+
+- New directory with 3+ files
+- Directory contains related documents that need navigation
+- Directory is a logical grouping (feature, team, topic)
+
+## When to Update a README
+
+- Adding a new file to the directory
+- Removing a file from the directory
+- Renaming files
+- Changing the purpose or scope of contained files
+- After major reorganization
+
+---
+
+## README Structure
+
+Follow this structure (adjust sections as needed):
+
+```markdown
+# Directory Name
+
+One-line description of what this directory contains.
+
+---
+
+## Quick Summary
+
+2-3 sentences explaining the purpose. What problem does this content solve? Who is it for?
+
+---
+
+## How to Navigate
+
+| If you want to understand... | Read this |
+|------------------------------|-----------|
+| [Goal/question] | `filename.md` |
+| [Goal/question] | `filename.md` |
+
+---
+
+## Document Index
+
+### [Category Name]
+
+| Document | What It Covers |
+|----------|----------------|
+| `filename-v1.md` | Brief description |
+
+### [Category Name]
+
+| Document | What It Covers |
+|----------|----------------|
+| `filename-v1.md` | Brief description |
+
+---
+
+## How These Docs Connect
+
+[ASCII diagram showing relationships - optional but helpful for complex directories]
+
+---
+
+## Quick Start by Role
+
+**[Role 1]:**
+1. `doc1.md` — Why
+2. `doc2.md` — Why
+
+**[Role 2]:**
+1. `doc1.md` — Why
+
+---
+
+## Related Documentation
+
+- **[Related area]:** `../path/` — Description
+- **[Related area]:** `../path/` — Description
+
+---
+
+## Maintenance
+
+Notes on how docs are maintained, sourced, or synced.
+
+**Last updated:** [Month Year]
+```
+
+---
+
+## Formatting Rules
+
+### Tables Over Lists
+
+Use tables for document indexes—they're scannable:
+
+```markdown
+| Document | What It Covers |
+|----------|----------------|
+| `overview-v1.md` | High-level strategy |
+```
+
+### Navigation Tables
+
+Start with a "How to Navigate" table that maps goals to files:
+
+```markdown
+| If you want to understand... | Read this |
+|------------------------------|-----------|
+| How pricing works | `pricing-v1.md` |
+```
+
+### Backticks for Filenames
+
+Always use backticks for file references: `filename-v1.md`
+
+### ASCII Diagrams
+
+For directories with interconnected docs, add a simple ASCII diagram showing relationships.
+
+### Relative Paths
+
+Use relative paths for cross-references: `../other-dir/file.md`
+
+---
+
+## Minimal README (Small Directories)
+
+For directories with only 3-5 files, a minimal README is fine:
+
+```markdown
+# Directory Name
+
+Brief description of what's here.
+
+## Documents
+
+| Document | Description |
+|----------|-------------|
+| `file1-v1.md` | What it covers |
+| `file2-v1.md` | What it covers |
+
+**Last updated:** [Month Year]
+```
+
+---
+
+## Examples
+
+**Good README characteristics:**
+- Starts with clear purpose statement
+- Has navigation table for quick lookup
+- Groups documents logically
+- Shows how docs connect
+- Includes role-based quick starts
+- Links to related directories
+
+**Avoid:**
+- Long prose descriptions without structure
+- Missing document index
+- Outdated file lists
+- No guidance on where to start

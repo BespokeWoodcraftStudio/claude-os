@@ -18,7 +18,7 @@ Started with 200+ names extracted from project documents and research, then cura
 
 ---
 
-## Operators & CEOs (25)
+## Operators & CEOs (26)
 
 Leaders who've built and scaled companies. Prioritize those who share specifics.
 
@@ -49,6 +49,7 @@ Leaders who've built and scaled companies. Prioritize those who share specifics.
 | 23 | **Mathilde Collin** | Front CEO | Transparent salary; operator-investor hybrid |
 | 24 | **Wade Foster** | Zapier CEO | Remote-first pioneer; automation thinking |
 | 25 | **Ivan Zhao** | Notion CEO | Product craft; slow growth then explosion |
+| 26 | **Jason Cohen** | Smart Bear + WP Engine founder | Built two unicorns (bootstrapped + funded); PMF roadmap; pricing strategy |
 
 ---
 

@@ -52,6 +52,7 @@ These roles provide expertise in specific business functions.
 | **Chief of Staff** | `chief-of-staff-v1.md` | Strategic priorities, cross-functional alignment | James Baker, Rahm Emanuel, Kevin Fishner |
 | **VP People** | `vp-people-v1.md` | Hiring, org design, culture | Patty McCord, Laszlo Bock, Molly Graham |
 | **CMO** | `cmo-v1.md` | Brand, demand generation, marketing strategy | Chris Walker, Dave Gerhardt, April Dunford |
+| **AEO Expert** | `aeo-expert-v1.md` | AI visibility, AEO methodology, prompt strategy, CheckThat domain | Overthink Group, Rand Fishkin, Conductor, Lily Ray |
 
 ---
 
@@ -75,6 +76,11 @@ These roles provide expertise in specific business functions.
 **For multiple perspectives:**
 ```
 @roles/coo-v1.md @roles/cfo-v1.md - We're considering hiring 3 more editors. Walk me through the ops and financial implications.
+```
+
+**For AEO and AI visibility strategy:**
+```
+@roles/aeo-expert-v1.md - Audit this brand's AI visibility. Where are the gaps and what content should we create?
 ```
 
 **To channel a specific leader:**

@@ -9,6 +9,7 @@ See [README.md](README.md) for an overview of this directory.
 | File | Type |
 |---|---|
 | [README.md](README.md) | Directory overview |
+| [aeo-expert-v1.md](aeo-expert-v1.md) | AI persona |
 | [cfo-v1.md](cfo-v1.md) | AI persona |
 | [chief-of-staff-v1.md](chief-of-staff-v1.md) | AI persona |
 | [cmo-v1.md](cmo-v1.md) | AI persona |

@@ -1,3 +1,15 @@
+---
+description: README structure and maintenance rules - load when creating or updating README files
+alwaysApply: false
+globs: "**/README.md"
+---
+
+---
+description: README structure and maintenance rules - load when creating or updating README files
+alwaysApply: false
+globs: "**/README.md"
+---
+
 # README Maintenance
 
 Every directory with 3+ files MUST have a README.md. Keep READMEs updated after major changes.

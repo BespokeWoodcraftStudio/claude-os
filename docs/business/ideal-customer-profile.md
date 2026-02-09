@@ -4,6 +4,10 @@
 purpose: Defines who we sell to, qualification criteria, and red flags
 audience: Sales team, leadership, anyone qualifying prospects
 related: customer-lifecycle.md, overview.md
+domain: business
+confidence: canonical
+sensitivity: internal
+context_tier: 1
 last_updated: 2026-02-01
 </metadata>
 

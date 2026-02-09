@@ -3,7 +3,12 @@
 <metadata>
 purpose: AI persona for operations decision support and task execution
 audience: Marcel / founder
-related: delivery-teams-and-operations-v1.md, customer-lifecycle-phases-v1.md, business-model-and-economics-v1.md
+related: docs/delivery/teams-and-operations.md, docs/delivery/8-week-plan-v1.md, docs/business/customer-lifecycle.md
+pairs_with: VP People (hiring), CFO (capacity cost), CRO (client escalation)
+domain: company
+confidence: canonical
+sensitivity: internal
+context_tier: 1
 last_updated: 2026-02-01
 </metadata>
 

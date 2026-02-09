@@ -4,6 +4,10 @@
 purpose: Explains how we make money, unit economics, ARR math, and why the model scales
 audience: Leadership, finance, anyone understanding the business mechanics
 related: ../company/strategy-overview.md, customer-lifecycle.md, ideal-customer-profile.md
+domain: business
+confidence: canonical
+sensitivity: internal
+context_tier: 1
 last_updated: 2026-02-01
 </metadata>
 

@@ -4,6 +4,10 @@
 purpose: Details CheckThat's pricing strategy, tiers, unit economics, and competitive positioning
 audience: Leadership, product, sales teams working on CheckThat
 related: product-vision-v1.md, organic-growth-strategy-v1.md
+domain: product
+confidence: current
+sensitivity: internal
+context_tier: 2
 last_updated: 2026-02-01
 </metadata>
 

@@ -7,6 +7,14 @@ description: Post messages to Slack channels using the Slack MCP server. Use whe
 
 Post messages to Slack channels via the Slack MCP server.
 
+## Inputs / Outputs
+
+| | What | Example |
+|---|---|---|
+| **Input** | Message content + optional channel name | "Post our Q1 update to #leaders" |
+| **Tool** | Slack MCP server (`user-slack/slack_post_message`) | -- |
+| **Output** | Confirmation of posted message | "Posted to #ceo-os" |
+
 ## Default Channel
 
 **ceo-os**: `C0AC7SMJLQ5` (default)

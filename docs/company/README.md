@@ -20,6 +20,9 @@ This section covers GrowthX's identity: our mission, vision, values, culture, an
 | Strategic direction details | `strategy-overview.md` |
 | The market opportunity | `the-big-picture.md` |
 | Current priorities | `priorities-next-6-months.md` |
+| Our AI growth system vision | `ai-growth-system-vision.md` |
+| Our execution system (EOS) | `growthx-eos-v1.md` |
+| Our operating rhythm and cadences | `operating-rhythm-v1.md` |
 
 ---
 
@@ -33,6 +36,9 @@ This section covers GrowthX's identity: our mission, vision, values, culture, an
 | `strategy-overview.md` | Company strategy and growth approach |
 | `the-big-picture.md` | Market opportunity and competitive positioning |
 | `priorities-next-6-months.md` | Current strategic priorities and key metrics |
+| `ai-growth-system-vision.md` | AI growth system vision and why websites matter more in the AI era |
+| `growthx-eos-v1.md` | EOS execution system for company-wide alignment |
+| `operating-rhythm-v1.md` | Meeting cadences, reviews, and planning rhythm |
 
 ---
 

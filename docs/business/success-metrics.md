@@ -4,6 +4,10 @@
 purpose: Defines the five dimensions of client health, signals, and account management practices
 audience: EMs, delivery teams, leadership
 related: customer-lifecycle.md, ../delivery/teams-and-operations.md
+domain: business
+confidence: current
+sensitivity: internal
+context_tier: 1
 last_updated: 2026-02-02
 </metadata>
 

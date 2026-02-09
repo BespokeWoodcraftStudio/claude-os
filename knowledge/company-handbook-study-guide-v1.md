@@ -1,5 +1,16 @@
 # Company Handbook Study Guide
 
+<metadata>
+purpose: Study guide on building company handbooks
+audience: Founders, CEOs, and Heads of People
+related: ../docs/company/culture-and-values.md
+domain: company
+confidence: research
+sensitivity: public
+context_tier: 3
+last_updated: 2026-02-09
+</metadata>
+
 > **For:** Founders, CEOs, and Heads of People at 10-100 person companies building or rebuilding their handbook
 > **Goal:** Create a company handbook employees actually read and reference—not just a compliance document
 > **Time Investment:** 15-25 hours to research, draft, and launch

@@ -3,7 +3,12 @@
 <metadata>
 purpose: AI persona for product and technology decision support and task execution
 audience: Marcel / founder
-related: checkthat-product-vision-v1.md, checkthat-organic-growth-strategy-v1.md, company-vision-and-strategy-v1.md
+related: docs/products/ecosystem-strategy.md, docs/products/checkthat/product-vision-v1.md, docs/company/vision-and-strategy.md
+pairs_with: CFO (build-vs-buy), AEO Expert (product strategy)
+domain: company
+confidence: canonical
+sensitivity: internal
+context_tier: 1
 last_updated: 2026-02-01
 </metadata>
 

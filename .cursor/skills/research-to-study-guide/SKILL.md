@@ -7,10 +7,19 @@ description: Deep research on any topic, synthesized into a comprehensive study 
 
 Transform any topic into a comprehensive, curated study guide through systematic research, quality validation, and audience-focused synthesis.
 
+## Inputs / Outputs
+
+| | What | Path |
+|---|---|---|
+| **Input** | Topic and learner profile from user | Conversational |
+| **Working file** | Research scratchpad (created by skill) | `pipeline/scratchpad/[topic]-research-scratchpad.md` |
+| **Output** | Finished study guide | `knowledge/[topic]-study-guide-v1.md` |
+| **Prompts** | Full prompt templates for this workflow | `prompts/` subdirectory in this skill |
+
 ## Quick Start
 
 1. **Get the topic and learner profile** from the user
-2. **Create scratchpad** at `/scratchpad/[topic]-research-scratchpad.md`
+2. **Create scratchpad** at `/pipeline/scratchpad/[topic]-research-scratchpad.md`
 3. **Execute research** using web search
 4. **Evaluate quality** — iterate if gaps exist
 5. **Synthesize** into study guide at `/knowledge/[topic]-study-guide-v1.md`
@@ -182,14 +191,14 @@ Create study guide with audience filtering:
 
 | File | Purpose |
 |------|---------|
-| `/scratchpad/[topic]-research-scratchpad.md` | Living research notes |
+| `/pipeline/scratchpad/[topic]-research-scratchpad.md` | Living research notes |
 | `/knowledge/[topic]-study-guide-v1.md` | Final study guide |
 
 ## Example Usage
 
 User: "I want to become an expert in company handbooks"
 
-1. Create scratchpad: `/scratchpad/company-handbook-research-scratchpad.md`
+1. Create scratchpad: `/pipeline/scratchpad/company-handbook-research-scratchpad.md`
 2. Audience: Founders at 10-100 person companies
 3. Research: Public handbooks (Basecamp, GitLab, Valve, Netflix), structure patterns, expert advice
 4. Evaluate: 24 sources, 6 frameworks, 10+ examples = Great (0.85)
@@ -197,4 +206,4 @@ User: "I want to become an expert in company handbooks"
 
 ## Deep Reference
 
-Full prompt template: [research-to-study-guide-prompt-v1.md](../../prompts/research-to-study-guide-prompt-v1.md)
+Full prompt template: [research-to-study-guide-prompt-v1.md](prompts/research-to-study-guide-prompt-v1.md)

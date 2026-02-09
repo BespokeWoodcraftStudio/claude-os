@@ -38,8 +38,8 @@ Format: `descriptive-name-v1.md`
 Each directory has an `/archive` subdirectory for outdated files.
 
 ```
-writing-guidelines/
-├── writing-style-context-v2.md  # Current
+context/voice/
+├── writing-style-context-v2.md # Current
 └── archive/
-    └── writing-style-context-v1.md  # Previous
+ └── writing-style-context-v1.md # Previous
 ```

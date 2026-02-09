@@ -136,7 +136,7 @@ EPD has 3 lanes:
 
 - **CheckThat product:** `../checkthat/` — Product strategy, positioning, pricing
 - **Company handbook:** `../` — Culture, policies, how we work
-- **Writing guidelines:** `../../writing-guidelines/` — Content style guide
+- **Writing guidelines:** `../../context/voice/` — Content style guide
 
 ---
 

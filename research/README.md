@@ -1,21 +1,39 @@
-# Research
+# Research — Pipeline Stage 1 (Input)
 
-Research scratchpads, competitive intelligence, and working research files. These are the raw and in-progress research artifacts that feed into polished study guides and knowledge docs.
+<metadata>
+purpose: Raw research material and competitive intelligence — first stage of the pipeline
+audience: AI agents running research workflows, Marcel reviewing research
+related: pipeline/scratchpad/README.md, pipeline/outputs/README.md, .cursor/skills/research-to-study-guide/SKILL.md
+domain: research
+confidence: canonical
+sensitivity: internal
+context_tier: 2
+last_updated: 2026-02-09
+</metadata>
 
-For finalized AEO research, see [/knowledge/aeo/research/](/knowledge/aeo/research/).
+Raw material enters the pipeline here. Competitive briefs, data gathering, research notes.
 
----
+## What Goes Here
 
-## Files
+- Research scratchpads from web searches
+- Competitive analysis and briefs
+- Raw data files (xlsx, csv)
+- Agency research and market intelligence
 
-| File | Topic | Summary |
-|---|---|---|
-| [agency-research-summary.md](agency-research-summary.md) | Agency Landscape | Research summary on agency market |
-| [linkedin-hooks-research-scratchpad.md](linkedin-hooks-research-scratchpad.md) | LinkedIn | Research notes for LinkedIn hooks study guide |
-| [Unusual_AI_Competitive_Brief.md](Unusual_AI_Competitive_Brief.md) | Competitive Intel | Deep competitive brief on Unusual.ai (AEO competitor) |
-| [Unusual_AI_Competitive_Brief.docx](Unusual_AI_Competitive_Brief.docx) | Competitive Intel | Same brief in Word format |
-| [top-100-agencies-database.xlsx](top-100-agencies-database.xlsx) | Agency Landscape | Database of top 100 agencies |
+## What "Done" Means
 
----
+Material is organized, key findings are extracted, and it's ready to inform a deliverable. When that happens, the working draft moves to `pipeline/scratchpad/`.
 
-See [INDEX.md](INDEX.md) for a complete file listing.
+## Flow
+
+```
+→ YOU ARE HERE → pipeline/scratchpad/ → pipeline/outputs/
+   (raw input)      (working drafts)      (finished work)
+```
+
+## Rules
+
+- Files enter here from research skills or manual research
+- Never move files backward from scratchpad/ to here
+- Large datasets stay here (don't promote raw xlsx to scratchpad)
+- When a research project spawns a deliverable, the draft goes to scratchpad/

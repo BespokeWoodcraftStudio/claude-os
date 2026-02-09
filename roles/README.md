@@ -149,10 +149,63 @@ Detailed research for each role is saved in `/outputs`:
 
 ---
 
+## Role Composition & Stacking
+
+Sometimes one role isn't enough. Here's how to combine them.
+
+### When to Stack Roles
+
+- **Multi-dimensional decisions** — "Should we build this feature?" needs CTO (feasibility) + CFO (economics) + CRO (revenue impact)
+- **Tension testing** — Deliberately load opposing perspectives to stress-test a plan
+- **Cross-functional reviews** — Quarterly planning, annual strategy, reorgs
+
+### Complementary Pairs
+
+| Decision Type | Primary Role | Pair With | Why |
+|--------------|-------------|-----------|-----|
+| Build vs. buy | CTO | CFO | Technical feasibility meets unit economics |
+| Hiring decisions | VP People | COO | Culture fit meets capacity planning |
+| Pricing changes | CFO | CRO | Margin impact meets sales reality |
+| Go-to-market | CMO | CRO | Brand strategy meets pipeline reality |
+| Client escalation | COO | Consigliere | Process meets political judgment |
+| Product strategy | CTO | AEO Expert | Platform vision meets market positioning |
+| Founder overwhelm | Performance Coach | Chief of Staff | Inner clarity meets external prioritization |
+| Hard conversations | Consigliere | VP People | Truth-telling meets people sensitivity |
+
+### Conflict Resolution Between Roles
+
+When stacked roles disagree (and they should):
+
+1. **Name the tension** — "The CFO says no based on margins. The CRO says yes based on pipeline. Here's the tradeoff."
+2. **Identify the constraint** — Which role's concern is the binding constraint? Cash is usually the binding constraint over growth.
+3. **Time-horizon test** — Short-term vs. long-term. The CFO often wins short-term, the CTO wins long-term.
+4. **Ask the CEO** — Present the tension clearly and let Marcel decide. Don't resolve it silently.
+
+### Context Dependencies
+
+Each role works better with specific docs loaded alongside it:
+
+| Role | Always Load With | Load If Relevant |
+|------|-----------------|-----------------|
+| CFO | `docs/finance/fiscal-plan-2026-v2.md` | `docs/business/business-model.md` |
+| COO | `docs/delivery/teams-and-operations.md` | `docs/delivery/8-week-plan-v1.md` |
+| CTO | `docs/products/ecosystem-strategy.md` | `docs/products/checkthat/product-vision-v1.md` |
+| CRO | `docs/business/ideal-customer-profile.md` | `docs/business/customer-lifecycle.md` |
+| CMO | `docs/business/overview.md` | `context/voice/writing-style-context-v2.md` |
+| Chief of Staff | `docs/company/vision-and-strategy.md` | `docs/company/strategy-overview.md` |
+| VP People | `docs/company/culture-and-values.md` | `docs/people/` |
+| AEO Expert | `knowledge/aeo/README.md` | `docs/products/checkthat/product-vision-v1.md` |
+| Performance Coach | `context/personal/marcel-santilli-user-manual-v1.md` | `context/personal/marcel-santilli-psychological-profile-v1.md` |
+| Consigliere | `context/personal/marcel-santilli-user-manual-v1.md` | `docs/company/vision-and-strategy.md` |
+
+---
+
 ## The Bottom Line
 
 **The Inner Circle** helps you perform at your best and tells you what you need to hear.
 
 **The Executive Team** provides world-class functional expertise in every domain.
+
+**Stacking roles** gives you the multi-perspective analysis that real leadership teams provide — without the politics.
 
 Together, they're your virtual leadership team — available on demand, no politics, no filters.

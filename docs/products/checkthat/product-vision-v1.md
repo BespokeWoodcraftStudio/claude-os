@@ -4,6 +4,10 @@
 purpose: Explains what CheckThat is, the market shift, and our strategy to win AI visibility
 audience: All team members, especially those working on CheckThat
 related: organic-growth-strategy-v1.md, pricing-and-monetization-v1.md, ../../company/strategy-overview.md
+domain: product
+confidence: canonical
+sensitivity: internal
+context_tier: 2
 last_updated: 2026-02-01
 </metadata>
 

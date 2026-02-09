@@ -7,9 +7,19 @@ description: Write and review content using GrowthX voice and style. Use when cr
 
 Write like a smart friend explaining something important. Direct, clear, real.
 
+## Inputs / Outputs
+
+| | What | Example |
+|---|---|---|
+| **Input** | Topic, draft, or content brief from user | "Write a LinkedIn post about AEO" |
+| **Context** | `context/voice/writing-style-context-v2.md` (always load) | -- |
+| **Context** | `context/personal/marcel-linkedin-style-guide-v1.md` (if LinkedIn) | -- |
+| **Context** | Relevant `docs/` files for subject matter | `docs/products/checkthat/` for CheckThat content |
+| **Output** | Finished content or review with flags | Delivered inline or saved to `pipeline/outputs/` |
+
 ## Quick Start
 
-1. Read the style guide: [writing-style-context-v2.md](../../writing-guidelines/writing-style-context-v2.md)
+1. Read the style guide: [writing-style-context-v2.md](../../context/voice/writing-style-context-v2.md)
 2. Apply these essentials:
    - Lead with the point (main idea in first two sentences)
    - Maximum clarity, minimum words
@@ -68,5 +78,5 @@ Before finishing, verify:
 ## Deep Reference
 
 For comprehensive guidance:
-- **Style rules**: [writing-style-context-v2.md](../../writing-guidelines/writing-style-context-v2.md) — GrowthX voice, principles, examples
+- **Style rules**: [writing-style-context-v2.md](../../context/voice/writing-style-context-v2.md) — GrowthX voice, principles, examples
 - **Craft foundations**: [writing-craft-study-guide.md](../../knowledge/writing-craft-study-guide.md) — Orwell, Hemingway, Zinsser, and 15+ writing masters

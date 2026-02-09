@@ -1,5 +1,16 @@
 # The Context Engineering Study Guide
 
+<metadata>
+purpose: Study guide on context engineering for AI agents
+audience: AI practitioners, engineers
+related: ../docs/context-routing.md
+domain: research
+confidence: research
+sensitivity: public
+context_tier: 3
+last_updated: 2026-02-09
+</metadata>
+
 Context engineering is the discipline of giving AI systems exactly the right information to accomplish tasks reliably. This guide synthesizes the most influential voices on the craft into principles you can apply today.
 
 ---

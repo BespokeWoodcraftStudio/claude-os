@@ -4,6 +4,13 @@
 created: February 2026
 purpose: Curated list of people whose thinking I trust and follow
 selection: Drawn from project sources + expanded based on relevance to CEO/operator challenges
+audience: Marcel / founder
+related: sources-index.md
+domain: research
+confidence: current
+sensitivity: public
+context_tier: 3
+last_updated: 2026-02-01
 </metadata>
 
 ---

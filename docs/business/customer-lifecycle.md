@@ -4,6 +4,10 @@
 purpose: Details the three phases every customer goes through from first contact to long-term partnership
 audience: All delivery team members, sales, strategy sprint teams
 related: ideal-customer-profile.md, ../delivery/teams-and-operations.md, success-metrics.md
+domain: business
+confidence: canonical
+sensitivity: internal
+context_tier: 1
 last_updated: 2026-02-01
 </metadata>
 

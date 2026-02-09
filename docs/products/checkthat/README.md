@@ -23,6 +23,7 @@ CheckThat tracks how AI engines answer B2B buyer questions. We map categories, b
 | How to talk about the product | `messaging-and-positioning-v1.md` |
 | Pricing, tiers, and unit economics | `pricing-and-monetization-v1.md` |
 | SEO and content growth strategy | `organic-growth-strategy-v1.md` |
+| Public-facing product pages (checkthat.io) | `public/` — [README](public/README.md) |
 
 ---
 
@@ -47,6 +48,12 @@ CheckThat tracks how AI engines answer B2B buyer questions. We map categories, b
 | Document | What It Covers |
 |----------|----------------|
 | `organic-growth-strategy-v1.md` | Entity model (brands, categories, answers, lists), site architecture, SEO playbook |
+
+### Public Pages
+
+| Document | What It Covers |
+|----------|----------------|
+| `public/` | Public-facing marketing and product pages for checkthat.io (about, guides, learn, product, why) |
 
 ---
 

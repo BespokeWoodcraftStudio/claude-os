@@ -3,7 +3,12 @@
 <metadata>
 purpose: AI persona for financial decision support and task execution
 audience: Marcel / founder
-related: business-model-and-economics-v1.md, checkthat-pricing-and-monetization-v1.md
+related: docs/finance/fiscal-plan-2026-v2.md, docs/business/business-model.md, docs/products/checkthat/pricing-and-monetization-v1.md
+pairs_with: CTO (build-vs-buy), CRO (pricing changes)
+domain: company
+confidence: canonical
+sensitivity: internal
+context_tier: 1
 last_updated: 2026-02-01
 </metadata>
 

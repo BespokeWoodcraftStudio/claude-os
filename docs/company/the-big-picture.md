@@ -1,5 +1,16 @@
 # The Big Picture
 
+<metadata>
+purpose: High-level company narrative and direction
+audience: All team members
+related: vision-and-strategy.md, strategy-overview.md, ../business/overview.md
+domain: company
+confidence: current
+sensitivity: internal
+context_tier: 1
+last_updated: 2026-02-09
+</metadata>
+
 For us to be successful, we need the right balance of *vision*, *ambition*, and *execution*.
 
 - **Vision** defines where we're going and why it matters.

@@ -1,21 +1,28 @@
 ---
-description: Pull meeting from Fireflies - downloads details and transcript, saves to /transcripts
-globs:
-alwaysApply: false
+name: pull-meeting
+description: Pull a meeting from Fireflies and save it to /transcripts with full context. Use when the user wants to pull, download, or retrieve a meeting transcript, or mentions Fireflies meetings. Triggers on "pull meeting", "get meeting", "fireflies", "meeting transcript", "download transcript".
 ---
 
-# /pull-meeting
+# Pull Meeting
 
-Pull a meeting from Fireflies and save it to `/transcripts` with full context.
+Pull a meeting from Fireflies and save it to `/records/transcripts` with full context.
+
+## Inputs / Outputs
+
+| | What | Example |
+|---|---|---|
+| **Input** | Meeting name, date, or participant from user | "Pull the strategy standup from Jan 27" |
+| **Tool** | Fireflies MCP server (`fireflies_search`, `fireflies_get_summary`, `fireflies_get_transcript`) | -- |
+| **Output** | Formatted transcript saved to records | `records/transcripts/2026-01-27-strategy-standup.md` |
 
 ## Overview
 
-This command:
+This skill:
 1. Searches Fireflies for the specified meeting
-2. Downloads meeting details (summary, action items, metadata) via `fireflies_get_summary`
-3. Downloads raw transcript (speakers, sentences) via `fireflies_get_transcript`
+2. Downloads meeting details (summary, action items, metadata)
+3. Downloads raw transcript (speakers, sentences)
 4. Combines into properly formatted markdown
-5. Saves to `/transcripts/YYYY-MM-DD-meeting-name.md`
+5. Saves to `/records/transcripts/YYYY-MM-DD-meeting-name.md`
 
 ## Workflow
 
@@ -23,13 +30,7 @@ This command:
 
 Ask the user: **"What meeting do you want to pull? (provide a name, date, or participant)"**
 
-Then search Fireflies:
-
-```
-fireflies_search with query: keyword:"<search term>" from:<date> to:<date> limit:10
-```
-
-Options:
+Then search Fireflies with options:
 - By keyword: `keyword:"standup"`
 - By date range: `from:2026-01-20 to:2026-01-27`
 - By participant: `participants:marcel@growthx.ai`
@@ -47,16 +48,7 @@ Ask: **"Is this the meeting? (Yes/No, or specify which one)"**
 
 ### Step 3: Fetch Meeting Details
 
-Use the meeting ID to call `fireflies_get_summary`:
-
-```
-CallMcpTool:
-  server: user-fireflies
-  toolName: fireflies_get_summary
-  arguments: { "transcriptId": "<meeting_id>" }
-```
-
-Extract:
+Use the meeting ID to get the summary with:
 - Title, date, time, duration
 - Organizer and participants
 - Meeting link and transcript URL
@@ -68,16 +60,7 @@ Extract:
 
 ### Step 4: Fetch Raw Transcript
 
-Call `fireflies_get_transcript`:
-
-```
-CallMcpTool:
-  server: user-fireflies
-  toolName: fireflies_get_transcript
-  arguments: { "transcriptId": "<meeting_id>" }
-```
-
-Extract:
+Get the full transcript with:
 - Speakers list
 - All sentences with speaker attribution
 - Format into readable dialogue
@@ -106,10 +89,7 @@ Using the summary data, write these sections in GrowthX style:
 - Use meeting date
 - Convert title to lowercase with hyphens
 - Remove special characters
-- Examples:
-  - `2026-01-27-strategy-sprint-standup.md`
-  - `2026-01-14-marcel-jason-weekly.md`
-  - `2026-01-23-brex-strategy-and-approach.md`
+- Examples: `2026-01-27-strategy-sprint-standup.md`, `2026-01-14-marcel-jason-weekly.md`
 
 **File Structure:**
 
@@ -193,7 +173,7 @@ transcript_url: https://app.fireflies.ai/view/<meeting_id>
 ### Step 7: Report Back
 
 After saving, confirm:
-- ✓ File saved to: `/transcripts/<filename>.md`
+- File saved to: `/records/transcripts/<filename>.md`
 - Meeting: <title>
 - Date: <date>
 - Duration: <duration> minutes
@@ -203,23 +183,15 @@ After saving, confirm:
 ## Writing Guidelines
 
 When generating Summary, Context, and Relevance sections:
-
 - **Direct and clear** - No corporate jargon
 - **Lead with the point** - Most important info first
 - **Use active voice** - "Marcel outlined" not "It was outlined by Marcel"
 - **Ground in specifics** - Numbers, names, dates, concrete details
 - **Connect to company context** - Reference GrowthX services, CheckThat, content strategy as relevant
 
-## Reference Scripts
-
-For data structure details, see:
-- `/scripts/fireflies-get-details.py` - Summary/metadata schema
-- `/scripts/fireflies-get-transcript.py` - Transcript schema and formatting
-
 ## Batch Mode
 
 To pull multiple meetings at once:
-
 1. Search with broader criteria: `from:2026-01-01 to:2026-01-31 limit:50`
 2. List all matching meetings for user to confirm
 3. Process each meeting sequentially using this workflow

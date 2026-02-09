@@ -7,6 +7,10 @@ related: growthx-eos-v1.md, operating-rhythm-v1.md, q4-2025-board-meeting.md
 version: 2
 last_updated: 2026-02-02
 changes_from_v1: Added Why We Believe (with real 2025 journey), What Could Go Wrong, ARR Waterfall, How This Affects You, Leading Indicators. Elevated retention to #2 priority. Added NRR targets. Strengthened Bottom Line. Added doc intro and section intros throughout.
+domain: finance
+confidence: current
+sensitivity: leadership-only
+context_tier: 2
 </metadata>
 
 ---

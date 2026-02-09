@@ -5,6 +5,14 @@ created: February 2026
 version: v1
 source: Synthesized from 49 transcripts (internal meetings, sales calls, interviews, strategy sessions, 1:1s, client meetings)
 methodology: Wendy Rhoades-style deep analysis of thinking, communication, and operating patterns
+purpose: Deep psychological profile of Marcel Santilli's thinking and operating patterns
+audience: Anyone working closely with Marcel
+related: marcel-santilli-user-manual-v1.md
+domain: company
+confidence: canonical
+sensitivity: leadership-only
+context_tier: 1
+last_updated: 2026-02-01
 </metadata>
 
 ---

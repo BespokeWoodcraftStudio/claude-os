@@ -5,6 +5,13 @@ created: February 2026
 version: v1
 purpose: Help anyone working with Marcel understand how he operates, what he values, and how to be effective with him
 source: Synthesized from 49 transcripts and direct observation
+audience: Anyone working with Marcel
+related: marcel-santilli-psychological-profile-v1.md
+domain: company
+confidence: canonical
+sensitivity: leadership-only
+context_tier: 1
+last_updated: 2026-02-01
 </metadata>
 
 ---

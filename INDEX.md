@@ -13,7 +13,8 @@ See [readme.md](readme.md) for project overview and navigation.
 |---|---|
 | [readme.md](readme.md) | Project overview and navigation |
 | [INDEX.md](INDEX.md) | This file -- global sitemap |
-| [claude.md](claude.md) | AI system context file |
+| [CLAUDE.md](CLAUDE.md) | AI agent root context file |
+| [AGENTS.md](AGENTS.md) | Symlink → CLAUDE.md (cross-tool compatibility) |
 
 ---
 
@@ -165,114 +166,114 @@ See [readme.md](readme.md) for project overview and navigation.
 
 ---
 
-## research/ -- Research & Competitive Intel
+## pipeline/research/ -- Research & Competitive Intel
 
-> [README](research/README.md) | [INDEX](research/INDEX.md)
-
-| File | Path |
-|---|---|
-| Agency Research Summary | [research/agency-research-summary.md](research/agency-research-summary.md) |
-| LinkedIn Hooks Research | [research/linkedin-hooks-research-scratchpad.md](research/linkedin-hooks-research-scratchpad.md) |
-| Unusual.ai Competitive Brief | [research/Unusual_AI_Competitive_Brief.md](research/Unusual_AI_Competitive_Brief.md) |
-| Top 100 Agencies | [research/top-100-agencies-database.xlsx](research/top-100-agencies-database.xlsx) |
-
----
-
-## roles/ -- AI Executive Personas
-
-> [README](roles/README.md) | [INDEX](roles/INDEX.md)
+> [README](pipeline/research/README.md) | [INDEX](pipeline/research/INDEX.md)
 
 | File | Path |
 |---|---|
-| CFO | [roles/cfo-v1.md](roles/cfo-v1.md) |
-| Chief of Staff | [roles/chief-of-staff-v1.md](roles/chief-of-staff-v1.md) |
-| CMO | [roles/cmo-v1.md](roles/cmo-v1.md) |
-| Consigliere | [roles/consigliere-v1.md](roles/consigliere-v1.md) |
-| COO | [roles/coo-v1.md](roles/coo-v1.md) |
-| CRO | [roles/cro-v1.md](roles/cro-v1.md) |
-| CTO | [roles/cto-v1.md](roles/cto-v1.md) |
-| Performance Coach | [roles/performance-coach-v1.md](roles/performance-coach-v1.md) |
-| VP People | [roles/vp-people-v1.md](roles/vp-people-v1.md) |
+| Agency Research Summary | [pipeline/research/agency-research-summary.md](pipeline/research/agency-research-summary.md) |
+| LinkedIn Hooks Research | [pipeline/research/linkedin-hooks-research-scratchpad.md](pipeline/research/linkedin-hooks-research-scratchpad.md) |
+| Unusual.ai Competitive Brief | [pipeline/research/Unusual_AI_Competitive_Brief.md](pipeline/research/Unusual_AI_Competitive_Brief.md) |
+| Top 100 Agencies | [pipeline/research/top-100-agencies-database.xlsx](pipeline/research/top-100-agencies-database.xlsx) |
 
 ---
 
-## writing-guidelines/ -- Style Standards
+## context/ -- Prescriptive (How to Act)
 
-> [README](writing-guidelines/README.md) | [INDEX](writing-guidelines/INDEX.md)
+> [README](context/README.md)
+
+Prescriptive files that configure agent behavior. Load BEFORE doing work.
+
+### context/voice/ -- How We Write
+
+> [README](context/voice/README.md) | [INDEX](context/voice/INDEX.md)
 
 | File | Path |
 |---|---|
-| Writing Style Guide (v2) | [writing-guidelines/writing-style-context-v2.md](writing-guidelines/writing-style-context-v2.md) |
+| Writing Style Guide (v2) | [context/voice/writing-style-context-v2.md](context/voice/writing-style-context-v2.md) |
+| LinkedIn Style Guide | [context/voice/marcel-linkedin-style-guide-v1.md](context/voice/marcel-linkedin-style-guide-v1.md) |
 
----
+### context/roles/ -- How We Think
 
-## personal-context/ -- Founder Context
-
-> [README](personal-context/README.md) | [INDEX](personal-context/INDEX.md)
+> [README](context/roles/README.md) | [INDEX](context/roles/INDEX.md)
 
 | File | Path |
 |---|---|
-| User Manual | [personal-context/marcel-santilli-user-manual-v1.md](personal-context/marcel-santilli-user-manual-v1.md) |
-| Psychological Profile | [personal-context/marcel-santilli-psychological-profile-v1.md](personal-context/marcel-santilli-psychological-profile-v1.md) |
-| LinkedIn Style Guide | [personal-context/marcel-linkedin-style-guide-v1.md](personal-context/marcel-linkedin-style-guide-v1.md) |
+| CFO | [context/roles/cfo-v1.md](context/roles/cfo-v1.md) |
+| Chief of Staff | [context/roles/chief-of-staff-v1.md](context/roles/chief-of-staff-v1.md) |
+| CMO | [context/roles/cmo-v1.md](context/roles/cmo-v1.md) |
+| Consigliere | [context/roles/consigliere-v1.md](context/roles/consigliere-v1.md) |
+| COO | [context/roles/coo-v1.md](context/roles/coo-v1.md) |
+| CRO | [context/roles/cro-v1.md](context/roles/cro-v1.md) |
+| CTO | [context/roles/cto-v1.md](context/roles/cto-v1.md) |
+| Performance Coach | [context/roles/performance-coach-v1.md](context/roles/performance-coach-v1.md) |
+| VP People | [context/roles/vp-people-v1.md](context/roles/vp-people-v1.md) |
+
+### context/personal/ -- Who Marcel Is
+
+> [README](context/personal/README.md) | [INDEX](context/personal/INDEX.md)
+
+| File | Path |
+|---|---|
+| User Manual | [context/personal/marcel-santilli-user-manual-v1.md](context/personal/marcel-santilli-user-manual-v1.md) |
+| Psychological Profile | [context/personal/marcel-santilli-psychological-profile-v1.md](context/personal/marcel-santilli-psychological-profile-v1.md) |
 
 ---
 
-## customers/ -- Client Documentation
+## pipeline/ -- Where Work Happens
 
-> [README](customers/README.md) | [INDEX](customers/INDEX.md)
+Files flow forward: research/ -> scratchpad/ -> outputs/. Never backward.
+
+### pipeline/research/ -- Raw Material
+
+> [README](pipeline/research/README.md) | [INDEX](pipeline/research/INDEX.md)
+
+Active research in progress. See INDEX for complete listing.
+
+### pipeline/scratchpad/ -- Work in Progress
+
+> [README](pipeline/scratchpad/README.md) | [INDEX](pipeline/scratchpad/INDEX.md)
+
+10+ working documents. See INDEX for complete listing.
+
+### pipeline/outputs/ -- Finished Deliverables
+
+> [README](pipeline/outputs/README.md) | [INDEX](pipeline/outputs/INDEX.md)
+
+17 files including role research, LinkedIn content, client deliverables, and databases. See INDEX for complete listing.
+
+---
+
+## records/ -- Historical Archives (Search Only)
+
+Search these directories -- never bulk-load them.
+
+### records/customers/ -- Client Documentation
+
+> [README](records/customers/README.md) | [INDEX](records/customers/INDEX.md)
 
 | Client | Context | Transcripts |
 |---|---|---|
-| Lovable | [lovable/lovable-client-context-v1.md](customers/lovable/lovable-client-context-v1.md) | 49 transcripts (Oct 2025 -- Feb 2026) |
+| Lovable | [lovable/lovable-client-context-v1.md](records/customers/lovable/lovable-client-context-v1.md) | 49 transcripts (Oct 2025 -- Feb 2026) |
+
+### records/transcripts/ -- Meeting Transcripts
+
+> [README](records/transcripts/README.md) | [INDEX](records/transcripts/INDEX.md)
+
+55+ meeting transcripts (2025-2026) plus 2 video transcripts. See INDEX for complete listing.
 
 ---
 
-## transcripts/ -- Meeting Transcripts
+## prompts/ -- AI Prompt Templates (Redirects)
 
-> [README](transcripts/README.md) | [INDEX](transcripts/INDEX.md)
+Prompts have been co-located with their skills. See `.cursor/skills/[skill-name]/prompts/`.
 
-55+ meeting transcripts (2025-2026) plus 2 video transcripts. See [transcripts/INDEX.md](transcripts/INDEX.md) for complete listing.
-
----
-
-## memos/ -- Strategic Memos
-
-> [README](memos/README.md) | [INDEX](memos/INDEX.md)
-
-| File | Path |
-|---|---|
-| AI Growth System Vision | [memos/ai-growth-system-vision.md](memos/ai-growth-system-vision.md) |
-| GrowthX EOS | [memos/growthx-eos-v1.md](memos/growthx-eos-v1.md) |
-| Operating Rhythm | [memos/operating-rhythm-v1.md](memos/operating-rhythm-v1.md) |
-
----
-
-## scratchpad/ -- Work in Progress
-
-> [README](scratchpad/README.md) | [INDEX](scratchpad/INDEX.md)
-
-10 working documents. See [scratchpad/INDEX.md](scratchpad/INDEX.md) for complete listing.
-
----
-
-## outputs/ -- Research Deliverables
-
-> [README](outputs/README.md) | [INDEX](outputs/INDEX.md)
-
-17 files including role research, LinkedIn content, client deliverables, and databases. See [outputs/INDEX.md](outputs/INDEX.md) for complete listing.
-
----
-
-## prompts/ -- AI Prompt Templates
-
-> [README](prompts/README.md) | [INDEX](prompts/INDEX.md)
-
-| File | Path |
-|---|---|
-| Research to Study Guide | [prompts/research-to-study-guide-prompt-v1.md](prompts/research-to-study-guide-prompt-v1.md) |
-| Research Supervisor | [prompts/research-supervisor-workflow-prompt-v1.md](prompts/research-supervisor-workflow-prompt-v1.md) |
-| PMM Study Guide | [prompts/pmm-study-guide-research-prompt.md](prompts/pmm-study-guide-research-prompt.md) |
+| Prompt | Skill | New Path |
+|--------|-------|----------|
+| Research to Study Guide | research-to-study-guide | `.cursor/skills/research-to-study-guide/prompts/` |
+| Research Supervisor | research-to-study-guide | `.cursor/skills/research-to-study-guide/prompts/` |
+| PMM Study Guide | research-to-study-guide | `.cursor/skills/research-to-study-guide/prompts/` |
 
 ---
 
@@ -299,26 +300,10 @@ See [readme.md](readme.md) for project overview and navigation.
 
 ---
 
-## downloads/ -- External Archives
+### records/downloads/ -- External Archives
 
-> [README](downloads/README.md) | [INDEX](downloads/INDEX.md)
+> [README](records/downloads/README.md) | [INDEX](records/downloads/INDEX.md)
 
 | Directory | Contents |
 |---|---|
-| [lennys-podcast-transcripts/](downloads/lennys-podcast-transcripts/) | 200+ episodes, 99 topic indexes |
-
----
-
-## public-docs/ -- Public-Facing Documentation
-
-> [index.md](public-docs/index.md)
-
-CheckThat public documentation covering about, guides, learn, product, and why sections. 15 files across 5 subdirectories.
-
----
-
-## leadership-docs/ -- Legacy
-
-> [README](leadership-docs/README.md) | [INDEX](leadership-docs/INDEX.md)
-
-Archived leadership docs. Active content migrated to [docs/finance/](docs/finance/).
+| [lennys-podcast-transcripts/](records/downloads/lennys-podcast-transcripts/) | 200+ episodes, 99 topic indexes |

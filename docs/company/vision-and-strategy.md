@@ -4,6 +4,10 @@
 purpose: Explains GrowthX's vision, competitive moats, and strategic model
 audience: All team members, especially new hires and leadership
 related: business-overview-for-onboarding-v1.md, business-model-and-economics-v1.md
+domain: company
+confidence: canonical
+sensitivity: internal
+context_tier: 1
 last_updated: 2026-02-01
 </metadata>
 

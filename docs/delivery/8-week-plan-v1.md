@@ -1,5 +1,16 @@
 # The 8-Week Plan
 
+<metadata>
+purpose: Standard 8-week client engagement plan
+audience: Delivery team, EMs, strategy sprint teams
+related: ../business/customer-lifecycle.md, creating-good-content.md, teams-and-operations.md
+domain: delivery
+confidence: canonical
+sensitivity: internal
+context_tier: 2
+last_updated: 2026-02-09
+</metadata>
+
 > Source: [Notion](https://www.notion.so/growthxlabs/The-8-Week-Plan-2112ba60bc7480609dc3d4668e8044d5)
 
 ---

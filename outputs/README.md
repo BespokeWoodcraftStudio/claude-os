@@ -1,43 +1,40 @@
-# Outputs
+# Outputs — Pipeline Stage 3 (Output)
 
-Completed research deliverables, AI-generated outputs, databases, and work products. These are finished artifacts produced from research workflows.
+<metadata>
+purpose: Finished deliverables and completed work — final stage of the pipeline
+audience: AI agents filing completed work, Marcel reviewing deliverables
+related: pipeline/research/README.md, pipeline/scratchpad/README.md, docs/context-routing.md
+domain: research
+confidence: canonical
+sensitivity: internal
+context_tier: 2
+last_updated: 2026-02-09
+</metadata>
 
----
+Finished work lands here. Delivered to client, published, or completed.
 
-## Research Outputs
+## What Goes Here
 
-| File | Topic |
-|---|---|
-| [cfo-research-summary-v1.md](cfo-research-summary-v1.md) | CFO role research |
-| [chief-of-staff-research-v1.md](chief-of-staff-research-v1.md) | Chief of Staff role research |
-| [cmo-research-summary-v1.md](cmo-research-summary-v1.md) | CMO role research |
-| [cro-research-for-ai-persona-v1.md](cro-research-for-ai-persona-v1.md) | CRO role research |
-| [cto-research-for-ai-persona-v1.md](cto-research-for-ai-persona-v1.md) | CTO role research |
-| [wendy-rhoades-character-research-v1.md](wendy-rhoades-character-research-v1.md) | Character study for Performance Coach persona |
-| [wags-character-research-v1.md](wags-character-research-v1.md) | Character study for Consigliere persona |
-| [marcel-santilli-psychoanalysis-v1.md](marcel-santilli-psychoanalysis-v1.md) | Founder psychological profile analysis |
+- Completed research deliverables
+- Published content and articles
+- Client deliverables (reports, analyses)
+- Finalized databases and datasets
+- LinkedIn content collections
 
-## Content & Marketing Outputs
+## What "Done" Means
 
-| File | Topic |
-|---|---|
-| [linkedin-real-post-examples.md](linkedin-real-post-examples.md) | LinkedIn post examples and patterns |
-| [linkedin-hooks-database.xlsx](linkedin-hooks-database.xlsx) | Database of LinkedIn hooks |
-| [content-growth-flow.mermaid](content-growth-flow.mermaid) | Content growth flow diagram |
+The file has been delivered, published, or otherwise finalized. It becomes reference material.
 
-## Client Deliverables
+## Flow
 
-| File | Topic |
-|---|---|
-| [GetAccept-AEO-Prompt-Database.xlsx](GetAccept-AEO-Prompt-Database.xlsx) | AEO prompt database for GetAccept |
+```
+pipeline/research/ → pipeline/scratchpad/ → YOU ARE HERE
+   (raw input)         (working drafts)       (finished work)
+```
 
-## Other
+## Rules
 
-| File | Topic |
-|---|---|
-| [2026_Marketing_Events_Research.xlsx](2026_Marketing_Events_Research.xlsx) | Marketing events database |
-| [Top_100_LinkedIn_Marketing_Influencers.xlsx](Top_100_LinkedIn_Marketing_Influencers.xlsx) | Influencer database |
-
----
-
-See [INDEX.md](INDEX.md) for a complete file listing.
+- Files arrive from scratchpad/ when they're complete
+- Never move files backward to scratchpad/ or research/
+- If a deliverable needs major revision, create a new version in scratchpad/ instead
+- Outputs may be referenced by other docs but should not be edited in place

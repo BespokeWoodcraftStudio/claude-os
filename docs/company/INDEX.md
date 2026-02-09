@@ -15,3 +15,6 @@ See [README.md](README.md) for an overview of this directory.
 | [strategy-overview.md](strategy-overview.md) | Company strategy overview |
 | [the-big-picture.md](the-big-picture.md) | High-level company narrative |
 | [vision-and-strategy.md](vision-and-strategy.md) | Vision and strategy details |
+| [ai-growth-system-vision.md](ai-growth-system-vision.md) | AI growth system vision memo |
+| [growthx-eos-v1.md](growthx-eos-v1.md) | EOS execution system |
+| [operating-rhythm-v1.md](operating-rhythm-v1.md) | Operating rhythm and cadences |

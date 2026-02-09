@@ -1,5 +1,16 @@
 # Product Ecosystem Strategy
 
+<metadata>
+purpose: Multi-product strategy connecting GrowthX services, CheckThat, and ContentOS
+audience: Leadership, product teams
+related: checkthat/product-vision-v1.md, ../company/vision-and-strategy.md, ../business/overview.md
+domain: product
+confidence: aspirational
+sensitivity: internal
+context_tier: 2
+last_updated: 2026-02-09
+</metadata>
+
 *Source: Notion - https://www.notion.so/2ae2ba60bc748150a2aff7249ff8951d*
 
 ---

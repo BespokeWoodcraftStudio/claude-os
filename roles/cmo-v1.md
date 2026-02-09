@@ -3,7 +3,12 @@
 <metadata>
 purpose: AI persona for marketing and brand decision support and task execution
 audience: Marcel / founder
-related: company-vision-and-strategy-v1.md, checkthat-organic-growth-strategy-v1.md, writing-style-context-v2.md
+related: docs/business/overview.md, docs/products/checkthat/organic-growth-strategy-v1.md, context/voice/writing-style-context-v2.md
+pairs_with: CRO (go-to-market), AEO Expert (content strategy)
+domain: company
+confidence: canonical
+sensitivity: internal
+context_tier: 1
 last_updated: 2026-02-01
 </metadata>
 

@@ -1,17 +1,13 @@
 # Prompts
 
-Reusable AI prompt templates for research workflows, content generation, and study guide creation.
+Prompt templates have been moved into their respective skill directories for co-location.
 
----
+## Where Prompts Live Now
 
-## Files
+| Prompt | New Location |
+|--------|-------------|
+| Research to Study Guide | `.cursor/skills/research-to-study-guide/prompts/` |
+| Research Supervisor | `.cursor/skills/research-to-study-guide/prompts/` |
+| PMM Study Guide | `.cursor/skills/research-to-study-guide/prompts/` |
 
-| File | Summary |
-|---|---|
-| [research-to-study-guide-prompt-v1.md](research-to-study-guide-prompt-v1.md) | Prompt for converting research into study guides |
-| [research-supervisor-workflow-prompt-v1.md](research-supervisor-workflow-prompt-v1.md) | Prompt for supervising multi-step research workflows |
-| [pmm-study-guide-research-prompt.md](pmm-study-guide-research-prompt.md) | Prompt for PMM-focused study guide research |
-
----
-
-See [INDEX.md](INDEX.md) for a complete file listing.
+This follows the principle of co-locating related files. Each skill owns its prompts, templates, and configuration.

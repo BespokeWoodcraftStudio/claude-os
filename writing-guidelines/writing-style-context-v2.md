@@ -1,5 +1,16 @@
 # Writing Style Context v2
 
+<metadata>
+purpose: The definitive GrowthX voice and style guide
+audience: All content creators, writers, AI agents
+related: ../docs/delivery/creating-good-content.md, ../roles/cmo-v1.md
+domain: writing
+confidence: canonical
+sensitivity: internal
+context_tier: 1
+last_updated: 2026-02-09
+</metadata>
+
 <scope>
 External writing: blogs, newsletters, product communication, thought leadership.
 Not for: legal, compliance, or highly formal contexts.
@@ -210,6 +221,85 @@ The goal isn't to sound smart. It's to make the reader feel smart.
 
 Write all your thoughts. Argue against them. Reduce to a tiny outline. Post the outline. Trash the rest.
 </remember>
+
+---
+
+## Domain Adaptation
+
+The base voice above applies everywhere. These modifiers adjust it for specific contexts. Apply the base rules FIRST, then layer the domain modifier on top.
+
+### Finance / Board Communications
+
+**Shift:** More formal, data-anchored, conservative claims.
+
+| Base Rule | Domain Override |
+|-----------|---------------|
+| Lead with the point | Lead with the number, then the point |
+| Write like you talk | Write like you'd present to your board — precise but not stiff |
+| Stay raw | Stay measured — confidence without bravado |
+| Ground in specifics | Ground in financials: ARR, margins, burn rate, runway |
+
+**Tone:** Competent operator reporting to sophisticated investors. No surprises.
+
+**Example:**
+> ARR grew 34% to $2.1M. Services revenue is stable at $1.8M. CheckThat contributed $300K in its first full quarter. We're hiring two more engineers in Q2, which extends runway to 14 months at current burn.
+
+**Avoid:** Aspirational language without numbers backing it. "We're crushing it" → "We grew 34%."
+
+### Product / AEO / Technical
+
+**Shift:** Precise terminology, feature-benefit linking, methodology-aware.
+
+| Base Rule | Domain Override |
+|-----------|---------------|
+| Maximum clarity, minimum words | Technical precision over brevity — use the correct term even if longer |
+| No jargon | Industry terms are fine when writing for practitioners — define on first use for mixed audiences |
+| One idea per sentence | One concept per paragraph — technical ideas sometimes need a sentence to state and a sentence to explain |
+
+**Tone:** Smart practitioner explaining to a peer. You know your stuff and assume they do too.
+
+**Example:**
+> AEO measures how AI engines recommend your brand. We track four signals: RECALL (are you mentioned?), SENTIMENT (how?), ALIGNMENT (with what claims?), and LIFT (did you move?). Most tools only measure RECALL. That's like measuring SEO by checking if Google indexed your page.
+
+### Customer-Facing / Client Work
+
+**Shift:** Warm, outcome-focused, their language not ours.
+
+| Base Rule | Domain Override |
+|-----------|---------------|
+| Lead with the point | Lead with their outcome, not our process |
+| Build from first principles | Build from their problem, not our framework |
+| Stay raw | Stay professional — authentic but polished |
+| Ground in specifics | Ground in their metrics, their competitors, their goals |
+
+**Tone:** Trusted advisor who gets their business. Not a vendor pitching.
+
+**Example:**
+> Your competitors are showing up in ChatGPT recommendations for "best enterprise data platform" and you're not. Here's why, and here's the 8-week plan to fix it.
+
+**Avoid:** Internal jargon (pipeline stages, EOS, operating rhythm). Use client's language.
+
+### LinkedIn / Marcel's Personal Voice
+
+**Shift:** Conversational, contrarian, pattern-interrupt hooks.
+
+For the full guide, load `context/voice/marcel-linkedin-style-guide-v1.md`. Key differences from base:
+
+| Base Rule | Domain Override |
+|-----------|---------------|
+| Lead with the point | Lead with the hook — provoke curiosity in the first line |
+| Maximum clarity | Maximum engagement — clarity serves the hook, not the other way around |
+| Paragraphs 2-4 sentences | One sentence per line. White space is your friend. |
+| No em dashes | Short sentences instead. Period. New line. |
+
+**Tone:** Marcel thinking out loud. Direct, opinionated, backed by experience.
+
+**Example:**
+> Most B2B companies are optimizing for a search engine that's losing market share.
+>
+> Meanwhile, ChatGPT is answering your buyer's questions right now.
+>
+> And you have no idea what it's saying about you.
 
 ---
 

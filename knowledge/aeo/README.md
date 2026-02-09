@@ -1,5 +1,16 @@
 # AEO & AI Visibility Knowledge Base
 
+<metadata>
+purpose: AEO and AI visibility knowledge hub with 103 indexed sources
+audience: Product, content, and strategy teams
+related: ../../docs/products/checkthat/product-vision-v1.md
+domain: aeo
+confidence: canonical
+sensitivity: public
+context_tier: 2
+last_updated: 2026-02-09
+</metadata>
+
 > Everything GrowthX knows about Answer Engine Optimization (AEO), AI visibility, brand mentions in AI responses, prompt tracking methodology, and measurement frameworks -- consolidated in one place.
 
 This directory contains the core knowledge base for AEO strategy, methodology, and research. It is organized into **guides** (actionable playbooks and study guides) and **research** (deep research, methodology documentation, and research notes). Related documents that live elsewhere in the project (product docs, competitive intel, client work, strategy) are cross-referenced below.
@@ -90,8 +101,8 @@ CheckThat is GrowthX's AI visibility monitoring product. All product documentati
 | File | What's There |
 |---|---|
 | [/scratchpad/board-prep-q4-2025-v1.md](/scratchpad/board-prep-q4-2025-v1.md) | Board prep with AEO/GEO category positioning and market landscape |
-| [/memos/ai-growth-system-vision.md](/memos/ai-growth-system-vision.md) | AI growth system vision: answer engines, AI visibility monitoring |
-| [/memos/growthx-eos-v1.md](/memos/growthx-eos-v1.md) | GrowthX EOS with CheckThat as AI visibility software |
+| [/docs/company/ai-growth-system-vision.md](/docs/company/ai-growth-system-vision.md) | AI growth system vision: answer engines, AI visibility monitoring |
+| [/docs/company/growthx-eos-v1.md](/docs/company/growthx-eos-v1.md) | GrowthX EOS with CheckThat as AI visibility software |
 | [/docs/finance/q4-2025-board-meeting.md](/docs/finance/q4-2025-board-meeting.md) | Q4 2025 board meeting: CheckThat, AEO category, AI visibility |
 | [/docs/finance/q3-2025-board-meeting.md](/docs/finance/q3-2025-board-meeting.md) | Q3 2025 board meeting: AEO opportunity and category |
 

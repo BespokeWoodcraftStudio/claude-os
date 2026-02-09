@@ -6,6 +6,10 @@ audience: Marketing, sales, and product teams
 related: product-vision-v1.md, pricing-and-monetization-v1.md, organic-growth-strategy-v1.md
 last_updated: 2026-02-03
 source: Notion - CheckThat Messaging and Positioning (WIP)
+domain: product
+confidence: current
+sensitivity: internal
+context_tier: 2
 </metadata>
 
 ---

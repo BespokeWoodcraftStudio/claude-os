@@ -4,6 +4,10 @@
 purpose: Introduction to how GrowthX works for new team members
 audience: New hires, anyone needing a quick business overview
 related: ../company/strategy-overview.md, customer-lifecycle.md, ../delivery/teams-and-operations.md
+domain: business
+confidence: canonical
+sensitivity: internal
+context_tier: 1
 last_updated: 2026-02-01
 </metadata>
 

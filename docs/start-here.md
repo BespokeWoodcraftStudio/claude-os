@@ -1,5 +1,16 @@
 # Start Here
 
+<metadata>
+purpose: New hire entry point and comprehensive onboarding guide
+audience: New hires, all team members
+related: company/vision-and-strategy.md, business/overview.md, company/culture-and-values.md
+domain: company
+confidence: canonical
+sensitivity: internal
+context_tier: 1
+last_updated: 2026-02-09
+</metadata>
+
 Welcome to GrowthX. This is your starting point for understanding who we are, how we work, and where to find everything you need.
 
 ---

@@ -7,6 +7,15 @@ description: File naming and versioning conventions for this repository. Apply w
 
 Apply these conventions when creating or renaming files in this workspace.
 
+## Inputs / Outputs
+
+| | What | Example |
+|---|---|---|
+| **Input** | File being created or renamed | Any new `.md` file in this workspace |
+| **Output** | Correctly named file following conventions | `company-vision-and-strategy-v1.md` |
+
+This skill is passive -- apply it whenever creating or renaming files. No tools required.
+
 ## Naming Convention
 
 Format: `descriptive-name-v1.md`
@@ -40,7 +49,7 @@ Format: `descriptive-name-v1.md`
 Each directory has an `/archive` subdirectory for outdated files.
 
 ```
-writing-guidelines/
+context/voice/
 ├── writing-style-context-v2.md  # Current
 └── archive/
     └── writing-style-context-v1.md  # Previous

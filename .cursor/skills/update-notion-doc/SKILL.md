@@ -2,6 +2,14 @@
 
 Update Notion pages from local markdown files while preserving Notion-specific elements.
 
+## Inputs / Outputs
+
+| | What | Example |
+|---|---|---|
+| **Input** | Local markdown file + Notion page URL | `@docs/company/vision.md` + Notion URL |
+| **Tool** | Notion MCP server (`user-Notion/notion-fetch`, `notion-update-page`) | -- |
+| **Output** | Updated Notion page with confirmation | "Updated page, preserved 2 child pages" |
+
 ## When to Use
 
 Use this skill when:

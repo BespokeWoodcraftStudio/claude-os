@@ -4,6 +4,10 @@
 purpose: Details the SEO architecture, entity model, and site structure for CheckThat's organic growth
 audience: Product, engineering, content teams working on CheckThat
 related: product-vision-v1.md, pricing-and-monetization-v1.md
+domain: product
+confidence: current
+sensitivity: internal
+context_tier: 2
 last_updated: 2026-02-01
 </metadata>
 

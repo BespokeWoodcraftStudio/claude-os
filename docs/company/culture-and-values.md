@@ -1,5 +1,16 @@
 # Culture & Values
 
+<metadata>
+purpose: Company culture principles and values
+audience: All team members
+related: mission-and-vision.md, ../delivery/teams-and-operations.md
+domain: company
+confidence: canonical
+sensitivity: internal
+context_tier: 1
+last_updated: 2026-02-09
+</metadata>
+
 We are building a new breed of company here at GrowthX. We are charting unknown territory, striving to become an AI-native company where AI is embedded at the core of everything we do.
 
 Our belief is simple: AI should exist to empower people to do their best work. And that starts with everyone here.

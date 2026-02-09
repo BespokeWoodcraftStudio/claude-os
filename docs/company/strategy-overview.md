@@ -1,5 +1,16 @@
 # Strategy Overview
 
+<metadata>
+purpose: Strategic direction and priorities
+audience: All team members, especially leadership
+related: vision-and-strategy.md, the-big-picture.md, ../business/overview.md
+domain: company
+confidence: current
+sensitivity: internal
+context_tier: 1
+last_updated: 2026-02-09
+</metadata>
+
 Team,
 
 As we approach $7M ARR in less than a year, I want to share what's driving our success and why I believe we've only scratched the surface of what's possible. This isn't just about building a great company—it's about pioneering a fundamental shift in how knowledge work gets done. This memo outlines our journey, what we've learned, and the massive market opportunity we're uniquely positioned to capture.

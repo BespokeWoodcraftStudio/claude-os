@@ -4,6 +4,10 @@
 purpose: Describes team structure, roles, pods, capacity planning, and the system mindset
 audience: All delivery team members, operations, leadership
 related: ../business/customer-lifecycle.md, ../business/success-metrics.md, ../business/overview.md
+domain: delivery
+confidence: current
+sensitivity: internal
+context_tier: 2
 last_updated: 2026-02-01
 </metadata>
 

@@ -3,7 +3,12 @@
 <metadata>
 purpose: AI persona for sales and revenue decision support and task execution
 audience: Marcel / founder
-related: ideal-customer-profile-v1.md, customer-lifecycle-phases-v1.md, business-model-and-economics-v1.md
+related: docs/business/ideal-customer-profile.md, docs/business/customer-lifecycle.md, docs/business/business-model.md
+pairs_with: CFO (pricing changes), CMO (go-to-market)
+domain: company
+confidence: canonical
+sensitivity: internal
+context_tier: 1
 last_updated: 2026-02-01
 </metadata>
 

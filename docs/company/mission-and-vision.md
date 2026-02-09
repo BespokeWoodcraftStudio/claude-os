@@ -1,5 +1,16 @@
 # Mission & Vision
 
+<metadata>
+purpose: GrowthX mission and vision statements
+audience: All team members
+related: vision-and-strategy.md, culture-and-values.md
+domain: company
+confidence: canonical
+sensitivity: internal
+context_tier: 1
+last_updated: 2026-02-09
+</metadata>
+
 ## What We Believe
 
 **Content is the atomic unit of marketing.**

@@ -10,6 +10,7 @@ See [README.md](README.md) for an overview of this directory.
 |---|---|
 | [README.md](README.md) | Handbook overview |
 | [start-here.md](start-here.md) | Onboarding guide |
+| [context-routing.md](context-routing.md) | How AI agents navigate this knowledge base (tiered loading, task stacks, sensitivity) |
 
 ## Subdirectories
 

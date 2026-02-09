@@ -297,23 +297,23 @@ The best prompts come from sales call transcripts, Reddit threads, G2 reviews, a
 
 | File | What It Contains | When to Read |
 |------|-----------------|-------------|
-| `public-docs/index.md` | CheckThat homepage: three questions, why existing tools fail, what we built, differentiators, numbers | Understanding the public-facing narrative |
-| `public-docs/learn/what-is-aeo.md` | AEO explained for a public audience, B2B context, buyer journey example | Explaining AEO to clients or external audiences |
-| `public-docs/learn/how-ai-decides.md` | How AI engines form recommendations: signals, third-party mentions, engine differences | Explaining AI visibility mechanics |
-| `public-docs/learn/how-we-measure.md` | Three-layer measurement approach, RECALL/SENTIMENT/ALIGNMENT/LIFT for public audience | Explaining measurement methodology externally |
-| `public-docs/learn/our-methodology.md` | How CheckThat defines categories, researches brands, builds prompts, tracks responses | Explaining data quality and editorial processes |
-| `public-docs/learn/why-prompts-matter.md` | Vanity prompts vs. buyer intent prompts, the shared library approach | Explaining prompt selection importance |
-| `public-docs/product/the-open-index.md` | Why data is public, what "open" means, the historical data argument | Explaining the open-by-default strategy |
-| `public-docs/product/inside-the-index.md` | Brand pages, category pages, answer pages, and how they connect | Understanding product structure |
-| `public-docs/product/tracking-and-insights.md` | How brand tracking works, custom prompts, multi-engine tracking, insights | Explaining the tracking experience |
-| `public-docs/product/pricing.md` | Public pricing tiers and philosophy | Pricing discussions |
-| `public-docs/guides/getting-started.md` | Step-by-step new user guide | Onboarding discussions |
-| `public-docs/guides/best-practices.md` | Best practices for tracking programs | Advising clients on implementation |
-| `public-docs/why/the-shift.md` | How search flipped, buyers asking AI first | Explaining market urgency |
-| `public-docs/why/the-problem.md` | The three questions brands can't answer | Articulating the problem |
-| `public-docs/why/our-approach.md` | CheckThat's model: open index, buyer intent focus | Explaining the strategy |
-| `public-docs/about/who-we-are.md` | GrowthX background and origin story | Company context |
-| `public-docs/about/open-by-default.md` | Why openness, the case for public data | Defending the open approach |
+| `docs/products/checkthat/public/index.md` | CheckThat homepage: three questions, why existing tools fail, what we built, differentiators, numbers | Understanding the public-facing narrative |
+| `docs/products/checkthat/public/learn/what-is-aeo.md` | AEO explained for a public audience, B2B context, buyer journey example | Explaining AEO to clients or external audiences |
+| `docs/products/checkthat/public/learn/how-ai-decides.md` | How AI engines form recommendations: signals, third-party mentions, engine differences | Explaining AI visibility mechanics |
+| `docs/products/checkthat/public/learn/how-we-measure.md` | Three-layer measurement approach, RECALL/SENTIMENT/ALIGNMENT/LIFT for public audience | Explaining measurement methodology externally |
+| `docs/products/checkthat/public/learn/our-methodology.md` | How CheckThat defines categories, researches brands, builds prompts, tracks responses | Explaining data quality and editorial processes |
+| `docs/products/checkthat/public/learn/why-prompts-matter.md` | Vanity prompts vs. buyer intent prompts, the shared library approach | Explaining prompt selection importance |
+| `docs/products/checkthat/public/product/the-open-index.md` | Why data is public, what "open" means, the historical data argument | Explaining the open-by-default strategy |
+| `docs/products/checkthat/public/product/inside-the-index.md` | Brand pages, category pages, answer pages, and how they connect | Understanding product structure |
+| `docs/products/checkthat/public/product/tracking-and-insights.md` | How brand tracking works, custom prompts, multi-engine tracking, insights | Explaining the tracking experience |
+| `docs/products/checkthat/public/product/pricing.md` | Public pricing tiers and philosophy | Pricing discussions |
+| `docs/products/checkthat/public/guides/getting-started.md` | Step-by-step new user guide | Onboarding discussions |
+| `docs/products/checkthat/public/guides/best-practices.md` | Best practices for tracking programs | Advising clients on implementation |
+| `docs/products/checkthat/public/why/the-shift.md` | How search flipped, buyers asking AI first | Explaining market urgency |
+| `docs/products/checkthat/public/why/the-problem.md` | The three questions brands can't answer | Articulating the problem |
+| `docs/products/checkthat/public/why/our-approach.md` | CheckThat's model: open index, buyer intent focus | Explaining the strategy |
+| `docs/products/checkthat/public/about/who-we-are.md` | GrowthX background and origin story | Company context |
+| `docs/products/checkthat/public/about/open-by-default.md` | Why openness, the case for public data | Defending the open approach |
 
 ---
 

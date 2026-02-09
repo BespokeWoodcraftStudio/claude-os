@@ -3,7 +3,7 @@
 <metadata>
 purpose: The definitive GrowthX voice and style guide
 audience: All content creators, writers, AI agents
-related: ../docs/delivery/creating-good-content.md, ../roles/cmo-v1.md
+related: ../../docs/delivery/creating-good-content.md, ../roles/cmo-v1.md
 domain: writing
 confidence: canonical
 sensitivity: internal

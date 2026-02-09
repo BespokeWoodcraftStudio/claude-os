@@ -3,7 +3,7 @@
 <metadata>
 purpose: Guidelines for creating quality client content
 audience: Content team, writers, delivery
-related: 8-week-plan-v1.md, ../../writing-guidelines/writing-style-context-v2.md
+related: 8-week-plan-v1.md, ../../context/voice/writing-style-context-v2.md
 domain: delivery
 confidence: canonical
 sensitivity: internal

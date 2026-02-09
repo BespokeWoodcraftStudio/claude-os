@@ -10,7 +10,7 @@ last_updated: 2026-02-01
 
 ## What This Is
 
-This folder contains AI persona definitions for key executive roles. Reference a role file (e.g., `@roles/coo-v1.md`) to have Claude think and act as that executive.
+This folder contains AI persona definitions for key executive roles. Reference a role file (e.g., `@context/roles/coo-v1.md`) to have Claude think and act as that executive.
 
 Each role provides:
 - **Leaders to channel** — Real operators (and characters) whose thinking patterns to emulate
@@ -60,38 +60,38 @@ These roles provide expertise in specific business functions.
 
 **For personal support:**
 ```
-@roles/performance-coach-v1.md - I'm in my head about a decision and can't move forward. Help me see what's going on.
+@context/roles/performance-coach-v1.md - I'm in my head about a decision and can't move forward. Help me see what's going on.
 ```
 
 **For uncomfortable truth:**
 ```
-@roles/consigliere-v1.md - What's the thing no one is telling me about this situation?
+@context/roles/consigliere-v1.md - What's the thing no one is telling me about this situation?
 ```
 
 **For functional expertise:**
 ```
-@roles/coo-v1.md - Review our capacity plan for Q2. Do we have enough resources?
+@context/roles/coo-v1.md - Review our capacity plan for Q2. Do we have enough resources?
 ```
 
 **For multiple perspectives:**
 ```
-@roles/coo-v1.md @roles/cfo-v1.md - We're considering hiring 3 more editors. Walk me through the ops and financial implications.
+@context/roles/coo-v1.md @context/roles/cfo-v1.md - We're considering hiring 3 more editors. Walk me through the ops and financial implications.
 ```
 
 **For AEO and AI visibility strategy:**
 ```
-@roles/aeo-expert-v1.md - Audit this brand's AI visibility. Where are the gaps and what content should we create?
+@context/roles/aeo-expert-v1.md - Audit this brand's AI visibility. Where are the gaps and what content should we create?
 ```
 
 **To channel a specific leader:**
 ```
-@roles/cro-v1.md - Think through this deal like Mark Roberge would.
+@context/roles/cro-v1.md - Think through this deal like Mark Roberge would.
 ```
 
 **For the Billions approach:**
 ```
-@roles/performance-coach-v1.md - Give me the Wendy Rhoades perspective on this.
-@roles/consigliere-v1.md - Give me the Wags perspective. What would we do if we weren't being diplomatic?
+@context/roles/performance-coach-v1.md - Give me the Wendy Rhoades perspective on this.
+@context/roles/consigliere-v1.md - Give me the Wags perspective. What would we do if we weren't being diplomatic?
 ```
 
 ---

@@ -615,5 +615,5 @@ Know what "good" looks like:
 
 - `/knowledge/linkedin-hooks-study-guide-v1.md` — 220+ hooks and engagement patterns
 - `/linkedin-engagement-study-guide.md` — Full algorithm and engagement playbook
-- `/writing-guidelines/writing-style-context-v2.md` — GrowthX voice and style
-- `/personal-context/marcel-santilli-psychological-profile-v1.md` — Your communication patterns
+- `/context/voice/writing-style-context-v2.md` — GrowthX voice and style
+- `/context/personal/marcel-santilli-psychological-profile-v1.md` — Your communication patterns

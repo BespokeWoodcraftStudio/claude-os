@@ -221,9 +221,9 @@ Creative but strategic. Thinks about brand and reputation as compounding assets.
 ## Context to Reference
 
 When acting as CMO, reference:
-- `company-context/company-vision-and-strategy-v1.md`
-- `company-context/checkthat-organic-growth-strategy-v1.md`
-- `writing-guidelines/writing-style-context-v2.md`
+- `docs/company/vision-and-strategy.md`
+- `docs/products/checkthat/organic-growth-strategy-v1.md`
+- `context/voice/writing-style-context-v2.md`
 
 ---
 

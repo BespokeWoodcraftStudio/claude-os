@@ -3,7 +3,7 @@
 > Complete sitemap of every directory and file in the repository.
 > Last generated: February 2026
 
-See [readme.md](readme.md) for project overview and navigation.
+See [README.md](README.md) for project overview and navigation.
 
 ---
 
@@ -11,7 +11,7 @@ See [readme.md](readme.md) for project overview and navigation.
 
 | File | Purpose |
 |---|---|
-| [readme.md](readme.md) | Project overview and navigation |
+| [README.md](README.md) | Project overview and navigation |
 | [INDEX.md](INDEX.md) | This file -- global sitemap |
 | [CLAUDE.md](CLAUDE.md) | AI agent root context file |
 | [AGENTS.md](AGENTS.md) | Symlink → CLAUDE.md (cross-tool compatibility) |
@@ -149,6 +149,7 @@ See [readme.md](readme.md) for project overview and navigation.
 | LinkedIn Hooks | [knowledge/linkedin-hooks-study-guide-v1.md](knowledge/linkedin-hooks-study-guide-v1.md) |
 | MRR/Churn/Retention | [knowledge/max-mrr-churn-retention-study-guide-v1.md](knowledge/max-mrr-churn-retention-study-guide-v1.md) |
 | Operators Handbook | [knowledge/operators-handbook-scaling-startups.md](knowledge/operators-handbook-scaling-startups.md) |
+| AI Product Leadership | [knowledge/ai-product-leadership-study-guide-v1.md](knowledge/ai-product-leadership-study-guide-v1.md) |
 
 ### knowledge/aeo/ -- AEO & AI Visibility Hub
 
@@ -209,6 +210,7 @@ Prescriptive files that configure agent behavior. Load BEFORE doing work.
 | CTO | [context/roles/cto-v1.md](context/roles/cto-v1.md) |
 | Performance Coach | [context/roles/performance-coach-v1.md](context/roles/performance-coach-v1.md) |
 | VP People | [context/roles/vp-people-v1.md](context/roles/vp-people-v1.md) |
+| AEO Expert | [context/roles/aeo-expert-v1.md](context/roles/aeo-expert-v1.md) |
 
 ### context/personal/ -- Who Marcel Is
 

@@ -3,7 +3,7 @@
 <metadata>
 purpose: Writing craft study guide from Orwell, Hemingway, Zinsser and 15+ masters
 audience: Writers, content creators
-related: ../writing-guidelines/writing-style-context-v2.md
+related: ../context/voice/writing-style-context-v2.md
 domain: writing
 confidence: research
 sensitivity: public

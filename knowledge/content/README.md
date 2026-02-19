@@ -1,13 +1,18 @@
+<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
+
 # Content — Writing & Content Creation
 
 <metadata>
-purpose: Hub for study guides on writing craft, style, and LinkedIn content
+purpose: Hub for study guides on writing craft and content creation
 audience: Writers, content creators, marketers
+summary: Directory of writing and content creation study guides, plus a template for creating new ones.
+token_estimate: small
+depends_on: []
+related: ../../context/voice/writing-style-context-v2.md
 domain: content
 confidence: canonical
-sensitivity: public
 context_tier: 2
-last_updated: 2026-02-09
+last_updated: 2026-02-18
 </metadata>
 
 Study guides for when you're creating content — writing, editing, and publishing.
@@ -18,14 +23,16 @@ Study guides for when you're creating content — writing, editing, and publishi
 
 | File | Topic | Summary |
 |------|-------|---------|
-| [elements-of-style-study-guide-v1.md](elements-of-style-study-guide-v1.md) | Writing Fundamentals | Strunk & White distilled — 8 usage rules, 11 composition principles, 21 style reminders |
 | [writing-craft-study-guide-v1.md](writing-craft-study-guide-v1.md) | Writing Craft | Principles from Orwell, Hemingway, Zinsser, and 15+ writing masters |
-| [linkedin-engagement-study-guide-v1.md](linkedin-engagement-study-guide-v1.md) | LinkedIn Strategy | Psychology of engagement, hook anatomy, algorithm dynamics, post structures |
-| [linkedin-hooks-study-guide-v1.md](linkedin-hooks-study-guide-v1.md) | LinkedIn Hooks | 220+ hooks, 7 hook categories, frameworks, and expert examples |
+
+## Templates
+
+| File | Purpose |
+|------|---------|
+| [study-guide-template-v1.md](study-guide-template-v1.md) | Template for creating new study guides on any topic |
 
 ---
 
 ## Related Context
 
-- [context/voice/writing-style-context-v2.md](../../context/voice/writing-style-context-v2.md) — The definitive GrowthX writing style guide
-- [context/voice/marcel-linkedin-style-guide-v1.md](../../context/voice/marcel-linkedin-style-guide-v1.md) — Marcel's LinkedIn voice and style
+- [context/voice/writing-style-context-v2.md](../../context/voice/writing-style-context-v2.md) — The definitive writing style guide

@@ -1,24 +1,47 @@
-# Scratchpad
+<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
 
-Work-in-progress documents, research scratchpads, meeting notes, and drafts. These are working files that may be promoted to `/knowledge/`, `/docs/`, or `/memos/` once finalized.
+# Scratchpad -- Pipeline Stage 2 (Processing)
 
----
+<metadata>
+purpose: Working drafts and in-progress documents — second stage of the pipeline
+audience: AI agents building deliverables, team members reviewing drafts
+summary: Working area for drafts being refined before promotion to outputs.
+token_estimate: small
+related: pipeline/research/README.md, pipeline/outputs/README.md
+domain: workflow
+confidence: canonical
+context_tier: 2
+last_updated: 2026-02-18
+</metadata>
 
-## Files
+Work-in-progress documents live here. Drafts, experiments, and anything being refined before it's ready to ship.
 
-| File | Topic | Summary |
-|---|---|---|
-| [board-prep-q4-2025-v1.md](board-prep-q4-2025-v1.md) | Strategy | Board prep with AEO/GEO category positioning |
-| [checkthat-positioning-vs-unusual-brief.md](checkthat-positioning-vs-unusual-brief.md) | Competitive | CheckThat vs Unusual.ai positioning analysis |
-| [company-handbook-research-scratchpad.md](company-handbook-research-scratchpad.md) | Research | Research notes for company handbook study guide |
-| [content-growth-flow.md](content-growth-flow.md) | Strategy | Content growth flow documentation |
-| [customer-retention-analysis-v1.md](customer-retention-analysis-v1.md) | Analysis | Customer retention and churn analysis |
-| [knox-meeting-notes-for-tyler.md](knox-meeting-notes-for-tyler.md) | Notes | Meeting notes from Knox partnership discussion |
-| [pmm-research-scratchpad.md](pmm-research-scratchpad.md) | Research | Product marketing manager research notes |
-| [strategy-sprint-customer-onboarding-guide-v1.md](strategy-sprint-customer-onboarding-guide-v1.md) | Delivery | Strategy Sprint customer onboarding guide |
-| [strategy-sprint-operators-guide-v1.md](strategy-sprint-operators-guide-v1.md) | Delivery | Strategy Sprint operators guide |
-| [strategy-sprint-troubleshooting-guide-v1.md](strategy-sprint-troubleshooting-guide-v1.md) | Delivery | Strategy Sprint troubleshooting guide |
+## What Goes Here
 
----
+- Working drafts informed by research/
+- Documents being reviewed or iterated
+- Experiments and prototypes
+- Content in revision cycles
 
-See [INDEX.md](INDEX.md) for a complete file listing.
+## What "Done" Means
+
+The document is polished enough to share, publish, or deliver. When that happens, it moves to `pipeline/outputs/`.
+
+## Flow
+
+```
+pipeline/research/ -> YOU ARE HERE -> pipeline/outputs/
+   (raw input)        (working drafts)    (finished work)
+```
+
+## Rules
+
+- Files arrive from research/ when raw material has been synthesized
+- Never move files backward to research/
+- When a draft is complete, move it to outputs/
+- If a draft stalls, it stays here until revived or archived
+- Multiple drafts of the same deliverable are fine — use version suffixes (v1, v2)
+
+## File Naming
+
+Use descriptive names with version suffix: `topic-working-draft-v1.md`

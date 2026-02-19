@@ -1,11 +1,13 @@
-# Index: downloads/
+# Index: records/downloads/
 
-> Complete file listing for `/downloads/`
+> Complete file listing for `records/downloads/`
 
 See [README.md](README.md) for an overview of this directory.
 
-## Subdirectories
+## Files
 
-| Directory | Description | Files |
-|---|---|---|
-| [lennys-podcast-transcripts/](lennys-podcast-transcripts/) | Lenny's Podcast episode transcripts | 200+ episodes, 99 topic indexes |
+| File | Summary | Tier |
+|------|---------|------|
+| [README.md](README.md) | Directory overview for external content archives | 2 |
+
+*Add downloaded content collections here as they are created.*

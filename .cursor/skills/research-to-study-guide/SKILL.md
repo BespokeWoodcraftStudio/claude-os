@@ -200,9 +200,10 @@ Place the final study guide in the subdirectory that matches its primary use cas
 
 | Subdirectory | When to use | Examples |
 |-------------|-------------|---------|
-| `content/` | Writing, style, content creation, LinkedIn | writing craft, hooks, engagement |
-| `building/` | Company ops, leadership, SaaS metrics, scaling | handbooks, churn, operator frameworks |
-| `product/` | AI, engineering, product strategy | AI product leadership, context engineering |
+| `content/` | Writing, style, content creation | writing craft, hooks, engagement |
+| `building/` | Company ops, leadership, scaling | handbooks, operator frameworks |
+| `product/` | Product strategy, engineering, technical topics | product leadership, architecture |
+| `domain/` | Industry-specific or specialized knowledge | market research, competitive analysis |
 
 If the topic doesn't clearly fit one subdirectory, ask the user which one to use.
 
@@ -215,6 +216,14 @@ User: "I want to become an expert in company handbooks"
 3. Research: Public handbooks (Basecamp, GitLab, Valve, Netflix), structure patterns, expert advice
 4. Evaluate: 24 sources, 6 frameworks, 10+ examples = Great (0.85)
 5. Synthesize: `/knowledge/building/company-handbook-study-guide-v1.md`
+
+User: "Research [industry topic] for our team"
+
+1. Create scratchpad: `/pipeline/scratchpad/[topic]-research-scratchpad.md`
+2. Define audience from user context
+3. Research: Web search across trusted sources, follow citation trails
+4. Evaluate: Score against quality bands
+5. Synthesize: `/knowledge/domain/[topic]-study-guide-v1.md`
 
 ## Deep Reference
 

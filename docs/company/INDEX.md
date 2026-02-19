@@ -1,20 +1,23 @@
-# Index: docs/company/
+<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
 
-> Complete file listing for `/docs/company/`
+# Company — Index
 
-See [README.md](README.md) for an overview of this directory.
+<metadata>
+purpose: Complete file listing for docs/company/
+audience: AI agents and humans navigating company docs
+summary: Index of all company identity documents — mission, values, and strategy.
+token_estimate: small
+depends_on: []
+related: README.md
+domain: company
+confidence: canonical
+context_tier: 1
+last_updated: 2026-02-18
+</metadata>
 
-## Files
-
-| File | Type |
-|---|---|
-| [README.md](README.md) | Directory overview |
-| [culture-and-values.md](culture-and-values.md) | Company culture and values |
-| [mission-and-vision.md](mission-and-vision.md) | Mission and vision statements |
-| [priorities-next-6-months.md](priorities-next-6-months.md) | Current strategic priorities |
-| [strategy-overview.md](strategy-overview.md) | Company strategy overview |
-| [the-big-picture.md](the-big-picture.md) | High-level company narrative |
-| [vision-and-strategy.md](vision-and-strategy.md) | Vision and strategy details |
-| [ai-growth-system-vision.md](ai-growth-system-vision.md) | AI growth system vision memo |
-| [growthx-eos-v1.md](growthx-eos-v1.md) | EOS execution system |
-| [operating-rhythm-v1.md](operating-rhythm-v1.md) | Operating rhythm and cadences |
+| File | Summary | Tier |
+|------|---------|------|
+| `README.md` | Directory overview and navigation | 1 |
+| `mission-and-vision.md` | Company mission, vision, and core beliefs | 1 |
+| `culture-and-values.md` | Guiding values and cultural principles | 1 |
+| `strategy-overview.md` | Strategic direction and growth approach | 1 |

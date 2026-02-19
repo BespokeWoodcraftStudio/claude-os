@@ -1,16 +1,20 @@
-# Index: customers/
+# Index: records/customers/
 
-> Complete file listing for `/customers/`
+> Complete file listing for `records/customers/`
 
 See [README.md](README.md) for an overview of this directory.
 
-## lovable/
+## Files
 
-| File | Type |
-|---|---|
-| [lovable/lovable-client-context-v1.md](lovable/lovable-client-context-v1.md) | Client context |
-| [lovable/download-transcripts.py](lovable/download-transcripts.py) | Script |
+| File | Summary | Tier |
+|------|---------|------|
+| [README.md](README.md) | Directory overview and client subdirectory pattern | 2 |
+| [client-context-template-v1.md](client-context-template-v1.md) | Template for per-client context documents | 3 |
 
-### lovable/transcripts/
+## Client Directories
 
-49 meeting transcripts from Oct 2025 -- Feb 2026. Files follow the format `YYYY-MM-DD-meeting-description.md`.
+*Add client subdirectories here as they are created:*
+
+| Client | Directory | Description |
+|--------|-----------|-------------|
+| *No clients yet* | -- | Use client-context-template-v1.md to add your first client |

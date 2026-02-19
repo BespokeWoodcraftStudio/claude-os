@@ -1,6 +1,8 @@
-# GrowthX Handbook
+<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
 
-The official handbook for GrowthX. Everything you need to know about the company, how we work, and what we're building.
+# [YOUR COMPANY] Handbook
+
+The official handbook for [YOUR COMPANY]. Everything you need to know about the company, how we work, and what we're building.
 
 ---
 
@@ -20,27 +22,24 @@ docs/
 │   └── mission, values, strategy, culture
 │
 ├── people/             ← HR & careers
-│   ├── onboarding/     ← Getting started
-│   └── policies/       ← Time off, conduct, leave
+│   └── onboarding, policies, time off
 │
 ├── how-we-work/        ← Communication & tools
-│   └── async, meetings, slack, documentation
+│   └── async, meetings, documentation
 │
 ├── business/           ← How we make money
-│   └── model, ICP, customer lifecycle, metrics
+│   └── model, ICP, customer lifecycle
 │
-├── sales/              ← Pre-sales (coming soon)
+├── sales/              ← Pre-sales process
 │
 ├── delivery/           ← Post-sales & client ops
-│   └── teams, operations, kickoff prep
+│   └── teams, operations, onboarding
 │
 ├── epd/                ← Engineering, Product, Design
-│   └── dev process, team docs, technical guides
+│   └── dev process, tech stack
 │
 ├── products/           ← What we build
-│   ├── checkthat/      ← AI visibility platform
-│   ├── contentos/      ← Content operations platform
-│   └── output/         ← AI framework
+│   └── product overviews, roadmaps
 │
 └── finance/            ← Board, fiscal, metrics
 ```
@@ -57,7 +56,7 @@ docs/
 | [Business](business/) | Business model, ICP, economics |
 | [Delivery](delivery/) | Client operations, post-sales |
 | [EPD](epd/) | Engineering, Product, Design |
-| [Products](products/) | CheckThat, ContentOS, Output |
+| [Products](products/) | Product documentation |
 | [Finance](finance/) | Board meetings, fiscal plans |
 
 ---
@@ -75,4 +74,4 @@ These directories serve other purposes and are not part of the official handbook
 
 ---
 
-**Last updated:** February 2026
+**Last updated:** 2026-02-18

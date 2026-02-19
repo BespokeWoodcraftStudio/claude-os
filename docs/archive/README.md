@@ -1,26 +1,35 @@
+<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
+
 # Archive
 
-Archived and superseded documents from earlier versions of the company knowledge base. These files are kept for historical reference but are no longer the current source of truth.
-
-For current versions, see the appropriate directory under [/docs/](/docs/).
+Archived and superseded documents from earlier versions of the knowledge base.
 
 ---
 
-## Files
+## How the Archive Works
 
-| File | Superseded By |
-|---|---|
-| [how-our-business-works.md](how-our-business-works.md) | [/docs/business/overview.md](/docs/business/overview.md) |
-| [how-we-make-money-v2.md](how-we-make-money-v2.md) | [/docs/business/business-model.md](/docs/business/business-model.md) |
-| [how-we-measure-client-success.md](how-we-measure-client-success.md) | [/docs/business/success-metrics.md](/docs/business/success-metrics.md) |
-| [organic-growth-strategy.md](organic-growth-strategy.md) | [/docs/finance/organic-growth-strategy.md](/docs/finance/organic-growth-strategy.md) |
-| [overview.md](overview.md) | [/docs/business/overview.md](/docs/business/overview.md) |
-| [pricing-monetization-strategy.md](pricing-monetization-strategy.md) | [/docs/finance/pricing-and-monetization-strategy.md](/docs/finance/pricing-and-monetization-strategy.md) |
-| [the-big-picture.md](the-big-picture.md) | [/docs/company/the-big-picture.md](/docs/company/the-big-picture.md) |
-| [the-customer-journey.md](the-customer-journey.md) | [/docs/business/customer-lifecycle.md](/docs/business/customer-lifecycle.md) |
-| [the-delivery-model.md](the-delivery-model.md) | [/docs/delivery/teams-and-operations.md](/docs/delivery/teams-and-operations.md) |
-| [who-we-sell-to.md](who-we-sell-to.md) | [/docs/business/ideal-customer-profile.md](/docs/business/ideal-customer-profile.md) |
+When a document is significantly rewritten (not just minor edits), the old version moves here. This preserves history while keeping the active directories clean.
+
+### Versioning Rules
+
+- **Minor updates** to an existing file: edit in place, update `last_updated` in metadata
+- **Major rewrites**: create a new version (e.g., `strategy-overview-v2.md`), move the old file here
+- **Archived files** are kept for reference but are never the current source of truth
+
+### File Format
+
+Archived files should note what replaced them:
+
+```markdown
+> **Archived:** This document has been superseded by [new-file.md](../path/to/new-file.md).
+```
 
 ---
 
-See [INDEX.md](INDEX.md) for a complete file listing.
+## Current Archives
+
+*This directory is empty in the starter template. Files will accumulate here as you iterate on your documentation.*
+
+---
+
+**Last updated:** 2026-02-18

@@ -1,3 +1,5 @@
+<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
+
 # Finance
 
 Board meetings, fiscal plans, and financial metrics.
@@ -6,7 +8,9 @@ Board meetings, fiscal plans, and financial metrics.
 
 ## Quick Summary
 
-This section contains financial documentation: board meeting materials, fiscal plans, and key metrics. Access is typically limited to leadership.
+This section contains financial documentation: fiscal plan templates and board meeting materials. Access is typically limited to leadership.
+
+**Sensitivity:** Leadership-only. Do not include fiscal plans, board meeting content, or valuation data in client-facing outputs.
 
 ---
 
@@ -14,36 +18,8 @@ This section contains financial documentation: board meeting materials, fiscal p
 
 | If you want to understand... | Read this |
 |------------------------------|-----------|
-| Current fiscal year plan | `fiscal-plan-2026-v2.md` |
-| Board meeting materials | `q1-2025-board-meeting.md` (and Q2–Q4) |
-
----
-
-## Document Index
-
-### Fiscal Plans
-
-| Document | What It Covers |
-|----------|----------------|
-| `fiscal-plan-2026-v2.md` | Current year financial plan |
-| `fiscal-plan-2025.md` | Previous year financial plan |
-
-### Board Meetings
-
-| Document | What It Covers |
-|----------|----------------|
-| `q1-2025-board-meeting.md` | Q1 2025 board materials |
-| `q2-2025-board-meeting.md` | Q2 2025 board materials |
-| `q3-2025-board-meeting.md` | Q3 2025 board materials |
-| `q4-2025-board-meeting.md` | Q4 2025 board materials |
-
-### Other
-
-| Document | What It Covers |
-|----------|----------------|
-| `2025-year-end-recap.md` | Year-end summary |
-| `growth-and-valuation.md` | Financial projections and benchmarks |
-| `market-size-and-opportunity.md` | TAM analysis |
+| Fiscal planning structure | `fiscal-plan-template.md` |
+| Board meeting format | `board-meeting-template.md` |
 
 ---
 
@@ -54,4 +30,4 @@ This section contains financial documentation: board meeting materials, fiscal p
 
 ---
 
-**Last updated:** February 2026
+**Last updated:** 2026-02-18

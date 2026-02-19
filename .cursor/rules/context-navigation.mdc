@@ -1,5 +1,5 @@
 ---
-description: How to navigate the GrowthX knowledge base - load when exploring docs, answering company questions, or unsure where to find information
+description: How to navigate the knowledge base - load when exploring docs, answering company questions, or unsure where to find information
 alwaysApply: false
 ---
 
@@ -11,21 +11,21 @@ This is a knowledge base, not a codebase. Navigate it like a library, not a repo
 
 | Task | Start Here | Then Load |
 |------|-----------|-----------|
-| Writing content | `context/voice/writing-style-context-v2.md` | Domain adaptation section for specific context |
+| Writing content | `context/voice/writing-style-context-v1.md` | Domain adaptation section for specific context |
 | Company questions | `docs/start-here.md` | Relevant `docs/` subdirectory |
-| Making decisions | `context/roles/README.md` | Specific role file (e.g., `context/roles/cfo-v1.md`) |
-| AEO / AI visibility | `knowledge/aeo/README.md` | Specific research or guide |
+| Making decisions | `context/roles/README.md` | Specific role file |
+| Research / learning | `knowledge/README.md` | Relevant subdirectory |
 | Client work | `records/customers/` (search) | `records/transcripts/` (search) |
 | Creating deliverables | `pipeline/scratchpad/` (drafts) | `pipeline/outputs/` (finished) |
 | Finding experts | `sources/people-index.md` | `sources/sources-index.md` |
 
 ## Loading Rules
 
-1. **Start with CLAUDE.md** — it's the root map (~50 lines)
+1. **Start with CLAUDE.md** — it's the root map
 2. **Load one tier at a time** — don't bulk-read directories
 3. **Search records/, never bulk-load them** — transcripts, customers, downloads are Tier 3
 4. **Check README.md first** in any directory — it explains what's there and how to navigate
-5. **Use INDEX.md** when you need a complete file listing
+5. **Use INDEX.md** when you need a complete file listing with summaries
 
 ## Directory Types
 
@@ -35,6 +35,7 @@ This is a knowledge base, not a codebase. Navigate it like a library, not a repo
 - **pipeline/** = Workflow stages — research → scratchpad → outputs
 - **records/** = Archives — search-only, never preload
 - **sources/** = Indexes — people and source references
+- **agent-docs/** = AI agent configurations — task-specific context loading instructions
 
 ## For Detailed Routing
 

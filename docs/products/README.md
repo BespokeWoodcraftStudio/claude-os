@@ -1,12 +1,16 @@
+<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
+
 # Products
 
-GrowthX's product portfolio documentation.
+[YOUR COMPANY]'s product portfolio documentation.
 
 ---
 
 ## Quick Summary
 
-GrowthX is building a multi-product ecosystem. Each product serves a specific strategic purpose, targets a distinct audience, and operates with its own economic model—but they integrate to create a cohesive ecosystem.
+[FILL IN: One paragraph describing your product portfolio and how products relate to each other.]
+
+<!-- Example: [YOUR COMPANY] builds a multi-product ecosystem. Each product serves a specific strategic purpose, targets a distinct audience, and operates with its own economic model — but they integrate to create a cohesive platform. -->
 
 ---
 
@@ -14,9 +18,8 @@ GrowthX is building a multi-product ecosystem. Each product serves a specific st
 
 | Product | Purpose | Target Audience | Business Model |
 |---------|---------|-----------------|----------------|
-| **CheckThat.ai** | Brand positioning & lead gen | Companies worried about AI visibility | Freemium PLG |
-| **ContentOS** | Core revenue & platform | Companies with serious content ops | Enterprise B2B |
-| **Output.ai** | Technical credibility | Engineers & technical users | Open source |
+| [FILL IN: Product 1] | [FILL IN] | [FILL IN] | [FILL IN] |
+| [FILL IN: Product 2] | [FILL IN] | [FILL IN] | [FILL IN] |
 
 ---
 
@@ -24,47 +27,17 @@ GrowthX is building a multi-product ecosystem. Each product serves a specific st
 
 | If you want to understand... | Read this |
 |------------------------------|-----------|
-| Multi-product strategy | `ecosystem-strategy.md` |
-| Services vs. platform FAQ | `services-and-platform-faq.md` |
-| CheckThat product docs | `checkthat/` |
-| ContentOS product docs | `contentos/` |
-| Output AI docs | `output/` |
-
----
-
-## Directory Structure
-
-```
-products/
-├── ecosystem-strategy.md          ← How products work together
-├── services-and-platform-faq.md   ← Internal FAQ: services vs. platform
-├── checkthat/              ← AI visibility platform
-│   ├── overview-v1.md
-│   ├── product-vision-v1.md
-│   ├── messaging-and-positioning-v1.md
-│   ├── pricing-and-monetization-v1.md
-│   └── organic-growth-strategy-v1.md
-├── contentos/              ← Content operations platform
-│   └── README.md (placeholder)
-└── output/                 ← AI framework
-    └── README.md (placeholder)
-```
-
----
-
-## Products vs EPD
-
-- **Products** (`/docs/products/`) = What we build (product documentation)
-- **EPD** (`/docs/epd/`) = How we build it (engineering team documentation)
+| Individual product details | `product-overview-template.md` |
+| Product roadmap planning | `product-roadmap-template.md` |
 
 ---
 
 ## Related Documentation
 
 - **Business:** `../business/` — Business model and economics
-- **Delivery:** `../delivery/` — Post-sales operations and client work
+- **Delivery:** `../delivery/` — Post-sales operations
 - **EPD:** `../epd/` — Engineering, Product, Design team docs
 
 ---
 
-**Last updated:** February 2026
+**Last updated:** 2026-02-18

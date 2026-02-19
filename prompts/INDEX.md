@@ -1,13 +1,12 @@
 # Index: prompts/
 
-> Prompts have been moved to their respective skill directories.
+> Complete file listing for `prompts/`
 
-See [README.md](README.md) for details.
+See [README.md](README.md) for an overview of this directory.
 
-## New Locations
+## Files
 
-| Prompt | New Location |
-|---|---|
-| [research-to-study-guide-prompt-v1.md](../.cursor/skills/research-to-study-guide/prompts/research-to-study-guide-prompt-v1.md) | `.cursor/skills/research-to-study-guide/prompts/` |
-| [research-supervisor-workflow-prompt-v1.md](../.cursor/skills/research-to-study-guide/prompts/research-supervisor-workflow-prompt-v1.md) | `.cursor/skills/research-to-study-guide/prompts/` |
-| [pmm-study-guide-research-prompt.md](../.cursor/skills/research-to-study-guide/prompts/pmm-study-guide-research-prompt.md) | `.cursor/skills/research-to-study-guide/prompts/` |
+| File | Summary | Tier |
+|------|---------|------|
+| [README.md](README.md) | Directory overview — prompt storage strategy and co-location guidance | 1 |
+| [prompt-template-v1.md](prompt-template-v1.md) | Standard template for reusable AI prompt files | 2 |

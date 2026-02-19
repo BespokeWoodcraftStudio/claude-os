@@ -1,18 +1,22 @@
-# Index: docs/delivery/
+<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
 
-> Complete file listing for `/docs/delivery/`
+# Delivery — Index
 
-See [README.md](README.md) for an overview of this directory.
+<metadata>
+purpose: Complete file listing for docs/delivery/
+audience: AI agents and humans navigating delivery docs
+summary: Index of all delivery operations documents — team structure, onboarding, and client ops.
+token_estimate: small
+depends_on: []
+related: README.md
+domain: delivery
+confidence: canonical
+context_tier: 1
+last_updated: 2026-02-18
+</metadata>
 
-## Files
-
-| File | Type |
-|---|---|
-| [README.md](README.md) | Directory overview |
-| [8-week-plan-v1.md](8-week-plan-v1.md) | Client engagement 8-week plan |
-| [creating-good-content.md](creating-good-content.md) | Content creation standards |
-| [human-ai-collaboration.md](human-ai-collaboration.md) | Human-AI collaboration framework |
-| [teams-and-operations.md](teams-and-operations.md) | Delivery teams and operations |
-| [how-marcel-runs-client-calls-v1.md](how-marcel-runs-client-calls-v1.md) | How Marcel approaches client calls |
-| [weekly-call-playbook-v1.md](weekly-call-playbook-v1.md) | Weekly customer call playbook for EMs |
-| [week-00-prep.md](week-00-prep.md) | Week 0 kickoff preparation |
+| File | Summary | Tier |
+|------|---------|------|
+| `README.md` | Directory overview and delivery model | 1 |
+| `teams-and-operations.md` | Team structure, roles, pods, capacity planning, and system mindset | 2 |
+| `client-onboarding-template.md` | Template for onboarding new clients into delivery | 2 |

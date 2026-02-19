@@ -1,107 +1,88 @@
-# GrowthX Context
+# Context OS — Starter Kit
 
-GrowthX's organizational knowledge base. Everything we know about how we work, who we serve, what we're building, and how we write -- codified for humans and AI agents.
+A structured knowledge base template for companies that want AI agents to truly understand their business. Clone it, fill it in, and every AI tool you use — Claude, Cursor, Copilot, or anything else — can write in your voice, make decisions with your frameworks, and navigate your company knowledge.
 
 ---
 
 ## Why This Exists
 
-1. **Onboarding takes too long.** New hires spend weeks absorbing tribal knowledge. This repository gets them productive faster.
-2. **AI can't match our voice.** Generic AI output sounds generic. Feed it this context, and it writes like us.
+1. **AI can't match your voice.** Generic AI output sounds generic. Feed it structured context, and it writes like you.
+2. **Onboarding takes too long.** New hires spend weeks absorbing tribal knowledge. This repository gets them productive faster.
 3. **Knowledge lives in heads.** When people leave, knowledge leaves. This captures it.
 
-The goal: anyone (human or AI) can understand GrowthX and produce on-brand work by reading this repository.
+The goal: anyone (human or AI) can understand your company and produce on-brand work by reading this repository.
 
 ---
 
-## Directory Map
+## What's Inside
 
 ```
-growthx-context/
-├── docs/                    # The GrowthX Handbook (company, business, delivery, EPD, finance)
-├── context/                 # Prescriptive files (how to act)
-│   ├── voice/               # How we write -- style guide, LinkedIn style
-│   ├── roles/               # How we think -- 9 AI executive personas
-│   └── personal/            # Who Marcel is -- user manual, psych profile
-├── knowledge/               # Study guides and learning materials
-│   └── aeo/                 # AEO & AI Visibility knowledge hub (7 docs, 103 sources)
-├── pipeline/                # Where work happens (flows forward only)
-│   ├── research/            # Raw material and competitive intelligence
-│   ├── scratchpad/          # Work-in-progress documents
-│   └── outputs/             # Completed research deliverables
-├── records/                 # Historical archives (search only, never bulk-load)
-│   ├── customers/           # Client documentation and transcripts
-│   ├── transcripts/         # Meeting transcripts (55+ files)
-│   └── downloads/           # External content archives (Lenny's Podcast)
-├── prompts/                 # Reusable AI prompt templates
-├── scripts/                 # Utility scripts (Fireflies, Fathom)
-├── sources/                 # People and sources indexes
-├── CLAUDE.md                # AI agent root context file
-└── INDEX.md                 # Global sitemap of every directory and file
+├── agent-docs/        Task-specific AI agent configurations
+├── docs/              Company handbook (company, business, delivery, products, finance)
+├── context/           Prescriptive AI context (voice, roles, personal)
+├── knowledge/         Study guides and reference materials
+├── pipeline/          Work management (research → scratchpad → outputs)
+├── records/           Historical archives (search only)
+├── sources/           Trusted people and sources indexes
+├── tests/             Context smoke tests
+├── CLAUDE.md          Claude Code entry point
+├── AGENTS.md          Cross-platform agent config
+└── SETUP.md           Comprehensive setup guide
 ```
 
 ---
 
-## Quick Start
+## Quick Start (15 Minutes)
 
-### For Onboarding
-1. [docs/start-here.md](docs/start-here.md) -- Your comprehensive onboarding guide
-2. [docs/company/](docs/company/) -- Who we are (mission, vision, values)
-3. [docs/business/](docs/business/) -- How we make money
-4. [context/voice/writing-style-context-v2.md](context/voice/writing-style-context-v2.md) -- How we write
+1. **Clone this repo** and open it in your editor
+2. **Open `CLAUDE.md`** — replace `[YOUR COMPANY]` with your company name and description
+3. **Fill in `context/voice/writing-style-context-v1.md`** — at minimum, define your voice and list 3-5 style anchors
+4. **Fill in `docs/company/mission-and-vision.md`** — your mission, vision, and core beliefs
+5. **Create your first role** — copy `context/roles/executive-role-template-v1.md` and fill it in for your most-needed executive persona
+6. **Test it** — open Claude or Cursor, point it at your repo, and ask it a question about your company
 
-### For AI Content Generation
-1. Load [CLAUDE.md](CLAUDE.md) as system context
-2. Load [context/voice/writing-style-context-v2.md](context/voice/writing-style-context-v2.md)
-3. Load relevant docs from [docs/](docs/) based on the task
-4. Generate content
-
-### For AEO & AI Visibility
-Start at [knowledge/aeo/README.md](knowledge/aeo/README.md) -- the consolidated hub with guides, research, and 103 indexed sources.
-
-### For AI Executive Personas
-See [context/roles/README.md](context/roles/README.md) -- 9 AI personas from Performance Coach to CTO.
+For the full setup guide, see [SETUP.md](SETUP.md).
 
 ---
 
-## Directory Overview
+## How It Works
 
-| Directory | What's There | README | INDEX |
-|---|---|---|---|
-| [docs/](docs/) | The GrowthX Handbook -- company, business, delivery, EPD, finance, products | [README](docs/README.md) | [INDEX](docs/INDEX.md) |
-| [context/](context/) | Prescriptive files -- voice, roles, personal | [README](context/README.md) | -- |
-| [context/voice/](context/voice/) | How we write -- style guide, LinkedIn style | [README](context/voice/README.md) | [INDEX](context/voice/INDEX.md) |
-| [context/roles/](context/roles/) | How we think -- 9 AI executive personas | [README](context/roles/README.md) | [INDEX](context/roles/INDEX.md) |
-| [context/personal/](context/personal/) | Who Marcel is -- user manual, psych profile | [README](context/personal/README.md) | [INDEX](context/personal/INDEX.md) |
-| [knowledge/](knowledge/) | Study guides (AEO, writing, operations, leadership, LinkedIn) | [README](knowledge/README.md) | [INDEX](knowledge/INDEX.md) |
-| [pipeline/research/](pipeline/research/) | Raw research material, competitive briefs | [README](pipeline/research/README.md) | [INDEX](pipeline/research/INDEX.md) |
-| [pipeline/scratchpad/](pipeline/scratchpad/) | Work-in-progress documents | [README](pipeline/scratchpad/README.md) | [INDEX](pipeline/scratchpad/INDEX.md) |
-| [pipeline/outputs/](pipeline/outputs/) | Completed research deliverables | [README](pipeline/outputs/README.md) | [INDEX](pipeline/outputs/INDEX.md) |
-| [records/customers/](records/customers/) | Client docs and transcripts | [README](records/customers/README.md) | [INDEX](records/customers/INDEX.md) |
-| [records/transcripts/](records/transcripts/) | Meeting transcripts (55+ files) | [README](records/transcripts/README.md) | [INDEX](records/transcripts/INDEX.md) |
-| [records/downloads/](records/downloads/) | External content archives (Lenny's Podcast) | [README](records/downloads/README.md) | [INDEX](records/downloads/INDEX.md) |
-| [prompts/](prompts/) | Reusable AI prompt templates | [README](prompts/README.md) | [INDEX](prompts/INDEX.md) |
-| [scripts/](scripts/) | Utility scripts | [README](scripts/README.md) | [INDEX](scripts/INDEX.md) |
-| [sources/](sources/) | People and sources indexes | [README](sources/README.md) | [INDEX](sources/INDEX.md) |
+### For AI Agents
+AI agents read `CLAUDE.md` first (loaded automatically). Based on the task, they load a specific agent config from `agent-docs/` which tells them exactly which context files to read. This means agents only load what's relevant — no wasted tokens on irrelevant context.
+
+### For Humans
+Every directory has `README.md` (what's here, why) and `INDEX.md` (file listing with one-line summaries). Start at `docs/start-here.md` for onboarding.
+
+### The Key Patterns
+
+- **Prescriptive context** (`context/`) tells agents HOW to act — voice, roles, personal style
+- **Reference docs** (`docs/`, `knowledge/`) tell agents WHAT IS true about the company
+- **Progressive disclosure** — agents scan summaries first, then load full files only when needed
+- **Forward-only pipeline** — work flows research → scratchpad → outputs, never backward
+- **Metadata everywhere** — every file has machine-readable tags for routing and navigation
 
 ---
 
-## Navigation
+## Cross-Platform Support
 
-Every directory has:
-- **README.md** -- Overview of what's in the directory and why it exists
-- **INDEX.md** -- Complete file listing (sitemap) for the directory
-
-For the full project sitemap, see [INDEX.md](INDEX.md).
+| Tool | Configuration |
+|------|---------------|
+| Claude Code | `CLAUDE.md` (loaded automatically) |
+| Cursor | `.cursor/rules/` and `.cursor/skills/` |
+| Other AI agents | `AGENTS.md` (cross-platform standard) |
 
 ---
 
 ## File Naming & Versioning
 
 - **Format:** `descriptive-name-v1.md` (lowercase, hyphens, version suffix)
-- **Minor updates:** Edit in place, update `last_updated` in header
+- **Minor updates:** Edit in place, update `last_updated` in metadata
 - **Major changes:** Create new version (`-v2`), move old to `/archive`
 
 ---
 
-**Last updated:** February 2026
+## Learn More
+
+- [SETUP.md](SETUP.md) — Full setup guide with context engineering primer
+- [agent-docs/context-engineering-guide.md](agent-docs/context-engineering-guide.md) — How to write content that AI agents can effectively use
+- [docs/context-routing.md](docs/context-routing.md) — Detailed routing rules for context loading

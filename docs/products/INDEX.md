@@ -1,36 +1,22 @@
-# Index: docs/products/
+<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
 
-> Complete file listing for `/docs/products/`
+# Products — Index
 
-See [README.md](README.md) for an overview of this directory.
+<metadata>
+purpose: Complete file listing for docs/products/
+audience: AI agents and humans navigating product docs
+summary: Index of product documentation — overviews and roadmap templates.
+token_estimate: small
+depends_on: []
+related: README.md
+domain: product
+confidence: canonical
+context_tier: 1
+last_updated: 2026-02-18
+</metadata>
 
-## Files
-
-| File | Type |
-|---|---|
-| [README.md](README.md) | Directory overview |
-| [ecosystem-strategy.md](ecosystem-strategy.md) | Product ecosystem strategy |
-| [services-and-platform-faq.md](services-and-platform-faq.md) | Internal FAQ: services vs. platform |
-
-## checkthat/
-
-| File | Type |
-|---|---|
-| [checkthat/README.md](checkthat/README.md) | CheckThat overview |
-| [checkthat/product-vision-v1.md](checkthat/product-vision-v1.md) | Product vision |
-| [checkthat/overview-v1.md](checkthat/overview-v1.md) | Product overview |
-| [checkthat/messaging-and-positioning-v1.md](checkthat/messaging-and-positioning-v1.md) | Messaging framework |
-| [checkthat/organic-growth-strategy-v1.md](checkthat/organic-growth-strategy-v1.md) | Growth strategy |
-| [checkthat/pricing-and-monetization-v1.md](checkthat/pricing-and-monetization-v1.md) | Pricing model |
-
-## contentos/
-
-| File | Type |
-|---|---|
-| [contentos/README.md](contentos/README.md) | ContentOS overview |
-
-## output/
-
-| File | Type |
-|---|---|
-| [output/README.md](output/README.md) | Output overview |
+| File | Summary | Tier |
+|------|---------|------|
+| `README.md` | Product portfolio overview and navigation | 1 |
+| `product-overview-template.md` | Template for documenting an individual product | 2 |
+| `product-roadmap-template.md` | Template for product roadmap planning | 2 |

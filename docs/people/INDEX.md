@@ -1,26 +1,23 @@
-# Index: docs/people/
+<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
 
-> Complete file listing for `/docs/people/`
+# People — Index
 
-See [README.md](README.md) for an overview of this directory.
+<metadata>
+purpose: Complete file listing for docs/people/
+audience: AI agents and humans navigating people docs
+summary: Index of HR, onboarding, and policy documents.
+token_estimate: small
+depends_on: []
+related: README.md
+domain: company
+confidence: canonical
+context_tier: 1
+last_updated: 2026-02-18
+</metadata>
 
-## Files
-
-| File | Type |
-|---|---|
-| [README.md](README.md) | Directory overview |
-
-## onboarding/
-
-| File | Type |
-|---|---|
-| [onboarding/company-wide.md](onboarding/company-wide.md) | Company-wide onboarding guide |
-| [onboarding/deliver-bootcamp.md](onboarding/deliver-bootcamp.md) | Delivery org first 2 weeks |
-
-## policies/
-
-| File | Type |
-|---|---|
-| [policies/code-of-conduct.md](policies/code-of-conduct.md) | Code of conduct |
-| [policies/parental-leave.md](policies/parental-leave.md) | Parental leave policy |
-| [policies/time-off.md](policies/time-off.md) | Time off policy |
+| File | Summary | Tier |
+|------|---------|------|
+| `README.md` | Directory overview and navigation | 1 |
+| `onboarding.md` | New hire onboarding checklist and first-week guide | 2 |
+| `code-of-conduct.md` | Ethical standards, expectations, and reporting | 2 |
+| `time-off-policy.md` | PTO guidelines and leave policies | 2 |

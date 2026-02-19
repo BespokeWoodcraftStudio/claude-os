@@ -1,323 +1,300 @@
-# Global Index: GrowthX Context
+# Global Index: Context OS
 
 > Complete sitemap of every directory and file in the repository.
 > Last generated: February 2026
 
-See [README.md](README.md) for project overview and navigation.
+<metadata>
+purpose: Global file index for the entire Context OS repository
+audience: AI agents and humans navigating the knowledge base
+summary: Complete sitemap with one-line summaries of every directory and key file.
+token_estimate: medium
+depends_on: []
+domain: system
+confidence: canonical
+context_tier: 0
+last_updated: 2026-02-18
+</metadata>
+
+See [readme.md](readme.md) for project overview. See [SETUP.md](SETUP.md) for setup guide.
 
 ---
 
 ## Root Files
 
-| File | Purpose |
-|---|---|
-| [README.md](README.md) | Project overview and navigation |
-| [INDEX.md](INDEX.md) | This file -- global sitemap |
-| [CLAUDE.md](CLAUDE.md) | AI agent root context file |
-| [AGENTS.md](AGENTS.md) | Symlink → CLAUDE.md (cross-tool compatibility) |
+| File | Summary | Tier |
+|------|---------|------|
+| `CLAUDE.md` | AI agent entry point — identity, directory map, task routing | 0 |
+| `AGENTS.md` | Cross-platform agent config (20+ tools) | 0 |
+| `readme.md` | Project README — what this is and how to use it | 0 |
+| `SETUP.md` | Comprehensive setup guide with context engineering primer | 0 |
+| `INDEX.md` | This file — global sitemap | 0 |
+| `.env.example` | API key template with categorized placeholders | -- |
 
 ---
 
-## docs/ -- The GrowthX Handbook
+## agent-docs/ — Task-Specific Agent Configs
+
+| File | Summary | Tier |
+|------|---------|------|
+| `writing-agent.md` | Context loading instructions for writing and editing tasks | 1 |
+| `research-agent.md` | Context loading instructions for research and learning | 1 |
+| `decision-agent.md` | Context loading instructions for strategic decisions and analysis | 1 |
+| `onboarding-agent.md` | Context loading instructions for team onboarding questions | 1 |
+| `context-engineering-guide.md` | How to write content for AI agents — token budgets, failure modes | 1 |
+
+---
+
+## docs/ — The Company Handbook
 
 > [README](docs/README.md) | [INDEX](docs/INDEX.md)
 
-| File | Path |
-|---|---|
-| Start Here | [docs/start-here.md](docs/start-here.md) |
+| File | Summary | Tier |
+|------|---------|------|
+| `start-here.md` | Onboarding entry point for new team members | 1 |
+| `context-routing.md` | Detailed routing rules for context loading | 1 |
 
 ### docs/company/
 
-> [README](docs/company/README.md) | [INDEX](docs/company/INDEX.md)
-
-| File | Path |
-|---|---|
-| Culture and Values | [docs/company/culture-and-values.md](docs/company/culture-and-values.md) |
-| Mission and Vision | [docs/company/mission-and-vision.md](docs/company/mission-and-vision.md) |
-| Priorities (Next 6 Months) | [docs/company/priorities-next-6-months.md](docs/company/priorities-next-6-months.md) |
-| Strategy Overview | [docs/company/strategy-overview.md](docs/company/strategy-overview.md) |
-| The Big Picture | [docs/company/the-big-picture.md](docs/company/the-big-picture.md) |
-| Vision and Strategy | [docs/company/vision-and-strategy.md](docs/company/vision-and-strategy.md) |
+| File | Summary | Tier |
+|------|---------|------|
+| `mission-and-vision.md` | Company mission, vision, and core beliefs | 1 |
+| `culture-and-values.md` | Guiding values and how they're practiced | 2 |
+| `strategy-overview.md` | Market position, traction, and strategic bets | 2 |
 
 ### docs/business/
 
-> [README](docs/business/README.md) | [INDEX](docs/business/INDEX.md)
-
-| File | Path |
-|---|---|
-| Business Model | [docs/business/business-model.md](docs/business/business-model.md) |
-| Customer Lifecycle | [docs/business/customer-lifecycle.md](docs/business/customer-lifecycle.md) |
-| Ideal Customer Profile | [docs/business/ideal-customer-profile.md](docs/business/ideal-customer-profile.md) |
-| Overview | [docs/business/overview.md](docs/business/overview.md) |
-| Success Metrics | [docs/business/success-metrics.md](docs/business/success-metrics.md) |
+| File | Summary | Tier |
+|------|---------|------|
+| `business-model.md` | Revenue model, unit economics, and growth levers | 1 |
+| `ideal-customer-profile.md` | ICP criteria, scoring, and red flags | 1 |
+| `customer-lifecycle.md` | End-to-end customer journey phases | 2 |
 
 ### docs/delivery/
 
-> [README](docs/delivery/README.md) | [INDEX](docs/delivery/INDEX.md)
-
-| File | Path |
-|---|---|
-| 8-Week Plan | [docs/delivery/8-week-plan-v1.md](docs/delivery/8-week-plan-v1.md) |
-| Creating Good Content | [docs/delivery/creating-good-content.md](docs/delivery/creating-good-content.md) |
-| Human-AI Collaboration | [docs/delivery/human-ai-collaboration.md](docs/delivery/human-ai-collaboration.md) |
-| Teams and Operations | [docs/delivery/teams-and-operations.md](docs/delivery/teams-and-operations.md) |
-| Week 00 Prep | [docs/delivery/week-00-prep.md](docs/delivery/week-00-prep.md) |
+| File | Summary | Tier |
+|------|---------|------|
+| `teams-and-operations.md` | Team structure, roles, capacity planning | 2 |
+| `client-onboarding-template.md` | Template for onboarding new clients | 2 |
 
 ### docs/epd/
 
-> [README](docs/epd/README.md) | [INDEX](docs/epd/INDEX.md)
-
-19 files covering engineering processes, product development, design, hiring, onboarding, and technical guides. See [docs/epd/INDEX.md](docs/epd/INDEX.md) for complete listing.
+| File | Summary | Tier |
+|------|---------|------|
+| `dev-process.md` | Development workflow, tools, and practices | 2 |
+| `tech-stack.md` | Technology choices and architecture overview | 2 |
 
 ### docs/finance/
 
-> [README](docs/finance/README.md) | [INDEX](docs/finance/INDEX.md)
-
-| File | Path |
-|---|---|
-| 2025 Year-End Recap | [docs/finance/2025-year-end-recap.md](docs/finance/2025-year-end-recap.md) |
-| Fiscal Plan 2025 | [docs/finance/fiscal-plan-2025.md](docs/finance/fiscal-plan-2025.md) |
-| Fiscal Plan 2026 | [docs/finance/fiscal-plan-2026-v2.md](docs/finance/fiscal-plan-2026-v2.md) |
-| Growth and Valuation | [docs/finance/growth-and-valuation.md](docs/finance/growth-and-valuation.md) |
-| LOC Offers | [docs/finance/loc-offers.md](docs/finance/loc-offers.md) |
-| Market Size | [docs/finance/market-size-and-opportunity.md](docs/finance/market-size-and-opportunity.md) |
-| Organic Growth Strategy | [docs/finance/organic-growth-strategy.md](docs/finance/organic-growth-strategy.md) |
-| Pricing Strategy | [docs/finance/pricing-and-monetization-strategy.md](docs/finance/pricing-and-monetization-strategy.md) |
-| Q1 2025 Board Meeting | [docs/finance/q1-2025-board-meeting.md](docs/finance/q1-2025-board-meeting.md) |
-| Q2 2025 Board Meeting | [docs/finance/q2-2025-board-meeting.md](docs/finance/q2-2025-board-meeting.md) |
-| Q3 2025 Board Meeting | [docs/finance/q3-2025-board-meeting.md](docs/finance/q3-2025-board-meeting.md) |
-| Q4 2025 Board Meeting | [docs/finance/q4-2025-board-meeting.md](docs/finance/q4-2025-board-meeting.md) |
+| File | Summary | Tier |
+|------|---------|------|
+| `fiscal-plan-template.md` | Template for annual financial planning | 2 |
+| `board-meeting-template.md` | Template for quarterly board presentations | 2 |
 
 ### docs/how-we-work/
 
-> [README](docs/how-we-work/README.md) | [INDEX](docs/how-we-work/INDEX.md)
-
-| File | Path |
-|---|---|
-| Async Communication | [docs/how-we-work/async-communication.md](docs/how-we-work/async-communication.md) |
-| Documentation | [docs/how-we-work/documentation.md](docs/how-we-work/documentation.md) |
-| Effective Meetings | [docs/how-we-work/effective-meetings.md](docs/how-we-work/effective-meetings.md) |
-| Prompting Fundamentals | [docs/how-we-work/prompting-fundamentals.md](docs/how-we-work/prompting-fundamentals.md) |
-| Slack | [docs/how-we-work/slack.md](docs/how-we-work/slack.md) |
-| Systems Thinking | [docs/how-we-work/systems-thinking.md](docs/how-we-work/systems-thinking.md) |
+| File | Summary | Tier |
+|------|---------|------|
+| `async-communication.md` | Async-first communication norms | 2 |
+| `documentation.md` | Documentation standards and practices | 2 |
+| `meetings.md` | Meeting types, cadences, and best practices | 2 |
 
 ### docs/people/
 
-> [README](docs/people/README.md) | [INDEX](docs/people/INDEX.md)
-
-| File | Path |
-|---|---|
-| Company-Wide Onboarding | [docs/people/onboarding/company-wide.md](docs/people/onboarding/company-wide.md) |
-| Deliver Bootcamp | [docs/people/onboarding/deliver-bootcamp.md](docs/people/onboarding/deliver-bootcamp.md) |
-| Code of Conduct | [docs/people/policies/code-of-conduct.md](docs/people/policies/code-of-conduct.md) |
-| Parental Leave | [docs/people/policies/parental-leave.md](docs/people/policies/parental-leave.md) |
-| Time Off | [docs/people/policies/time-off.md](docs/people/policies/time-off.md) |
+| File | Summary | Tier |
+|------|---------|------|
+| `onboarding.md` | New hire onboarding checklist and process | 2 |
+| `code-of-conduct.md` | Ethical standards and expectations | 2 |
+| `time-off-policy.md` | PTO, holidays, and leave policies | 2 |
 
 ### docs/products/
 
-> [README](docs/products/README.md) | [INDEX](docs/products/INDEX.md)
+| File | Summary | Tier |
+|------|---------|------|
+| `product-overview-template.md` | Template for documenting a product | 2 |
+| `product-roadmap-template.md` | Template for product roadmap planning | 2 |
 
-| File | Path |
-|---|---|
-| Ecosystem Strategy | [docs/products/ecosystem-strategy.md](docs/products/ecosystem-strategy.md) |
-| CheckThat Vision | [docs/products/checkthat/product-vision-v1.md](docs/products/checkthat/product-vision-v1.md) |
-| CheckThat Overview | [docs/products/checkthat/overview-v1.md](docs/products/checkthat/overview-v1.md) |
-| CheckThat Messaging | [docs/products/checkthat/messaging-and-positioning-v1.md](docs/products/checkthat/messaging-and-positioning-v1.md) |
-| CheckThat Growth | [docs/products/checkthat/organic-growth-strategy-v1.md](docs/products/checkthat/organic-growth-strategy-v1.md) |
-| CheckThat Pricing | [docs/products/checkthat/pricing-and-monetization-v1.md](docs/products/checkthat/pricing-and-monetization-v1.md) |
+### docs/sales/
 
-### docs/archive/
-
-> [README](docs/archive/README.md) | [INDEX](docs/archive/INDEX.md)
-
-10 archived documents. See [docs/archive/INDEX.md](docs/archive/INDEX.md) for complete listing.
+| File | Summary | Tier |
+|------|---------|------|
+| `sales-process.md` | Sales pipeline stages and methodology | 2 |
 
 ---
 
-## knowledge/ -- Study Guides & Learning
-
-> [README](knowledge/README.md) | [INDEX](knowledge/INDEX.md)
-
-### knowledge/content/ -- Writing & Content Creation
-
-| File | Path |
-|---|---|
-| Elements of Style | [knowledge/content/elements-of-style-study-guide-v1.md](knowledge/content/elements-of-style-study-guide-v1.md) |
-| Writing Craft | [knowledge/content/writing-craft-study-guide-v1.md](knowledge/content/writing-craft-study-guide-v1.md) |
-| LinkedIn Engagement | [knowledge/content/linkedin-engagement-study-guide-v1.md](knowledge/content/linkedin-engagement-study-guide-v1.md) |
-| LinkedIn Hooks | [knowledge/content/linkedin-hooks-study-guide-v1.md](knowledge/content/linkedin-hooks-study-guide-v1.md) |
-
-### knowledge/building/ -- Company Operations & Leadership
-
-| File | Path |
-|---|---|
-| CEO User Manual | [knowledge/building/ceo-user-manual-study-guide-v1.md](knowledge/building/ceo-user-manual-study-guide-v1.md) |
-| Company Handbook | [knowledge/building/company-handbook-study-guide-v1.md](knowledge/building/company-handbook-study-guide-v1.md) |
-| Operators Handbook | [knowledge/building/operators-handbook-scaling-startups-v1.md](knowledge/building/operators-handbook-scaling-startups-v1.md) |
-| MRR/Churn/Retention | [knowledge/building/max-mrr-churn-retention-study-guide-v1.md](knowledge/building/max-mrr-churn-retention-study-guide-v1.md) |
-
-### knowledge/product/ -- AI & Product Development
-
-| File | Path |
-|---|---|
-| AI Product Leadership | [knowledge/product/ai-product-leadership-study-guide-v1.md](knowledge/product/ai-product-leadership-study-guide-v1.md) |
-| Context Engineering | [knowledge/product/context-engineering-study-guide-v1.md](knowledge/product/context-engineering-study-guide-v1.md) |
-
-### knowledge/aeo/ -- AEO & AI Visibility Hub
-
-> [README](knowledge/aeo/README.md)
-
-| File | Path |
-|---|---|
-| Buyer Evaluation Playbook | [knowledge/aeo/guides/buyer-evaluation-prompt-playbook.md](knowledge/aeo/guides/buyer-evaluation-prompt-playbook.md) |
-| Prompt Writing Methodology | [knowledge/aeo/guides/prompt-writing-methodology.md](knowledge/aeo/guides/prompt-writing-methodology.md) |
-| Buyer Eval Study Guide | [knowledge/aeo/guides/buyer-evaluation-prompts-study-guide.md](knowledge/aeo/guides/buyer-evaluation-prompts-study-guide.md) |
-| Metrics Deep Research (103 sources) | [knowledge/aeo/research/metrics-deep-research.md](knowledge/aeo/research/metrics-deep-research.md) |
-| Prompt Methodology & Patterns (1,190 lines) | [knowledge/aeo/research/prompt-methodology-and-pattern-library.md](knowledge/aeo/research/prompt-methodology-and-pattern-library.md) |
-| Prompt Writing Research Notes | [knowledge/aeo/research/prompt-writing-research-notes.md](knowledge/aeo/research/prompt-writing-research-notes.md) |
-| Buyer Eval Research Notes | [knowledge/aeo/research/buyer-evaluation-research-notes.md](knowledge/aeo/research/buyer-evaluation-research-notes.md) |
-
----
-
-## pipeline/research/ -- Research & Competitive Intel
-
-> [README](pipeline/research/README.md) | [INDEX](pipeline/research/INDEX.md)
-
-| File | Path |
-|---|---|
-| Agency Research Summary | [pipeline/research/agency-research-summary.md](pipeline/research/agency-research-summary.md) |
-| LinkedIn Hooks Research | [pipeline/research/linkedin-hooks-research-scratchpad.md](pipeline/research/linkedin-hooks-research-scratchpad.md) |
-| Unusual.ai Competitive Brief | [pipeline/research/Unusual_AI_Competitive_Brief.md](pipeline/research/Unusual_AI_Competitive_Brief.md) |
-| Top 100 Agencies | [pipeline/research/top-100-agencies-database.xlsx](pipeline/research/top-100-agencies-database.xlsx) |
-
----
-
-## context/ -- Prescriptive (How to Act)
+## context/ — Prescriptive AI Context
 
 > [README](context/README.md)
 
 Prescriptive files that configure agent behavior. Load BEFORE doing work.
 
-### context/voice/ -- How We Write
+### context/voice/
 
 > [README](context/voice/README.md) | [INDEX](context/voice/INDEX.md)
 
-| File | Path |
-|---|---|
-| Writing Style Guide (v2) | [context/voice/writing-style-context-v2.md](context/voice/writing-style-context-v2.md) |
-| LinkedIn Style Guide | [context/voice/marcel-linkedin-style-guide-v1.md](context/voice/marcel-linkedin-style-guide-v1.md) |
+| File | Summary | Tier |
+|------|---------|------|
+| `writing-style-context-v1.md` | Definitive voice and style guide for all content | 1 |
+| `social-media-style-guide-template-v1.md` | Platform-agnostic social media voice guide | 2 |
 
-### context/roles/ -- How We Think
+### context/roles/
 
 > [README](context/roles/README.md) | [INDEX](context/roles/INDEX.md)
 
-| File | Path |
-|---|---|
-| CFO | [context/roles/cfo-v1.md](context/roles/cfo-v1.md) |
-| Chief of Staff | [context/roles/chief-of-staff-v1.md](context/roles/chief-of-staff-v1.md) |
-| CMO | [context/roles/cmo-v1.md](context/roles/cmo-v1.md) |
-| Consigliere | [context/roles/consigliere-v1.md](context/roles/consigliere-v1.md) |
-| COO | [context/roles/coo-v1.md](context/roles/coo-v1.md) |
-| CRO | [context/roles/cro-v1.md](context/roles/cro-v1.md) |
-| CTO | [context/roles/cto-v1.md](context/roles/cto-v1.md) |
-| Performance Coach | [context/roles/performance-coach-v1.md](context/roles/performance-coach-v1.md) |
-| VP People | [context/roles/vp-people-v1.md](context/roles/vp-people-v1.md) |
-| AEO Expert | [context/roles/aeo-expert-v1.md](context/roles/aeo-expert-v1.md) |
+| File | Summary | Tier |
+|------|---------|------|
+| `executive-role-template-v1.md` | Template for functional executive roles (CFO, CMO, etc.) | 1 |
+| `advisor-role-template-v1.md` | Template for inner circle / advisory roles | 1 |
 
-### context/personal/ -- Who Marcel Is
+### context/personal/
 
 > [README](context/personal/README.md) | [INDEX](context/personal/INDEX.md)
 
-| File | Path |
-|---|---|
-| User Manual | [context/personal/marcel-santilli-user-manual-v1.md](context/personal/marcel-santilli-user-manual-v1.md) |
-| Psychological Profile | [context/personal/marcel-santilli-psychological-profile-v1.md](context/personal/marcel-santilli-psychological-profile-v1.md) |
+| File | Summary | Tier |
+|------|---------|------|
+| `founder-user-manual-template-v1.md` | Founder communication style and decision patterns | 1 |
 
 ---
 
-## pipeline/ -- Where Work Happens
+## knowledge/ — Study Guides & Reference
 
-Files flow forward: research/ -> scratchpad/ -> outputs/. Never backward.
+> [README](knowledge/README.md) | [INDEX](knowledge/INDEX.md)
 
-### pipeline/research/ -- Raw Material
+### knowledge/content/
 
-> [README](pipeline/research/README.md) | [INDEX](pipeline/research/INDEX.md)
+| File | Summary | Tier |
+|------|---------|------|
+| `writing-craft-study-guide-v1.md` | Writing masters and techniques (universal) | 2 |
+| `study-guide-template-v1.md` | Template for creating new study guides | 2 |
 
-Active research in progress. See INDEX for complete listing.
+### knowledge/building/
 
-### pipeline/scratchpad/ -- Work in Progress
+| File | Summary | Tier |
+|------|---------|------|
+| `company-operations-study-guide-template-v1.md` | Template for company operations knowledge | 2 |
 
-> [README](pipeline/scratchpad/README.md) | [INDEX](pipeline/scratchpad/INDEX.md)
+### knowledge/product/
 
-10+ working documents. See INDEX for complete listing.
+| File | Summary | Tier |
+|------|---------|------|
+| `product-knowledge-study-guide-template-v1.md` | Template for product-specific knowledge | 2 |
 
-### pipeline/outputs/ -- Finished Deliverables
+### knowledge/domain/
 
-> [README](pipeline/outputs/README.md) | [INDEX](pipeline/outputs/INDEX.md)
-
-17 files including role research, LinkedIn content, client deliverables, and databases. See INDEX for complete listing.
-
----
-
-## records/ -- Historical Archives (Search Only)
-
-Search these directories -- never bulk-load them.
-
-### records/customers/ -- Client Documentation
-
-> [README](records/customers/README.md) | [INDEX](records/customers/INDEX.md)
-
-| Client | Context | Transcripts |
-|---|---|---|
-| Lovable | [lovable/lovable-client-context-v1.md](records/customers/lovable/lovable-client-context-v1.md) | 49 transcripts (Oct 2025 -- Feb 2026) |
-
-### records/transcripts/ -- Meeting Transcripts
-
-> [README](records/transcripts/README.md) | [INDEX](records/transcripts/INDEX.md)
-
-55+ meeting transcripts (2025-2026) plus 2 video transcripts. See INDEX for complete listing.
+| File | Summary | Tier |
+|------|---------|------|
+| `domain-research-template-v1.md` | Template for domain-specific research | 2 |
 
 ---
 
-## prompts/ -- AI Prompt Templates (Redirects)
+## pipeline/ — Work Management
 
-Prompts have been co-located with their skills. See `.cursor/skills/[skill-name]/prompts/`.
+> [README](pipeline/README.md)
 
-| Prompt | Skill | New Path |
-|--------|-------|----------|
-| Research to Study Guide | research-to-study-guide | `.cursor/skills/research-to-study-guide/prompts/` |
-| Research Supervisor | research-to-study-guide | `.cursor/skills/research-to-study-guide/prompts/` |
-| PMM Study Guide | research-to-study-guide | `.cursor/skills/research-to-study-guide/prompts/` |
+Files flow forward: research/ → scratchpad/ → outputs/. Never backward.
+
+### pipeline/research/
+
+| File | Summary | Tier |
+|------|---------|------|
+| `research-brief-template-v1.md` | Template for research briefs with source tracking | 2 |
+
+### pipeline/scratchpad/
+
+| File | Summary | Tier |
+|------|---------|------|
+| `working-draft-template-v1.md` | Template for working drafts with status tracking | 2 |
+
+### pipeline/outputs/
+
+| File | Summary | Tier |
+|------|---------|------|
+| `deliverable-template-v1.md` | Template for finished deliverables with lineage metadata | 2 |
 
 ---
 
-## scripts/ -- Utility Scripts
+## records/ — Historical Archives (Search Only)
 
-> [README](scripts/README.md) | [INDEX](scripts/INDEX.md)
+> [README](records/README.md)
 
-| File | Path |
-|---|---|
-| Fireflies Transcript | [scripts/fireflies-get-transcript.py](scripts/fireflies-get-transcript.py) |
-| Fireflies Details | [scripts/fireflies-get-details.py](scripts/fireflies-get-details.py) |
-| Fathom Backup | [scripts/fathom-backup.py](scripts/fathom-backup.py) |
+Search these directories — never bulk-load them.
+
+### records/transcripts/
+
+| File | Summary | Tier |
+|------|---------|------|
+| `meeting-transcript-template-v1.md` | Template for meeting transcripts | 3 |
+
+### records/customers/
+
+| File | Summary | Tier |
+|------|---------|------|
+| `client-context-template-v1.md` | Template for per-client context | 3 |
+
+### records/downloads/
+
+Empty — add external archives here as needed.
 
 ---
 
-## sources/ -- Reference Indexes
+## sources/ — Trusted References
 
 > [README](sources/README.md) | [INDEX](sources/INDEX.md)
 
-| File | Path |
-|---|---|
-| People Index | [sources/people-index.md](sources/people-index.md) |
-| Sources Index | [sources/sources-index.md](sources/sources-index.md) |
+| File | Summary | Tier |
+|------|---------|------|
+| `people-index.md` | Curated list of trusted people by domain | 3 |
+| `sources-index.md` | Curated list of trusted publications, tools, and media | 3 |
 
 ---
 
-### records/downloads/ -- External Archives
+## prompts/ — Reusable Prompt Templates
 
-> [README](records/downloads/README.md) | [INDEX](records/downloads/INDEX.md)
+> [README](prompts/README.md) | [INDEX](prompts/INDEX.md)
 
-| Directory | Contents |
-|---|---|
-| [lennys-podcast-transcripts/](records/downloads/lennys-podcast-transcripts/) | 200+ episodes, 99 topic indexes |
+| File | Summary | Tier |
+|------|---------|------|
+| `prompt-template-v1.md` | Standard prompt format template | 2 |
+
+---
+
+## scripts/ — Utility Scripts
+
+> [README](scripts/README.md) | [INDEX](scripts/INDEX.md)
+
+| File | Summary | Tier |
+|------|---------|------|
+| `script-template.py` | Python script format template | -- |
+
+---
+
+## tests/ — Context Smoke Tests
+
+> [README](tests/README.md)
+
+| File | Summary | Tier |
+|------|---------|------|
+| `voice-test.md` | Verify writing voice loads correctly | -- |
+| `role-test.md` | Verify executive roles produce role-specific analysis | -- |
+| `navigation-test.md` | Verify agent finds the right docs | -- |
+| `pipeline-test.md` | Verify pipeline flow works correctly | -- |
+
+---
+
+## .cursor/ — IDE Integration
+
+### .cursor/rules/
+
+| File | Summary |
+|------|---------|
+| `context-navigation.mdc` | How to navigate the knowledge base |
+| `file-naming.mdc` | File naming and versioning conventions |
+| `readme-maintenance.mdc` | README structure and maintenance rules |
+
+### .cursor/skills/
+
+| Skill | Summary |
+|-------|---------|
+| `write-content/` | Write and review content using company voice |
+| `research-to-study-guide/` | Deep research synthesized into study guides |
+| `file-naming/` | File naming conventions (passive skill) |
+| `SKILL-TEMPLATE/` | Template for creating new skills |

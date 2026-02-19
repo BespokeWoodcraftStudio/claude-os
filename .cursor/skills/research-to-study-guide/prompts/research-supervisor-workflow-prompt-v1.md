@@ -1,6 +1,6 @@
 # Research Supervisor Workflow Prompt
 
-A comprehensive research workflow that plans, executes, validates, and synthesizes research into high-quality reports. Adapted from the GrowthX Flow research-supervisor workflow.
+A comprehensive research workflow that plans, executes, validates, and synthesizes research into high-quality reports.
 
 ---
 

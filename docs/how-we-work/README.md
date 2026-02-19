@@ -1,3 +1,5 @@
+<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
+
 # How We Work
 
 Communication, meetings, tools, and collaboration practices.
@@ -6,7 +8,7 @@ Communication, meetings, tools, and collaboration practices.
 
 ## Quick Summary
 
-This section covers the mechanics of working at GrowthX: how we communicate, run meetings, use tools, and document our work. Read this to understand our operating rhythm.
+This section covers the mechanics of working at [YOUR COMPANY]: how we communicate, run meetings, use tools, and document our work. Read this to understand our operating rhythm.
 
 ---
 
@@ -15,24 +17,8 @@ This section covers the mechanics of working at GrowthX: how we communicate, run
 | If you want to understand... | Read this |
 |------------------------------|-----------|
 | Async-first communication | `async-communication.md` |
-| How to run effective meetings | `effective-meetings.md` |
-| Slack channels and norms | `slack.md` |
+| How to run effective meetings | `meetings.md` |
 | Why and how we document | `documentation.md` |
-| Systems thinking framework | `systems-thinking.md` |
-| AI prompting best practices | `prompting-fundamentals.md` |
-
----
-
-## Document Index
-
-| Document | What It Covers |
-|----------|----------------|
-| `async-communication.md` | Async-first communication guide |
-| `effective-meetings.md` | Best practices for running meetings |
-| `slack.md` | Slack channel organization and norms |
-| `documentation.md` | Why and how we document |
-| `systems-thinking.md` | Framework for understanding interconnected systems |
-| `prompting-fundamentals.md` | How to write effective AI prompts |
 
 ---
 
@@ -53,4 +39,4 @@ This section covers the mechanics of working at GrowthX: how we communicate, run
 
 ---
 
-**Last updated:** February 2026
+**Last updated:** 2026-02-18

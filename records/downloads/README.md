@@ -1,15 +1,39 @@
+<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
+
 # Downloads
+
+<metadata>
+purpose: External content archives downloaded for reference and training data
+audience: AI agents searching for reference material
+summary: Archive of externally sourced content like podcast transcripts, reports, and datasets.
+token_estimate: small
+related: records/README.md
+domain: records
+confidence: canonical
+context_tier: 2
+last_updated: 2026-02-18
+</metadata>
 
 External content archives downloaded for reference and training data.
 
----
+## What Goes Here
 
-## Contents
+- Podcast transcripts
+- Downloaded reports and whitepapers
+- External datasets
+- Reference material from third parties
 
-| Directory | What's There |
-|---|---|
-| [lennys-podcast-transcripts/](lennys-podcast-transcripts/) | 200+ Lenny's Podcast episode transcripts organized by guest, with 99 topic indexes |
+## How to Use
 
----
+1. **Search by keyword** to find relevant reference material
+2. **Never bulk-load** -- this directory can grow very large
+3. **Organize by source** in subdirectories when collections are large
 
-See [INDEX.md](INDEX.md) for a complete file listing.
+## Directory Structure
+
+```
+records/downloads/
+  [source-name]/           # Subdirectory per source or collection
+    file-1.md
+    file-2.md
+```

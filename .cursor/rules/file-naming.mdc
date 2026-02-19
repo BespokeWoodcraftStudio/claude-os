@@ -19,7 +19,7 @@ Format: `descriptive-name-v1.md`
 ✅ **Good:**
 - `company-vision-and-strategy-v1.md`
 - `ideal-customer-profile-v1.md`
-- `writing-style-context-v2.md`
+- `writing-style-context-v1.md`
 
 ❌ **Bad:**
 - `Company Vision.md` (spaces, capitals, no version)
@@ -39,7 +39,7 @@ Each directory has an `/archive` subdirectory for outdated files.
 
 ```
 context/voice/
-├── writing-style-context-v2.md # Current
+├── writing-style-context-v1.md # Current
 └── archive/
  └── writing-style-context-v1.md # Previous
 ```

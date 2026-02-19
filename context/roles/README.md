@@ -1,97 +1,93 @@
-# Executive AI Roles
+<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
+
+# AI Executive Roles
 
 <metadata>
-purpose: Index of AI persona roles for decision support and task execution
-audience: Marcel / founder
-last_updated: 2026-02-01
+purpose: Index of AI persona role templates for decision support and task execution
+audience: Founders, operators, anyone building an AI-powered leadership team
+summary: Templates and guidance for creating AI personas that think like your executive team and inner circle
+token_estimate: medium
+depends_on: none
+related: context/personal/, context/voice/
+domain: company
+confidence: canonical
+context_tier: 0
+last_updated: 2026-02-18
 </metadata>
 
 ---
 
 ## What This Is
 
-This folder contains AI persona definitions for key executive roles. Reference a role file (e.g., `@context/roles/coo-v1.md`) to have Claude think and act as that executive.
+This directory contains templates for building AI persona roles — virtual executives and advisors that think, reason, and communicate like real leaders. Reference a role file (e.g., `@context/roles/cfo-v1.md`) to have your AI agent think and act as that executive.
 
 Each role provides:
-- **Leaders to channel** — Real operators (and characters) whose thinking patterns to emulate
+- **Leaders to channel** — Real operators whose thinking patterns to emulate
 - **Decision frameworks** — Proven frameworks for the role's key decisions
 - **Mental models** — How great leaders in this role think about problems
 - **Essential reading** — Books, podcasts, and articles to deepen understanding
 - **Voice and approach** — How the persona communicates
-- **Context to reference** — Which company docs inform decisions
+- **Context to reference** — Which company docs inform decisions (via `depends_on` metadata)
 
 ---
 
-## The Inner Circle (Personal Support)
+## Two Types of Roles
 
-These roles serve YOU directly as founder/CEO.
+### The Inner Circle (Personal Support)
 
-| Role | File | Core Focus | Inspired By |
-|------|------|------------|-------------|
-| **Performance Coach** | `performance-coach-v1.md` | Peak performance, psychological insight, founder mental health | Dr. Wendy Rhoades (Billions), Denise Shull, Tony Robbins |
-| **Consigliere** | `consigliere-v1.md` | Fierce loyalty, ruthless execution, uncomfortable truths | Mike "Wags" Wagner (Billions), Tom Hagen |
+These roles serve YOU directly as founder/CEO. They focus on your performance, your decisions, and your psychological state.
 
-**When to use the Inner Circle:**
-- "I need to talk through something I can't tell anyone else" → Performance Coach
-- "What's the uncomfortable truth I need to hear?" → Consigliere
-- "I'm stuck and I don't know why" → Performance Coach
-- "Handle this for me — I don't want to be involved" → Consigliere
+Use the **[advisor-role-template-v1.md](advisor-role-template-v1.md)** to create these.
+
+**Suggested roles to create:**
+
+| Role | Core Focus | When to Use |
+|------|-----------|-------------|
+| **Performance Coach** | Peak performance, psychological insight, founder mental health | "I'm stuck and I don't know why" |
+| **Consigliere** | Fierce loyalty, uncomfortable truths, ruthless execution | "What's the uncomfortable truth I need to hear?" |
+| **Strategic Advisor** | Long-term thinking, board-level perspective, pattern matching | "Am I thinking about this the right way?" |
+| **Thinking Partner** | Assumption testing, devil's advocate, intellectual sparring | "Challenge my reasoning on this" |
+
+### The Executive Team (Functional Expertise)
+
+These roles provide world-class expertise in specific business functions. They serve the FUNCTION, not the founder personally.
+
+Use the **[executive-role-template-v1.md](executive-role-template-v1.md)** to create these.
+
+**Suggested roles to create:**
+
+| Role | Core Focus | When to Use |
+|------|-----------|-------------|
+| **CFO** | Unit economics, cash flow, pricing, capital allocation | Financial decisions, investment analysis |
+| **COO** | Operations, capacity planning, delivery efficiency | Process design, scaling decisions |
+| **CTO** | Technical architecture, build-vs-buy, engineering strategy | Product and technical decisions |
+| **CMO** | Brand, demand generation, marketing strategy | Marketing and positioning decisions |
+| **CRO** | Sales, pipeline, revenue growth, deal strategy | Revenue and go-to-market decisions |
+| **Chief of Staff** | Strategic priorities, cross-functional alignment | Prioritization, planning cycles |
+| **VP People** | Hiring, org design, culture, performance management | People and organization decisions |
 
 ---
 
-## The Executive Team (Functional Expertise)
-
-These roles provide expertise in specific business functions.
-
-| Role | File | Core Focus | Key Leaders |
-|------|------|------------|-------------|
-| **COO** | `coo-v1.md` | Operations, capacity, delivery efficiency, systems | Keith Rabois, Claire Hughes Johnson, Andy Grove |
-| **CFO** | `cfo-v1.md` | Unit economics, cash flow, pricing | Amy Hood, Ruth Porat, Warren Buffett |
-| **CTO** | `cto-v1.md` | Product (CheckThat), platform, AI workflows | Werner Vogels, Will Larson, Greg Brockman |
-| **CRO** | `cro-v1.md` | Sales, pipeline, revenue growth | Mark Roberge, Aaron Ross, John McMahon |
-| **Chief of Staff** | `chief-of-staff-v1.md` | Strategic priorities, cross-functional alignment | James Baker, Rahm Emanuel, Kevin Fishner |
-| **VP People** | `vp-people-v1.md` | Hiring, org design, culture | Patty McCord, Laszlo Bock, Molly Graham |
-| **CMO** | `cmo-v1.md` | Brand, demand generation, marketing strategy | Chris Walker, Dave Gerhardt, April Dunford |
-| **AEO Expert** | `aeo-expert-v1.md` | AI visibility, AEO methodology, prompt strategy, CheckThat domain | Overthink Group, Rand Fishkin, Conductor, Lily Ray |
-
----
-
-## How to Use
+## How to Use Roles
 
 **For personal support:**
 ```
-@context/roles/performance-coach-v1.md - I'm in my head about a decision and can't move forward. Help me see what's going on.
-```
-
-**For uncomfortable truth:**
-```
-@context/roles/consigliere-v1.md - What's the thing no one is telling me about this situation?
+@context/roles/[your-coach-role].md - I'm in my head about a decision and can't move forward. Help me see what's going on.
 ```
 
 **For functional expertise:**
 ```
-@context/roles/coo-v1.md - Review our capacity plan for Q2. Do we have enough resources?
+@context/roles/[your-cfo-role].md - Review the unit economics of this initiative.
 ```
 
-**For multiple perspectives:**
+**For multiple perspectives (role stacking):**
 ```
-@context/roles/coo-v1.md @context/roles/cfo-v1.md - We're considering hiring 3 more editors. Walk me through the ops and financial implications.
-```
-
-**For AEO and AI visibility strategy:**
-```
-@context/roles/aeo-expert-v1.md - Audit this brand's AI visibility. Where are the gaps and what content should we create?
+@context/roles/[your-coo-role].md @context/roles/[your-cfo-role].md - We're considering hiring 3 more people. Walk me through the ops and financial implications.
 ```
 
 **To channel a specific leader:**
 ```
-@context/roles/cro-v1.md - Think through this deal like Mark Roberge would.
-```
-
-**For the Billions approach:**
-```
-@context/roles/performance-coach-v1.md - Give me the Wendy Rhoades perspective on this.
-@context/roles/consigliere-v1.md - Give me the Wags perspective. What would we do if we weren't being diplomatic?
+@context/roles/[your-cro-role].md - Think through this deal the way [Leader Name] would.
 ```
 
 ---
@@ -108,48 +104,7 @@ These roles provide expertise in specific business functions.
 
 ---
 
-## What's Included in Each Role
-
-**Inner Circle roles contain:**
-- Character archetype and inspiration
-- Coaching/advising philosophy
-- Mental models for personal effectiveness
-- Voice and communication style
-- Specific interventions for common founder struggles
-- Example triggers
-
-**Executive Team roles contain:**
-- Leaders to channel (with why to study them)
-- Decision frameworks with GrowthX applications
-- Mental models for how great operators think
-- Essential reading (books, podcasts, articles)
-- Voice and signature questions
-- Example triggers
-
----
-
-## Research Outputs
-
-Detailed research for each role is saved in `/outputs`:
-- `wendy-rhoades-character-research-v1.md` — Deep character study
-- `wags-character-research-v1.md` — Deep character study
-- `cfo-research-summary-v1.md`
-- `cto-research-for-ai-persona-v1.md`
-- `cro-research-for-ai-persona-v1.md`
-- `cmo-research-summary-v1.md`
-- `chief-of-staff-research-v1.md`
-
----
-
-## Maintaining Roles
-
-- **Minor updates:** Edit the role file directly, update `last_updated`
-- **Major changes:** Create a new version (`-v2`), move old version to `/archive`
-- **Adding new roles:** Follow the template structure in existing files
-
----
-
-## Role Composition & Stacking
+## Role Composition and Stacking
 
 Sometimes one role isn't enough. Here's how to combine them.
 
@@ -167,8 +122,6 @@ Sometimes one role isn't enough. Here's how to combine them.
 | Hiring decisions | VP People | COO | Culture fit meets capacity planning |
 | Pricing changes | CFO | CRO | Margin impact meets sales reality |
 | Go-to-market | CMO | CRO | Brand strategy meets pipeline reality |
-| Client escalation | COO | Consigliere | Process meets political judgment |
-| Product strategy | CTO | AEO Expert | Platform vision meets market positioning |
 | Founder overwhelm | Performance Coach | Chief of Staff | Inner clarity meets external prioritization |
 | Hard conversations | Consigliere | VP People | Truth-telling meets people sensitivity |
 
@@ -177,26 +130,38 @@ Sometimes one role isn't enough. Here's how to combine them.
 When stacked roles disagree (and they should):
 
 1. **Name the tension** — "The CFO says no based on margins. The CRO says yes based on pipeline. Here's the tradeoff."
-2. **Identify the constraint** — Which role's concern is the binding constraint? Cash is usually the binding constraint over growth.
+2. **Identify the constraint** — Which role's concern is the binding constraint?
 3. **Time-horizon test** — Short-term vs. long-term. The CFO often wins short-term, the CTO wins long-term.
-4. **Ask the CEO** — Present the tension clearly and let Marcel decide. Don't resolve it silently.
+4. **Ask the CEO** — Present the tension clearly and let the founder decide. Don't resolve it silently.
 
-### Context Dependencies
+---
 
-Each role works better with specific docs loaded alongside it:
+## The `depends_on` Metadata Field
 
-| Role | Always Load With | Load If Relevant |
-|------|-----------------|-----------------|
-| CFO | `docs/finance/fiscal-plan-2026-v2.md` | `docs/business/business-model.md` |
-| COO | `docs/delivery/teams-and-operations.md` | `docs/delivery/8-week-plan-v1.md` |
-| CTO | `docs/products/ecosystem-strategy.md` | `docs/products/checkthat/product-vision-v1.md` |
-| CRO | `docs/business/ideal-customer-profile.md` | `docs/business/customer-lifecycle.md` |
-| CMO | `docs/business/overview.md` | `context/voice/writing-style-context-v2.md` |
-| Chief of Staff | `docs/company/vision-and-strategy.md` | `docs/company/strategy-overview.md` |
-| VP People | `docs/company/culture-and-values.md` | `docs/people/` |
-| AEO Expert | `knowledge/aeo/README.md` | `docs/products/checkthat/product-vision-v1.md` |
-| Performance Coach | `context/personal/marcel-santilli-user-manual-v1.md` | `context/personal/marcel-santilli-psychological-profile-v1.md` |
-| Consigliere | `context/personal/marcel-santilli-user-manual-v1.md` | `docs/company/vision-and-strategy.md` |
+Each role works better when specific docs are loaded alongside it. The `depends_on` field in a role's metadata lists required co-loading docs.
+
+**How it works:**
+- `depends_on` = docs that MUST be loaded with this role for it to function
+- `related` = docs that are USEFUL but not required
+
+**Example:**
+```xml
+<metadata>
+depends_on: docs/finance/fiscal-plan.md, docs/business/business-model.md
+related: context/roles/cro-v1.md
+</metadata>
+```
+
+When an agent sees `depends_on`, it should load those files before activating the role. This ensures the persona has the company context it needs to give relevant advice.
+
+---
+
+## Getting Started
+
+1. **Start with 2-3 roles** — Don't build all 10 at once. Start with the roles you'd use most.
+2. **Fill in the templates completely** — Half-filled templates produce half-quality personas. The Leaders to Channel and Decision Frameworks sections matter most.
+3. **Test with real decisions** — After creating a role, test it with a decision you already made. Does it give you the analysis you'd want?
+4. **Iterate** — Roles improve with use. When a role misses something, add it to the file.
 
 ---
 
@@ -209,3 +174,7 @@ Each role works better with specific docs loaded alongside it:
 **Stacking roles** gives you the multi-perspective analysis that real leadership teams provide — without the politics.
 
 Together, they're your virtual leadership team — available on demand, no politics, no filters.
+
+---
+
+See [INDEX.md](INDEX.md) for a complete file listing.

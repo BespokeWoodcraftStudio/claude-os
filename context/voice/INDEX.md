@@ -6,15 +6,14 @@ See [README.md](README.md) for an overview of this directory.
 
 ## Files
 
-| File | Type |
-|---|---|
-| [README.md](README.md) | Directory overview |
-| [writing-style-context-v2.md](writing-style-context-v2.md) | Style guide (current) |
-| [marcel-linkedin-style-guide-v1.md](marcel-linkedin-style-guide-v1.md) | Marcel's LinkedIn voice |
+| File | Summary | Tier |
+|------|---------|------|
+| [README.md](README.md) | Directory overview | 0 |
+| [writing-style-context-v1.md](writing-style-context-v1.md) | Definitive voice and style guide for all content | 1 |
+| [social-media-style-guide-template-v1.md](social-media-style-guide-template-v1.md) | Platform-agnostic social media voice guide and post templates | 2 |
 
 ## archive/
 
-| File | Type |
-|---|---|
-| [archive/writing-style-context-v1.md](archive/writing-style-context-v1.md) | Style guide (v1) |
-| [archive/writing-style-raw.md](archive/writing-style-raw.md) | Raw notes |
+| File | Summary | Tier |
+|------|---------|------|
+| archive/.gitkeep | Placeholder | -- |

@@ -1,23 +1,22 @@
-# Index: docs/finance/
+<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
 
-> Complete file listing for `/docs/finance/`
+# Finance — Index
 
-See [README.md](README.md) for an overview of this directory.
+<metadata>
+purpose: Complete file listing for docs/finance/
+audience: AI agents and humans navigating finance docs
+summary: Index of financial documents — fiscal plans and board meeting templates.
+token_estimate: small
+depends_on: []
+related: README.md
+domain: finance
+confidence: canonical
+context_tier: 1
+last_updated: 2026-02-18
+</metadata>
 
-## Files
-
-| File | Type |
-|---|---|
-| [README.md](README.md) | Directory overview |
-| [2025-year-end-recap.md](2025-year-end-recap.md) | Year-end recap |
-| [fiscal-plan-2025.md](fiscal-plan-2025.md) | 2025 fiscal plan |
-| [fiscal-plan-2026-v2.md](fiscal-plan-2026-v2.md) | 2026 fiscal plan (current) |
-| [growth-and-valuation.md](growth-and-valuation.md) | Growth metrics and valuation |
-| [loc-offers.md](loc-offers.md) | Line of credit offers |
-| [market-size-and-opportunity.md](market-size-and-opportunity.md) | TAM/SAM/SOM analysis |
-| [organic-growth-strategy.md](organic-growth-strategy.md) | Organic growth strategy |
-| [pricing-and-monetization-strategy.md](pricing-and-monetization-strategy.md) | Pricing and monetization |
-| [q1-2025-board-meeting.md](q1-2025-board-meeting.md) | Q1 2025 board meeting |
-| [q2-2025-board-meeting.md](q2-2025-board-meeting.md) | Q2 2025 board meeting |
-| [q3-2025-board-meeting.md](q3-2025-board-meeting.md) | Q3 2025 board meeting |
-| [q4-2025-board-meeting.md](q4-2025-board-meeting.md) | Q4 2025 board meeting |
+| File | Summary | Tier |
+|------|---------|------|
+| `README.md` | Directory overview, sensitivity note | 1 |
+| `fiscal-plan-template.md` | Template for annual/quarterly fiscal planning | 2 |
+| `board-meeting-template.md` | Template for quarterly board meeting materials | 2 |

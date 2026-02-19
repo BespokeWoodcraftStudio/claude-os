@@ -1,28 +1,29 @@
+<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
+
 # Start Here
 
 <metadata>
 purpose: New hire entry point and comprehensive onboarding guide
 audience: New hires, all team members
-related: company/vision-and-strategy.md, business/overview.md, company/culture-and-values.md
+summary: The starting point for understanding [YOUR COMPANY] — who we are, how we work, and where to find everything.
+token_estimate: medium
+depends_on: []
+related: company/mission-and-vision.md, business/business-model.md, company/culture-and-values.md
 domain: company
 confidence: canonical
-sensitivity: internal
 context_tier: 1
-last_updated: 2026-02-09
+last_updated: 2026-02-18
 </metadata>
 
-Welcome to GrowthX. This is your starting point for understanding who we are, how we work, and where to find everything you need.
+Welcome to [YOUR COMPANY]. This is your starting point for understanding who we are, how we work, and where to find everything you need.
 
 ---
 
-## What is GrowthX?
+## What is [YOUR COMPANY]?
 
-GrowthX runs two engines:
+<!-- Example: YourCo helps mid-market B2B companies grow through content marketing and AI-powered workflows. -->
 
-- **GrowthX (services)**: B2B content marketing. We help tech companies grow through content. $200k+/year engagements. This is the main revenue driver.
-- **CheckThat (software)**: Open AI visibility index for B2B. Our strategic product bet.
-
-We help B2B tech companies grow through content. Content is the atomic unit. Websites are the destination.
+[FILL IN: One paragraph describing what your company does, who you serve, and what makes you different.]
 
 ---
 
@@ -35,29 +36,31 @@ We help B2B tech companies grow through content. Content is the atomic unit. Web
    - [Mission and Vision](company/mission-and-vision.md) — Why we exist
    - [Culture and Values](company/culture-and-values.md) — How we operate
 3. **Understand how we communicate:**
-   - [Slack Guide](how-we-work/slack.md) — Where conversations happen
    - [Async Communication](how-we-work/async-communication.md) — Our async-first culture
+   - [Meetings](how-we-work/meetings.md) — How we run meetings
 
 ### Days 2-3: Understand the Business
 
 1. **Learn how we make money:**
-   - [Business Overview](business/overview.md) — The business at a glance
+   - [Business Model](business/business-model.md) — The business at a glance
    - [Ideal Customer Profile](business/ideal-customer-profile.md) — Who we serve
 2. **Understand our products:**
-   - [Product Ecosystem Strategy](products/ecosystem-strategy.md) — Our multi-product approach
+   - [Product Overview](products/product-overview-template.md) — What we build
 
 ### Days 4-5: Go Deeper on Your Role
 
-**If you're in Delivery:**
-- [Delivery Teams & Operations](delivery/teams-and-operations.md) — How delivery works
-- [Deliver Bootcamp](people/onboarding/deliver-bootcamp.md) — Your intensive onboarding
+[FILL IN: Add role-specific onboarding paths. Example sections below.]
 
-**If you're in EPD:**
-- [EPD Overview](epd/README.md) — Engineering, Product, Design
-- [How We Build](epd/product-lane-dev-process-v1.md) — Shape Up methodology
+**If you're in Delivery:**
+- [Teams & Operations](delivery/teams-and-operations.md) — How delivery works
+- [Client Onboarding](delivery/client-onboarding-template.md) — How we onboard new clients
+
+**If you're in Engineering:**
+- [Dev Process](epd/dev-process.md) — How we build software
+- [Tech Stack](epd/tech-stack.md) — Our technical architecture
 
 **For everyone:**
-- [Company-Wide Onboarding](people/onboarding/company-wide.md) — Full onboarding checklist
+- [Onboarding Guide](people/onboarding.md) — Full onboarding checklist
 
 ---
 
@@ -69,10 +72,10 @@ docs/
 ├── people/        ← HR, policies, onboarding
 ├── how-we-work/   ← Communication, meetings, tools
 ├── business/      ← Business model, ICP, customer lifecycle
-├── sales/         ← Pre-sales (coming soon)
+├── sales/         ← Pre-sales process
 ├── delivery/      ← Post-sales, client operations
 ├── epd/           ← Engineering, Product, Design team
-├── products/      ← Product documentation (CheckThat, ContentOS, Output)
+├── products/      ← Product documentation
 └── finance/       ← Board meetings, fiscal plans
 ```
 
@@ -86,11 +89,11 @@ We're distributed. Write things down instead of scheduling meetings. If it's not
 
 ### 2. Document Everything
 
-Our handbook is a living document. If you can't find something, ask—then document the answer.
+Our handbook is a living document. If you can't find something, ask — then document the answer.
 
 ### 3. Client Obsession
 
-In delivery, the client comes first. EMs own the relationship end-to-end. We're accountable for their success.
+[FILL IN: Your version of client-first philosophy.]
 
 ### 4. System Thinking
 
@@ -104,52 +107,31 @@ We bias toward action. Make decisions with ~70% certainty. Course-correct as you
 
 ## Essential Policies
 
-- [Code of Conduct](people/policies/code-of-conduct.md) — Ethical standards
-- [Time Off](people/policies/time-off.md) — Unlimited PTO guidelines
-- [Parental Leave](people/policies/parental-leave.md) — Leave details
+- [Code of Conduct](people/code-of-conduct.md) — Ethical standards
+- [Time Off Policy](people/time-off-policy.md) — PTO guidelines
+- [Onboarding](people/onboarding.md) — Getting started
 
 ---
 
 ## Tools We Use
 
+[FILL IN: List your primary tools. Example:]
+
 - **Slack** — Primary communication
 - **Notion** — Documentation and project management
 - **GitHub** — Code and technical documentation
-- **ContentOS** — Our content operations platform
+- **[YOUR TOOL]** — [FILL IN: Description]
 
 ---
 
 ## Getting Help
 
+[FILL IN: Where to go for different types of questions. Example:]
+
 - **General questions:** Ask in #general on Slack
 - **HR/People:** Your manager or HR lead
 - **Technical:** #engineering on Slack
 - **Client work:** Your pod or engagement manager
-
----
-
-## Quick Links by Role
-
-### Delivery Team
-| Doc | Why |
-|-----|-----|
-| [Teams & Operations](delivery/teams-and-operations.md) | How pods work |
-| [Week 00 Prep](delivery/week-00-prep.md) | Pre-kickoff checklist |
-| [Customer Lifecycle](business/customer-lifecycle.md) | Client journey |
-
-### Engineering/Product
-| Doc | Why |
-|-----|-----|
-| [EPD README](epd/README.md) | Start here |
-| [Product Ecosystem](products/ecosystem-strategy.md) | Multi-product strategy |
-| [Dev Process](epd/product-lane-dev-process-v1.md) | How we ship |
-
-### Leadership
-| Doc | Why |
-|-----|-----|
-| [Strategy Overview](company/strategy-overview.md) | Company direction |
-| [Business Model](business/business-model.md) | How we make money |
-| [Fiscal Plan](finance/fiscal-plan-2026-v2.md) | Current financials |
 
 ---
 
@@ -166,4 +148,4 @@ These live outside `/docs` and serve different purposes:
 
 ---
 
-Welcome to the team. We're glad you're here.
+Welcome to the team.

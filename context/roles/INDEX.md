@@ -1,27 +1,19 @@
-# Index: roles/
+# Index: context/roles/
 
-> Complete file listing for `/roles/`
+> Complete file listing for `/context/roles/`
 
 See [README.md](README.md) for an overview of this directory.
 
 ## Files
 
-| File | Type |
-|---|---|
-| [README.md](README.md) | Directory overview |
-| [aeo-expert-v1.md](aeo-expert-v1.md) | AI persona |
-| [cfo-v1.md](cfo-v1.md) | AI persona |
-| [chief-of-staff-v1.md](chief-of-staff-v1.md) | AI persona |
-| [cmo-v1.md](cmo-v1.md) | AI persona |
-| [consigliere-v1.md](consigliere-v1.md) | AI persona |
-| [coo-v1.md](coo-v1.md) | AI persona |
-| [cro-v1.md](cro-v1.md) | AI persona |
-| [cto-v1.md](cto-v1.md) | AI persona |
-| [performance-coach-v1.md](performance-coach-v1.md) | AI persona |
-| [vp-people-v1.md](vp-people-v1.md) | AI persona |
+| File | Summary | Tier |
+|------|---------|------|
+| [README.md](README.md) | Directory overview — role types, stacking, usage guide | 0 |
+| [executive-role-template-v1.md](executive-role-template-v1.md) | Template for functional executive roles (CFO, CMO, COO, CTO, CRO, etc.) | 1 |
+| [advisor-role-template-v1.md](advisor-role-template-v1.md) | Template for inner circle advisory roles (coach, consigliere, advisor) | 1 |
 
 ## archive/
 
-| File | Type |
-|---|---|
-| archive/.gitkeep | Placeholder |
+| File | Summary | Tier |
+|------|---------|------|
+| archive/.gitkeep | Placeholder | -- |

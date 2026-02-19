@@ -1,14 +1,18 @@
+<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
+
 # Context Routing Guide
 
 <metadata>
 purpose: Detailed routing rules for AI agents navigating this knowledge base
 audience: AI agents (Cursor, Claude Code) and humans designing agent workflows
-related: CLAUDE.md, context/README.md, pipeline/README.md
+summary: Explains HOW to load context efficiently — tiered loading, task stacks, sensitivity rules, and navigation patterns.
+token_estimate: large
+depends_on: []
+related: ../CLAUDE.md, ../context/README.md, ../pipeline/README.md
 domain: company
 confidence: canonical
-sensitivity: internal
 context_tier: 1
-last_updated: 2026-02-09
+last_updated: 2026-02-18
 </metadata>
 
 CLAUDE.md tells agents what exists and when to load it. This doc explains HOW to load context efficiently and what to watch out for.
@@ -38,18 +42,18 @@ Each task type has a recommended loading sequence. Load files in order — stop 
 
 ```
 1. context/voice/writing-style-context-v2.md     (always — the definitive guide)
-2. context/personal/marcel-linkedin-style-guide-v1.md  (if LinkedIn post)
-3. docs/business/overview.md                      (if about GrowthX)
-4. docs/products/checkthat/product-vision-v1.md   (if about CheckThat)
-5. knowledge/aeo/README.md                        (if about AEO/AI visibility)
+2. [FILL IN: Additional style guides for specific channels]
+3. docs/business/business-model.md                (if about [YOUR COMPANY])
+4. docs/products/product-overview-template.md     (if about a specific product)
+5. knowledge/domain/                              (if about your domain expertise)
 ```
 
 ### Answering Company Questions
 
 ```
 1. docs/start-here.md                             (orientation)
-2. docs/company/vision-and-strategy.md            (if strategy question)
-3. docs/business/overview.md                      (if business model question)
+2. docs/company/strategy-overview.md              (if strategy question)
+3. docs/business/business-model.md                (if business model question)
 4. docs/business/ideal-customer-profile.md        (if ICP/sales question)
 5. docs/delivery/                                 (if about how we deliver)
 6. docs/finance/                                  (if financial — flag sensitivity)
@@ -59,10 +63,10 @@ Each task type has a recommended loading sequence. Load files in order — stop 
 
 ```
 1. context/roles/[relevant-role]-v1.md            (load the right persona)
-2. docs/company/vision-and-strategy.md            (strategic context)
-3. docs/business/overview.md                      (business context)
-4. docs/finance/fiscal-plan-2026-v2.md            (if financial implications)
-5. context/personal/marcel-santilli-user-manual-v1.md  (if advising Marcel directly)
+2. docs/company/strategy-overview.md              (strategic context)
+3. docs/business/business-model.md                (business context)
+4. docs/finance/fiscal-plan-template.md           (if financial implications)
+5. context/personal/[user-manual].md              (if advising the founder directly)
 ```
 
 ### Research / Deep Dives
@@ -100,7 +104,7 @@ Some content requires caution. When in doubt, ask before generating.
 
 | Level | What It Means | Directories | Action |
 |-------|--------------|-------------|--------|
-| **Public** | Can be shared externally | docs/products/checkthat/public/, knowledge/ | Generate freely |
+| **Public** | Can be shared externally | knowledge/, docs/products/[public content] | Generate freely |
 | **Internal** | Company-internal, not secret | docs/company/, docs/business/, docs/delivery/, context/ | Generate freely, don't share externally |
 | **Leadership-only** | Financial, strategic, sensitive | docs/finance/, context/personal/ | Flag before generating. Don't include in outputs without asking. |
 
@@ -134,7 +138,7 @@ pipeline/research/  →  pipeline/scratchpad/  →  pipeline/outputs/
 source_skill: research-to-study-guide
 input_files: [pipeline/research/topic-raw-notes.md]
 output_stage: scratchpad
-last_updated: 2026-02-09
+last_updated: 2026-02-18
 </metadata>
 ```
 
@@ -142,13 +146,13 @@ last_updated: 2026-02-09
 
 ## Records: Search Protocol
 
-The `records/` directory contains 500+ files. Never bulk-load them.
+The `records/` directory can contain hundreds of files. Never bulk-load them.
 
-| Directory | Size | How to Access |
-|-----------|------|--------------|
-| `records/transcripts/` | 55+ meeting files | Search by date (YYYY-MM-DD prefix) or grep for keywords |
-| `records/customers/` | 50+ files | Navigate to `records/customers/[client]/` for client context |
-| `records/downloads/` | 400+ files | Grep for topics. Most are Lenny's Podcast transcripts. |
+| Directory | How to Access |
+|-----------|--------------|
+| `records/transcripts/` | Search by date (YYYY-MM-DD prefix) or grep for keywords |
+| `records/customers/` | Navigate to `records/customers/[client]/` for client context |
+| `records/downloads/` | Grep for topics. Never read all at once. |
 
 **Search strategy:**
 1. Use grep/search with specific keywords — never `read *`
@@ -167,7 +171,7 @@ The `records/` directory contains 500+ files. Never bulk-load them.
 3. Check the README.md in the most relevant directory
 4. Search/grep for keywords across the repo
 
-### "I need to understand GrowthX"
+### "I need to understand [YOUR COMPANY]"
 
 Start at `docs/start-here.md`. It links to everything else.
 
@@ -177,7 +181,7 @@ Always load `context/voice/writing-style-context-v2.md` before writing anything.
 
 ### "I need a persona for analysis"
 
-Pick from `context/roles/`. The README.md lists all 9 roles with when to use each one.
+Pick from `context/roles/`. The README.md lists all roles with when to use each one.
 
 ### "I found conflicting information"
 
@@ -193,13 +197,15 @@ Files use `<metadata>` XML tags for machine-readable context:
 
 ```xml
 <metadata>
-purpose: [1 sentence — what this file is for]
-audience: [who reads this]
-related: [2-4 relative paths to connected files]
-domain: [company|business|delivery|product|finance|aeo|writing|research]
-confidence: [canonical|current|research|aspirational]
-sensitivity: [public|internal|leadership-only]
-context_tier: [0|1|2|3]
+purpose: [What this file does]
+audience: [Who reads this]
+summary: [ONE sentence summary]
+token_estimate: [small/medium/large]
+depends_on: [Files that must co-load, if any]
+related: [Cross-references]
+domain: [company/product/writing/etc.]
+confidence: [canonical/current/draft]
+context_tier: [0/1/2/3]
 last_updated: [YYYY-MM-DD]
 </metadata>
 ```

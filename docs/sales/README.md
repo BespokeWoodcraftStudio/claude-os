@@ -1,3 +1,5 @@
+<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
+
 # Sales
 
 Pre-sales process, pipeline, and go-to-market.
@@ -6,18 +8,15 @@ Pre-sales process, pipeline, and go-to-market.
 
 ## Quick Summary
 
-This section will contain sales playbooks, pricing guides, and go-to-market documentation. Currently a placeholder for future content.
+This section contains sales documentation: the sales process, qualification criteria, and go-to-market materials.
 
 ---
 
-## Coming Soon
+## How to Navigate
 
-- Sales playbook
-- Pricing guide
-- Demo scripts
-- Objection handling
-- Qualification criteria
-- Proposal templates
+| If you want to understand... | Read this |
+|------------------------------|-----------|
+| Our sales process end-to-end | `sales-process.md` |
 
 ---
 
@@ -29,4 +28,4 @@ This section will contain sales playbooks, pricing guides, and go-to-market docu
 
 ---
 
-**Last updated:** February 2026
+**Last updated:** 2026-02-18

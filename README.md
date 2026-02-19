@@ -1,45 +1,76 @@
 # Context OS — Starter Kit
 
-A structured knowledge base template for companies that want AI agents to truly understand their business. Clone it, fill it in, and every AI tool you use — Claude, Cursor, Copilot, or anything else — can write in your voice, make decisions with your frameworks, and navigate your company knowledge.
+**The quality of your context determines the quality of your AI outputs.**
+
+Every AI agent, copilot, and assistant you use is only as good as the context you give it. Most teams dump unstructured docs into a folder and wonder why AI sounds generic. Context OS gives you a better way — a structured, opinionated system for organizing everything AI needs to know about you and your company.
+
+The result: AI that writes in your voice, thinks with your frameworks, and makes decisions like someone who actually works there.
 
 ---
 
-## Why This Exists
+## The Problem
 
-1. **AI can't match your voice.** Generic AI output sounds generic. Feed it structured context, and it writes like you.
-2. **Onboarding takes too long.** New hires spend weeks absorbing tribal knowledge. This repository gets them productive faster.
-3. **Knowledge lives in heads.** When people leave, knowledge leaves. This captures it.
+AI tools are powerful, but they start from zero every time. They don't know your voice, your strategy, your customers, or how you make decisions. So you get:
 
-The goal: anyone (human or AI) can understand your company and produce on-brand work by reading this repository.
+- **Generic outputs** that could have been written by anyone
+- **Repeated prompting** — re-explaining the same context over and over
+- **Inconsistent quality** — some outputs are great, most are mediocre
+- **Knowledge trapped in people's heads** — when someone leaves, the context leaves with them
+
+The fix isn't better prompts. It's better context.
 
 ---
 
-## What's Inside
+## What Context OS Does
+
+Context OS is a starter kit — a ready-to-fork repository structure that organizes your company's knowledge into a format AI agents can actually use. You fill in the templates with your information, and every AI tool you connect to it immediately gets smarter about your business.
+
+**Built for Claude Code, Claude Cowork, and Cursor.** The context is structured in plain markdown, so it works with any AI tool that can read files — but these three get first-class support.
+
+### What's inside
 
 ```
-├── agent-docs/        Task-specific AI agent configurations
-├── docs/              Company handbook (company, business, delivery, products, finance)
-├── context/           Prescriptive AI context (voice, roles, personal)
-├── knowledge/         Study guides and reference materials
-├── pipeline/          Work management (research → scratchpad → outputs)
-├── records/           Historical archives (search only)
+├── context/           How AI should behave (voice, roles, personal style)
+├── docs/              What's true about your company (handbook, strategy, products)
+├── knowledge/         Deep reference material (study guides, domain expertise)
+├── agent-docs/        Task-specific agent configurations
+├── pipeline/          Work-in-progress (research → scratchpad → outputs)
+├── records/           Historical archives (transcripts, customer notes)
 ├── sources/           Trusted people and sources indexes
+├── prompts/           Reusable prompt templates
+├── scripts/           Automation scripts
 ├── tests/             Context smoke tests
-├── CLAUDE.md          Claude Code entry point
+├── CLAUDE.md          Claude Code entry point (loaded automatically)
 ├── AGENTS.md          Cross-platform agent config
-└── SETUP.md           Comprehensive setup guide
+└── SETUP.md           Setup guide
 ```
+
+---
+
+## Why This Structure Matters
+
+Most knowledge bases are flat — a pile of docs with no hierarchy. AI agents waste tokens reading irrelevant content, miss important context, and produce inconsistent results.
+
+Context OS is designed around three principles:
+
+1. **Prescriptive context** (`context/`) tells agents HOW to act — your voice, your decision-making frameworks, your leadership style. This is what makes outputs sound like you instead of sounding like AI.
+
+2. **Reference context** (`docs/`, `knowledge/`) tells agents WHAT IS true — your business model, your customers, your strategy. This is what makes outputs accurate instead of generic.
+
+3. **Progressive disclosure** — agents scan summaries first, then load full files only when needed. Every directory has a `README.md` (what's here) and `INDEX.md` (file listing with summaries). No token waste.
+
+The result is AI that has the right context at the right time, without being overwhelmed by everything at once.
 
 ---
 
 ## Quick Start (15 Minutes)
 
-1. **Clone this repo** and open it in your editor
-2. **Open `CLAUDE.md`** — replace `[YOUR COMPANY]` with your company name and description
-3. **Fill in `context/voice/writing-style-context-v1.md`** — at minimum, define your voice and list 3-5 style anchors
-4. **Fill in `docs/company/mission-and-vision.md`** — your mission, vision, and core beliefs
-5. **Create your first role** — copy `context/roles/executive-role-template-v1.md` and fill it in for your most-needed executive persona
-6. **Test it** — open Claude or Cursor, point it at your repo, and ask it a question about your company
+1. **Fork or clone this repo**
+2. **Open `CLAUDE.md`** — replace `[YOUR COMPANY]` with your company name and fill in the placeholders
+3. **Define your voice** — fill in `context/voice/writing-style-context-v1.md` with how you write and speak
+4. **Add your basics** — fill in `docs/company/mission-and-vision.md` with your mission and vision
+5. **Create your first role** — copy `context/roles/executive-role-template-v1.md` and customize it for your most-needed AI persona
+6. **Test it** — open Claude Code, Claude Cowork, or Cursor pointed at your repo and ask it a question about your company
 
 For the full setup guide, see [SETUP.md](SETUP.md).
 
@@ -48,18 +79,13 @@ For the full setup guide, see [SETUP.md](SETUP.md).
 ## How It Works
 
 ### For AI Agents
-AI agents read `CLAUDE.md` first (loaded automatically). Based on the task, they load a specific agent config from `agent-docs/` which tells them exactly which context files to read. This means agents only load what's relevant — no wasted tokens on irrelevant context.
+AI agents read `CLAUDE.md` first (loaded automatically). Based on the task, they load a specific agent config from `agent-docs/` which tells them exactly which context files to read. Agents only load what's relevant — no wasted tokens on irrelevant context.
 
 ### For Humans
-Every directory has `README.md` (what's here, why) and `INDEX.md` (file listing with one-line summaries). Start at `docs/start-here.md` for onboarding.
+Every directory has `README.md` (what's here, why) and `INDEX.md` (file listing with summaries). Start at `docs/start-here.md` for onboarding.
 
-### The Key Patterns
-
-- **Prescriptive context** (`context/`) tells agents HOW to act — voice, roles, personal style
-- **Reference docs** (`docs/`, `knowledge/`) tell agents WHAT IS true about the company
-- **Progressive disclosure** — agents scan summaries first, then load full files only when needed
-- **Forward-only pipeline** — work flows research → scratchpad → outputs, never backward
-- **Metadata everywhere** — every file has machine-readable tags for routing and navigation
+### The Pipeline
+Work flows forward only: `research/` → `scratchpad/` → `outputs/`. Raw research gets refined into working drafts, then polished into final deliverables. This mirrors how good thinking actually works.
 
 ---
 
@@ -68,8 +94,9 @@ Every directory has `README.md` (what's here, why) and `INDEX.md` (file listing 
 | Tool | Configuration |
 |------|---------------|
 | Claude Code | `CLAUDE.md` (loaded automatically) |
+| Claude Cowork | `CLAUDE.md` (loaded automatically) |
 | Cursor | `.cursor/rules/` and `.cursor/skills/` |
-| Other AI agents | `AGENTS.md` (cross-platform standard) |
+| Other AI tools | `AGENTS.md` (cross-platform standard) |
 
 ---
 

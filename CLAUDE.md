@@ -44,6 +44,15 @@ Load the right agent config for your task:
    d. Never skip steps. Never save directly to `knowledge/` without going through `pipeline/` first.
    e. Load `agent-docs/research-agent.md` for full instructions.
 
+## Git Workflow
+
+**After every change, commit and push to GitHub.** When you create, edit, or delete files in this repo, immediately:
+1. Stage the changed files
+2. Commit with a clear, descriptive message
+3. Push to origin
+
+Do not wait for the user to ask. Do not batch changes across separate tasks. Each logical unit of work gets its own commit and push.
+
 ## File Structure
 
 Every directory has `README.md` (what's here, why) and `INDEX.md` (file listing with summaries).

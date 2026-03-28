@@ -1,4 +1,3 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
 
 # How We Work
 
@@ -8,7 +7,7 @@ Communication, meetings, tools, and collaboration practices.
 
 ## Quick Summary
 
-This section covers the mechanics of working at [YOUR COMPANY]: how we communicate, run meetings, use tools, and document our work. Read this to understand our operating rhythm.
+This section covers the mechanics of working at Bespoke Woodcraft Studio: how we communicate, run meetings, use tools, and document our work. Read this to understand our operating rhythm.
 
 ---
 

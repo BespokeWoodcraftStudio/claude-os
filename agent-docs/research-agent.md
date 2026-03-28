@@ -1,6 +1,5 @@
 # Research Agent Configuration
 
-<!-- TEMPLATE: Update file paths and add your company-specific research conventions. Delete this comment when done. -->
 
 <metadata>
 purpose: Context loading instructions for research and learning tasks

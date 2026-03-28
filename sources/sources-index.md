@@ -1,17 +1,15 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
 # Sources Index: Trusted Sources
 
 <metadata>
-purpose: Curated list of publications, newsletters, podcasts, books, and tools you trust
+purpose: Curated list of publications, newsletters, podcasts, books, and tools we trust for woodworking content and creative business
 audience: Team members and AI agents looking for authoritative sources
-summary: Template for organizing trusted information sources by type — newsletters, podcasts, books, publications, tools, communities.
+summary: Trusted information sources organized by type — newsletters, podcasts, books, publications, tools, communities — focused on woodworking, maker culture, content creation, and creative business.
 token_estimate: medium
 related: sources/people-index.md
 domain: research
 confidence: draft
 context_tier: 3
-last_updated: 2026-02-18
+last_updated: 2026-03-27
 </metadata>
 
 ---
@@ -21,7 +19,7 @@ last_updated: 2026-02-18
 Start with the 20-30 sources you actually return to, then expand to ~100 over time. Curate based on:
 1. Signal-to-noise ratio (high value per piece)
 2. Actionability (specific, not just conceptual)
-3. Relevance to your stage and challenges
+3. Relevance to content creation for woodworkers and makers
 4. Update frequency (for time-sensitive topics)
 
 ---
@@ -30,22 +28,24 @@ Start with the 20-30 sources you actually return to, then expand to ~100 over ti
 
 Regular reading that compounds over time.
 
-### Operator & Strategy Newsletters
+### Content Strategy & Creator Economy Newsletters
 
 | # | Source | Author/Org | Why You Trust It |
 |---|--------|------------|-----------------|
-| 1 | [FILL IN: e.g., Lenny's Newsletter] | [FILL IN: e.g., Lenny Rachitsky] | [FILL IN: e.g., Best product/growth interviews; tactical depth] |
-| 2 | [FILL IN: e.g., First Round Review] | [FILL IN: e.g., First Round Capital] | [FILL IN: e.g., Long-form operator interviews; tactics] |
-| 3 | [FILL IN: e.g., Stratechery] | [FILL IN: e.g., Ben Thompson] | [FILL IN: e.g., Tech strategy analysis; frameworks] |
-| | [ADD YOUR TRUSTED OPERATOR NEWSLETTERS] | | |
+| 1 | Creator Science | Jay Clouse | Data-driven creator growth insights; interviews with top creators |
+| 2 | The Futur | Chris Do | Creative business strategy; pricing, positioning, client work |
+| 3 | Ali Abdaal's Sunday Snippets | Ali Abdaal | YouTube growth strategies; transparent about what works |
+| 4 | Paddy Galloway's newsletter | Paddy Galloway | YouTube analytics and strategy breakdowns; data-backed |
+| | Add more trusted content strategy newsletters | | |
 
-### Industry-Specific Newsletters
+### Woodworking & Maker Industry Newsletters
 
 | # | Source | Author/Org | Why You Trust It |
 |---|--------|------------|-----------------|
-| 1 | [FILL IN: newsletter relevant to your industry] | [FILL IN] | [FILL IN] |
-| 2 | [FILL IN: newsletter relevant to your industry] | [FILL IN] | [FILL IN] |
-| | [ADD YOUR INDUSTRY NEWSLETTERS] | | |
+| 1 | Fine Woodworking newsletter | Taunton Press | Industry benchmark for quality woodworking content and techniques |
+| 2 | Popular Woodworking newsletter | Popular Woodworking | Broad coverage of techniques, tools, and maker trends |
+| 3 | Wood Magazine digital updates | Meredith/Wood Magazine | Project ideas and tool reviews with wide readership |
+| | Add more woodworking industry newsletters | | |
 
 ---
 
@@ -53,21 +53,24 @@ Regular reading that compounds over time.
 
 Deep dives and interviews for commutes and focused listening.
 
-### Operator & Business Podcasts
+### Content Creation & Business Podcasts
 
 | # | Source | Host(s) | Why You Trust It |
 |---|--------|---------|-----------------|
-| 1 | [FILL IN: e.g., Acquired] | [FILL IN: e.g., Ben Gilbert, David Rosenthal] | [FILL IN: e.g., Company deep dives; history] |
-| 2 | [FILL IN: e.g., The Knowledge Project] | [FILL IN: e.g., Shane Parrish] | [FILL IN: e.g., Decision-making; mental models] |
-| 3 | [FILL IN: e.g., Founders] | [FILL IN: e.g., David Senra] | [FILL IN: e.g., Biography deep dives] |
-| | [ADD YOUR TRUSTED PODCASTS] | | |
+| 1 | The Colin and Samir Show | Colin Rosenblum, Samir Chaudry | Creator economy deep dives; interview top creators about business |
+| 2 | Creator Science | Jay Clouse | Data-backed creator strategies; long-form interviews |
+| 3 | The Futur Podcast | Chris Do | Creative business; positioning and pricing for agencies |
+| 4 | Deep Dive with Ali Abdaal | Ali Abdaal | YouTube strategy, creator business models, productivity |
+| | Add more trusted content/business podcasts | | |
 
-### Industry-Specific Podcasts
+### Woodworking & Maker Podcasts
 
 | # | Source | Host(s) | Why You Trust It |
 |---|--------|---------|-----------------|
-| 1 | [FILL IN: podcast relevant to your industry] | [FILL IN] | [FILL IN] |
-| | [ADD YOUR INDUSTRY PODCASTS] | | |
+| 1 | The Wood Whisperer Podcast | Marc Spagnuolo | Long-running; covers techniques, tools, and the business of woodworking |
+| 2 | The Modern Maker Podcast | Mike Montgomery | Maker business; balancing content creation with craft |
+| 3 | Shop Talk Live | Fine Woodworking editors | Industry perspective; technique discussions with working pros |
+| | Add more woodworking/maker podcasts | | |
 
 ---
 
@@ -75,28 +78,33 @@ Deep dives and interviews for commutes and focused listening.
 
 Foundational texts organized by category.
 
-### Operations & Scaling
+### Content & Creative Business
 
 | # | Title | Author | Why It's Essential |
 |---|-------|--------|-------------------|
-| 1 | [FILL IN: e.g., High Output Management] | [FILL IN: e.g., Andy Grove] | [FILL IN: e.g., Foundational; leverage; Task-Relevant Maturity] |
-| 2 | [FILL IN: e.g., Scaling People] | [FILL IN: e.g., Claire Hughes Johnson] | [FILL IN: e.g., Modern ops bible; tactical] |
-| | [ADD YOUR OPERATIONS BOOKS] | | |
+| 1 | Show Your Work! | Austin Kleon | The philosophy behind sharing creative process publicly |
+| 2 | Win Without Pitching Manifesto | Blair Enns | How creative agencies should sell; positioning over pitching |
+| 3 | Building a StoryBrand | Donald Miller | Messaging framework; making the customer the hero |
+| 4 | Profit First | Mike Michalowicz | Cash flow management for small creative businesses |
+| | Add more content/business books | | |
 
-### Strategy & Thinking
-
-| # | Title | Author | Why It's Essential |
-|---|-------|--------|-------------------|
-| 1 | [FILL IN: e.g., Good Strategy/Bad Strategy] | [FILL IN: e.g., Richard Rumelt] | [FILL IN: e.g., Strategy clarity; diagnosis] |
-| 2 | [FILL IN: e.g., Playing to Win] | [FILL IN: e.g., Roger Martin] | [FILL IN: e.g., Strategy choices] |
-| | [ADD YOUR STRATEGY BOOKS] | | |
-
-### [FILL IN: Category Relevant to Your Work]
+### Craft & Woodworking
 
 | # | Title | Author | Why It's Essential |
 |---|-------|--------|-------------------|
-| 1 | [FILL IN] | [FILL IN] | [FILL IN] |
-| | [ADD YOUR BOOKS] | | |
+| 1 | The Anarchist's Tool Chest | Christopher Schwarz | Philosophy of hand tools; what matters vs. consumerism |
+| 2 | The Soul of a Tree | George Nakashima | Woodworking as art and philosophy; timeless inspiration |
+| 3 | Understanding Wood | R. Bruce Hoadley | Foundational wood science; reference for any woodworker |
+| | Add more woodworking books | | |
+
+### Video Production & Storytelling
+
+| # | Title | Author | Why It's Essential |
+|---|-------|--------|-------------------|
+| 1 | In the Blink of an Eye | Walter Murch | Editing philosophy; rhythm and pacing in visual storytelling |
+| 2 | Storyworthy | Matthew Dicks | Finding and telling compelling stories; applicable to any medium |
+| 3 | YouTube Secrets | Sean Cannell & Benji Travis | Platform-specific growth strategies; tactical |
+| | Add more video/storytelling books | | |
 
 ---
 
@@ -106,9 +114,12 @@ Institutional knowledge and data.
 
 | # | Source | Type | Why You Trust It |
 |---|--------|------|-----------------|
-| 1 | [FILL IN: e.g., Harvard Business Review] | [FILL IN: e.g., Publication] | [FILL IN: e.g., Academic rigor + accessibility] |
-| 2 | [FILL IN: e.g., Y Combinator Library] | [FILL IN: e.g., Startup advice] | [FILL IN: e.g., Battle-tested; free] |
-| | [ADD YOUR TRUSTED PUBLICATIONS] | | |
+| 1 | Fine Woodworking | Trade publication | Gold standard for woodworking techniques and project journalism |
+| 2 | Popular Woodworking | Trade publication | Accessible techniques; broad coverage of the hobby/pro spectrum |
+| 3 | Woodcraft Magazine | Trade publication | Project-focused; strong plans and step-by-step guides |
+| 4 | Tubefilter | Creator economy news | YouTube and creator platform trends; data-driven reporting |
+| 5 | Creator Economy Newsletter (The Information) | Industry analysis | Business models and economics of creator businesses |
+| | Add more trusted publications | | |
 
 ---
 
@@ -118,9 +129,13 @@ Reference data and benchmarks.
 
 | # | Source | Type | Why You Trust It |
 |---|--------|------|-----------------|
-| 1 | [FILL IN: e.g., Crunchbase] | [FILL IN: e.g., Database] | [FILL IN: e.g., Company data; funding] |
-| 2 | [FILL IN: e.g., G2] | [FILL IN: e.g., Reviews] | [FILL IN: e.g., Software comparisons] |
-| | [ADD YOUR TRUSTED TOOLS] | | |
+| 1 | vidIQ | YouTube analytics | Keyword research, competitor analysis, thumbnail testing |
+| 2 | TubeBuddy | YouTube optimization | SEO, A/B testing, tag suggestions for YouTube content |
+| 3 | Social Blade | Channel analytics | Public stats and growth tracking for YouTube channels |
+| 4 | Canva | Design tool | Thumbnail and social media graphics; fast iteration |
+| 5 | Frame.io | Video collaboration | Client review and feedback on video deliverables |
+| 6 | Descript | Video/audio editing | Transcript-based editing; speeds up content production |
+| | Add more trusted tools | | |
 
 ---
 
@@ -130,9 +145,12 @@ Peer learning and discussion.
 
 | # | Source | Type | Why You Trust It |
 |---|--------|------|-----------------|
-| 1 | [FILL IN: e.g., Hacker News] | [FILL IN: e.g., Community] | [FILL IN: e.g., Tech discussion; signals] |
-| 2 | [FILL IN: e.g., industry-specific Slack group] | [FILL IN: e.g., Community] | [FILL IN] |
-| | [ADD YOUR TRUSTED COMMUNITIES] | | |
+| 1 | r/woodworking | Reddit community | Largest online woodworking community; trend signals and real feedback |
+| 2 | r/BeginnerWoodWorking | Reddit community | Entry-level perspective; helps understand audience pain points |
+| 3 | Lumberjocks | Woodworking forum | Deep project discussions; experienced makers sharing techniques |
+| 4 | Sawmill Creek | Woodworking forum | Professional-leaning discussions; tool reviews and shop setup |
+| 5 | YouTube Creator Community (official) | Platform community | Direct from YouTube; algorithm updates and best practices |
+| | Add more trusted communities | | |
 
 ---
 
@@ -141,13 +159,17 @@ Peer learning and discussion.
 Organize your regular consumption:
 
 **Daily (~15 min):**
-- [FILL IN: 2-3 daily newsletters]
+- Scan r/woodworking and YouTube trending in woodworking/maker categories
+- Check YouTube Studio analytics for client channels
 
 **Weekly (~1 hr):**
-- [FILL IN: 2-3 weekly sources or podcast episodes]
+- 1-2 podcast episodes from creator economy or woodworking shows
+- Review Creator Science or Paddy Galloway newsletter
 
 **Monthly:**
-- [FILL IN: Monthly publications, 1-2 podcast deep dives, one book]
+- Read one book from the lists above
+- Deep dive into 2-3 competitor channels for client benchmarking
+- Review Fine Woodworking or Popular Woodworking current issue
 
 ---
 

@@ -1,6 +1,4 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
-# Social Media Style Guide Template v1
+# Social Media Style Guide v1
 
 <metadata>
 purpose: Platform-agnostic voice guide for social media content creation
@@ -23,27 +21,27 @@ Understanding this shapes everything else. People engage when content:
 
 | Trigger | Why It Works | Your Natural Fit |
 |---------|--------------|------------------|
-| **Creates an open loop** | Brain needs to close incomplete information | [FILL IN: What kind of open loops does your voice naturally create? E.g., "Math-driven hooks that demand the reader see the punchline"] |
-| **Pattern interruption** | Unexpected claims break the scroll | [FILL IN: What assumptions in your industry do you challenge?] |
-| **Invites identity expression** | People signal who they are by engaging | [FILL IN: What kind of questions let your audience demonstrate expertise?] |
-| **Validates what they suspect** | Makes them feel smart for agreeing | [FILL IN: What "conventional wisdom is wrong" angles do you have?] |
-| **Triggers emotion** | Inspiration, frustration, vindication | [FILL IN: What emotional range does your content cover?] |
+| **Creates an open loop** | Brain needs to close incomplete information | Process reveals — showing the first cut and making people want to see the finished piece |
+| **Pattern interruption** | Unexpected claims break the scroll | Challenge the idea that you need expensive tools or exotic wood to build beautiful furniture |
+| **Invites identity expression** | People signal who they are by engaging | Questions about technique, wood species, or finishing methods let makers show what they know |
+| **Validates what they suspect** | Makes them feel smart for agreeing | "You don't need a $5,000 table saw to build heirloom furniture" — validates budget-conscious makers |
+| **Triggers emotion** | Inspiration, frustration, vindication | Inspiration from seeing the process, satisfaction from learning something practical |
 
-**Your edge:** [FILL IN: What combination of qualities makes your social voice unique? Example: "You combine evidence (numbers, data) with vulnerability (failures, struggles). That's rare."]
+**Your edge:** You combine real craft knowledge with calm, generous teaching. No gatekeeping, no showing off. You make people feel like they could do this too — and that's rare in the woodworking content space.
 
 ---
 
 ## Your Core Voice on Social
 
-[FILL IN: Describe your social media voice in one sentence. Example: "Write like a practitioner teaching a peer. Not a guru dispensing wisdom. Not a vendor selling services."]
+Write like a maker talking to another maker at the workbench. Calm, unhurried, generous. Not a guru dispensing wisdom. Not a brand selling services.
 
 **Three qualities that define your social voice:**
 
 | Quality | What It Means | Example |
 |---------|---------------|---------|
-| **[FILL IN: Quality 1]** | [FILL IN: Definition] | [FILL IN: Example post snippet] |
-| **[FILL IN: Quality 2]** | [FILL IN: Definition] | [FILL IN: Example post snippet] |
-| **[FILL IN: Quality 3]** | [FILL IN: Definition] | [FILL IN: Example post snippet] |
+| **Calm** | No hype, no urgency. Let the work speak. | "White oak. Hardwax oil. Two coats. That's it." |
+| **Generous** | Teach the thing, don't tease it. Share the actual process. | "Here's the exact jig I use for consistent mortises." |
+| **Grounded** | Root every claim in real experience. No theory without sawdust. | "I've built 40+ dining tables. This joint has never failed." |
 
 ---
 
@@ -66,9 +64,9 @@ Understanding this shapes everything else. People engage when content:
 - End with a genuine question
 - No external links in post body (put in comments)
 
-**Best posting times:** [FILL IN: When your audience is most active. Default guidance: Tuesday-Thursday, 9 AM-2 PM in your primary timezone.]
+**Best posting times:** Tuesday-Thursday, 9 AM-2 PM EST. Woodworking audience tends to be active early mornings and evenings when they're not in the shop.
 
-**Frequency:** [FILL IN: Target posts per week. Reference: 3-5/week is optimal for most B2B audiences.]
+**Frequency:** 3-4 posts per week on LinkedIn. Daily presence on Instagram/YouTube community tab.
 
 ### X / Twitter
 
@@ -82,16 +80,33 @@ Understanding this shapes everything else. People engage when content:
 
 ### Other Platforms
 
-[FILL IN: Add rules for any other platforms you use: YouTube, Instagram, TikTok, Substack, etc. For each, specify hook rules, format preferences, and tone adjustments.]
+### YouTube
+
+**Hook window:** First 30 seconds determine watch time. Open with the finished piece or a surprising moment from the build, then rewind to the beginning.
+
+**Format preferences:**
+- Long-form build videos (10-20 min) for the core channel
+- Shorts (30-60 sec) for tips, tool demos, and process clips
+- Show the full process — don't skip the tedious parts, speed them up
+- Talk to camera naturally, like explaining to a friend in the shop
+
+**Tone:** Calm workshop energy. Background shop sounds are a feature, not a bug.
+
+### Instagram
+
+**Hook window:** First frame of a reel or first line of a caption must stop the scroll.
+
+**Format preferences:**
+- Reels: 30-90 sec process clips with text overlay
+- Carousels: Before/after, step-by-step breakdowns, wood selection guides
+- Stories: Behind-the-scenes shop life, polls about design choices
+- Captions: Shorter than LinkedIn, more visual language
+
+**Tone:** More visual, less wordy. Let the craft do the talking.
 
 ---
 
 ## Your Natural Hook Patterns
-
-[FILL IN: Identify 4-6 hook patterns that match your natural communication style. For each pattern, provide:
-- A name for the pattern
-- The structural template
-- 2-3 example hooks in your voice]
 
 ### 1. The First Principles Challenge
 
@@ -106,9 +121,9 @@ Here's what I learned [doing/building/studying X]:
 ```
 
 **Examples in your voice:**
-- [FILL IN: Example hook 1]
-- [FILL IN: Example hook 2]
-- [FILL IN: Example hook 3]
+- "You don't need a jointer to get flat boards. Here's what I do instead."
+- "Exotic wood doesn't make better furniture. It makes more expensive furniture."
+- "The best finish isn't the one that looks perfect. It's the one your client can maintain."
 
 ---
 
@@ -125,8 +140,8 @@ That's the math nobody talks about.
 ```
 
 **Examples in your voice:**
-- [FILL IN: Example hook 1]
-- [FILL IN: Example hook 2]
+- "A 4/4 white oak board costs $8/bf. A dining table sells for $4,000. The wood is 6% of the price. So where's the other 94% going?"
+- "The average YouTube woodworking video gets 2,000 views. The average cost of a custom dining table is $3,500. You only need 1 in 1,000 viewers to become a customer."
 
 ---
 
@@ -143,8 +158,8 @@ It took me [X years/failures] to learn this:
 ```
 
 **Examples in your voice:**
-- [FILL IN: Example hook 1]
-- [FILL IN: Example hook 2]
+- "My first commission was a cutting board for $50. I spent 12 hours on it. That's when I learned: pricing isn't about wood. It's about knowing your worth."
+- "I used to think you needed a full shop to make real furniture. Then I built a credenza in a one-car garage with three tools."
 
 ---
 
@@ -163,8 +178,8 @@ It's about [underlying system].
 ```
 
 **Examples in your voice:**
-- [FILL IN: Example hook 1]
-- [FILL IN: Example hook 2]
+- "Woodworkers don't have a skills problem. They have a marketing problem. The best furniture maker in your city is probably invisible online."
+- "Most makers price by the hour. But your client doesn't care how long it took. They care how it looks on their dining room table."
 
 ---
 
@@ -181,114 +196,135 @@ Here's what that taught me:
 ```
 
 **Examples in your voice:**
-- [FILL IN: Example hook 1]
-- [FILL IN: Example hook 2]
+- "I ruined a $400 slab of walnut last month. Rushed the glue-up because I was behind schedule. The joint failed on day three."
+- "I spent two years making content nobody watched. Same builds, same quality. The difference? I was filming the product, not the process."
 
 ---
 
-### 6. [FILL IN: Your Unique Pattern]
+### 6. The Shop Floor Lesson
 
-[FILL IN: Describe a hook pattern that's specific to your industry or personal style.]
+Share a specific moment from the workshop that teaches a broader principle.
 
 ```
-[Template structure]
+[Specific thing that happened in the shop]
+
+Most people would [common reaction].
+
+But here's what it actually taught me:
+
+[Principle that applies beyond woodworking]
 ```
 
 **Examples in your voice:**
-- [FILL IN: Example hook 1]
-- [FILL IN: Example hook 2]
+- "I snapped a chisel yesterday. Cheap steel, too much force. Lesson: the right tool isn't the most expensive one. It's the one built for the task."
+- "A client asked me to match a 100-year-old oak table. You can't rush patina. Some things only time can build. Same with your brand."
 
 ---
 
 ## Hooks to Avoid (Not Your Voice)
 
-[FILL IN: List 4-6 hook types that don't fit your voice. For each, explain why it doesn't work for you.]
-
 | Hook Type | Why It Doesn't Fit |
 |-----------|-------------------|
-| [FILL IN: Hook type] | [FILL IN: Why] |
-| [FILL IN: Hook type] | [FILL IN: Why] |
+| "STOP buying [tool] RIGHT NOW" | Too aggressive. We teach, not shout. |
+| Clickbait reveals | "You won't BELIEVE what happened" — disrespects the audience |
 | "I'm excited to announce..." | Too corporate. Lead with insight, not announcements. |
 | "Let me tell you a secret..." | Too salesy. Teach openly instead. |
-| [FILL IN: Hook type] | [FILL IN: Why] |
+| Gear flexing | Showing off expensive tools contradicts our "you don't need much" philosophy |
 
 ---
 
 ## Your Post Structure
 
 ```
-1. HOOK: [FILL IN: What your hooks look like] (1 line)
+1. HOOK: A calm, surprising observation or challenge (1 line)
 
 2. CONTEXT: Why this matters / where it came from (2-3 lines)
 
-3. BREAKDOWN: [FILL IN: How you decompose ideas — lists, short paragraphs, etc.]
+3. BREAKDOWN: Short paragraphs, one idea per line. Show the process.
 
 4. SYNTHESIS: What it all connects to (1-2 lines)
 
-5. INVITATION: Question that invites peer-level discussion
+5. INVITATION: Question that invites makers to share their experience
 ```
 
 ### Example Post in Your Voice
 
 ```
-[FILL IN: Write a complete example post in your voice. This is the single most important calibration tool for AI agents. Make it representative of your best social media writing.]
+Stop buying wood at the big box store.
+
+I know it's convenient. I know it's right there.
+
+But here's what you're actually paying for:
+- Wood that's been kiln-dried too fast
+- Boards that'll twist within a week of milling
+- Species selection limited to construction lumber
+
+Find a local sawmill. Drive an hour if you have to.
+
+You'll pay less per board foot. You'll get better grain selection.
+And you'll build a relationship with someone who actually knows wood.
+
+The best table I ever built started with a conversation at a sawmill,
+not a receipt from Home Depot.
+
+Where do you source your lumber?
 ```
 
 ---
 
 ## Your Signature Phrases
 
-[FILL IN: List 4-6 phrases that are authentically yours. These are verbal fingerprints that make your content sound like you.]
+Replace these with phrases Ahmed actually uses. Placeholders below — update with real ones over time.
 
 | Phrase | When to Use |
 |--------|-------------|
-| [FILL IN: Phrase] | [FILL IN: Context] |
-| [FILL IN: Phrase] | [FILL IN: Context] |
-| [FILL IN: Phrase] | [FILL IN: Context] |
-| [FILL IN: Phrase] | [FILL IN: Context] |
+| "The work speaks for itself — if someone is watching" | When talking about why content matters for makers |
+| "Stop shopping. Start building." | When pushing back on gear obsession |
+| "Honest material, properly dried" | When discussing wood selection philosophy |
+| "That's a Tuesday in the shop" | When normalizing mistakes or setbacks |
 
 ---
 
 ## Content Pillars (What to Write About)
 
-[FILL IN: List 4-6 content pillars — the recurring themes your social content covers. For each, list 2-3 subtopics.]
+### 1. The Craft
+- Woodworking techniques and joinery
+- Material selection and wood science
+- Tool philosophy (buy less, use more)
 
-### 1. [FILL IN: Pillar Name]
-- [FILL IN: Subtopic]
-- [FILL IN: Subtopic]
-- [FILL IN: Subtopic]
+### 2. The Business of Making
+- Pricing custom work
+- Finding clients through content
+- Building a sustainable one-person shop
 
-### 2. [FILL IN: Pillar Name]
-- [FILL IN: Subtopic]
-- [FILL IN: Subtopic]
-- [FILL IN: Subtopic]
+### 3. Content for Makers
+- Why showing the process builds trust
+- Video production for workshop settings
+- From hobby channel to business asset
 
-### 3. [FILL IN: Pillar Name]
-- [FILL IN: Subtopic]
-- [FILL IN: Subtopic]
-
-### 4. [FILL IN: Pillar Name]
-- [FILL IN: Subtopic]
-- [FILL IN: Subtopic]
+### 4. Lessons from the Shop
+- Mistakes and what they teach
+- The mindset behind good craftsmanship
+- Patience, process, and compound improvement
 
 ---
 
 ## Tone Calibration
 
 ### When Teaching
-- [FILL IN: How you teach on social media. Example: "Use numbers to make points concrete."]
-- [FILL IN: Additional guidance]
-- [FILL IN: Additional guidance]
+- Show the process, not just the result. Let people watch the work happen.
+- Use specific measurements, species names, and tool names. Vague isn't helpful.
+- Assume the reader is smart but maybe hasn't tried this yet.
 
 ### When Sharing Struggles
-- [FILL IN: How you share vulnerability. Example: "Be matter-of-fact, not dramatic."]
-- [FILL IN: Additional guidance]
-- [FILL IN: Additional guidance]
+- Be matter-of-fact, not dramatic. "I messed this up" not "I was devastated."
+- Always include what you learned or what you'd do differently.
+- Normalize mistakes — they're part of the craft, not a crisis.
 
 ### When Challenging Ideas
-- [FILL IN: How you challenge on social. Example: "Lead with evidence, not opinion."]
-- [FILL IN: Additional guidance]
-- [FILL IN: Additional guidance]
+- Lead with your experience, not opinion. "After 40 tables, I've found..." not "I think..."
+- Challenge the practice, not the person. Respect the maker, question the method.
+- Offer the alternative, not just the critique.
 
 ---
 
@@ -303,7 +339,7 @@ Commenting strategically can grow your audience faster than posting alone. The a
 3. **End with a question** — Keeps conversation going
 
 **Example in your voice:**
-> [FILL IN: Write one example comment that demonstrates your voice and adds real value to someone else's post.]
+> "Love the grain match on that tabletop. I've been experimenting with bookmatching walnut slabs and the key I found is milling both halves in the same session so they're at the same moisture content. Have you noticed any movement issues with that species in your climate?"
 
 ### Daily Comment Practice
 
@@ -327,10 +363,8 @@ Before posting, ask:
 
 ## What You Would Never Post
 
-[FILL IN: List 5-6 types of content that violate your values or voice. These are red lines.]
-
-- [FILL IN: Content type and why]
-- [FILL IN: Content type and why]
+- Gatekeeping content that makes people feel like they can't do this
+- Dunking on other makers or their work
 - Content that sounds like it was written by AI
 - Anything you haven't validated through experience
 - Corporate announcements without insight
@@ -470,7 +504,7 @@ Know what "good" looks like:
 | Views per post | 1,000+ | 5,000+ | 25,000+ |
 | Save rate | 1%+ | 3%+ | 5%+ |
 
-[FILL IN: Adjust benchmarks based on your platform and audience size. These are LinkedIn defaults for B2B audiences of 1,000-10,000 followers.]
+Benchmarks above are LinkedIn defaults. Adjust for YouTube (views, watch time, subscribers) and Instagram (saves, shares) as the primary platforms for woodworking content.
 
 ---
 
@@ -492,6 +526,6 @@ Know what "good" looks like:
 
 > "Write to please just one person." — Kurt Vonnegut
 
-[FILL IN: Who is your "one person"? Example: "Write for a founder who's 2-3 years behind where you are. Someone with the same pain points you had. Someone who would value hearing what you wish someone had told you."]
+Write for a woodworker who builds beautiful furniture in their garage but has zero online presence. Someone who knows their craft is good enough but doesn't know how to show it. Someone who would value hearing what Ahmed wishes someone had told him three years ago.
 
 That's the content that resonates. That's the content only you can write.

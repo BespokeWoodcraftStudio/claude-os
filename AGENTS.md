@@ -1,10 +1,9 @@
 # Context OS — Agent Configuration
 
-<!-- TEMPLATE: Replace [YOUR COMPANY] and [BRACKETED] placeholders. Delete this comment when done. -->
 
 ## Project Overview
 
-This is a structured knowledge base for [YOUR COMPANY]. It is not a codebase — there is no app, no build step, no dependencies. The product is context.
+This is a structured knowledge base for Bespoke Woodcraft Studio. It is not a codebase — there is no app, no build step, no dependencies. The product is context.
 
 AI agents use this repository to understand the company, write in its voice, make decisions using executive personas, and produce on-brand work.
 

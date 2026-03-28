@@ -17,7 +17,7 @@ Before running this test, you must have:
 
 ### Prompt
 
-> What does [YOUR COMPANY] do?
+> What does Bespoke Woodcraft Studio do?
 
 ### What Should Load
 
@@ -33,7 +33,7 @@ Before running this test, you must have:
 
 ### What Bad Looks Like
 
-> I don't have specific information about [YOUR COMPANY]. Based on general knowledge...
+> I don't have specific information about Bespoke Woodcraft Studio. Based on general knowledge...
 
 (This means your docs aren't filled in or the agent isn't loading them)
 

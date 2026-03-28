@@ -1,12 +1,10 @@
-# [YOUR COMPANY] Context OS
+# Bespoke Woodcraft Studio Context OS
 
-<!-- TEMPLATE: Replace [YOUR COMPANY] and [BRACKETED] placeholders. Delete this comment when done. -->
-
-Knowledge base for [YOUR COMPANY]. Not a codebase — the product is context.
+Knowledge base for Bespoke Woodcraft Studio. Not a codebase — the product is context.
 
 ## What We Do
 
-- **[YOUR COMPANY]**: [FILL IN: One-line description of your company and what you do]
+- **Bespoke Woodcraft Studio**: Content creation agency specializing in woodworking and craft — we tell the stories behind handmade work.
 
 ## Where Things Live
 
@@ -33,12 +31,12 @@ Load the right agent config for your task:
 
 ## Universal Rules
 
-1. **Don't invent facts** about [YOUR COMPANY] not in these docs
+1. **Don't invent facts** about Bespoke Woodcraft Studio not in these docs
 2. **Don't bulk-load** records/ or downloads/ — search them
 3. **Newer docs win** when information conflicts
 4. **Flag sensitive content** — don't generate legal, compliance, or financial content without asking
 5. **File naming**: `descriptive-name-v1.md` (lowercase, hyphens, version suffix)
-6. **Voice**: [FILL IN: Your voice in one sentence. Example: "Direct, clear, real. Like a smart friend explaining something important."]
+6. **Voice**: Warm, calm, and clear. Like a craftsman walking you through how something works — no rush, no jargon, just genuine knowledge shared generously.
 7. **Research tasks follow the pipeline.** When asked to research, learn about, deep dive, or study any topic:
    a. First ask: raw research only, or full study guide? Clarify scope and audience.
    b. Present a research plan (questions + output locations) and get user approval before starting.

@@ -1,11 +1,9 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
 # Culture of Documentation
 
 <metadata>
 purpose: Explains why and how we maintain a culture of documentation
 audience: All team members
-summary: How [YOUR COMPANY] approaches documentation — principles, practices, ownership, and the single source of truth.
+summary: How Bespoke Woodcraft Studio approaches documentation — principles, practices, ownership, and the single source of truth.
 token_estimate: medium
 depends_on: []
 related: async-communication.md, meetings.md
@@ -15,7 +13,7 @@ context_tier: 2
 last_updated: 2026-02-18
 </metadata>
 
-At [YOUR COMPANY], our Culture of Documentation is a foundational aspect of how we work. As a distributed, asynchronous team, our ability to thrive relies on clear, comprehensive, and well-organized knowledge that is accessible to everyone.
+At Bespoke Woodcraft Studio, our Culture of Documentation is a foundational aspect of how we work. As a distributed, asynchronous team, our ability to thrive relies on clear, comprehensive, and well-organized knowledge that is accessible to everyone.
 
 ---
 
@@ -39,9 +37,7 @@ We collectively work towards:
 
 ## Single Source of Truth (SSoT)
 
-[FILL IN: What is your single source of truth for documentation? Why did you choose it?]
-
-<!-- Example: Our SSoT is Notion. Everyone has access, and it's the most up-to-date repository of information. -->
+Our SSoT is this Context OS knowledge base (stored in Git) for company knowledge, processes, and brand guidelines. For day-to-day project work, we use Notion as our shared workspace for content calendars, client boards, and task tracking. Git is the canonical source for anything about how we operate; Notion is where live project work happens. If something conflicts, the Context OS docs win.
 
 ---
 

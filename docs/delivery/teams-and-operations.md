@@ -1,11 +1,9 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
 # Delivery Teams and Operations
 
 <metadata>
 purpose: Describes team structure, roles, pods, capacity planning, and the system mindset
 audience: All delivery team members, operations, leadership
-summary: How [YOUR COMPANY] structures delivery teams, defines roles, plans capacity, and applies systems thinking.
+summary: How Bespoke Woodcraft Studio structures delivery teams, defines roles, plans capacity, and applies systems thinking.
 token_estimate: large
 depends_on: []
 related: ../business/customer-lifecycle.md, ../business/business-model.md
@@ -19,85 +17,80 @@ last_updated: 2026-02-18
 
 ## TL;DR
 
-[FILL IN: 4-5 bullet points summarizing how delivery works at your company.]
-
-<!-- Example:
-- Three teams: Sales, Onboarding Sprint, Delivery (pods).
-- Account managers own the client relationship end-to-end.
-- System mindset: every week serving the same client should get easier.
-- Scaling requires building capacity ahead of demand.
--->
+- Three functions: Client Strategy, Content Production, and Post-Production.
+- Ahmed leads client relationships and creative direction.
+- Content is delivered through a pipeline: shoot, edit, review, publish.
+- System mindset: every week serving the same client should get easier through templates, brand guides, and repeatable workflows.
+- We scale by building reusable assets and streamlined processes, not just adding people.
 
 ---
 
 ## Overview
 
-[FILL IN: What makes your delivery model unique? What does it combine?]
+Bespoke Woodcraft Studio combines creative storytelling with a systematic production pipeline. We pair deep understanding of the woodworking and maker community with a repeatable content engine: strategy, production, post-production, and publishing. Every client gets a tailored content plan, but the underlying workflow is consistent and efficient.
 
 ---
 
 ## The Teams
 
-[FILL IN: Describe your team structure]
+As a small team, we operate as a single pod with clearly defined functional areas rather than separate departments.
 
 | Team | Focus | Phase |
 |------|-------|-------|
-| [FILL IN] | [FILL IN] | [FILL IN] |
-| [FILL IN] | [FILL IN] | [FILL IN] |
-| [FILL IN] | [FILL IN] | [FILL IN] |
+| Client Strategy | Client relationships, content planning, brand voice | Pre-production and ongoing |
+| Content Production | Video shoots, photography, written content creation | Production |
+| Post-Production & Publishing | Editing, review, scheduling, analytics | Post-production and delivery |
 
 ---
 
 ## Core Roles
 
-### [FILL IN: Primary Client-Facing Role]
+### Creative Director / Client Lead (Ahmed)
 
-<!-- Example: Engagement Managers, Account Managers, Customer Success Managers -->
-
-[FILL IN: What does this role do? What are they responsible for?]
+Ahmed owns the client relationship end-to-end: from initial strategy through ongoing content direction. This role sets the creative vision, ensures brand consistency, and acts as the single point of accountability for every client.
 
 **Accountabilities:**
 
 | Phase | Responsibility |
 |-------|---------------|
-| [FILL IN] | [FILL IN] |
-| [FILL IN] | [FILL IN] |
+| Onboarding | Define content strategy, brand voice, and publishing cadence with the client |
+| Ongoing delivery | Review all content before publish, maintain client communication, adjust strategy based on performance |
 
 **What good looks like:**
-- [FILL IN: Behavior 1]
-- [FILL IN: Behavior 2]
-- [FILL IN: Behavior 3]
+- Clients feel heard and understood from the first conversation
+- Content plans are clear, realistic, and aligned with business goals
+- Feedback loops are tight: client never waits more than one business day for a response
 
 ---
 
-### [FILL IN: Primary Production/Execution Role]
+### Content Editor / Producer
 
-<!-- Example: Editors, Analysts, Specialists -->
+Handles the hands-on production work: video editing, thumbnail creation, caption writing, and content formatting. Responsible for turning raw footage and drafts into polished, publish-ready deliverables.
 
-[FILL IN: What does this role do?]
-
-**Pacing:** [FILL IN: How far ahead should work be completed?]
+**Pacing:** Edits should be completed at least 3 business days before the scheduled publish date to allow time for client review and revisions.
 
 ---
 
-### [FILL IN: Additional Roles as Needed]
+### Freelance / Contract Support
 
-[FILL IN: Describe other roles in your delivery organization]
+For larger shoots, specialized content (e.g., photography, motion graphics), or high-volume periods, we bring in trusted freelancers. They plug into existing workflows using our templates, brand guides, and project boards. Ahmed briefs and reviews all freelance work.
 
 ---
 
 ## Team Structure
 
-[FILL IN: How are teams/pods organized?]
+As a small studio, we operate as one tight pod with clear ownership areas rather than multiple teams.
 
 ```
-[FILL IN: Pod/team structure diagram]
-
-Example:
-Pod
-├── Account Manager (lead)
-├── Specialist(s) (execution)
-└── Shared resources (as needed)
+Bespoke Woodcraft Studio
+├── Ahmed (Creative Director / Client Lead)
+│   ├── Content strategy and client relationships
+│   └── Final review on all deliverables
+├── Editor / Producer
+│   ├── Video editing, thumbnails, captions
+│   └── Content formatting and scheduling
+└── Freelancers (as needed)
+    └── Photography, motion graphics, overflow editing
 ```
 
 ---
@@ -133,13 +126,13 @@ This is critical.
 
 ## How Capacity Works
 
-[FILL IN: What inputs drive your capacity? What are the ratios and ramp times?]
+Capacity is driven by production bandwidth. The main bottlenecks are editing hours and Ahmed's review time.
 
 | Input | Ratio | Ramp Time |
 |-------|-------|-----------|
-| [FILL IN] | [FILL IN] | [FILL IN] |
-| [FILL IN] | [FILL IN] | [FILL IN] |
-| [FILL IN] | [FILL IN] | [FILL IN] |
+| Editor | 1 editor handles 4-6 client accounts (depending on content volume) | 2-3 weeks to learn brand guides and workflows |
+| Ahmed (review + strategy) | Can actively manage 8-10 client relationships | N/A |
+| Freelancer | 1 freelancer per project or overflow need | 1 week onboarding with templates and brand assets |
 
 ---
 
@@ -147,6 +140,6 @@ This is critical.
 
 | Role | Primary Accountability |
 |------|------------------------|
-| [FILL IN] | [FILL IN] |
-| [FILL IN] | [FILL IN] |
-| [FILL IN] | [FILL IN] |
+| Ahmed (Creative Director) | Client satisfaction, content strategy, final quality |
+| Editor / Producer | On-time delivery, edit quality, publish-ready output |
+| Freelancers | Deliverable quality within brief, on-time handoff |

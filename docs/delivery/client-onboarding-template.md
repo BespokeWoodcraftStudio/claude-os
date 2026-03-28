@@ -1,5 +1,3 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
 # Client Onboarding Template
 
 <metadata>
@@ -27,12 +25,12 @@ This template guides the onboarding of a new client from signed contract through
 
 Complete these before the first client meeting:
 
-- [ ] [FILL IN: Setup task 1 — e.g., Create client workspace/folder]
-- [ ] [FILL IN: Setup task 2 — e.g., Review signed SOW and contract terms]
-- [ ] [FILL IN: Setup task 3 — e.g., Research client's business, competitors, industry]
-- [ ] [FILL IN: Setup task 4 — e.g., Set up project management boards]
-- [ ] [FILL IN: Setup task 5 — e.g., Schedule kickoff meeting]
-- [ ] [FILL IN: Setup task 6 — e.g., Prepare kickoff deck/agenda]
+- [ ] Create client folder in shared drive (brand assets, raw footage, drafts, finals)
+- [ ] Review signed SOW and contract terms (scope, deliverables, timeline)
+- [ ] Research the client's business: website, social channels, existing content, competitors
+- [ ] Set up project board for the client (content calendar, task tracking)
+- [ ] Schedule kickoff call with the client
+- [ ] Prepare kickoff agenda and brand questionnaire
 
 ---
 
@@ -42,28 +40,28 @@ Complete these before the first client meeting:
 
 ### Kickoff Meeting Agenda
 
-1. [FILL IN: Agenda item — e.g., Introductions and team overview]
-2. [FILL IN: Agenda item — e.g., Review goals and success metrics]
-3. [FILL IN: Agenda item — e.g., Walk through the engagement plan]
-4. [FILL IN: Agenda item — e.g., Agree on communication cadence]
-5. [FILL IN: Agenda item — e.g., Define immediate next steps]
+1. Introductions and overview of how we work together
+2. Review goals: what does success look like for the client's content?
+3. Walk through the content plan, deliverables, and publishing cadence
+4. Agree on communication channels and feedback turnaround expectations
+5. Collect brand assets, logins, and raw materials; define immediate next steps
 
 ### Post-Kickoff Actions
 
-- [ ] [FILL IN: Action 1 — e.g., Send kickoff summary to client]
-- [ ] [FILL IN: Action 2 — e.g., Grant access to shared tools]
-- [ ] [FILL IN: Action 3 — e.g., Begin discovery/audit work]
+- [ ] Send kickoff summary and content calendar draft to client
+- [ ] Grant client access to shared review folder or approval tool
+- [ ] Begin content audit: review existing channels, top-performing content, and gaps
 
 ---
 
 ## Weeks 2-4: Ramp
 
-**Goal:** [FILL IN: What should be accomplished in the first month?]
+**Goal:** Deliver the first round of content, establish the production rhythm, and refine brand voice based on client feedback.
 
-- [ ] [FILL IN: Milestone 1]
-- [ ] [FILL IN: Milestone 2]
-- [ ] [FILL IN: Milestone 3]
-- [ ] [FILL IN: First deliverable or checkpoint]
+- [ ] Complete brand voice guide and visual style reference for this client
+- [ ] Produce and deliver the first batch of content (video, written, or social)
+- [ ] Collect client feedback and incorporate revisions
+- [ ] Publish first pieces of content and confirm the ongoing cadence is working
 
 ---
 
@@ -71,9 +69,9 @@ Complete these before the first client meeting:
 
 Once onboarding is complete, establish:
 
-- **[FILL IN: Recurring meeting]** — [FILL IN: Frequency and purpose]
-- **[FILL IN: Reporting cadence]** — [FILL IN: What gets reported and when]
-- **[FILL IN: Review cadence]** — [FILL IN: QBR or periodic reviews]
+- **Weekly check-in** — 25-minute call or async update to review upcoming content, gather feedback, and flag any changes
+- **Content delivery and review** — Drafts delivered 3 business days before publish date; client has 48 hours to review and approve
+- **Monthly performance review** — Short recap of content performance (views, engagement, growth) with recommendations for the next month
 
 ---
 
@@ -81,8 +79,8 @@ Once onboarding is complete, establish:
 
 Watch for these signals that the engagement may be at risk:
 
-- [FILL IN: Warning sign 1]
-- [FILL IN: Warning sign 2]
-- [FILL IN: Warning sign 3]
+- Client is unresponsive to review requests or feedback deadlines for more than a week
+- Goals keep shifting without clear direction or written confirmation
+- Client provides very little raw material (no footage, no photos, unclear brand) and expects us to fill the gap without additional scope
 
-**If you see red flags:** [FILL IN: Escalation process]
+**If you see red flags:** Surface the concern to Ahmed immediately. Schedule a candid conversation with the client to reset expectations before the pattern becomes entrenched.

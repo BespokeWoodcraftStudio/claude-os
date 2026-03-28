@@ -1,6 +1,5 @@
 # Writing Agent Configuration
 
-<!-- TEMPLATE: Update file paths and add your company-specific writing conventions. Delete this comment when done. -->
 
 <metadata>
 purpose: Context loading instructions for writing and editing tasks

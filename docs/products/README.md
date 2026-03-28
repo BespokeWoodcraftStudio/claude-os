@@ -1,16 +1,12 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
 # Products
 
-[YOUR COMPANY]'s product portfolio documentation.
+Bespoke Woodcraft Studio's service portfolio documentation.
 
 ---
 
 ## Quick Summary
 
-[FILL IN: One paragraph describing your product portfolio and how products relate to each other.]
-
-<!-- Example: [YOUR COMPANY] builds a multi-product ecosystem. Each product serves a specific strategic purpose, targets a distinct audience, and operates with its own economic model — but they integrate to create a cohesive platform. -->
+Bespoke Woodcraft Studio offers a suite of content services designed for woodworkers and makers who want to grow their businesses through media. Our core services — video production, social media management, and brand content strategy — work together as a unified system: video fuels social, social drives audience growth, and brand strategy ties everything to business results. Each service can be engaged standalone, but the full package is where clients see the most impact.
 
 ---
 
@@ -18,8 +14,8 @@
 
 | Product | Purpose | Target Audience | Business Model |
 |---------|---------|-----------------|----------------|
-| [FILL IN: Product 1] | [FILL IN] | [FILL IN] | [FILL IN] |
-| [FILL IN: Product 2] | [FILL IN] | [FILL IN] | [FILL IN] |
+| Video Production | Create high-quality shop videos, tutorials, and brand films for YouTube and social platforms | Woodworkers, makers, and tool brands | Monthly retainer or per-project pricing |
+| Social Media Management | Grow and engage audiences on Instagram, TikTok, YouTube, and Facebook | Makers and maker-brands building an online following | Monthly retainer (tiered by platform count and posting frequency) |
 
 ---
 
@@ -27,8 +23,8 @@
 
 | If you want to understand... | Read this |
 |------------------------------|-----------|
-| Individual product details | `product-overview-template.md` |
-| Product roadmap planning | `product-roadmap-template.md` |
+| Individual service details | `product-overview-template.md` |
+| Service roadmap and priorities | `product-roadmap-template.md` |
 
 ---
 
@@ -36,7 +32,7 @@
 
 - **Business:** `../business/` — Business model and economics
 - **Delivery:** `../delivery/` — Post-sales operations
-- **EPD:** `../epd/` — Engineering, Product, Design team docs
+- **EPD:** `../epd/` — Production tech stack and workflow docs
 
 ---
 

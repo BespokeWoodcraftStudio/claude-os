@@ -1,14 +1,12 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
 # Delivery
 
-Post-sales operations, client work, and service delivery.
+Post-sales operations, client work, and content delivery.
 
 ---
 
 ## Quick Summary
 
-This section covers everything that happens after the sale: team structure, client operations, onboarding, and how we deliver results. This is the heart of [YOUR COMPANY]'s services business.
+This section covers everything that happens after a client signs on: team structure, onboarding, content production, and how we deliver results. This is the heart of Bespoke Woodcraft Studio's services business.
 
 ---
 
@@ -23,23 +21,20 @@ This section covers everything that happens after the sale: team structure, clie
 
 ## The Delivery Model
 
-[FILL IN: Diagram or description of your delivery flow]
-
-<!-- Example:
 ```
-Sales → Onboarding Sprint (X weeks) → Ongoing Engagement
-          ↓                              ↓
-     Convert to ongoing              Pods / Teams
+Discovery Call → Onboarding (2 weeks) → Ongoing Content Production
+                    ↓                           ↓
+            Brand guide + content plan     Shoot → Edit → Review → Publish
+                                                         ↓
+                                               Monthly performance recap
 ```
--->
 
 ---
 
 ## Related Documentation
 
 - **Business:** `../business/` — Customer lifecycle and success metrics
-- **Products:** `../products/` — What we're building and selling
-- **EPD:** `../epd/` — Engineering support for delivery
+- **Products:** `../products/` — Service packages and offerings
 - **Sales:** `../sales/` — What happens before delivery
 
 ---

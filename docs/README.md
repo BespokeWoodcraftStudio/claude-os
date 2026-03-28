@@ -1,8 +1,6 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
+# Bespoke Woodcraft Studio Handbook
 
-# [YOUR COMPANY] Handbook
-
-The official handbook for [YOUR COMPANY]. Everything you need to know about the company, how we work, and what we're building.
+The official handbook for Bespoke Woodcraft Studio. Everything you need to know about the company, how we work, and what we're building.
 
 ---
 

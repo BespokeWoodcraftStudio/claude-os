@@ -66,7 +66,7 @@ The result is AI that has the right context at the right time, without being ove
 ## Quick Start (15 Minutes)
 
 1. **Fork or clone this repo**
-2. **Open `CLAUDE.md`** — replace `[YOUR COMPANY]` with your company name and fill in the placeholders
+2. **Open `CLAUDE.md`** — replace `Bespoke Woodcraft Studio` with your company name and fill in the placeholders
 3. **Define your voice** — fill in `context/voice/writing-style-context-v1.md` with how you write and speak
 4. **Add your basics** — fill in `docs/company/mission-and-vision.md` with your mission and vision
 5. **Create your first role** — copy `context/roles/executive-role-template-v1.md` and customize it for your most-needed AI persona

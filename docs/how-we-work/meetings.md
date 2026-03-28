@@ -1,9 +1,7 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
 # Meetings
 
 <metadata>
-purpose: Guide to running effective meetings at [YOUR COMPANY]
+purpose: Guide to running effective meetings at Bespoke Woodcraft Studio
 audience: All team members
 summary: Meeting formats, cadences, agendas, and ground rules for effective sync communication.
 token_estimate: medium
@@ -33,16 +31,16 @@ We're async by default, but meetings still matter. When we do meet, we make it c
 
 ### 1:1s
 
-**Frequency:** [FILL IN: Weekly/biweekly]
+**Frequency:** Weekly
 **Duration:** 25-30 minutes
 **Purpose:** Relationship building, feedback, blockers, career development
 
 **Format:**
-- [FILL IN: How do 1:1s work at your company?]
+- Team member brings topics first. Ahmed fills remaining time with feedback, priorities, or open discussion. Keep it conversational and human, not a status report.
 
 ### Team Standups
 
-**Frequency:** [FILL IN: Daily/2x week/weekly]
+**Frequency:** 2x per week (Monday and Thursday)
 **Duration:** 15 minutes
 **Purpose:** Quick sync on blockers and priorities
 
@@ -51,17 +49,17 @@ We're async by default, but meetings still matter. When we do meet, we make it c
 - Where I'm blocked
 - What I need help with
 
-### [FILL IN: Weekly Team Meeting]
+### Weekly Content Review
 
 **Frequency:** Weekly
-**Duration:** [FILL IN]
-**Purpose:** [FILL IN]
+**Duration:** 50 minutes
+**Purpose:** Review upcoming content across all clients, flag any issues with deadlines or quality, and align on priorities for the week ahead.
 
-### [FILL IN: All-Hands / Company Meeting]
+### Monthly Studio Sync
 
-**Frequency:** [FILL IN: Monthly/quarterly]
-**Duration:** [FILL IN]
-**Purpose:** [FILL IN: Company updates, wins, strategy]
+**Frequency:** Monthly
+**Duration:** 50 minutes
+**Purpose:** Step back from day-to-day work. Review overall business health, celebrate wins, discuss what's working and what's not, and share any strategic updates.
 
 ---
 
@@ -69,11 +67,11 @@ We're async by default, but meetings still matter. When we do meet, we make it c
 
 | Meeting | Frequency | Attendees | Duration |
 |---------|-----------|-----------|----------|
-| 1:1s | [FILL IN] | Manager + report | 25 min |
-| Standup | [FILL IN] | Team | 15 min |
-| [FILL IN: Team sync] | [FILL IN] | [FILL IN] | [FILL IN] |
-| [FILL IN: All-hands] | [FILL IN] | All | [FILL IN] |
-| [FILL IN: Planning] | [FILL IN] | [FILL IN] | [FILL IN] |
+| 1:1s | Weekly | Ahmed + team member | 25 min |
+| Standup | 2x/week | Team | 15 min |
+| Content Review | Weekly | All production team | 50 min |
+| Studio Sync | Monthly | All | 50 min |
+| Content Planning | Biweekly | Ahmed + editor(s) | 50 min |
 
 ---
 

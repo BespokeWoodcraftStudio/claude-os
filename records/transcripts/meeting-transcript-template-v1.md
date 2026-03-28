@@ -1,18 +1,16 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
-# [FILL IN: YYYY-MM-DD] -- [FILL IN: Meeting Description]
+# [YYYY-MM-DD] -- [Meeting Description]
 
 <metadata>
 purpose: Meeting transcript
 audience: Team members reviewing meeting context
-summary: [FILL IN: One sentence describing what was discussed]
+summary: [One sentence describing what was discussed, e.g., "Content strategy kickoff with new furniture maker client"]
 token_estimate: [small/medium/large]
-source: [FILL IN: recording tool name or "manual"]
-participants: [FILL IN: comma-separated list of attendees]
-domain: [FILL IN: e.g., strategy, client, hiring, product]
+source: [e.g., Riverside.fm, Descript, Zoom, manual notes]
+participants: [comma-separated list of attendees]
+domain: [e.g., client, content-strategy, production, review]
 confidence: current
 context_tier: 3
-last_updated: [FILL IN: YYYY-MM-DD]
+last_updated: [YYYY-MM-DD]
 </metadata>
 
 ---
@@ -21,27 +19,39 @@ last_updated: [FILL IN: YYYY-MM-DD]
 
 | Field | Value |
 |-------|-------|
-| **Date** | [FILL IN: YYYY-MM-DD] |
-| **Duration** | [FILL IN: e.g., 45 min] |
-| **Participants** | [FILL IN: Who was there] |
-| **Recording tool** | [FILL IN: your recording tool name] |
+| **Date** | [YYYY-MM-DD] |
+| **Duration** | [e.g., 45 min] |
+| **Type** | [e.g., Client kickoff, Content review, Strategy session, Shoot planning, Post-production review] |
+| **Participants** | [Who was there] |
+| **Recording tool** | [e.g., Riverside.fm, Descript, Zoom recording] |
 
 ## Summary
 
-[FILL IN: 2-3 sentence summary of the meeting — key decisions, outcomes, action items]
+[2-3 sentence summary of the meeting -- key decisions, outcomes, action items. Example: "Reviewed first three video drafts for Oak & Iron Furniture. Client approved the dovetail tutorial but wants re-edit on the shop tour to tighten pacing. Agreed on new thumbnail direction using close-up detail shots."]
 
 ## Key Decisions
 
-- [FILL IN: Decision made during the meeting]
+- [Decision made during the meeting, e.g., "Moving from voice-over to on-camera format for better audience connection"]
 
 ## Action Items
 
-- [ ] [FILL IN: Action item] -- [FILL IN: Owner]
+- [ ] [Action item] -- [Owner, e.g., "Ahmed"]
+- [ ] [Action item] -- [Owner, e.g., "Client"]
+
+## Content Notes
+
+[Anything specific to content production that came up:]
+- Shots needed or footage gaps
+- B-roll requests
+- Music/sound direction
+- Thumbnail or title ideas discussed
+- Platform-specific adjustments (YouTube vs. Instagram vs. TikTok)
 
 ## Transcript
 
-[FILL IN: Full transcript from recording tool, or paste below]
+[Full transcript from recording tool, or paste below]
 
 ---
 
 *File naming convention: `YYYY-MM-DD-meeting-description.md`*
+*Example: `2026-03-15-oak-iron-content-review.md`*

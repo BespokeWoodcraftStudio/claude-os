@@ -1,5 +1,3 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
 # Company
 
 Who we are, what we believe, and where we're going.
@@ -8,7 +6,7 @@ Who we are, what we believe, and where we're going.
 
 ## Quick Summary
 
-This section covers [YOUR COMPANY]'s identity: mission, vision, values, culture, and strategic direction. Start here to understand what drives us.
+This section covers Bespoke Woodcraft Studio's identity: mission, vision, values, culture, and strategic direction. Start here to understand what drives us.
 
 ---
 

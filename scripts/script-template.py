@@ -1,26 +1,30 @@
 """
-[FILL IN: Script Name] -- [FILL IN: One-line description]
+YouTube Analytics Fetcher -- Pull channel and video stats for Bespoke Woodcraft Studio clients
 
 Purpose:
-    [FILL IN: What this script does and why it exists]
+    Fetches YouTube channel and video analytics data for client channels,
+    formats the results, and saves them to the records directory for
+    performance tracking and content strategy decisions.
 
 Usage:
-    python script-template.py [FILL IN: arguments]
+    python script-template.py --channel-id UC_XXXXX --days 30 --output-dir records/
 
 Inputs:
-    [FILL IN: What data or configuration this script needs]
-    - Environment variables: [FILL IN: e.g., API_KEY, BASE_URL]
-    - Arguments: [FILL IN: e.g., --date, --output-dir]
+    Data and configuration this script needs:
+    - Environment variables: YOUTUBE_API_KEY (YouTube Data API v3 key)
+    - Arguments: --channel-id (YouTube channel ID), --days (lookback period), --output-dir (where to write results)
 
 Outputs:
-    [FILL IN: What this script produces and where it writes]
-    - Files written to: [FILL IN: e.g., records/transcripts/]
+    JSON and markdown summary of channel performance:
+    - Files written to: records/analytics/[channel-name]-[date].md
 
 Requirements:
-    [FILL IN: e.g., pip install requests python-dotenv]
+    pip install requests python-dotenv google-api-python-client
 
 Notes:
-    - [FILL IN: Any important caveats or assumptions]
+    - Requires a YouTube Data API v3 key (free tier supports 10,000 quota units/day)
+    - One channel analytics pull costs ~5 quota units
+    - Run weekly or after major content publishes to track trends
 """
 
 import os
@@ -33,8 +37,8 @@ from datetime import datetime
 
 # --- Configuration ---
 
-# API_KEY = os.environ.get("[FILL_IN_ENV_VAR]")
-# BASE_URL = "[FILL IN: API base URL]"
+# YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY")
+# BASE_URL = "https://www.googleapis.com/youtube/v3"
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "..", "records")
 
 # --- Logging ---
@@ -50,14 +54,14 @@ logger = logging.getLogger(__name__)
 
 
 def main():
-    """[FILL IN: Main function description]"""
+    """Fetch YouTube analytics for a client channel and save a performance report."""
     logger.info("Starting script: %s", __file__)
 
-    # [FILL IN: Script logic here]
-    # 1. Validate configuration
-    # 2. Fetch or process data
-    # 3. Write output to appropriate directory
-    # 4. Log results
+    # 1. Validate configuration (check API key, parse arguments)
+    # 2. Fetch channel statistics and recent video data from YouTube API
+    # 3. Calculate key metrics (views, watch time, subscriber growth, top videos)
+    # 4. Write formatted report to records/analytics/
+    # 5. Log summary of results
 
     logger.info("Script complete.")
 

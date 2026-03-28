@@ -26,7 +26,7 @@ No build step. No dependencies. No package manager. Just markdown files.
 
 ### Step 1: Set Up the Basics
 
-Open `CLAUDE.md` and replace all `[YOUR COMPANY]` placeholders with your company name and a one-line description. Fill in the voice rule at the bottom.
+Open `CLAUDE.md` and replace all `Bespoke Woodcraft Studio` placeholders with your company name and a one-line description. Fill in the voice rule at the bottom.
 
 ### Step 2: Define Your Voice
 
@@ -46,7 +46,7 @@ Copy `context/roles/executive-role-template-v1.md` to a new file (e.g., `cfo-v1.
 ### Step 5: Test It
 
 Open Claude Code, Claude Cowork, or Cursor, point it at this repo, and try these prompts:
-- "What does [YOUR COMPANY] do?"
+- "What does Bespoke Woodcraft Studio do?"
 - "Write a short blog intro about [topic] in our voice"
 - "As CFO, should we [decision]?"
 

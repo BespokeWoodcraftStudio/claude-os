@@ -1,11 +1,9 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
 # Start Here
 
 <metadata>
 purpose: New hire entry point and comprehensive onboarding guide
 audience: New hires, all team members
-summary: The starting point for understanding [YOUR COMPANY] — who we are, how we work, and where to find everything.
+summary: The starting point for understanding Bespoke Woodcraft Studio — who we are, how we work, and where to find everything.
 token_estimate: medium
 depends_on: []
 related: company/mission-and-vision.md, business/business-model.md, company/culture-and-values.md
@@ -15,15 +13,13 @@ context_tier: 1
 last_updated: 2026-02-18
 </metadata>
 
-Welcome to [YOUR COMPANY]. This is your starting point for understanding who we are, how we work, and where to find everything you need.
+Welcome to Bespoke Woodcraft Studio. This is your starting point for understanding who we are, how we work, and where to find everything you need.
 
 ---
 
-## What is [YOUR COMPANY]?
+## What is Bespoke Woodcraft Studio?
 
-<!-- Example: YourCo helps mid-market B2B companies grow through content marketing and AI-powered workflows. -->
-
-[FILL IN: One paragraph describing what your company does, who you serve, and what makes you different.]
+Bespoke Woodcraft Studio is a content creation agency that helps woodworkers and makers grow their businesses through video, written content, and social media. We combine cinematic production quality with genuine craft knowledge to tell the stories behind handmade work. Our clients are woodworkers, furniture makers, and craft businesses who do incredible work but need help getting it in front of the right audience.
 
 ---
 
@@ -49,7 +45,7 @@ Welcome to [YOUR COMPANY]. This is your starting point for understanding who we 
 
 ### Days 4-5: Go Deeper on Your Role
 
-[FILL IN: Add role-specific onboarding paths. Example sections below.]
+Dig into the areas most relevant to your role.
 
 **If you're in Delivery:**
 - [Teams & Operations](delivery/teams-and-operations.md) — How delivery works
@@ -93,7 +89,7 @@ Our handbook is a living document. If you can't find something, ask — then doc
 
 ### 3. Client Obsession
 
-[FILL IN: Your version of client-first philosophy.]
+Our clients are makers. They care about the work, not the marketing. Our job is to make the content feel as honest and well-crafted as the furniture they build. If a client watches their own video and doesn't recognize themselves in it, we failed.
 
 ### 4. System Thinking
 
@@ -115,23 +111,21 @@ We bias toward action. Make decisions with ~70% certainty. Course-correct as you
 
 ## Tools We Use
 
-[FILL IN: List your primary tools. Example:]
+**Our primary tools:**
 
 - **Slack** — Primary communication
-- **Notion** — Documentation and project management
-- **GitHub** — Code and technical documentation
-- **[YOUR TOOL]** — [FILL IN: Description]
+- **GitHub** — Documentation and knowledge base (this repo)
+- **DaVinci Resolve** — Video editing and color grading
+- **Claude Code** — AI-assisted content and operations
 
 ---
 
 ## Getting Help
 
-[FILL IN: Where to go for different types of questions. Example:]
-
-- **General questions:** Ask in #general on Slack
-- **HR/People:** Your manager or HR lead
-- **Technical:** #engineering on Slack
-- **Client work:** Your pod or engagement manager
+- **General questions:** Ask Ahmed directly or post in #general on Slack
+- **Content questions:** Check the style guides in `context/voice/` first
+- **Client work:** Check `records/customers/` for client context
+- **Process questions:** Check `docs/how-we-work/` or ask Ahmed
 
 ---
 

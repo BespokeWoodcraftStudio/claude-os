@@ -1,4 +1,3 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
 
 # Personal Context
 
@@ -17,7 +16,7 @@ last_updated: 2026-02-18
 
 ---
 
-Context files for the founder of [YOUR COMPANY]. These inform AI personas and calibrate agent behavior to produce personalized, relevant output.
+Context files for the founder of Bespoke Woodcraft Studio. These inform AI personas and calibrate agent behavior to produce personalized, relevant output.
 
 ## What This Is
 

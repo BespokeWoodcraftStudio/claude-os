@@ -1,17 +1,15 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
-# [FILL IN: Research Topic] -- Research Brief
+# [TOPIC] -- Research Brief
 
 <metadata>
-purpose: [FILL IN: What question this research answers]
-audience: [FILL IN: Who will use this research]
-summary: [FILL IN: One sentence describing the research]
+purpose: [What question this research answers]
+audience: [Who will use this research]
+summary: [One sentence describing the research]
 token_estimate: medium
-source_skill: [FILL IN: skill or workflow that produced this, or "manual"]
+source_skill: [Skill or workflow that produced this, or "manual"]
 input_files: []
 output_stage: research
 related: []
-domain: [FILL IN: e.g., competitive, market, technical]
+domain: [e.g., content-strategy, audience-growth, platform-trends, woodworking-niche, client-industry]
 confidence: draft
 context_tier: 2
 last_updated: 2026-02-18
@@ -21,33 +19,40 @@ last_updated: 2026-02-18
 
 ## Research Question
 
-[FILL IN: The specific question or hypothesis this research addresses]
+[The specific question or hypothesis this research addresses. Examples:
+- "What YouTube content formats are driving subscriber growth for woodworking channels in 2026?"
+- "Which social platforms deliver the best ROI for custom furniture makers?"
+- "What blog topics generate the most organic traffic in the maker/DIY space?"]
 
 ## Sources Consulted
 
 | Source | Type | Date | Key Finding |
 |--------|------|------|-------------|
-| [FILL IN: source name] | [web/interview/report/database] | [date] | [one-line finding] |
+| [Source name] | [web/interview/report/analytics/platform-data] | [date] | [One-line finding] |
 
 ## Raw Findings
 
-### [FILL IN: Theme 1]
+### [Theme 1 -- e.g., Platform Algorithm Changes]
 
-[FILL IN: Notes, quotes, data points]
+[Notes, quotes, data points]
 
-### [FILL IN: Theme 2]
+### [Theme 2 -- e.g., Audience Engagement Patterns]
 
-[FILL IN: Notes, quotes, data points]
+[Notes, quotes, data points]
+
+### [Theme 3 -- e.g., Competitor Content Analysis]
+
+[Notes, quotes, data points]
 
 ## Key Takeaways
 
-1. [FILL IN: Most important finding]
-2. [FILL IN: Second finding]
-3. [FILL IN: Third finding]
+1. [Most important finding]
+2. [Second finding]
+3. [Third finding]
 
 ## Next Steps
 
-- [ ] [FILL IN: What to do with this research — typically "draft deliverable in scratchpad/"]
+- [ ] [What to do with this research -- typically "draft content strategy in scratchpad/" or "create video script outline in scratchpad/"]
 
 ---
 

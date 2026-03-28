@@ -1,21 +1,17 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
+# Production (Equipment, Process & Delivery)
 
-# EPD (Engineering, Product & Design)
-
-Documentation for [YOUR COMPANY]'s EPD organization — how we build product, structure teams, and operate.
+Documentation for Bespoke Woodcraft Studio's production organization — how we create content, structure the team, and operate.
 
 ---
 
 ## Quick Summary
 
-[FILL IN: Describe your EPD organization structure. How many teams/lanes? What does each focus on?]
+Production at Bespoke Woodcraft Studio is organized into two lanes:
 
-<!-- Example:
-EPD has 3 lanes:
-1. **Product Lane:** Engineers building the core product
-2. **Client Engineering:** Forward-deployed engineers creating custom solutions
-3. **Infrastructure:** Team managing shared platform and tooling
--->
+1. **Video Production:** Filming, editing, color grading, and motion graphics — the team that creates the actual content.
+2. **Social & Content:** Social media management, copywriting, scheduling, analytics, and community engagement — the team that gets content in front of audiences and drives results.
+
+Both lanes operate on monthly client cycles and share a common planning and review cadence.
 
 ---
 
@@ -23,15 +19,15 @@ EPD has 3 lanes:
 
 | If you want to understand... | Read this |
 |------------------------------|-----------|
-| How we build and ship software | `dev-process.md` |
-| Our technical architecture and stack | `tech-stack.md` |
+| How we produce and ship content | `dev-process.md` |
+| Our cameras, software, and tools | `tech-stack.md` |
 
 ---
 
 ## Related Documentation
 
 - **Delivery:** `../delivery/` — Post-sales operations and client work
-- **Products:** `../products/` — Product portfolio documentation
+- **Products:** `../products/` — Service portfolio documentation
 - **How We Work:** `../how-we-work/` — Communication and collaboration
 
 ---

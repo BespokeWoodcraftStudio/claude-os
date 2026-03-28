@@ -1,5 +1,3 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
 # Context Routing Guide
 
 <metadata>
@@ -12,7 +10,7 @@ related: ../CLAUDE.md, ../context/README.md, ../pipeline/README.md
 domain: company
 confidence: canonical
 context_tier: 1
-last_updated: 2026-02-18
+last_updated: 2026-03-27
 </metadata>
 
 CLAUDE.md tells agents what exists and when to load it. This doc explains HOW to load context efficiently and what to watch out for.
@@ -42,8 +40,8 @@ Each task type has a recommended loading sequence. Load files in order — stop 
 
 ```
 1. context/voice/writing-style-context-v2.md     (always — the definitive guide)
-2. [FILL IN: Additional style guides for specific channels]
-3. docs/business/business-model.md                (if about [YOUR COMPANY])
+2. context/voice/social-media-voice-v1.md          (if social media or short-form content)
+3. docs/business/business-model.md                (if about Bespoke Woodcraft Studio)
 4. docs/products/product-overview-template.md     (if about a specific product)
 5. knowledge/domain/                              (if about your domain expertise)
 ```
@@ -171,7 +169,7 @@ The `records/` directory can contain hundreds of files. Never bulk-load them.
 3. Check the README.md in the most relevant directory
 4. Search/grep for keywords across the repo
 
-### "I need to understand [YOUR COMPANY]"
+### "I need to understand Bespoke Woodcraft Studio"
 
 Start at `docs/start-here.md`. It links to everything else.
 

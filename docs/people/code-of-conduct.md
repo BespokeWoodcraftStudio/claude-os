@@ -1,11 +1,9 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
 # Code of Conduct
 
 <metadata>
 purpose: Ethical standards and expectations for all team members
 audience: All team members
-summary: [YOUR COMPANY]'s code of conduct — expected behaviors, reporting mechanisms, and consequences.
+summary: Bespoke Woodcraft Studio's code of conduct — expected behaviors, reporting mechanisms, and consequences.
 token_estimate: medium
 depends_on: []
 related: ../company/culture-and-values.md, onboarding.md
@@ -19,7 +17,7 @@ last_updated: 2026-02-18
 
 ## Our Commitment
 
-[YOUR COMPANY] is committed to providing a welcoming, inclusive, and respectful environment for everyone. This code of conduct applies to all team members, contractors, and partners.
+Bespoke Woodcraft Studio is committed to providing a welcoming, inclusive, and respectful environment for everyone. This code of conduct applies to all team members, contractors, and partners.
 
 ---
 
@@ -39,7 +37,8 @@ last_updated: 2026-02-18
 - Sharing confidential company or client information
 - Dishonesty in reporting, timekeeping, or expense claims
 - Retaliation against anyone who reports a concern
-- [FILL IN: Any additional company-specific policies]
+- Using client footage, assets, or content for personal projects without written permission
+- Misrepresenting our work or capabilities to clients
 
 ---
 
@@ -47,9 +46,9 @@ last_updated: 2026-02-18
 
 If you experience or witness behavior that violates this code:
 
-1. [FILL IN: Primary reporting channel — e.g., Speak to your manager]
-2. [FILL IN: Secondary reporting channel — e.g., Contact HR directly]
-3. [FILL IN: Anonymous option — e.g., Use the anonymous reporting form]
+1. Talk to Ahmed directly — in person, over a call, or via DM. Whatever feels most comfortable.
+2. If your concern involves Ahmed, or you'd prefer to go another route, reach out to a trusted team member who can help escalate.
+3. You can also put your concern in writing via email to ahmed@bespokewoodcraft.studio if you'd rather not have a live conversation.
 
 All reports will be taken seriously and investigated promptly. Retaliation against reporters is strictly prohibited.
 
@@ -70,4 +69,4 @@ The severity of the consequence will be proportional to the violation.
 
 ## Acknowledgment
 
-All team members are expected to read and abide by this code of conduct. Questions about any provision should be directed to [FILL IN: HR contact or channel].
+All team members are expected to read and abide by this code of conduct. Questions about any provision should be directed to Ahmed or raised in #general on Slack.

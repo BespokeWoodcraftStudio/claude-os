@@ -1,17 +1,15 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
-# [FILL IN: Deliverable Title]
+# [DELIVERABLE TITLE]
 
 <metadata>
-purpose: [FILL IN: What this deliverable is]
-audience: [FILL IN: Who this was created for — client name, internal team, public]
-summary: [FILL IN: One sentence describing the finished deliverable]
+purpose: [What this deliverable is -- e.g., finished video script, published blog post, content strategy deck]
+audience: [Who this was created for -- client name, internal team, public]
+summary: [One sentence describing the finished deliverable]
 token_estimate: [small/medium/large]
-source_skill: [FILL IN: skill or workflow that produced this]
-input_files: [FILL IN: e.g., pipeline/research/topic-brief-v1.md, pipeline/scratchpad/topic-draft-v1.md]
+source_skill: [Skill or workflow that produced this]
+input_files: [e.g., pipeline/research/maker-audience-brief-v1.md, pipeline/scratchpad/workshop-tour-script-draft-v1.md]
 output_stage: outputs
 related: []
-domain: [FILL IN: e.g., content, strategy, analysis, client]
+domain: [e.g., video-production, written-content, social-media, client-strategy]
 confidence: canonical
 context_tier: 2
 last_updated: 2026-02-18
@@ -23,25 +21,26 @@ last_updated: 2026-02-18
 
 | Field | Value |
 |-------|-------|
-| **Source research** | [FILL IN: link to pipeline/research/ file(s)] |
-| **Working draft** | [FILL IN: link to pipeline/scratchpad/ file(s)] |
-| **Produced by** | [FILL IN: skill name, workflow, or "manual"] |
-| **Delivered to** | [FILL IN: client, publication, internal team] |
-| **Delivery date** | [FILL IN: date] |
+| **Source research** | [Link to pipeline/research/ file(s)] |
+| **Working draft** | [Link to pipeline/scratchpad/ file(s)] |
+| **Produced by** | [Skill name, workflow, or "manual"] |
+| **Delivered to** | [Client name, publication, or internal team] |
+| **Delivery date** | [Date] |
+| **Content type** | [Video script / Blog post / Social media package / Content calendar / Strategy document] |
 
 ## Content
 
-### [FILL IN: Section 1]
+### [Section 1 -- e.g., Final Script / Article Body]
 
-[FILL IN: Final content]
+[Final content]
 
-### [FILL IN: Section 2]
+### [Section 2 -- e.g., Supporting Assets / Distribution Notes]
 
-[FILL IN: Final content]
+[Final content]
 
 ## Appendix
 
-[FILL IN: Supporting data, methodology notes, or references — optional]
+[Supporting data, performance benchmarks, keyword research, reference links, or methodology notes -- optional]
 
 ---
 

@@ -1,4 +1,3 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
 
 # Outputs -- Pipeline Stage 3 (Output)
 

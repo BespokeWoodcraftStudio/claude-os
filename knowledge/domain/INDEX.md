@@ -1,15 +1,13 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
 # Domain — Index
 
 <metadata>
 purpose: Complete file listing for knowledge/domain/
 audience: AI agents and humans navigating domain research
-summary: Index of domain-specific research and expertise files.
+summary: Index of domain-specific research and expertise files for woodworking content creation.
 token_estimate: small
 depends_on: []
 related: README.md
-domain: [FILL IN: your domain]
+domain: woodworking content creation
 confidence: canonical
 context_tier: 2
 last_updated: 2026-02-18

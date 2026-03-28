@@ -1,4 +1,3 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
 
 # Context
 
@@ -37,7 +36,7 @@ If a file tells the agent **WHAT TO DO**, it's context. It belongs here. Context
 
 | Directory | Purpose | When to Load |
 |-----------|---------|-------------|
-| `voice/` | How we write and communicate — [YOUR COMPANY] voice, social media style | Any content generation or writing task |
+| `voice/` | How we write and communicate — Bespoke Woodcraft Studio voice, social media style | Any content generation or writing task |
 | `roles/` | How we think — AI executive and advisory personas | Decision support, analysis, reasoning tasks |
 | `personal/` | Who the founder is — operating manual, preferences, patterns | Working directly with or for the founder |
 
@@ -50,7 +49,7 @@ If a file tells the agent **WHAT TO DO**, it's context. It belongs here. Context
 ## What Each Directory Contains
 
 ### voice/
-The definitive writing rules for [YOUR COMPANY]. The writing style guide is the single most important context file for any content generation task. Includes base voice definition, core principles, structure patterns, domain adaptations, and a social media style guide.
+The definitive writing rules for Bespoke Woodcraft Studio. The writing style guide is the single most important context file for any content generation task. Includes base voice definition, core principles, structure patterns, domain adaptations, and a social media style guide.
 
 ### roles/
 Templates for AI personas that think like your executive team and inner circle. Two types: **executive roles** (CFO, CMO, COO — serve the function) and **advisory roles** (coach, consigliere — serve the founder). Roles can be stacked for multi-perspective analysis.

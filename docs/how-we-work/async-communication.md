@@ -1,11 +1,9 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
 # Asynchronous Communication
 
 <metadata>
 purpose: Guide to async-first communication practices
 audience: All team members
-summary: How [YOUR COMPANY] communicates asynchronously — definitions, benefits, practices, and etiquette.
+summary: How Bespoke Woodcraft Studio communicates asynchronously — definitions, benefits, practices, and etiquette.
 token_estimate: large
 depends_on: []
 related: documentation.md, meetings.md
@@ -15,7 +13,7 @@ context_tier: 2
 last_updated: 2026-02-18
 </metadata>
 
-This document serves as a guide to how we communicate at [YOUR COMPANY]. Since we are a distributed team, we rely on both sync and async, and each serves a different role.
+This document serves as a guide to how we communicate at Bespoke Woodcraft Studio. Since we are a distributed team, we rely on both sync and async, and each serves a different role.
 
 ---
 

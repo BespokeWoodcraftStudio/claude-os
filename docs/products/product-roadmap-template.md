@@ -1,11 +1,9 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
-# [FILL IN: Product Name] — Roadmap
+# Content Services — Roadmap
 
 <metadata>
-purpose: Product roadmap for [FILL IN: product name]
-audience: EPD, leadership, stakeholders
-summary: Roadmap template covering current priorities, upcoming features, and long-term vision for a product.
+purpose: Product roadmap for Bespoke Woodcraft Studio content services
+audience: Production team, leadership, stakeholders
+summary: Roadmap covering current priorities, upcoming service expansions, and long-term vision for the studio's content offerings.
 token_estimate: medium
 depends_on: []
 related: product-overview-template.md, ../epd/dev-process.md
@@ -19,31 +17,31 @@ last_updated: 2026-02-18
 
 ## Vision
 
-[FILL IN: Where is this product heading in 12-24 months?]
+Over the next 12-24 months, Bespoke Woodcraft Studio will become the go-to content partner for woodworkers and makers scaling their businesses. We will expand from video and social into podcast production, written long-form content, and course launch support — building a full content ecosystem that follows a maker from first YouTube video to established brand.
 
 ---
 
 ## Current Focus
 
-**Theme:** [FILL IN: Current quarter/cycle theme]
+**Theme:** Systematize core delivery and increase client capacity
 
 | Initiative | Status | Owner | Target Date |
 |-----------|--------|-------|-------------|
-| [FILL IN: Initiative 1] | [FILL IN: Not started/In progress/Done] | [FILL IN] | [FILL IN] |
-| [FILL IN: Initiative 2] | [FILL IN] | [FILL IN] | [FILL IN] |
-| [FILL IN: Initiative 3] | [FILL IN] | [FILL IN] | [FILL IN] |
+| Standardize video production workflow (shoot-to-publish in 5 business days) | In progress | Production Lead | Q1 2026 |
+| Launch templated social media content packages for onboarding speed | In progress | Social Team | Q1 2026 |
+| Build client content dashboard for transparent reporting | Not started | Ahmed | Q2 2026 |
 
 ---
 
 ## Next Up
 
-**Theme:** [FILL IN: Next quarter/cycle theme]
+**Theme:** Expand service lines and deepen client value
 
 | Initiative | Priority | Estimated Effort |
 |-----------|----------|-----------------|
-| [FILL IN] | [FILL IN: P0/P1/P2] | [FILL IN: S/M/L] |
-| [FILL IN] | [FILL IN] | [FILL IN] |
-| [FILL IN] | [FILL IN] | [FILL IN] |
+| Podcast production service for maker brands | P1 | L |
+| Long-form blog and newsletter writing service | P1 | M |
+| Course/product launch content packages | P2 | L |
 
 ---
 
@@ -51,9 +49,9 @@ last_updated: 2026-02-18
 
 Items we're thinking about but haven't committed to:
 
-- [FILL IN: Future idea 1]
-- [FILL IN: Future idea 2]
-- [FILL IN: Future idea 3]
+- Paid advertising management (YouTube pre-roll, Meta ads) for maker clients
+- White-label content services for woodworking tool brands
+- Annual "State of Maker Content" report as a lead generation and brand authority play
 
 ---
 
@@ -61,8 +59,8 @@ Items we're thinking about but haven't committed to:
 
 Things we've explicitly decided NOT to pursue (and why):
 
-- [FILL IN: What we're not doing] — [FILL IN: Why]
-- [FILL IN: What we're not doing] — [FILL IN: Why]
+- General lifestyle or non-maker content — we stay in our niche where our expertise is the differentiator
+- In-house e-commerce or merch fulfillment — we create content that drives sales, but we don't run the store
 
 ---
 
@@ -70,9 +68,9 @@ Things we've explicitly decided NOT to pursue (and why):
 
 | Metric | Current | Target | Timeframe |
 |--------|---------|--------|-----------|
-| [FILL IN] | [FILL IN] | [FILL IN] | [FILL IN] |
-| [FILL IN] | [FILL IN] | [FILL IN] | [FILL IN] |
-| [FILL IN] | [FILL IN] | [FILL IN] | [FILL IN] |
+| Active retainer clients | Track current count | Grow by 50% | Next 12 months |
+| Average client retention (months) | Track current average | 12+ months | Ongoing |
+| Content pieces delivered per client per month | Track current output | 20+ (across formats) | Q2 2026 |
 
 ---
 
@@ -80,5 +78,5 @@ Things we've explicitly decided NOT to pursue (and why):
 
 | Date | What Shipped |
 |------|-------------|
-| [FILL IN] | [FILL IN] |
-| [FILL IN] | [FILL IN] |
+| 2026-02-18 | Initial roadmap created |
+| 2026-01-01 | Standardized video editing pipeline launched |

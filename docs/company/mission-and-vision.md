@@ -1,11 +1,9 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
 # Mission & Vision
 
 <metadata>
 purpose: Company mission and vision statements
 audience: All team members
-summary: Defines what [YOUR COMPANY] believes, its mission, and the long-term vision.
+summary: Defines what Bespoke Woodcraft Studio believes, its mission, and the long-term vision.
 token_estimate: medium
 depends_on: []
 related: culture-and-values.md, strategy-overview.md
@@ -17,34 +15,26 @@ last_updated: 2026-02-18
 
 ## What We Believe
 
-<!-- Example: YourCo believes that great content, powered by AI, is the highest-leverage way for B2B companies to grow. -->
+**The best marketing for makers is showing the work.**
 
-[FILL IN: 3-5 core beliefs that drive your company. Each belief should be a bold statement followed by a paragraph explaining why it matters. Structure as:]
+Most woodworkers and craftspeople are terrible at telling their story. Not because they can't — because nobody showed them how. The work speaks for itself, but only if someone is watching. Content bridges that gap.
 
-**[FILL IN: Core belief #1]**
+**Craft deserves the same production quality as tech.**
 
-[FILL IN: Why this belief matters and how it shapes your work.]
+YouTube is full of beautifully shot tech reviews and poorly lit workshop videos. We believe handmade work deserves cinematic storytelling. When you pair real skill with real production value, the audience shows up.
 
-**[FILL IN: Core belief #2]**
+**Teach generously, sell naturally.**
 
-[FILL IN: Why this belief matters and how it shapes your work.]
-
-**[FILL IN: Core belief #3]**
-
-[FILL IN: Why this belief matters and how it shapes your work.]
+The best content gives something away. When you teach people how you build, they trust you enough to buy what you build. Generosity compounds faster than any ad spend.
 
 ---
 
 ## Our Mission
 
-[FILL IN: One to three sentences. What does your company exist to do? Keep it concrete and action-oriented.]
-
-<!-- Example: Help companies grow through content. Build systems that compound. Make great people incredibly productive. -->
+Help woodworkers and makers grow their businesses through content that shows the real work. Build stories that compound trust. Turn craftsmanship into an audience.
 
 ---
 
 ## Our Vision
 
-[FILL IN: Two to three sentences. What does the world look like when you succeed? Paint a picture of the future you're building toward.]
-
-<!-- Example: A world where the best companies don't struggle to create great content at scale. Where AI handles the heavy lifting and humans do the work that matters. -->
+A world where the best makers don't struggle to find their audience. Where a one-person workshop can build a brand as compelling as any studio-backed channel. Where craft and content work together, and the people doing the real work get the recognition they deserve.

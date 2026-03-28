@@ -1,8 +1,6 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
 # Business
 
-How [YOUR COMPANY] works as a business.
+How Bespoke Woodcraft Studio works as a business.
 
 ---
 
@@ -24,13 +22,9 @@ This section explains the business fundamentals: our model, economics, customers
 
 ## The Business at a Glance
 
-[FILL IN: 2-3 bullet points summarizing your business. What do you sell? Who do you sell to? What's your price point?]
-
-<!-- Example:
-- We sell 8-week strategy sprints that convert to 12-month contracts. Target ACV: $200k+.
-- Our customers are B2B tech companies with $10M+ raised.
-- We combine AI workflows with human expertise to deliver measurable outcomes.
--->
+- We help woodworkers and makers grow their businesses through video, written content, and social media — so they can stay in the shop while their audience grows.
+- Our clients are professional woodworkers doing $200k+/year in revenue with visually compelling craft and little online presence.
+- We start with a $2,500-$4,000 starter package, then move to monthly retainers at $3,000-$5,000/month. Target annual client value: $36k-$60k.
 
 ---
 

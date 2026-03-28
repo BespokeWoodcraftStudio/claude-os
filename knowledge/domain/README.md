@@ -1,31 +1,29 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
 # Domain — Domain-Specific Research & Expertise
 
 <metadata>
 purpose: Hub for domain-specific research, deep dives, and specialized knowledge
 audience: Anyone working on domain-specific projects or research
-summary: Directory for deep research on your company's specific domain expertise — industry knowledge, market research, and specialized topics.
+summary: Directory for deep research on woodworking content creation — platform algorithms, maker audience behavior, video production techniques, and content strategy for the trades.
 token_estimate: small
 depends_on: []
 related: ../../docs/business/, ../../docs/products/
-domain: [FILL IN: your domain]
+domain: woodworking content creation
 confidence: canonical
 context_tier: 2
 last_updated: 2026-02-18
 </metadata>
 
-This is where domain-specific research lives — the deep knowledge that makes [YOUR COMPANY] an expert in its field.
+This is where domain-specific research lives — the deep knowledge that makes Bespoke Woodcraft Studio an expert in content creation for woodworkers and makers.
 
 ---
 
 ## What Goes Here
 
-- Industry research and analysis
-- Market landscape studies
-- Domain-specific methodologies
-- Technical deep dives on your area of expertise
-- Competitive intelligence (sanitized)
+- Woodworking content strategy research and analysis
+- Platform algorithm studies (YouTube, Instagram, TikTok) for maker audiences
+- Video production techniques specific to workshop environments
+- Maker audience behavior and engagement research
+- Competitive intelligence on other content agencies serving the trades (sanitized)
 
 ## What Does NOT Go Here
 

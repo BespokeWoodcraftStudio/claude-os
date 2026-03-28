@@ -1,18 +1,16 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
-# Board Meeting — [FILL IN: Quarter/Year]
+# Quarterly Business Review — Q[X] FY20XX
 
 <metadata>
-purpose: Template for quarterly board meeting materials
-audience: Board of directors, leadership team
-summary: Board meeting template covering business update, financials, key metrics, and strategic discussion topics.
+purpose: Template for quarterly business review meetings
+audience: Founder, leadership, key advisors
+summary: Quarterly review template covering business update, financials, key metrics, and strategic discussion topics for a small content creation agency.
 token_estimate: medium
 depends_on: []
 related: fiscal-plan-template.md, ../company/strategy-overview.md
 domain: finance
 confidence: draft
 context_tier: 2
-last_updated: 2026-02-18
+last_updated: 2026-03-27
 </metadata>
 
 **Sensitivity:** Leadership-only. Do not share externally.
@@ -21,9 +19,9 @@ last_updated: 2026-02-18
 
 ## Meeting Details
 
-- **Date:** [FILL IN]
-- **Attendees:** [FILL IN]
-- **Duration:** [FILL IN]
+- **Date:** [Date of meeting]
+- **Attendees:** Ahmed Hamade (Founder), [advisors or key team members as applicable]
+- **Duration:** 60-90 minutes
 
 ---
 
@@ -41,18 +39,18 @@ last_updated: 2026-02-18
 
 ### Highlights
 
-- [FILL IN: Key win or milestone]
-- [FILL IN: Key win or milestone]
-- [FILL IN: Key win or milestone]
+- [Key client win, new retainer signed, or notable project delivered]
+- [Content milestone — e.g., client channel growth, viral video, campaign results]
+- [Operational improvement — e.g., new workflow, tool adoption, process streamlining]
 
 ### Challenges
 
-- [FILL IN: Key challenge]
-- [FILL IN: Key challenge]
+- [Key challenge — e.g., freelancer bandwidth, client scope creep, delayed deliverables]
+- [Key challenge — e.g., seasonality impact, pricing pressure, content performance]
 
 ### Team Update
 
-[FILL IN: Notable hires, departures, org changes]
+[Notable freelancer additions/departures, workload distribution changes, or capacity notes]
 
 ---
 
@@ -60,11 +58,11 @@ last_updated: 2026-02-18
 
 | Metric | Actual | Plan | Variance |
 |--------|--------|------|----------|
-| Revenue | [FILL IN] | [FILL IN] | [FILL IN] |
-| Gross Margin | [FILL IN] | [FILL IN] | [FILL IN] |
-| EBITDA | [FILL IN] | [FILL IN] | [FILL IN] |
-| Cash Balance | [FILL IN] | [FILL IN] | [FILL IN] |
-| Burn Rate | [FILL IN] | [FILL IN] | [FILL IN] |
+| Revenue | [Actual] | [Plan] | [+/- $] |
+| Gross Margin | [Actual %] | [Plan %] | [+/- pp] |
+| Net Profit | [Actual] | [Plan] | [+/- $] |
+| Cash Balance | [Actual] | [Plan] | [+/- $] |
+| Monthly Burn Rate | [Actual] | [Plan] | [+/- $] |
 
 ---
 
@@ -72,27 +70,27 @@ last_updated: 2026-02-18
 
 | Metric | Last Quarter | This Quarter | Trend |
 |--------|-------------|-------------|-------|
-| ARR | [FILL IN] | [FILL IN] | [FILL IN] |
-| Customers | [FILL IN] | [FILL IN] | [FILL IN] |
-| Churn Rate | [FILL IN] | [FILL IN] | [FILL IN] |
-| NRR | [FILL IN] | [FILL IN] | [FILL IN] |
-| ACV | [FILL IN] | [FILL IN] | [FILL IN] |
+| Active Retainer Clients | [#] | [#] | [Up/Down/Flat] |
+| Project-Based Clients | [#] | [#] | [Up/Down/Flat] |
+| Retainer vs. Project Revenue Mix | [%/%] | [%/%] | [Trend] |
+| Average Monthly Retainer Value | [$] | [$] | [Up/Down/Flat] |
+| Client Churn Rate | [%] | [%] | [Up/Down/Flat] |
 
 ---
 
 ## 4. Strategic Discussion
 
-### Topic: [FILL IN: Strategic Topic]
+### Topic: [Strategic Topic — e.g., Expanding Video Packages, Hiring First Full-Time Editor]
 
-**Context:** [FILL IN]
+**Context:** [Background on why this topic matters now]
 
 **Options:**
-1. [FILL IN: Option A]
-2. [FILL IN: Option B]
+1. [Option A — e.g., hire a part-time video editor to increase capacity]
+2. [Option B — e.g., continue using freelancers and invest in better tooling]
 
-**Recommendation:** [FILL IN]
+**Recommendation:** [Which option and why]
 
-**Board input needed on:** [FILL IN]
+**Input needed on:** [Specific question for advisors — e.g., timing, budget threshold, risk tolerance]
 
 ---
 
@@ -100,11 +98,11 @@ last_updated: 2026-02-18
 
 | Action | Owner | Due Date |
 |--------|-------|----------|
-| [FILL IN] | [FILL IN] | [FILL IN] |
-| [FILL IN] | [FILL IN] | [FILL IN] |
+| [Action item from discussion] | [Owner] | [Date] |
+| [Action item from discussion] | [Owner] | [Date] |
 
 ---
 
 ## Next Meeting
 
-**Date:** [FILL IN]
+**Date:** [Scheduled date for next quarterly review]

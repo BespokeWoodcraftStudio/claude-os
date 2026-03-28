@@ -1,11 +1,10 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
 
 # Writing Guidelines
 
 <metadata>
 purpose: Directory overview for voice and style context files
 audience: AI agents, content creators, writers
-summary: Voice, tone, and style standards for all [YOUR COMPANY] content
+summary: Voice, tone, and style standards for all Bespoke Woodcraft Studio content
 token_estimate: small
 depends_on: none
 related: context/roles/, context/personal/
@@ -17,11 +16,11 @@ last_updated: 2026-02-18
 
 ---
 
-Voice, tone, and style standards for all [YOUR COMPANY] content. The definitive guide for how we write.
+Voice, tone, and style standards for all Bespoke Woodcraft Studio content. The definitive guide for how we write.
 
 ## What This Is
 
-This directory contains the prescriptive writing rules that tell AI agents and human writers HOW to write for [YOUR COMPANY]. The writing style guide is the single most important context file for any content generation task.
+This directory contains the prescriptive writing rules that tell AI agents and human writers HOW to write for Bespoke Woodcraft Studio. The writing style guide is the single most important context file for any content generation task.
 
 ## Files
 

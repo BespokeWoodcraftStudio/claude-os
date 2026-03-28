@@ -1,6 +1,5 @@
 # Onboarding Agent Configuration
 
-<!-- TEMPLATE: Update file paths to match your actual docs. Delete this comment when done. -->
 
 <metadata>
 purpose: Context loading instructions for team onboarding and company questions
@@ -21,7 +20,7 @@ Load this agent config when the task involves:
 - Onboarding a new team member
 - Explaining company culture, values, or processes
 - Finding the right internal documentation
-- "How do we do X at [YOUR COMPANY]?" type questions
+- "How do we do X at Bespoke Woodcraft Studio?" type questions
 
 ## Required Context (Always Load)
 

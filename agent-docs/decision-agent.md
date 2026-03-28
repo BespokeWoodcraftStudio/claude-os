@@ -1,6 +1,5 @@
 # Decision Agent Configuration
 
-<!-- TEMPLATE: Update file paths and add your company-specific decision frameworks. Delete this comment when done. -->
 
 <metadata>
 purpose: Context loading instructions for strategic decisions and analysis

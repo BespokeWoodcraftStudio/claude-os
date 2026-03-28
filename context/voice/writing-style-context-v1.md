@@ -1,9 +1,7 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
 # Writing Style Context v1
 
 <metadata>
-purpose: The definitive [YOUR COMPANY] voice and style guide for all content
+purpose: The definitive Bespoke Woodcraft Studio voice and style guide for all content
 audience: All content creators, writers, AI agents
 summary: Defines voice, principles, structure, and quality standards for all external writing
 token_estimate: medium
@@ -25,14 +23,14 @@ Not for: legal, compliance, or highly formal contexts.
 <voice>
 ## Voice
 
-[FILL IN: Describe your company's voice in one sentence. Think of it as the feeling the reader should have. Example: "Write like a smart friend explaining something important over coffee."]
+Write like a craftsman showing someone around the workshop. Calm, unhurried, generous with knowledge. No showing off — just genuine expertise shared clearly.
 
 **Three qualities:**
-- **[FILL IN: Quality 1]** (e.g., Direct — no jargon, get to the point)
-- **[FILL IN: Quality 2]** (e.g., Clear — simple words, anyone can understand)
-- **[FILL IN: Quality 3]** (e.g., Real — authentic, not polished corporate speak)
+- **Warm** — approachable and human, like a conversation not a lecture
+- **Clear** — simple words, logical flow, anyone can follow along
+- **Grounded** — rooted in real experience, real materials, real process
 
-[FILL IN: One sentence describing the reader experience you're aiming for. What should the reader feel after reading your content?]
+The reader should feel like they just learned something real from someone who actually does the work.
 </voice>
 
 ---
@@ -42,30 +40,20 @@ Not for: legal, compliance, or highly formal contexts.
 
 Channel these writers. Study their techniques.
 
-[FILL IN: List 3-5 writers or communicators whose style you want to emulate. For each, include:
-- Their name
-- A 1-2 word description of what they do well
-- A specific technique they use that you want to adopt
-- An example quote that captures their style
+**Dan Martell** — Calm authority
+- Teaches complex ideas through simple frameworks and personal stories
+- Never talks down to the audience — shares what he learned the hard way
+- *"You don't need more time. You need fewer things."*
 
-Format each anchor like this:]
+**Cam (Blacktail Studio)** — Honest maker
+- Walks you through the process, including mistakes and what he'd do differently
+- Uses humor and self-deprecation to keep things approachable
+- *Shows don't just tell — let people watch the work happen*
 
-**[Writer Name]** — [What they do well]
-- [Specific technique or habit]
-- [Another technique or observation]
-- *"[Example quote that captures their style]"*
-
-**[Writer Name]** — [What they do well]
-- [Specific technique or habit]
-- [Another technique or observation]
-- *"[Example quote that captures their style]"*
-
-**[Writer Name]** — [What they do well]
-- [Specific technique or habit]
-- [Another technique or observation]
-- *"[Example quote that captures their style]"*
-
-[FILL IN: Add 2 more style anchors if desired. Three is the minimum for triangulating your voice.]
+**James Clear** — Precise clarity
+- Strips ideas down to their essential truth with no wasted words
+- Builds arguments through concrete examples and evidence, not opinion
+- *"You do not rise to the level of your goals. You fall to the level of your systems."*
 </style_anchors>
 
 ---
@@ -181,7 +169,27 @@ Each example shows a transformation. The weak version is common. The strong vers
 
 *Why it works: The weak version accepts convention. The strong version questions it by examining fundamentals. This is how you find insights others miss.*
 
-[FILL IN: Add 1-2 examples that use your company's domain. Show a before/after in your industry's language. This helps AI agents calibrate to your specific context.]
+### Craft domain: overselling vs. showing the work
+
+**Weak:**
+> Our artisanal, hand-selected premium hardwoods undergo a meticulous multi-stage finishing process to deliver an unparalleled bespoke furniture experience.
+
+**Strong:**
+> We use white oak for this table because it holds up to water and doesn't need a lot of fuss. Two coats of hardwax oil, let it cure for a week, and it's ready for twenty years of dinners.
+
+*Why it works: The strong version tells you what, why, and how long. The weak version uses ten-dollar words to say nothing specific. Craft speaks for itself — you don't need to dress it up.*
+
+---
+
+### Teaching vs. gatekeeping
+
+**Weak:**
+> Proper joinery techniques require years of experience and specialized equipment that most hobbyists simply don't have access to.
+
+**Strong:**
+> A mortise and tenon is just a peg in a hole. You can cut one with a chisel and a drill press. Here's how.
+
+*Why it works: The strong version invites people in. The weak version builds a wall. Good content makes skills feel achievable, not exclusive.*
 
 </examples>
 
@@ -200,7 +208,9 @@ These patterns signal corporate writing or unclear thinking.
 - **Flowery language** that adds no information
 - **Excessive formatting** (bullet lists when prose works better, bold everywhere)
 
-[FILL IN: Add any industry-specific jargon or phrases your company should avoid.]
+- **Pretentious craft language**: artisanal, curated, bespoke (ironic given the company name — use it sparingly), hand-selected, premium experience
+- **Gatekeeping phrases**: "you really need to..." "most people can't..." "it takes years to..."
+- **Vague material references**: "quality materials" "fine woods" — name the species, name the finish
 </avoid>
 
 ---
@@ -215,7 +225,7 @@ Before finishing, run these tests:
 3. **Cut test**: Can you remove 20% of the words without losing meaning?
 4. **Earn-it test**: Does every paragraph earn its place?
 5. **Why test**: Did you explain *why* this matters, not just what it is?
-6. **Style anchor test**: Would [FILL IN: your primary style anchor] write it this way?
+6. **Style anchor test**: Would Dan Martell or Cam from Blacktail Studio say it this way?
 </quality_checks>
 
 ---
@@ -250,7 +260,7 @@ The base voice above applies everywhere. These modifiers adjust it for specific 
 **Tone:** Competent operator reporting to sophisticated investors. No surprises.
 
 **Example:**
-> [FILL IN: Write one example paragraph in your company's financial voice. Include real or realistic metrics.]
+> Content revenue hit $42K in Q1, up 18% from last quarter. Video production costs dropped 12% after we brought editing in-house. We're on track for $180K annual with current client load. Three new retainer conversations in pipeline.
 
 **Avoid:** Aspirational language without numbers backing it.
 
@@ -267,7 +277,7 @@ The base voice above applies everywhere. These modifiers adjust it for specific 
 **Tone:** Smart practitioner explaining to a peer. You know your stuff and assume they do too.
 
 **Example:**
-> [FILL IN: Write one example paragraph about your product or technical domain. Show how you balance precision with clarity.]
+> We shoot on a Sony FX3 with a 24-70mm f/2.8 for most workshop content. Dual-system audio — a Rode NTG5 shotgun on a boom for ambient shop sound and a Sennheiser lav for voice. Color grade in DaVinci Resolve using a custom LUT built for warm workshop lighting. Final delivery is 4K H.265 for YouTube, 1080p H.264 for social cuts.
 
 ### Customer-Facing / Client Work
 
@@ -283,7 +293,7 @@ The base voice above applies everywhere. These modifiers adjust it for specific 
 **Tone:** Trusted advisor who gets their business. Not a vendor pitching.
 
 **Example:**
-> [FILL IN: Write one example paragraph addressing a client. Show how you center their outcomes over your process.]
+> Your audience wants to see the real process, not a polished highlight reel. We'll build a content series around your signature pieces — from rough lumber to finished product. The goal: 50K views per video within six months, and enough trust built that customers are reaching out before you post the price.
 
 **Avoid:** Internal jargon. Use the client's language.
 
@@ -300,12 +310,16 @@ For the full guide, load `context/voice/social-media-style-guide-template-v1.md`
 | Paragraphs 2-4 sentences | One sentence per line. White space is your friend. |
 | No em dashes | Short sentences instead. Period. New line. |
 
-**Tone:** [FILL IN: Describe how your founder or brand voice sounds on social media. Example: "Founder thinking out loud. Direct, opinionated, backed by experience."]
+**Tone:** Maker thinking out loud. Calm, observational, sharing lessons from the shop floor. Not trying to go viral — just saying what's true.
 
 **Example:**
-> [FILL IN: Write a 3-5 line social media post in your voice. Show the hook-and-space style.]
-
-[FILL IN: Add additional domain adaptations relevant to your business. Common ones: Sales/outbound, Internal communications, Partner/channel communications, Press/PR.]
+> Most woodworkers overthink wood selection.
+>
+> Pick something stable. Pick something you can get more of.
+>
+> The best table I ever built was white oak from a local mill. Nothing exotic. Just honest material, properly dried.
+>
+> Stop shopping. Start building.
 
 ---
 

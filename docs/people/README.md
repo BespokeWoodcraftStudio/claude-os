@@ -1,8 +1,6 @@
-<!-- TEMPLATE: Replace all [BRACKETED] placeholders. Delete this comment when done. -->
-
 # People
 
-HR, policies, onboarding, and careers at [YOUR COMPANY].
+HR, policies, onboarding, and careers at Bespoke Woodcraft Studio.
 
 ---
 
@@ -16,7 +14,7 @@ Everything related to your employment: how to get started, company policies, and
 
 | If you want to understand... | Read this |
 |------------------------------|-----------|
-| Your first days at [YOUR COMPANY] | `onboarding.md` |
+| Your first days at Bespoke Woodcraft Studio | `onboarding.md` |
 | Ethical standards and conduct | `code-of-conduct.md` |
 | Time off and PTO | `time-off-policy.md` |
 

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LAX to Europe — Award Flight Points Comparison</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0f172a; color: #e2e8f0; padding: 24px;
+  }
+  h1 { text-align: center; font-size: 28px; margin-bottom: 6px; color: #f8fafc; }
+  .subtitle { text-align: center; color: #94a3b8; margin-bottom: 24px; font-size: 14px; }
+  .controls { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+  .controls button {
+    padding: 10px 20px; border: 2px solid #334155; background: #1e293b;
+    color: #cbd5e1; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600;
+    transition: all 0.2s;
+  }
+  .controls button:hover { border-color: #60a5fa; color: #60a5fa; }
+  .controls button.active { background: #1d4ed8; border-color: #3b82f6; color: #fff; }
+  .sort-controls { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+  .sort-controls button {
+    padding: 6px 14px; border: 1px solid #475569; background: #1e293b;
+    color: #94a3b8; border-radius: 6px; cursor: pointer; font-size: 12px; transition: all 0.2s;
+  }
+  .sort-controls button:hover { border-color: #60a5fa; color: #60a5fa; }
+  .sort-controls button.active { background: #1e40af; border-color: #3b82f6; color: #fff; }
+  .sort-label { color: #64748b; font-size: 12px; padding: 6px 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+  .city-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; max-width: 1400px; margin: 0 auto; }
+  .city-card {
+    background: #1e293b; border-radius: 12px; border: 1px solid #334155;
+    overflow: hidden; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .city-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+  .city-header {
+    padding: 16px 20px; background: linear-gradient(135deg, #1e40af, #7c3aed);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .city-name { font-size: 20px; font-weight: 700; color: #fff; }
+  .city-code { font-size: 13px; color: #c4b5fd; font-weight: 500; }
+  .direction-tabs { display: flex; border-bottom: 1px solid #334155; }
+  .direction-tab {
+    flex: 1; padding: 10px; text-align: center; cursor: pointer; font-size: 13px;
+    color: #94a3b8; background: #1e293b; border: none; font-weight: 600; transition: all 0.2s;
+  }
+  .direction-tab.active { color: #60a5fa; background: #172554; border-bottom: 2px solid #3b82f6; }
+  .direction-tab:hover { color: #93c5fd; }
+  .fare-section { padding: 12px 16px; }
+  .fare-header {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+    color: #64748b; font-weight: 700; margin-bottom: 8px; padding-bottom: 4px;
+    border-bottom: 1px solid #334155;
+  }
+  .fare-header.economy { color: #4ade80; }
+  .fare-header.premium { color: #facc15; }
+  .fare-header.business { color: #f97316; }
+  .program-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 6px 0; border-bottom: 1px solid rgba(51,65,85,0.5); font-size: 13px;
+  }
+  .program-row:last-child { border-bottom: none; }
+  .program-name { color: #cbd5e1; font-weight: 500; }
+  .program-points { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .program-points.best { color: #4ade80; font-size: 14px; }
+  .program-points.good { color: #facc15; }
+  .program-points.high { color: #f87171; }
+  .no-data { color: #475569; font-style: italic; font-size: 12px; padding: 8px 0; }
+  .roundtrip-total {
+    padding: 12px 16px; background: #172554; border-top: 1px solid #1e40af;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .roundtrip-label { font-size: 11px; color: #93c5fd; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+  .roundtrip-value { font-size: 16px; font-weight: 800; color: #4ade80; }
+  .legend { text-align: center; margin-top: 24px; padding: 16px; color: #64748b; font-size: 12px; }
+  .legend span { margin: 0 12px; }
+  .legend .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+  .dot.green { background: #4ade80; }
+  .dot.yellow { background: #facc15; }
+  .dot.red { background: #f87171; }
+  @media (max-width: 768px) {
+    .city-cards { grid-template-columns: 1fr; }
+    h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>LAX to Europe — Award Flight Points Comparison</h1>
+<p class="subtitle">Best available award prices from seats.aero &middot; Travel dates: March 31 – April 15, 2026 &middot; One-way pricing</p>
+
+<div class="controls">
+  <button class="active" onclick="setView('roundtrip')">Round Trip Total</button>
+  <button onclick="setView('outbound')">Outbound (LAX →)</button>
+  <button onclick="setView('return')">Return (→ LAX)</button>
+</div>
+
+<div class="sort-controls">
+  <span class="sort-label">Sort by:</span>
+  <button class="active" onclick="setSort('economy')">Economy</button>
+  <button onclick="setSort('premium')">Premium Economy</button>
+  <button onclick="setSort('business')">Business</button>
+</div>
+
+<div class="city-cards" id="cards"></div>
+
+<div class="legend">
+  <span><span class="dot green"></span> Best deal</span>
+  <span><span class="dot yellow"></span> Mid-range</span>
+  <span><span class="dot red"></span> Premium price</span>
+  <span style="margin-left: 24px;">Data sourced from seats.aero on March 26, 2026. Prices are lowest found across Mar 31–Apr 15 window.</span>
+</div>
+
+<script>
+const data = {
+  "London (LHR)": {
+    outbound: {
+      "Flying Blue": {economy:25000, premium:53000, business:105500},
+      "Virgin Atlantic": {economy:25000, premium:76000, business:155000},
+      "Qatar": {economy:25750, premium:null, business:110000},
+      "Alaska": {economy:27500, premium:45000, business:70000},
+      "American": {economy:30000, premium:40000, business:57500},
+      "Qantas": {economy:36200, premium:85000, business:108000},
+      "JetBlue": {economy:40000, premium:null, business:166300},
+      "Aeroplan": {economy:40000, premium:null, business:90000},
+      "United": {economy:40000, premium:95000, business:88000},
+      "Velocity": {economy:42000, premium:null, business:null},
+      "Delta": {economy:61000, premium:130500, business:null},
+      "Turkish": {economy:75000, premium:null, business:175000},
+      "Smiles": {economy:91000, premium:null, business:null}
+    },
+    return: {
+      "Alaska": {economy:27500, premium:null, business:110000},
+      "American": {economy:30000, premium:82000, business:57500},
+      "Flying Blue": {economy:32000, premium:51610, business:60000},
+      "Qantas": {economy:36200, premium:null, business:133600},
+      "United": {economy:40000, premium:95900, business:115000},
+      "Aeroplan": {economy:40000, premium:null, business:90000},
+      "Velocity": {economy:42000, premium:null, business:null},
+      "Virgin Atlantic": {economy:50000, premium:76000, business:155000},
+      "Turkish": {economy:55000, premium:null, business:175000},
+      "Delta": {economy:62000, premium:120000, business:null},
+      "JetBlue": {economy:60700, premium:null, business:248000},
+      "Smiles": {economy:99000, premium:null, business:null}
+    }
+  },
+  "Paris (CDG)": {
+    outbound: {
+      "Flying Blue": {economy:25000, premium:40000, business:null},
+      "American": {economy:30000, premium:null, business:57500},
+      "Alaska": {economy:35000, premium:45000, business:70000},
+      "Qantas": {economy:43200, premium:null, business:108000},
+      "JetBlue": {economy:45100, premium:null, business:null},
+      "Turkish": {economy:55000, premium:null, business:175000},
+      "Smiles": {economy:109000, premium:166000, business:null},
+      "Etihad": {economy:127000, premium:null, business:null}
+    },
+    return: {
+      "Flying Blue": {economy:25000, premium:40000, business:null},
+      "Virgin Atlantic": {economy:25000, premium:null, business:null},
+      "American": {economy:30000, premium:null, business:57500},
+      "Alaska": {economy:35000, premium:45000, business:70000},
+      "Velocity": {economy:42000, premium:null, business:null},
+      "Qantas": {economy:43200, premium:null, business:108000},
+      "JetBlue": {economy:45100, premium:null, business:null},
+      "Turkish": {economy:55000, premium:null, business:175000},
+      "Smiles": {economy:109000, premium:null, business:null},
+      "Etihad": {economy:127000, premium:null, business:null}
+    }
+  },
+  "Frankfurt (FRA)": {
+    outbound: {
+      "Lufthansa": {economy:25000, premium:null, business:88370},
+      "Flying Blue": {economy:25000, premium:72500, business:160000},
+      "Virgin Atlantic": {economy:25000, premium:null, business:null},
+      "American": {economy:30000, premium:null, business:57500},
+      "Alaska": {economy:35000, premium:null, business:70000},
+      "United": {economy:40000, premium:100000, business:88000},
+      "Aeroplan": {economy:40000, premium:null, business:70000},
+      "Velocity": {economy:42000, premium:null, business:null},
+      "Qantas": {economy:43200, premium:null, business:113900},
+      "Turkish": {economy:55000, premium:null, business:175000},
+      "JetBlue": {economy:65000, premium:null, business:null},
+      "Etihad": {economy:127000, premium:null, business:null}
+    },
+    return: {
+      "Lufthansa": {economy:4815, premium:48657, business:75965},
+      "Flying Blue": {economy:25000, premium:40000, business:60000},
+      "American": {economy:30000, premium:null, business:57500},
+      "Alaska": {economy:35000, premium:null, business:70000},
+      "United": {economy:40000, premium:100000, business:88000},
+      "Aeroplan": {economy:40000, premium:null, business:70000},
+      "Velocity": {economy:42000, premium:null, business:null},
+      "Qantas": {economy:43200, premium:null, business:113900},
+      "Turkish": {economy:55000, premium:null, business:175000}
+    }
+  },
+  "Amsterdam (AMS)": {
+    outbound: {
+      "Flying Blue": {economy:25000, premium:40000, business:null},
+      "Virgin Atlantic": {economy:25000, premium:null, business:null},
+      "American": {economy:30000, premium:null, business:57500},
+      "Alaska": {economy:35000, premium:null, business:70000},
+      "Velocity": {economy:42000, premium:null, business:null},
+      "Qantas": {economy:43200, premium:null, business:108000},
+      "Turkish": {economy:55000, premium:null, business:175000},
+      "JetBlue": {economy:65000, premium:null, business:null},
+      "Smiles": {economy:114000, premium:null, business:296000},
+      "Etihad": {economy:127000, premium:null, business:null}
+    },
+    return: {
+      "Flying Blue": {economy:25000, premium:40000, business:118500},
+      "Virgin Atlantic": {economy:25000, premium:null, business:null},
+      "American": {economy:30000, premium:null, business:57500},
+      "Alaska": {economy:35000, premium:null, business:70000},
+      "Velocity": {economy:42000, premium:null, business:null},
+      "Qantas": {economy:43200, premium:null, business:108000},
+      "Turkish": {economy:55000, premium:null, business:175000},
+      "Smiles": {economy:114000, premium:null, business:295000},
+      "JetBlue": {economy:114000, premium:null, business:null},
+      "Etihad": {economy:null, premium:null, business:null}
+    }
+  },
+  "Rome (FCO)": {
+    outbound: {
+      "Flying Blue": {economy:25000, premium:80000, business:124000},
+      "American": {economy:30000, premium:null, business:57500},
+      "Alaska": {economy:35000, premium:null, business:70000},
+      "United": {economy:40000, premium:92600, business:88000},
+      "Velocity": {economy:42000, premium:null, business:null},
+      "Qantas": {economy:43200, premium:null, business:113900},
+      "Turkish": {economy:55000, premium:null, business:175000},
+      "Aeroplan": {economy:54100, premium:null, business:90000},
+      "Delta": {economy:60300, premium:148600, business:null},
+      "JetBlue": {economy:65000, premium:null, business:null}
+    },
+    return: {
+      "Flying Blue": {economy:25000, premium:40000, business:60000},
+      "Virgin Atlantic": {economy:25000, premium:null, business:null},
+      "American": {economy:30000, premium:null, business:57500},
+      "Alaska": {economy:35000, premium:45000, business:70000},
+      "United": {economy:40000, premium:98000, business:88000},
+      "Velocity": {economy:42000, premium:null, business:null},
+      "Qantas": {economy:43200, premium:85300, business:113900},
+      "Aeroplan": {economy:53300, premium:null, business:90000},
+      "Turkish": {economy:55000, premium:null, business:175000},
+      "Delta": {economy:58000, premium:145000, business:null}
+    }
+  }
+};
+
+let currentView = 'roundtrip';
+let currentSort = 'economy';
+
+function fmt(n) {
+  if (n === null || n === undefined) return null;
+  return n.toLocaleString();
+}
+
+function getColor(val, allVals) {
+  if (val === null) return '';
+  const sorted = allVals.filter(v => v !== null).sort((a,b) => a - b);
+  if (sorted.length === 0) return 'good';
+  const idx = sorted.indexOf(val);
+  const pct = sorted.length > 1 ? idx / (sorted.length - 1) : 0;
+  if (pct <= 0.33) return 'best';
+  if (pct <= 0.66) return 'good';
+  return 'high';
+}
+
+function getBestRT(city, cabin) {
+  // Find the best roundtrip total for a given cabin across all programs
+  const out = data[city].outbound;
+  const ret = data[city].return;
+  let bestTotal = null;
+  let bestProg = null;
+  // Check all outbound programs
+  for (const [prog, fares] of Object.entries(out)) {
+    const outPrice = fares[cabin];
+    if (outPrice === null || outPrice === undefined) continue;
+    // Find matching return program or best return
+    const retPrice = ret[prog]?.[cabin];
+    if (retPrice !== null && retPrice !== undefined) {
+      const total = outPrice + retPrice;
+      if (bestTotal === null || total < bestTotal) {
+        bestTotal = total;
+        bestProg = prog;
+      }
+    }
+  }
+  return { total: bestTotal, program: bestProg };
+}
+
+function renderCards() {
+  const container = document.getElementById('cards');
+  container.innerHTML = '';
+
+  // Sort cities by current sort cabin
+  const cities = Object.keys(data);
+  cities.sort((a, b) => {
+    let aVal, bVal;
+    if (currentView === 'roundtrip') {
+      aVal = getBestRT(a, currentSort).total;
+      bVal = getBestRT(b, currentSort).total;
+    } else {
+      const dir = currentView === 'outbound' ? 'outbound' : 'return';
+      const aProgs = Object.values(data[a][dir]).map(f => f[currentSort]).filter(v => v !== null && v !== undefined);
+      const bProgs = Object.values(data[b][dir]).map(f => f[currentSort]).filter(v => v !== null && v !== undefined);
+      aVal = aProgs.length ? Math.min(...aProgs) : Infinity;
+      bVal = bProgs.length ? Math.min(...bProgs) : Infinity;
+    }
+    if (aVal === null) aVal = Infinity;
+    if (bVal === null) bVal = Infinity;
+    return aVal - bVal;
+  });
+
+  cities.forEach(city => {
+    const card = document.createElement('div');
+    card.className = 'city-card';
+
+    const code = city.match(/\((\w+)\)/)?.[1] || '';
+    const cityName = city.replace(/\s*\(\w+\)/, '');
+
+    let html = `<div class="city-header">
+      <span class="city-name">${cityName}</span>
+      <span class="city-code">LAX ⇌ ${code}</span>
+    </div>`;
+
+    // Render fare sections based on view
+    const cabins = ['economy', 'premium', 'business'];
+    const cabinLabels = { economy: 'Economy', premium: 'Premium Economy', business: 'Business Class' };
+    const cabinClasses = { economy: 'economy', premium: 'premium', business: 'business' };
+
+    if (currentView === 'roundtrip') {
+      cabins.forEach(cabin => {
+        const rt = getBestRT(city, cabin);
+        // Also get top 5 roundtrip options
+        const options = [];
+        for (const [prog, fares] of Object.entries(data[city].outbound)) {
+          const outP = fares[cabin];
+          if (outP === null || outP === undefined) continue;
+          const retP = data[city].return[prog]?.[cabin];
+          if (retP !== null && retP !== undefined) {
+            options.push({ program: prog, outbound: outP, ret: retP, total: outP + retP });
+          }
+        }
+        options.sort((a, b) => a.total - b.total);
+        const top5 = options.slice(0, 5);
+        const allTotals = options.map(o => o.total);
+
+        html += `<div class="fare-section">
+          <div class="fare-header ${cabinClasses[cabin]}">${cabinLabels[cabin]} — Round Trip</div>`;
+
+        if (top5.length === 0) {
+          html += `<div class="no-data">No round-trip availability found</div>`;
+        } else {
+          top5.forEach(opt => {
+            const color = getColor(opt.total, allTotals);
+            html += `<div class="program-row">
+              <span class="program-name">${opt.program}</span>
+              <span class="program-points ${color}">${fmt(opt.total)} pts</span>
+            </div>`;
+          });
+        }
+        html += `</div>`;
+      });
+
+      // Show best roundtrip total
+      const bestEcon = getBestRT(city, 'economy');
+      html += `<div class="roundtrip-total">
+        <span class="roundtrip-label">Best Economy RT</span>
+        <span class="roundtrip-value">${bestEcon.total ? fmt(bestEcon.total) + ' pts' : 'N/A'}</span>
+      </div>`;
+
+    } else {
+      const dir = currentView === 'outbound' ? 'outbound' : 'return';
+      const dirLabel = currentView === 'outbound' ? `LAX → ${code}` : `${code} → LAX`;
+
+      cabins.forEach(cabin => {
+        const programs = Object.entries(data[city][dir])
+          .map(([prog, fares]) => ({ program: prog, points: fares[cabin] }))
+          .filter(p => p.points !== null && p.points !== undefined)
+          .sort((a, b) => a.points - b.points)
+          .slice(0, 5);
+
+        const allVals = programs.map(p => p.points);
+
+        html += `<div class="fare-section">
+          <div class="fare-header ${cabinClasses[cabin]}">${cabinLabels[cabin]} — ${dirLabel}</div>`;
+
+        if (programs.length === 0) {
+          html += `<div class="no-data">No availability found</div>`;
+        } else {
+          programs.forEach(p => {
+            const color = getColor(p.points, allVals);
+            html += `<div class="program-row">
+              <span class="program-name">${p.program}</span>
+              <span class="program-points ${color}">${fmt(p.points)} pts</span>
+            </div>`;
+          });
+        }
+        html += `</div>`;
+      });
+    }
+
+    card.innerHTML = html;
+    container.appendChild(card);
+  });
+}
+
+function setView(view) {
+  currentView = view;
+  document.querySelectorAll('.controls button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  renderCards();
+}
+
+function setSort(sort) {
+  currentSort = sort;
+  document.querySelectorAll('.sort-controls button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  renderCards();
+}
+
+renderCards();
+</script>
+</body>
+</html>

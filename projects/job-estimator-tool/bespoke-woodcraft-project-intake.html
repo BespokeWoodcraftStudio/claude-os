@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Bespoke Woodcraft Studio — Project Intake</title>
+<style>
+  :root {
+    --bg: #1a1a1a;
+    --surface: #242424;
+    --surface-raised: #2e2e2e;
+    --border: #3a3a3a;
+    --border-focus: #b08d57;
+    --text: #e8e0d4;
+    --text-muted: #9a9189;
+    --accent: #b08d57;
+    --accent-hover: #c9a46c;
+    --danger: #c0392b;
+    --success: #27ae60;
+    --walnut: #5c3a1e;
+    --radius: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6; padding: 0; min-height: 100vh;
+  }
+  .header {
+    background: linear-gradient(135deg, var(--walnut), #3a2210);
+    padding: 24px 20px; text-align: center;
+    border-bottom: 3px solid var(--accent);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .header h1 { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.5px; }
+  .header p { font-size: 0.85rem; color: var(--accent); margin-top: 4px; }
+  .container { max-width: 800px; margin: 0 auto; padding: 16px; }
+
+  /* Unit toggle */
+  .unit-toggle-bar {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    padding: 12px; background: var(--surface); border-radius: var(--radius);
+    margin-bottom: 16px; border: 1px solid var(--border);
+  }
+  .unit-toggle-bar span.unit-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; }
+  .utb-option {
+    font-size: 0.9rem; color: var(--text-muted); cursor: pointer;
+    padding: 6px 16px; border-radius: 20px; transition: all 0.2s;
+    border: none; background: none; font-family: inherit;
+  }
+  .utb-option.active { background: var(--accent); color: #1a1a1a; font-weight: 600; }
+
+  /* Sections */
+  .section {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); margin-bottom: 16px; overflow: hidden;
+  }
+  .section.hidden { display: none; }
+  .section-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px; cursor: pointer; user-select: none;
+    background: var(--surface); transition: background 0.2s;
+  }
+  .section-header:hover { background: var(--surface-raised); }
+  .section-header h2 { font-size: 1.05rem; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  .section-header .chevron { transition: transform 0.3s; color: var(--text-muted); font-size: 1.2rem; }
+  .section-header.open .chevron { transform: rotate(180deg); }
+  .section-body { padding: 0 20px 20px; display: none; }
+  .section-body.open { display: block; }
+
+  /* Form elements */
+  .field { margin-bottom: 16px; }
+  .field label {
+    display: block; font-size: 0.85rem; font-weight: 600; color: var(--text-muted);
+    margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .field .hint {
+    font-size: 0.78rem; color: var(--text-muted); opacity: 0.7;
+    margin-bottom: 6px; font-style: italic; text-transform: none; letter-spacing: 0;
+  }
+  input[type="text"], input[type="email"], input[type="tel"],
+  input[type="date"], input[type="number"], textarea, select {
+    width: 100%; padding: 12px 14px; background: var(--bg);
+    border: 1px solid var(--border); border-radius: var(--radius);
+    color: var(--text); font-size: 1rem; font-family: inherit; transition: border-color 0.2s;
+  }
+  input:focus, textarea:focus, select:focus {
+    outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(176,141,87,0.2);
+  }
+  textarea { resize: vertical; min-height: 80px; }
+  select { cursor: pointer; appearance: auto; }
+  .row { display: flex; gap: 12px; }
+  .row > .field { flex: 1; }
+
+  .checkbox-field { display: flex; align-items: center; gap: 10px; padding: 10px 0; }
+  .checkbox-field input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--accent); cursor: pointer; }
+  .checkbox-field label {
+    margin: 0; text-transform: none; font-weight: 400; font-size: 0.95rem; color: var(--text); cursor: pointer;
+  }
+
+  /* Project type multi-select cards */
+  .project-type-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px; margin-bottom: 8px;
+  }
+  .pt-card {
+    padding: 14px 10px; border: 2px solid var(--border); border-radius: var(--radius);
+    text-align: center; cursor: pointer; transition: all 0.2s; background: var(--bg);
+  }
+  .pt-card:hover { border-color: var(--accent); }
+  .pt-card.selected { border-color: var(--accent); background: rgba(176,141,87,0.12); }
+  .pt-card .icon { font-size: 1.5rem; margin-bottom: 4px; }
+  .pt-card .name { font-size: 0.8rem; font-weight: 600; }
+  .pt-hint { font-size: 0.78rem; color: var(--text-muted); font-style: italic; margin-bottom: 16px; }
+
+  /* Wall entries */
+  .wall-entry {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px; margin-bottom: 12px;
+  }
+  .wall-label {
+    font-weight: 700; font-size: 0.95rem; color: var(--accent);
+    margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  }
+  .wall-label .wall-name-input {
+    background: transparent; border: 1px solid transparent; border-radius: 4px;
+    color: var(--accent); font-weight: 700; font-size: 0.95rem; font-family: inherit;
+    padding: 2px 6px; width: auto; min-width: 80px; max-width: 250px;
+    transition: border-color 0.2s;
+  }
+  .wall-label .wall-name-input:hover { border-color: var(--border); }
+  .wall-label .wall-name-input:focus {
+    border-color: var(--accent); outline: none;
+    background: var(--surface-raised); box-shadow: 0 0 0 2px rgba(176,141,87,0.2);
+  }
+  .remove-btn {
+    background: none; border: none; color: var(--danger); cursor: pointer;
+    font-size: 0.8rem; padding: 4px 8px; border-radius: 4px;
+  }
+  .remove-btn:hover { background: rgba(192,57,43,0.15); }
+
+  /* Feature items */
+  .feature-item {
+    background: var(--surface-raised); border: 1px solid var(--border);
+    border-radius: 6px; padding: 10px 12px; margin-bottom: 8px;
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  }
+  .feature-item .fi-label { font-size: 0.8rem; font-weight: 600; color: var(--text-muted); min-width: 70px; }
+  .feature-item .fi-name-input {
+    background: transparent; border: 1px solid transparent; border-radius: 4px;
+    color: var(--text-muted); font-weight: 600; font-size: 0.8rem; font-family: inherit;
+    padding: 2px 4px; width: auto; min-width: 60px; max-width: 160px;
+  }
+  .feature-item .fi-name-input:hover { border-color: var(--border); }
+  .feature-item .fi-name-input:focus {
+    border-color: var(--accent); outline: none; color: var(--text);
+    background: var(--surface); box-shadow: 0 0 0 2px rgba(176,141,87,0.2);
+  }
+  .feature-item input { width: 80px; padding: 6px 8px; font-size: 0.85rem; }
+  .feature-item .remove-feature {
+    background: none; border: none; color: var(--danger); cursor: pointer;
+    font-size: 1.1rem; margin-left: auto; padding: 2px 6px;
+  }
+
+  /* Buttons */
+  .add-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 14px; background: transparent; border: 1px dashed var(--border);
+    border-radius: var(--radius); color: var(--accent); cursor: pointer;
+    font-size: 0.85rem; transition: all 0.2s; margin-right: 8px; margin-bottom: 8px;
+  }
+  .add-btn:hover { border-color: var(--accent); background: rgba(176,141,87,0.05); }
+
+  /* Photo zones */
+  .photo-category {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px; margin-bottom: 12px;
+  }
+  .photo-category h4 { font-size: 0.9rem; margin-bottom: 4px; }
+  .photo-category .cat-desc { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 12px; }
+  .photo-drop-zone {
+    border: 2px dashed var(--border); border-radius: var(--radius);
+    padding: 24px; text-align: center; cursor: pointer; transition: all 0.2s;
+    color: var(--text-muted); font-size: 0.85rem;
+  }
+  .photo-drop-zone:hover, .photo-drop-zone.dragover {
+    border-color: var(--accent); background: rgba(176,141,87,0.05);
+  }
+  .photo-drop-zone .drop-icon { font-size: 1.5rem; margin-bottom: 6px; }
+  .photo-thumbnails { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .photo-thumb {
+    position: relative; width: 72px; height: 72px;
+    border-radius: 6px; overflow: hidden; border: 1px solid var(--border);
+  }
+  .photo-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .photo-thumb .remove-photo {
+    position: absolute; top: 2px; right: 2px; background: rgba(0,0,0,0.7);
+    color: #fff; border: none; border-radius: 50%; width: 20px; height: 20px;
+    font-size: 0.7rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  }
+
+  /* Appliance entries */
+  .appliance-entry {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 14px; margin-bottom: 10px;
+  }
+  .appliance-entry .row { margin-bottom: 8px; }
+  .appliance-entry .row:last-child { margin-bottom: 0; }
+
+  /* Preferences grid */
+  .pref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+
+  /* Export bar */
+  .export-bar {
+    position: sticky; bottom: 0; background: var(--surface);
+    border-top: 2px solid var(--accent); padding: 14px 20px;
+    display: flex; gap: 10px; justify-content: center; z-index: 100;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.4);
+  }
+  .btn {
+    padding: 12px 24px; border: none; border-radius: var(--radius);
+    font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: inherit;
+  }
+  .btn-primary { background: var(--accent); color: #1a1a1a; }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+  .btn-secondary:hover { background: rgba(176,141,87,0.1); }
+  .btn-danger { background: transparent; color: var(--danger); border: 1px solid var(--danger); font-size: 0.8rem; padding: 8px 14px; }
+
+  /* Toast */
+  .toast {
+    position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(20px);
+    background: var(--success); color: #fff; padding: 10px 24px; border-radius: 20px;
+    font-size: 0.9rem; font-weight: 600; opacity: 0; transition: all 0.3s; z-index: 200; pointer-events: none;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+  .section-subtitle { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
+
+  /* Conditional visibility helper — managed by JS */
+  .cond-section { display: none; }
+  .cond-section.active { display: block; }
+  .cond-block { display: none; }
+  .cond-block.active { display: block; }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .row { flex-direction: column; gap: 0; }
+    .container { padding: 10px; }
+    .header h1 { font-size: 1.2rem; }
+    .feature-item { flex-direction: column; align-items: flex-start; }
+    .feature-item input { width: 100%; }
+    .export-bar { flex-direction: column; }
+    .btn { width: 100%; text-align: center; }
+    .pref-grid { grid-template-columns: 1fr; }
+    .project-type-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>BESPOKE WOODCRAFT STUDIO</h1>
+  <p>Project Intake Form</p>
+</div>
+
+<div class="container">
+
+  <!-- Unit Toggle -->
+  <div class="unit-toggle-bar">
+    <span class="unit-label">UNITS:</span>
+    <button class="utb-option active" id="btn-imperial" onclick="setUnit('imperial')">Inches / Feet</button>
+    <button class="utb-option" id="btn-metric" onclick="setUnit('metric')">Centimeters / Meters</button>
+  </div>
+
+  <!-- ===== Section 1: Project Info ===== -->
+  <div class="section">
+    <div class="section-header open" onclick="toggleSection(this)">
+      <h2>Project Info</h2>
+      <span class="chevron">&#9662;</span>
+    </div>
+    <div class="section-body open">
+      <div class="field">
+        <label>Project Name</label>
+        <input type="text" id="projectName" placeholder="e.g. Martinez Kitchen & Entertainment Center">
+      </div>
+      <div class="field">
+        <label>Project Type(s)</label>
+        <div class="pt-hint">Select all that apply — sections will appear for each type.</div>
+        <div class="project-type-grid">
+          <div class="pt-card" data-type="kitchen" onclick="toggleType(this)">
+            <div class="icon">&#127859;</div><div class="name">Kitchen</div>
+          </div>
+          <div class="pt-card" data-type="bathroom" onclick="toggleType(this)">
+            <div class="icon">&#128705;</div><div class="name">Bathroom Vanity</div>
+          </div>
+          <div class="pt-card" data-type="builtin" onclick="toggleType(this)">
+            <div class="icon">&#128218;</div><div class="name">Built-ins & Closets</div>
+          </div>
+          <div class="pt-card" data-type="table" onclick="toggleType(this)">
+            <div class="icon">&#129717;</div><div class="name">Tables & Desks</div>
+          </div>
+          <div class="pt-card" data-type="coffeebar" onclick="toggleType(this)">
+            <div class="icon">&#9749;</div><div class="name">Coffee Bar</div>
+          </div>
+          <div class="pt-card" data-type="entertainment" onclick="toggleType(this)">
+            <div class="icon">&#128250;</div><div class="name">TV / Entertainment / Sideboard</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Client Type</label>
+          <select id="clientType">
+            <option value="residential">Residential</option>
+            <option value="commercial">Commercial</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Budget Range</label>
+          <input type="text" id="budget" placeholder="e.g. $8,000 - $12,000 or TBD">
+        </div>
+      </div>
+      <div class="field">
+        <label>Project Description</label>
+        <textarea id="projectDesc" rows="3" placeholder="Brief overview of the full project scope..."></textarea>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Target Start Date</label>
+          <input type="date" id="startDate">
+        </div>
+        <div class="field">
+          <label>Deadline</label>
+          <input type="date" id="deadline">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Section 2: Client Info ===== -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>Client Info</h2>
+      <span class="chevron">&#9662;</span>
+    </div>
+    <div class="section-body">
+      <div class="field">
+        <label>Client Name</label>
+        <input type="text" id="clientName" placeholder="Full name">
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Phone</label>
+          <input type="tel" id="clientPhone" placeholder="(555) 123-4567">
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" id="clientEmail" placeholder="client@email.com">
+        </div>
+      </div>
+      <div class="field">
+        <label>Job Site Address</label>
+        <textarea id="clientAddress" rows="2" placeholder="Full address of the installation site"></textarea>
+      </div>
+      <div class="field">
+        <label>How Did They Find Us?</label>
+        <select id="referralSource">
+          <option value="">— Select —</option>
+          <option value="word-of-mouth">Word of Mouth</option>
+          <option value="instagram">Instagram</option>
+          <option value="tiktok">TikTok</option>
+          <option value="youtube">YouTube</option>
+          <option value="website">Website</option>
+          <option value="google">Google Search</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Section 3: Materials & Finishes ===== -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>Materials & Finishes</h2>
+      <span class="chevron">&#9662;</span>
+    </div>
+    <div class="section-body">
+      <div class="field">
+        <label>Primary Wood Species</label>
+        <input type="text" id="primaryWood" placeholder="e.g. Walnut, Rift Sawn White Oak">
+      </div>
+      <div class="field">
+        <label>Secondary Wood / Accent Materials</label>
+        <input type="text" id="secondaryWood" placeholder="e.g. Maple for drawer boxes, steel accents">
+      </div>
+      <div class="field">
+        <label>Finish</label>
+        <input type="text" id="finish" placeholder="e.g. Rubio Monocoat Pure, lacquer, conversion varnish">
+      </div>
+
+      <div class="cond-block" data-show="kitchen coffeebar">
+        <div class="field">
+          <label>Countertop Material</label>
+          <input type="text" id="countertop" placeholder="e.g. Soapstone, quartz, butcher block">
+        </div>
+      </div>
+      <div class="cond-block" data-show="bathroom">
+        <div class="field">
+          <label>Vanity Top Material</label>
+          <input type="text" id="vanityTop" placeholder="e.g. Marble, quartz, concrete">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Hardware</label>
+        <textarea id="hardware" rows="2" placeholder="e.g. Matte black pulls — Amerock Bar 5&quot; CC, soft-close Blum hinges"></textarea>
+      </div>
+
+      <div class="cond-block" data-show="kitchen coffeebar bathroom builtin entertainment">
+        <div class="field">
+          <label>Cabinet Door Style</label>
+          <input type="text" id="doorStyle" placeholder="e.g. Slab, shaker, flat panel with reveal">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Design Style / Aesthetic Notes</label>
+        <textarea id="designNotes" rows="3" placeholder="e.g. Industrial modern, matte black + warm wood contrast, clean lines, no ornate details"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Section 4: Room Measurements (for cabinet/built-in types) ===== -->
+  <div class="section cond-section" data-show="kitchen bathroom builtin coffeebar entertainment">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>Room Measurements</h2>
+      <span class="chevron">&#9662;</span>
+    </div>
+    <div class="section-body">
+      <p class="section-subtitle">Add each wall and note its features — windows, outlets, vents, plumbing. Measurements use your selected unit system.</p>
+      <div class="row" style="margin-bottom:16px;">
+        <div class="field">
+          <label>Ceiling Height</label>
+          <input type="text" id="ceilingHeight" placeholder="">
+        </div>
+        <div class="field">
+          <label>Floor to Soffit (if applicable)</label>
+          <input type="text" id="soffitHeight" placeholder="Leave blank if none">
+        </div>
+      </div>
+      <div id="wallContainer"></div>
+      <button class="add-btn" onclick="addWall()">+ Add Wall</button>
+    </div>
+  </div>
+
+  <!-- ===== Section 4b: Table / Desk Dimensions ===== -->
+  <div class="section cond-section" data-show="table">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>Table / Desk Dimensions</h2>
+      <span class="chevron">&#9662;</span>
+    </div>
+    <div class="section-body">
+      <div class="row">
+        <div class="field"><label>Length</label><input type="text" id="tableLength" placeholder=""></div>
+        <div class="field"><label>Width</label><input type="text" id="tableWidth" placeholder=""></div>
+        <div class="field"><label>Height</label><input type="text" id="tableHeight" placeholder=""></div>
+      </div>
+      <div class="field">
+        <label>Seating Capacity (if applicable)</label>
+        <input type="text" id="seating" placeholder="e.g. Seats 8">
+      </div>
+      <div class="field">
+        <label>Base / Leg Style</label>
+        <input type="text" id="baseStyle" placeholder="e.g. Trestle, pedestal, hairpin, welded steel">
+      </div>
+      <div class="field">
+        <label>Top Details</label>
+        <textarea id="topDetails" rows="2" placeholder="e.g. Live edge, book-matched, waterfall edge, breadboard ends"></textarea>
+      </div>
+      <div class="field">
+        <label>Room / Space Notes</label>
+        <textarea id="tableRoomNotes" rows="2" placeholder="e.g. Open plan dining area, 14x18 ft room, concrete floors, mid-century chairs"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Section 4c: Entertainment Center / Sideboard Details ===== -->
+  <div class="section cond-section" data-show="entertainment">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>Entertainment Center / Sideboard Details</h2>
+      <span class="chevron">&#9662;</span>
+    </div>
+    <div class="section-body">
+      <div class="field">
+        <label>TV Size & Mount Type</label>
+        <input type="text" id="tvSize" placeholder="e.g. 75&quot; Samsung — wall-mounted, or sitting on unit">
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Overall Width Target</label>
+          <input type="text" id="entWidth" placeholder="">
+        </div>
+        <div class="field">
+          <label>Overall Height Target</label>
+          <input type="text" id="entHeight" placeholder="">
+        </div>
+        <div class="field">
+          <label>Depth</label>
+          <input type="text" id="entDepth" placeholder="">
+        </div>
+      </div>
+      <div class="field">
+        <label>Configuration</label>
+        <textarea id="entConfig" rows="2" placeholder="e.g. Floating credenza below TV, two flanking towers floor-to-ceiling, open center shelf for soundbar"></textarea>
+      </div>
+      <div class="field">
+        <label>A/V Equipment & Cable Management</label>
+        <textarea id="entAV" rows="2" placeholder="e.g. Receiver, PS5, Apple TV, cable box — needs ventilation, wire chase behind unit to wall plate"></textarea>
+      </div>
+      <div class="field">
+        <label>Display / Shelving Needs</label>
+        <textarea id="entDisplay" rows="2" placeholder="e.g. Adjustable shelves for books, glass doors for collectibles, LED strip lighting"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Section 5: Appliances & Fixtures ===== -->
+  <div class="section cond-section" data-show="kitchen bathroom coffeebar">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>Appliances & Fixtures</h2>
+      <span class="chevron">&#9662;</span>
+    </div>
+    <div class="section-body">
+      <p class="section-subtitle">Add each appliance or fixture that the cabinetry needs to accommodate.</p>
+      <div id="applianceContainer"></div>
+      <button class="add-btn" onclick="addAppliance()">+ Add Appliance / Fixture</button>
+    </div>
+  </div>
+
+  <!-- ===== Section 6: Client Preferences ===== -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>Client Preferences & Special Requests</h2>
+      <span class="chevron">&#9662;</span>
+    </div>
+    <div class="section-body">
+
+      <!-- Kitchen / Coffee Bar prefs -->
+      <div class="cond-block" data-show="kitchen coffeebar">
+        <label style="display:block;font-size:0.85rem;font-weight:600;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;">Cabinet & Storage Features</label>
+        <div class="pref-grid">
+          <div class="checkbox-field"><input type="checkbox" id="pref-softclose" data-pref="Soft-close hinges & drawers"><label for="pref-softclose">Soft-close hinges & drawers</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-pullout-trash" data-pref="Pull-out trash/recycling"><label for="pref-pullout-trash">Pull-out trash/recycling</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-lazy-susan" data-pref="Lazy Susan / corner solution"><label for="pref-lazy-susan">Lazy Susan / corner solution</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-pullout-shelves" data-pref="Pull-out shelves"><label for="pref-pullout-shelves">Pull-out shelves</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-under-cab-lighting" data-pref="Under-cabinet lighting"><label for="pref-under-cab-lighting">Under-cabinet lighting</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-open-shelving" data-pref="Open shelving sections"><label for="pref-open-shelving">Open shelving sections</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-glass-doors" data-pref="Glass door inserts"><label for="pref-glass-doors">Glass door inserts</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-integrated-lighting" data-pref="Integrated shelf lighting"><label for="pref-integrated-lighting">Integrated shelf lighting</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-spice-drawer" data-pref="Spice drawer / insert"><label for="pref-spice-drawer">Spice drawer / insert</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-knife-block" data-pref="Built-in knife block"><label for="pref-knife-block">Built-in knife block</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-utensil-dividers" data-pref="Utensil dividers"><label for="pref-utensil-dividers">Utensil dividers</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-appliance-garage" data-pref="Appliance garage"><label for="pref-appliance-garage">Appliance garage</label></div>
+        </div>
+        <hr class="divider">
+      </div>
+
+      <!-- Bathroom prefs -->
+      <div class="cond-block" data-show="bathroom">
+        <label style="display:block;font-size:0.85rem;font-weight:600;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;">Bathroom Features</label>
+        <div class="pref-grid">
+          <div class="checkbox-field"><input type="checkbox" id="pref-bath-softclose" data-pref="Soft-close hinges & drawers"><label for="pref-bath-softclose">Soft-close hinges & drawers</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-bath-pullout" data-pref="Pull-out drawers"><label for="pref-bath-pullout">Pull-out drawers</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-linen-tower" data-pref="Linen tower / side cabinet"><label for="pref-linen-tower">Linen tower / side cabinet</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-medicine-cab" data-pref="Medicine cabinet"><label for="pref-medicine-cab">Medicine cabinet</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-mirror" data-pref="Mirror integration"><label for="pref-mirror">Mirror integration</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-bath-lighting" data-pref="Integrated vanity lighting"><label for="pref-bath-lighting">Integrated vanity lighting</label></div>
+        </div>
+        <hr class="divider">
+      </div>
+
+      <!-- Built-in prefs -->
+      <div class="cond-block" data-show="builtin">
+        <label style="display:block;font-size:0.85rem;font-weight:600;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;">Built-in Features</label>
+        <div class="pref-grid">
+          <div class="checkbox-field"><input type="checkbox" id="pref-bi-softclose" data-pref="Soft-close doors & drawers"><label for="pref-bi-softclose">Soft-close doors & drawers</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-adjustable-shelves" data-pref="Adjustable shelves"><label for="pref-adjustable-shelves">Adjustable shelves</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-bi-lighting" data-pref="Integrated lighting"><label for="pref-bi-lighting">Integrated lighting</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-cable-mgmt" data-pref="Cable management"><label for="pref-cable-mgmt">Cable management</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-file-drawers" data-pref="File drawers"><label for="pref-file-drawers">File drawers</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-locks" data-pref="Locking drawers/doors"><label for="pref-locks">Locking drawers/doors</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-bi-glass" data-pref="Glass door inserts"><label for="pref-bi-glass">Glass door inserts</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-crown" data-pref="Crown molding / trim"><label for="pref-crown">Crown molding / trim</label></div>
+        </div>
+        <hr class="divider">
+      </div>
+
+      <!-- Entertainment prefs -->
+      <div class="cond-block" data-show="entertainment">
+        <label style="display:block;font-size:0.85rem;font-weight:600;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;">Entertainment Center Features</label>
+        <div class="pref-grid">
+          <div class="checkbox-field"><input type="checkbox" id="pref-ent-softclose" data-pref="Soft-close doors & drawers"><label for="pref-ent-softclose">Soft-close doors & drawers</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-ent-cable" data-pref="Cable management / wire chase"><label for="pref-ent-cable">Cable management / wire chase</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-ent-ventilation" data-pref="Ventilation for A/V equipment"><label for="pref-ent-ventilation">Ventilation for A/V equipment</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-ent-led" data-pref="LED accent lighting"><label for="pref-ent-led">LED accent lighting</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-ent-glass" data-pref="Glass doors"><label for="pref-ent-glass">Glass doors</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-ent-floating" data-pref="Floating / wall-mounted"><label for="pref-ent-floating">Floating / wall-mounted</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-ent-fireplace" data-pref="Electric fireplace insert"><label for="pref-ent-fireplace">Electric fireplace insert</label></div>
+          <div class="checkbox-field"><input type="checkbox" id="pref-ent-adj-shelves" data-pref="Adjustable shelves"><label for="pref-ent-adj-shelves">Adjustable shelves</label></div>
+        </div>
+        <hr class="divider">
+      </div>
+
+      <div class="field">
+        <label>Special Considerations</label>
+        <div class="hint">Kids, pets, ADA requirements, food safety, humidity, matching existing furniture, etc.</div>
+        <textarea id="specialConsiderations" rows="3" placeholder="e.g. Two young kids — need durable, food-safe finish. Dog — avoid low open shelves."></textarea>
+      </div>
+      <div class="field">
+        <label>Design Cues & Inspiration Notes</label>
+        <div class="hint">Colors, textures, existing decor to match, specific looks the client referenced.</div>
+        <textarea id="designCues" rows="3" placeholder="e.g. Wants to match their existing Restoration Hardware dining chairs. Neutral palette."></textarea>
+      </div>
+      <div class="field">
+        <label>Client Questions / Concerns</label>
+        <textarea id="clientQuestions" rows="2" placeholder="e.g. Asked about wood movement on wide panels, wants to know maintenance schedule"></textarea>
+      </div>
+      <div class="checkbox-field">
+        <input type="checkbox" id="progressPhotos">
+        <label for="progressPhotos">Client wants progress photos (social media opportunity)</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Section 7: Photos ===== -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>Photos & Reference Images</h2>
+      <span class="chevron">&#9662;</span>
+    </div>
+    <div class="section-body">
+      <p class="section-subtitle">Upload photos by category. Filenames are listed in the exported project file.</p>
+
+      <div class="photo-category">
+        <h4>Current Space</h4>
+        <p class="cat-desc">Photos of the room / area as it exists today — walls, floors, existing items to remove or match.</p>
+        <div class="photo-drop-zone" data-cat="current-space" onclick="triggerUpload(this)" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="drop(event,'current-space')">
+          <div class="drop-icon">&#128247;</div>Tap to add photos or drag & drop
+        </div>
+        <input type="file" accept="image/*" multiple style="display:none" data-cat="current-space" onchange="fileSelect(event,'current-space')">
+        <div class="photo-thumbnails" data-cat="current-space"></div>
+      </div>
+
+      <div class="photo-category">
+        <h4>Client Inspiration / Mockups</h4>
+        <p class="cat-desc">Pinterest pins, magazine photos, sketches, 3D renders — what the client envisions.</p>
+        <div class="photo-drop-zone" data-cat="inspiration" onclick="triggerUpload(this)" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="drop(event,'inspiration')">
+          <div class="drop-icon">&#127912;</div>Tap to add photos or drag & drop
+        </div>
+        <input type="file" accept="image/*" multiple style="display:none" data-cat="inspiration" onchange="fileSelect(event,'inspiration')">
+        <div class="photo-thumbnails" data-cat="inspiration"></div>
+      </div>
+
+      <div class="photo-category">
+        <h4>Appliances & Fixtures</h4>
+        <p class="cat-desc">Photos of specific appliances, sinks, faucets, or hardware the project needs to accommodate.</p>
+        <div class="photo-drop-zone" data-cat="appliances" onclick="triggerUpload(this)" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="drop(event,'appliances')">
+          <div class="drop-icon">&#9881;&#65039;</div>Tap to add photos or drag & drop
+        </div>
+        <input type="file" accept="image/*" multiple style="display:none" data-cat="appliances" onchange="fileSelect(event,'appliances')">
+        <div class="photo-thumbnails" data-cat="appliances"></div>
+      </div>
+
+      <div class="photo-category">
+        <h4>Problem Areas</h4>
+        <p class="cat-desc">Damage, obstacles, out-of-square walls, plumbing issues, existing work that needs attention.</p>
+        <div class="photo-drop-zone" data-cat="problems" onclick="triggerUpload(this)" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="drop(event,'problems')">
+          <div class="drop-icon">&#9888;&#65039;</div>Tap to add photos or drag & drop
+        </div>
+        <input type="file" accept="image/*" multiple style="display:none" data-cat="problems" onchange="fileSelect(event,'problems')">
+        <div class="photo-thumbnails" data-cat="problems"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Section 8: Internal Notes ===== -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>Internal Notes (Ahmed Only)</h2>
+      <span class="chevron">&#9662;</span>
+    </div>
+    <div class="section-body">
+      <div class="field">
+        <label>Build Strategy / Approach</label>
+        <textarea id="buildStrategy" rows="3" placeholder="e.g. Build face frames in shop, scribe to wall on-site. Rent panel saw for sheet goods."></textarea>
+      </div>
+      <div class="field">
+        <label>Subcontractors Needed</label>
+        <textarea id="subs" rows="2" placeholder="e.g. Metal shop for steel base, electrician, stone fabricator"></textarea>
+      </div>
+      <div class="field">
+        <label>Material List / Sourcing Notes</label>
+        <textarea id="materials" rows="2" placeholder="e.g. Need 60 bf walnut 4/4 — check Bohnhoff. Plywood: Baltic birch 3/4."></textarea>
+      </div>
+      <div class="field">
+        <label>Goal for Claude Conversation</label>
+        <div class="hint">What do you want help with when you upload this project file?</div>
+        <textarea id="claudeGoal" rows="2" placeholder="e.g. Plan cabinet layout, create cut list, draft client proposal, write social content"></textarea>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- Export bar -->
+<div class="export-bar">
+  <button class="btn btn-primary" onclick="downloadMarkdown()">Download .md File</button>
+  <button class="btn btn-secondary" onclick="copyToClipboard()">Copy to Clipboard</button>
+  <button class="btn btn-danger" onclick="clearForm()">Clear Form</button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ==================== STATE ====================
+let currentUnit = 'imperial';
+let selectedTypes = new Set();
+let wallCount = 0;
+let applianceCount = 0;
+let featureId = 0;
+const photos = { 'current-space': [], 'inspiration': [], 'appliances': [], 'problems': [] };
+
+const TYPE_LABELS = {
+  kitchen: 'Kitchen',
+  bathroom: 'Bathroom Vanity',
+  builtin: 'Built-ins & Closets',
+  table: 'Tables & Desks',
+  coffeebar: 'Coffee Bar',
+  entertainment: 'TV Entertainment Center / Sideboard'
+};
+
+// ==================== UNITS ====================
+function setUnit(u) {
+  currentUnit = u;
+  document.getElementById('btn-imperial').classList.toggle('active', u === 'imperial');
+  document.getElementById('btn-metric').classList.toggle('active', u === 'metric');
+}
+function uL() { return currentUnit === 'imperial' ? 'in' : 'cm'; }
+
+// ==================== SECTIONS ====================
+function toggleSection(hdr) {
+  hdr.classList.toggle('open');
+  hdr.nextElementSibling.classList.toggle('open');
+}
+
+// ==================== PROJECT TYPE MULTI-SELECT ====================
+function toggleType(card) {
+  const t = card.dataset.type;
+  if (selectedTypes.has(t)) { selectedTypes.delete(t); card.classList.remove('selected'); }
+  else { selectedTypes.add(t); card.classList.add('selected'); }
+  updateVisibility();
+}
+
+function updateVisibility() {
+  // Conditional sections
+  document.querySelectorAll('.cond-section').forEach(sec => {
+    const showFor = sec.dataset.show.split(' ');
+    const visible = showFor.some(t => selectedTypes.has(t));
+    sec.classList.toggle('active', visible);
+    sec.classList.toggle('hidden', !visible);
+    if (visible) sec.style.display = ''; else sec.style.display = 'none';
+  });
+  // Conditional blocks within always-visible sections
+  document.querySelectorAll('.cond-block').forEach(blk => {
+    const showFor = blk.dataset.show.split(' ');
+    const visible = showFor.some(t => selectedTypes.has(t));
+    blk.classList.toggle('active', visible);
+    blk.style.display = visible ? 'block' : 'none';
+  });
+  // Auto-add first wall if room measurement types selected and no walls yet
+  const roomTypes = ['kitchen', 'bathroom', 'builtin', 'coffeebar', 'entertainment'];
+  if (roomTypes.some(t => selectedTypes.has(t)) && wallCount === 0) addWall();
+}
+
+// ==================== WALLS ====================
+function addWall() {
+  wallCount++;
+  const letter = String.fromCharCode(64 + wallCount);
+  const c = document.getElementById('wallContainer');
+  const d = document.createElement('div');
+  d.className = 'wall-entry'; d.id = `wall-${wallCount}`;
+  const u = uL();
+  d.innerHTML = `
+    <div class="wall-label"><input type="text" class="wall-name-input" data-field="wall-name" value="Wall ${letter}" placeholder="Wall ${letter}" onfocus="this.select()"> <button class="remove-btn" onclick="this.closest('.wall-entry').remove()">Remove</button></div>
+    <div class="row">
+      <div class="field"><label>Wall Length</label><input type="text" data-field="wall-length" placeholder="e.g. ${currentUnit==='imperial'?'124 in or 10 ft 4 in':'315 cm'}"></div>
+      <div class="field"><label>Wall Height (if different)</label><input type="text" data-field="wall-height" placeholder="Leave blank to use ceiling height"></div>
+    </div>
+    <div class="field"><label>Wall Notes</label><input type="text" data-field="wall-notes" placeholder="e.g. Bump-out, load-bearing, exterior wall"></div>
+    <div class="feature-list" id="features-${wallCount}"></div>
+    <div style="margin-top:8px;">
+      <button class="add-btn" onclick="addFeature(${wallCount},'window')">+ Window</button>
+      <button class="add-btn" onclick="addFeature(${wallCount},'outlet')">+ Outlet</button>
+      <button class="add-btn" onclick="addFeature(${wallCount},'vent')">+ Vent</button>
+      <button class="add-btn" onclick="addFeature(${wallCount},'plumbing')">+ Plumbing</button>
+      <button class="add-btn" onclick="addFeature(${wallCount},'other')">+ Other</button>
+    </div>`;
+  c.appendChild(d);
+}
+
+function addFeature(wn, type) {
+  featureId++;
+  const list = document.getElementById(`features-${wn}`);
+  const d = document.createElement('div');
+  d.className = 'feature-item'; d.id = `feat-${featureId}`; d.dataset.featureType = type;
+  const u = uL();
+  const fid = featureId;
+  const rm = `<button class="remove-feature" onclick="document.getElementById('feat-${fid}').remove()">&#10005;</button>`;
+  const tpl = {
+    window: `<input type="text" class="fi-name-input" data-field="feat-name" value="Window" onfocus="this.select()">
+      <input type="text" data-field="width" placeholder="Width (${u})">
+      <input type="text" data-field="height" placeholder="Height (${u})">
+      <input type="text" data-field="from-floor" placeholder="From floor (${u})">
+      <input type="text" data-field="from-left" placeholder="From left edge (${u})">${rm}`,
+    outlet: `<input type="text" class="fi-name-input" data-field="feat-name" value="Outlet" onfocus="this.select()">
+      <input type="text" data-field="from-floor" placeholder="From floor (${u})">
+      <input type="text" data-field="from-left" placeholder="From left edge (${u})">
+      <input type="text" data-field="type" placeholder="Type (GFCI, 240V)" style="width:120px;">${rm}`,
+    vent: `<input type="text" class="fi-name-input" data-field="feat-name" value="Vent" onfocus="this.select()">
+      <input type="text" data-field="width" placeholder="Width (${u})">
+      <input type="text" data-field="height" placeholder="Height (${u})">
+      <input type="text" data-field="from-floor" placeholder="From floor (${u})">
+      <input type="text" data-field="from-left" placeholder="From left edge (${u})">${rm}`,
+    plumbing: `<input type="text" class="fi-name-input" data-field="feat-name" value="Plumbing" onfocus="this.select()">
+      <input type="text" data-field="from-floor" placeholder="From floor (${u})">
+      <input type="text" data-field="from-left" placeholder="From left edge (${u})">
+      <input type="text" data-field="type" placeholder="Type (supply, drain, gas)" style="width:140px;">${rm}`,
+    other: `<input type="text" class="fi-name-input" data-field="feat-name" value="Other" onfocus="this.select()">
+      <input type="text" data-field="desc" placeholder="Description" style="width:140px;">
+      <input type="text" data-field="from-floor" placeholder="From floor (${u})">
+      <input type="text" data-field="from-left" placeholder="From left edge (${u})">${rm}`
+  };
+  d.innerHTML = tpl[type];
+  list.appendChild(d);
+}
+
+// ==================== APPLIANCES ====================
+function addAppliance() {
+  applianceCount++;
+  const c = document.getElementById('applianceContainer');
+  const d = document.createElement('div');
+  d.className = 'appliance-entry'; d.id = `app-${applianceCount}`;
+  const u = uL(); const aid = applianceCount;
+  d.innerHTML = `
+    <div class="row">
+      <div class="field"><label>Appliance / Fixture</label><input type="text" data-field="name" placeholder="e.g. Refrigerator, Dishwasher, Sink"></div>
+      <div class="field"><label>Brand & Model</label><input type="text" data-field="model" placeholder="e.g. Bosch 800 Series"></div>
+    </div>
+    <div class="row">
+      <div class="field"><label>Width</label><input type="text" data-field="width" placeholder="${u}"></div>
+      <div class="field"><label>Height</label><input type="text" data-field="height" placeholder="${u}"></div>
+      <div class="field"><label>Depth</label><input type="text" data-field="depth" placeholder="${u}"></div>
+    </div>
+    <div class="field"><label>Notes</label><input type="text" data-field="notes" placeholder="e.g. Counter-depth, needs dedicated circuit, existing"></div>
+    <button class="remove-btn" onclick="document.getElementById('app-${aid}').remove()" style="margin-top:4px;">Remove</button>`;
+  c.appendChild(d);
+}
+
+// ==================== PHOTOS ====================
+function triggerUpload(dz) {
+  document.querySelector(`input[type="file"][data-cat="${dz.dataset.cat}"]`).click();
+}
+function dragOver(e) { e.preventDefault(); e.currentTarget.classList.add('dragover'); }
+function dragLeave(e) { e.currentTarget.classList.remove('dragover'); }
+function drop(e, cat) { e.preventDefault(); e.currentTarget.classList.remove('dragover'); addPhotos(Array.from(e.dataTransfer.files).filter(f=>f.type.startsWith('image/')), cat); }
+function fileSelect(e, cat) { addPhotos(Array.from(e.target.files), cat); e.target.value = ''; }
+function addPhotos(files, cat) {
+  files.forEach(f => {
+    const r = new FileReader();
+    r.onload = ev => { photos[cat].push({name:f.name,data:ev.target.result}); renderThumbs(cat); };
+    r.readAsDataURL(f);
+  });
+}
+function renderThumbs(cat) {
+  const c = document.querySelector(`.photo-thumbnails[data-cat="${cat}"]`);
+  c.innerHTML = '';
+  photos[cat].forEach((p,i) => {
+    const t = document.createElement('div'); t.className = 'photo-thumb';
+    t.innerHTML = `<img src="${p.data}" alt="${p.name}"><button class="remove-photo" onclick="photos['${cat}'].splice(${i},1);renderThumbs('${cat}')">&#10005;</button>`;
+    c.appendChild(t);
+  });
+}
+
+// ==================== MARKDOWN EXPORT ====================
+function generateMarkdown() {
+  const v = id => (document.getElementById(id)?.value||'').trim();
+  const ch = id => document.getElementById(id)?.checked||false;
+  const unitNote = currentUnit === 'imperial' ? 'Imperial (inches/feet)' : 'Metric (cm/m)';
+  const types = Array.from(selectedTypes);
+  const typeStr = types.map(t => TYPE_LABELS[t]).join(', ') || 'TBD';
+
+  let md = `# Bespoke Woodcraft Studio — Project File\n`;
+  md += `> Generated ${new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'})}\n\n---\n\n`;
+
+  // Project Info
+  md += `## Project Info\n\n`;
+  md += `- **Project Name:** ${v('projectName')||'TBD'}\n`;
+  md += `- **Project Type(s):** ${typeStr}\n`;
+  md += `- **Client Type:** ${v('clientType')||'TBD'}\n`;
+  md += `- **Description:** ${v('projectDesc')||'TBD'}\n`;
+  md += `- **Target Start:** ${v('startDate')||'TBD'}\n`;
+  md += `- **Deadline:** ${v('deadline')||'TBD'}\n`;
+  md += `- **Budget Range:** ${v('budget')||'TBD'}\n`;
+  md += `- **Measurement System:** ${unitNote}\n\n`;
+
+  // Client Info
+  md += `## Client Info\n\n`;
+  md += `- **Name:** ${v('clientName')||'TBD'}\n`;
+  md += `- **Phone:** ${v('clientPhone')||'TBD'}\n`;
+  md += `- **Email:** ${v('clientEmail')||'TBD'}\n`;
+  md += `- **Address:** ${v('clientAddress')||'TBD'}\n`;
+  md += `- **Referral Source:** ${v('referralSource')||'TBD'}\n\n`;
+
+  // Materials
+  md += `## Materials & Finishes\n\n`;
+  md += `- **Primary Wood:** ${v('primaryWood')||'TBD'}\n`;
+  md += `- **Secondary / Accent:** ${v('secondaryWood')||'N/A'}\n`;
+  md += `- **Finish:** ${v('finish')||'TBD'}\n`;
+  if (types.some(t=>['kitchen','coffeebar'].includes(t))) md += `- **Countertop:** ${v('countertop')||'TBD'}\n`;
+  if (types.includes('bathroom')) md += `- **Vanity Top:** ${v('vanityTop')||'TBD'}\n`;
+  md += `- **Hardware:** ${v('hardware')||'TBD'}\n`;
+  if (types.some(t=>['kitchen','coffeebar','bathroom','builtin','entertainment'].includes(t)))
+    md += `- **Door Style:** ${v('doorStyle')||'TBD'}\n`;
+  md += `- **Design Style Notes:** ${v('designNotes')||'N/A'}\n\n`;
+
+  // Table dimensions
+  if (types.includes('table')) {
+    md += `## Table / Desk Dimensions\n\n`;
+    md += `- **Length:** ${v('tableLength')||'TBD'}\n`;
+    md += `- **Width:** ${v('tableWidth')||'TBD'}\n`;
+    md += `- **Height:** ${v('tableHeight')||'TBD'}\n`;
+    md += `- **Seating:** ${v('seating')||'N/A'}\n`;
+    md += `- **Base/Leg Style:** ${v('baseStyle')||'TBD'}\n`;
+    md += `- **Top Details:** ${v('topDetails')||'N/A'}\n`;
+    md += `- **Room Notes:** ${v('tableRoomNotes')||'N/A'}\n\n`;
+  }
+
+  // Entertainment center details
+  if (types.includes('entertainment')) {
+    md += `## Entertainment Center / Sideboard Details\n\n`;
+    md += `- **TV Size & Mount:** ${v('tvSize')||'TBD'}\n`;
+    md += `- **Overall Width:** ${v('entWidth')||'TBD'}\n`;
+    md += `- **Overall Height:** ${v('entHeight')||'TBD'}\n`;
+    md += `- **Depth:** ${v('entDepth')||'TBD'}\n`;
+    md += `- **Configuration:** ${v('entConfig')||'TBD'}\n`;
+    md += `- **A/V Equipment & Cable Mgmt:** ${v('entAV')||'N/A'}\n`;
+    md += `- **Display / Shelving:** ${v('entDisplay')||'N/A'}\n\n`;
+  }
+
+  // Room Measurements
+  const roomTypes = ['kitchen','bathroom','builtin','coffeebar','entertainment'];
+  if (types.some(t => roomTypes.includes(t))) {
+    const walls = document.querySelectorAll('#wallContainer .wall-entry');
+    if (walls.length > 0 || v('ceilingHeight')) {
+      md += `## Room Measurements\n\n`;
+      md += `- **Ceiling Height:** ${v('ceilingHeight')||'TBD'}\n`;
+      if (v('soffitHeight')) md += `- **Floor to Soffit:** ${v('soffitHeight')}\n`;
+      md += `\n`;
+
+      walls.forEach((wall, i) => {
+        const wallName = wall.querySelector('[data-field="wall-name"]')?.value || `Wall ${String.fromCharCode(65+i)}`;
+        const wl = wall.querySelector('[data-field="wall-length"]')?.value||'TBD';
+        const wh = wall.querySelector('[data-field="wall-height"]')?.value||'';
+        const wn = wall.querySelector('[data-field="wall-notes"]')?.value||'';
+        md += `### ${wallName}\n\n- **Length:** ${wl}\n`;
+        if (wh) md += `- **Height:** ${wh}\n`;
+        if (wn) md += `- **Notes:** ${wn}\n`;
+
+        const feats = wall.querySelectorAll('.feature-item');
+        if (feats.length) {
+          md += `\n**Features:**\n\n`;
+          feats.forEach(f => {
+            const ft = f.dataset.featureType;
+            const fv = {};
+            f.querySelectorAll('input').forEach(inp => { if(inp.dataset.field) fv[inp.dataset.field]=inp.value||''; });
+            const fname = fv['feat-name'] || ft.charAt(0).toUpperCase() + ft.slice(1);
+            if (ft==='window') md += `- **${fname}:** ${fv.width||'?'} x ${fv.height||'?'} — ${fv['from-floor']||'?'} from floor, ${fv['from-left']||'?'} from left edge\n`;
+            else if (ft==='outlet') md += `- **${fname}${fv.type?' ('+fv.type+')':''}:** ${fv['from-floor']||'?'} from floor, ${fv['from-left']||'?'} from left edge\n`;
+            else if (ft==='vent') md += `- **${fname}:** ${fv.width||'?'} x ${fv.height||'?'} — ${fv['from-floor']||'?'} from floor, ${fv['from-left']||'?'} from left edge\n`;
+            else if (ft==='plumbing') md += `- **${fname}${fv.type?' ('+fv.type+')':''}:** ${fv['from-floor']||'?'} from floor, ${fv['from-left']||'?'} from left edge\n`;
+            else if (ft==='other') md += `- **${fname}${fv.desc?' — '+fv.desc:''}:** ${fv['from-floor']||'?'} from floor, ${fv['from-left']||'?'} from left edge\n`;
+          });
+        }
+        md += `\n`;
+      });
+    }
+  }
+
+  // Appliances
+  if (types.some(t=>['kitchen','bathroom','coffeebar'].includes(t))) {
+    const apps = document.querySelectorAll('#applianceContainer .appliance-entry');
+    if (apps.length) {
+      md += `## Appliances & Fixtures\n\n`;
+      apps.forEach((a,i) => {
+        const nm = a.querySelector('[data-field="name"]')?.value||`Item ${i+1}`;
+        const mo = a.querySelector('[data-field="model"]')?.value||'';
+        const w = a.querySelector('[data-field="width"]')?.value||'?';
+        const h = a.querySelector('[data-field="height"]')?.value||'?';
+        const d = a.querySelector('[data-field="depth"]')?.value||'?';
+        const n = a.querySelector('[data-field="notes"]')?.value||'';
+        md += `- **${nm}**${mo?' — '+mo:''}: ${w} W x ${h} H x ${d} D${n?' | '+n:''}\n`;
+      });
+      md += `\n`;
+    }
+  }
+
+  // Preferences
+  md += `## Client Preferences & Special Requests\n\n`;
+  const prefs = [];
+  document.querySelectorAll('.cond-block.active input[type="checkbox"][data-pref]:checked').forEach(cb => {
+    prefs.push(cb.dataset.pref);
+  });
+  if (prefs.length) {
+    md += `**Selected Features:**\n`;
+    prefs.forEach(p => md += `- ${p}\n`);
+    md += `\n`;
+  }
+  if (v('specialConsiderations')) md += `- **Special Considerations:** ${v('specialConsiderations')}\n`;
+  if (v('designCues')) md += `- **Design Cues:** ${v('designCues')}\n`;
+  if (v('clientQuestions')) md += `- **Client Questions:** ${v('clientQuestions')}\n`;
+  md += `- **Progress Photos:** ${ch('progressPhotos')?'Yes — social media opportunity':'Not requested'}\n\n`;
+
+  // Photos
+  const hasPhotos = Object.values(photos).some(a=>a.length>0);
+  if (hasPhotos) {
+    md += `## Photos & Reference Images\n\n`;
+    const cl = {'current-space':'Current Space','inspiration':'Client Inspiration / Mockups','appliances':'Appliances & Fixtures','problems':'Problem Areas'};
+    Object.entries(photos).forEach(([cat,arr]) => {
+      if (arr.length) { md += `**${cl[cat]}:**\n`; arr.forEach(p => md += `- ${p.name}\n`); md += `\n`; }
+    });
+  }
+
+  // Internal notes
+  const hasInt = v('buildStrategy')||v('subs')||v('materials')||v('claudeGoal');
+  if (hasInt) {
+    md += `## Internal Notes (Ahmed Only)\n\n`;
+    if (v('buildStrategy')) md += `- **Build Strategy:** ${v('buildStrategy')}\n`;
+    if (v('subs')) md += `- **Subcontractors:** ${v('subs')}\n`;
+    if (v('materials')) md += `- **Material Sourcing:** ${v('materials')}\n`;
+    if (v('claudeGoal')) md += `- **Goal for Claude:** ${v('claudeGoal')}\n`;
+    md += `\n`;
+  }
+
+  md += `---\n*Generated by Bespoke Woodcraft Studio Project Intake Form*\n`;
+  return md;
+}
+
+// ==================== EXPORT ACTIONS ====================
+function downloadMarkdown() {
+  const md = generateMarkdown();
+  const name = (document.getElementById('projectName').value.trim()||'project').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+$/,'');
+  const blob = new Blob([md],{type:'text/markdown'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = name+'-intake.md';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
+  showToast('File downloaded!');
+}
+
+function copyToClipboard() {
+  const md = generateMarkdown();
+  navigator.clipboard.writeText(md).then(()=>showToast('Copied to clipboard!')).catch(()=>{
+    const t=document.createElement('textarea'); t.value=md; document.body.appendChild(t);
+    t.select(); document.execCommand('copy'); document.body.removeChild(t); showToast('Copied to clipboard!');
+  });
+}
+
+function clearForm() {
+  if (!confirm('Clear the entire form? This cannot be undone.')) return;
+  document.querySelectorAll('input[type="text"],input[type="email"],input[type="tel"],input[type="date"],input[type="number"],textarea').forEach(el=>el.value='');
+  document.querySelectorAll('select').forEach(el=>el.selectedIndex=0);
+  document.querySelectorAll('input[type="checkbox"]').forEach(el=>el.checked=false);
+  document.querySelectorAll('.pt-card').forEach(c=>c.classList.remove('selected'));
+  selectedTypes.clear();
+  document.getElementById('wallContainer').innerHTML='';
+  document.getElementById('applianceContainer').innerHTML='';
+  wallCount=0; applianceCount=0;
+  Object.keys(photos).forEach(c=>{photos[c]=[];renderThumbs(c);});
+  updateVisibility();
+  showToast('Form cleared');
+}
+
+function showToast(msg) {
+  const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2500);
+}
+</script>
+</body>
+</html>

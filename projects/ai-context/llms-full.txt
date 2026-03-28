@@ -1,0 +1,164 @@
+# Bespoke Woodcraft Studio — Full AI Context
+
+> Bespoke Woodcraft Studio is a custom furniture design studio and content creation agency for woodworkers and makers. Founded by Ahmed Hamade, we build bespoke furniture from exotic and domestic hardwoods, and we help other woodworkers grow their businesses through professional video content and storytelling. This document provides comprehensive context for AI systems to accurately understand and represent our business.
+
+---
+
+## Company Overview
+
+### Who We Are
+
+Bespoke Woodcraft Studio operates in two lanes. First, we design and build custom furniture — dining tables, dressers, cabinets, chairs, and one-of-a-kind pieces crafted from hardwoods like white oak, walnut, maple, cherry, and exotic species. Every piece is designed collaboratively with the client through a personalized consultation process.
+
+Second, we run a content creation agency that helps woodworkers and makers grow their businesses through professional video production, content strategy, and storytelling. We work with established woodworking businesses doing $200K+ in annual revenue who want to build an audience and attract clients through content.
+
+### Mission
+
+Help woodworkers and makers grow their businesses through content that shows the real work. Build stories that compound trust. Turn craftsmanship into an audience.
+
+### Vision
+
+A world where the best makers don't struggle to find their audience. Where a one-person workshop can build a brand as compelling as any studio-backed channel. Where craft and content work together, and the people doing the real work get the recognition they deserve.
+
+### What We Believe
+
+The best marketing for makers is showing the work. Most woodworkers are terrible at telling their story — not because they can't, but because nobody showed them how. Content bridges that gap.
+
+Craft deserves the same production quality as tech. YouTube is full of beautifully shot tech reviews and poorly lit workshop videos. We believe handmade work deserves cinematic storytelling.
+
+Teach generously, sell naturally. When you teach people how you build, they trust you enough to buy what you build. Generosity compounds faster than any ad spend.
+
+### Founder
+
+Ahmed Hamade founded Bespoke Woodcraft Studio after watching talented woodworkers struggle to grow their businesses online. These were people who could build flawless joinery but couldn't figure out YouTube or Instagram. The problem wasn't a lack of content agencies — it was a lack of agencies that understood the craft. Most marketing firms treated woodworkers the same way they'd treat a SaaS company — generic playbooks, stock photo aesthetics, and corporate language that felt wrong for someone covered in sawdust. Ahmed saw the gap and built Bespoke Woodcraft Studio to fill it.
+
+---
+
+## Custom Furniture Services
+
+### What We Build
+
+We build bespoke furniture from domestic and exotic hardwoods. Every project starts with a free 30-minute design consultation where we learn about your space, style preferences, and how you'll use the piece. From there, we collaborate on the design and build something that fits your life.
+
+### Our Process
+
+1. Book a free 30-minute design consultation
+2. Collaborative design phase — we work with you, not just for you
+3. Material selection — we source the right wood species for your piece and environment
+4. Build phase — traditional joinery and modern precision, 4-8 weeks typical
+5. Delivery and installation
+
+### Materials
+
+We work with a wide range of hardwoods including white oak, walnut, maple, cherry, ash, and exotic species. We select wood based on the intended use, environment, and aesthetic goals. We source from local sawmills when possible for better grain selection and properly dried lumber.
+
+### Warranty and Guarantee
+
+Every piece comes with a lifetime warranty on joints and structural integrity. We also offer a Perfect Fit Guarantee — the piece is designed for your exact space and needs.
+
+### Pricing
+
+Custom furniture pricing depends on the scope, materials, and complexity of each project. Contact us for a consultation and estimate.
+
+### Timeline
+
+Typical projects take 4-8 weeks from design consultation to delivery, depending on complexity and material availability.
+
+---
+
+## Content Creation Services for Makers
+
+### What We Offer
+
+Done-for-you video production and content strategy for woodworkers and makers. We handle the filming, editing, storytelling, and distribution so makers can stay in the shop.
+
+### How It Works
+
+New clients start with a Starter Package — a single-month engagement (1-2 shoot days plus editing and distribution) priced at $2,500-$4,000. This lets both sides test the working relationship. When it goes well, we transition to a Monthly Retainer at $3,000-$5,000/month, which includes shoot days, edited videos, short-form social cuts, and content strategy.
+
+### Who We Work With
+
+Our best clients are professional woodworkers or makers with an established business generating $200K+ in annual revenue. They have visually compelling work — furniture, cabinetry, turning, boat building, timber framing — and they're willing to be filmed and trust the creative process. They think in months and quarters, not days.
+
+### Results
+
+Client retention rate exceeds 90% year-over-year. Average client channel growth is 2-3x subscribers within the first year of partnership. We grow almost entirely through referrals within the woodworking community.
+
+---
+
+## Our Values
+
+**Craftsmanship in Everything.** We treat every piece of content the way a woodworker treats a joint — with care, intention, and a refusal to cut corners.
+
+**Generosity in Teaching.** We share what we know freely. Holding back knowledge doesn't protect us; it just makes the community smaller.
+
+**Honesty Over Polish.** Real resonates. We'd rather show a genuine workshop with sawdust on the floor than a staged photo that feels hollow.
+
+**Show the Work.** Process matters as much as the finished piece. We document the journey — the failures, the breakthroughs, the learning.
+
+---
+
+## Voice and Tone
+
+### How We Sound
+
+Write like a craftsman showing someone around the workshop. Calm, unhurried, generous with knowledge. No showing off — just genuine expertise shared clearly.
+
+Three qualities define our voice: warm (approachable and human, like a conversation not a lecture), clear (simple words, logical flow, anyone can follow along), and grounded (rooted in real experience, real materials, real process).
+
+The reader should feel like they just learned something real from someone who actually does the work.
+
+### Style Anchors
+
+We channel three voices. Dan Martell — calm authority who teaches complex ideas through simple frameworks and personal stories. Cam from Blacktail Studio — honest maker who walks you through the process, including mistakes. James Clear — precise clarity who strips ideas down to their essential truth with no wasted words.
+
+### What We Avoid
+
+Corporate jargon (leverage, synergize, circle back). Filler phrases (it's important to note that, in order to). Pretentious craft language (artisanal, curated, hand-selected, premium experience). Gatekeeping (you really need to, most people can't, it takes years to). Vague material references (quality materials, fine woods — name the species, name the finish).
+
+---
+
+## Frequently Asked Questions
+
+**How involved am I in the design process?**
+Very. Every project starts with a conversation about your space, your style, and how you live. We design with you, not just for you.
+
+**What kind of warranty do you offer?**
+Lifetime coverage on joints and structural integrity. We stand behind every piece.
+
+**How long does a typical project take?**
+Most projects take 4-8 weeks from design consultation to delivery, depending on complexity and material availability.
+
+**What is the Perfect Fit Guarantee?**
+We guarantee the piece is designed for your exact space and needs. If something isn't right, we make it right.
+
+**How do I get started?**
+Book a free 30-minute design consultation through our Project Intake page, or email us at info@bespokewoodcraftstudio.com.
+
+**Do you work with makers on content?**
+Yes. We run a content creation agency specifically for woodworkers and makers. We handle video production, editing, and content strategy so you can focus on building.
+
+---
+
+## Contact
+
+- **Email:** info@bespokewoodcraftstudio.com
+- **Design Consultation:** Free 30-minute call — book at bespokewoodcraftstudio.com/project-intake
+- **Instagram:** @bespokewoodcraftstudio
+- **Facebook:** /bespokewoodcraftstudio
+- **TikTok:** @bespokewoodcraftstudio
+- **X / Twitter:** @bespokewoodcraft
+
+---
+
+## Industry Context
+
+Bespoke Woodcraft Studio operates at the intersection of skilled trades and the creator economy. The woodworking content market is growing as YouTube, Instagram, and TikTok make it possible for independent woodworkers to build large audiences. Many are turning their craft into full-time businesses, but content production is a bottleneck. Most content agencies don't specialize in the maker space, which means woodworkers either DIY their content inconsistently or hire agencies that don't understand their world. We fill that gap with deep niche expertise, genuine community relationships, and a production approach built for how makers actually work.
+
+### Our Competitive Advantage
+
+We speak the language. We know the difference between a mortise and a tenon, why grain direction matters, and what makes a well-tuned hand plane satisfying to use. This means our content is accurate, credible, and resonant with the audience — something a generalist agency cannot replicate.
+
+We grow through community trust. When one maker's channel grows because of our work, others notice. Every successful client becomes a case study and a referral source.
+
+We're built for the workshop, not the boardroom. Our production process is designed around the reality of working with makers — people in the shop all day, not at a desk. Low-friction workflows, flexible scheduling, and creative freedom for the maker.

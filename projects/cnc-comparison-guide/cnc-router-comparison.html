@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CNC Router Buyer's Guide — Under $5,000</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+:root{
+  --bg:#f5f3ef;--white:#ffffff;--s1:#faf9f7;--s2:#f0ede8;--s3:#e5e1db;
+  --ink:#1a1612;--ink2:#3d3730;--ink3:#5c564e;--mut:#8c8578;
+  --acc:#b8860b;--accL:#d4a017;--accD:#8a6508;--accBg:rgba(184,134,11,.08);
+  --grn:#16a34a;--grnBg:rgba(22,163,74,.06);--grnBd:rgba(22,163,74,.25);
+  --red:#dc2626;--redBg:rgba(220,38,38,.06);--redBd:rgba(220,38,38,.25);
+  --blu:#2563eb;--bluBg:rgba(37,99,235,.06);
+  --brd:#d6d1c9;--brd2:#c8c2b8;
+  --r:14px;--r2:10px;
+  --sh:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04);
+  --shH:0 2px 8px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.06);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;}
+a{color:var(--acc);text-decoration:none;transition:color .15s;}a:hover{color:var(--accD);}
+::selection{background:var(--accL);color:#fff;}
+
+.hero{padding:56px 32px 44px;text-align:center;background:var(--white);border-bottom:1px solid var(--brd);}
+.hero h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;letter-spacing:-.03em;color:var(--ink);}
+.hero h1 span{color:var(--acc);}
+.hero .sub{font-size:1rem;color:var(--mut);margin-top:6px;}
+.hero .pills{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap;}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:100px;font-size:.78rem;font-weight:600;border:1px solid var(--brd);background:var(--s1);color:var(--ink2);}
+
+.wrap{max-width:1320px;margin:0 auto;padding:0 20px;}
+
+.nav{position:sticky;top:0;z-index:100;background:rgba(245,243,239,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--brd);padding:12px 20px;}
+.nav-inner{max-width:1320px;margin:0 auto;display:flex;gap:6px;flex-wrap:wrap;}
+.ntab{padding:8px 18px;border-radius:100px;font-size:.82rem;font-weight:600;color:var(--mut);cursor:pointer;transition:.2s;border:1px solid transparent;}
+.ntab:hover{color:var(--ink);background:var(--s2);}
+.ntab.on{color:#fff;background:var(--acc);border-color:var(--acc);}
+
+.pnl{display:none}.pnl.on{display:block;padding-top:32px;padding-bottom:60px;}
+
+/* Filters */
+.fbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;}
+.fbtn{padding:7px 16px;border-radius:100px;font-size:.78rem;font-weight:600;color:var(--mut);border:1px solid var(--brd);background:var(--white);cursor:pointer;transition:.2s;}
+.fbtn:hover{border-color:var(--acc);color:var(--acc);}
+.fbtn.on{background:var(--acc);color:#fff;border-color:var(--acc);}
+
+/* Cards */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(620px,1fr));gap:24px;}
+@media(max-width:680px){.cgrid{grid-template-columns:1fr;}}
+.card{background:var(--white);border:1px solid var(--brd);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;}
+.card:hover{box-shadow:var(--shH);}
+.card.over-budget{border-color:var(--red);border-width:2px;}
+
+.cd-layout{display:grid;grid-template-columns:260px 1fr;}
+@media(max-width:580px){.cd-layout{grid-template-columns:1fr;}}
+
+.cd-img{min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;position:relative;}
+.img-sienci{background:linear-gradient(135deg,#2d4a5e,#1a3040);}
+.img-onefinity{background:linear-gradient(135deg,#3a3428,#1f1b14);}
+.img-avid{background:linear-gradient(135deg,#1a3a5c,#0d1f33);}
+.img-makermade{background:linear-gradient(135deg,#2d5a3e,#1a3328);}
+.img-printNC{background:linear-gradient(135deg,#4a3a2d,#2d1f14);}
+.img-idc{background:linear-gradient(135deg,#3d2d1a,#261a0d);}
+.cd-img .brand-label{color:rgba(255,255,255,.9);font-weight:700;font-size:1.1rem;letter-spacing:.02em;}
+.cd-img .model-label{color:rgba(255,255,255,.6);font-size:.8rem;margin-top:4px;}
+.cd-img .photo-link{margin-top:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:rgba(255,255,255,.15);color:#fff;font-size:.72rem;font-weight:600;backdrop-filter:blur(8px);transition:.2s;}
+.cd-img .photo-link:hover{background:rgba(255,255,255,.3);color:#fff;}
+
+.cd-body{padding:24px;}
+.cd-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px;}
+.cd-name{font-size:1.15rem;font-weight:800;color:var(--ink);}
+.cd-brand{font-size:.78rem;color:var(--mut);font-weight:500;}
+.cd-price-tag{text-align:right;}
+.cd-price-tag .price{font-size:1.3rem;font-weight:800;color:var(--acc);}
+.cd-price-tag .from{font-size:.68rem;color:var(--mut);font-weight:500;}
+.ob-badge{display:inline-block;padding:3px 10px;border-radius:100px;font-size:.68rem;font-weight:700;background:var(--redBg);color:var(--red);border:1px solid var(--redBd);margin-top:4px;}
+
+.cd-summary{font-size:.84rem;color:var(--ink3);line-height:1.6;margin-bottom:16px;}
+
+.cd-specs{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;margin-bottom:16px;}
+.spec{font-size:.76rem;color:var(--ink3);}
+.spec b{color:var(--ink);font-weight:600;}
+
+.cd-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;}
+.tag{padding:3px 10px;border-radius:100px;font-size:.68rem;font-weight:600;background:var(--s2);color:var(--ink3);}
+.tag.pro{background:var(--grnBg);color:var(--grn);border:1px solid var(--grnBd);}
+.tag.con{background:var(--redBg);color:var(--red);border:1px solid var(--redBd);}
+
+.pc-toggle{font-size:.78rem;font-weight:600;color:var(--acc);cursor:pointer;margin-bottom:10px;display:inline-flex;align-items:center;gap:4px;}
+.pc-list{display:none;margin-bottom:14px;}
+.pc-list.open{display:block;}
+.pc-list ul{list-style:none;padding:0;}
+.pc-list li{font-size:.78rem;padding:3px 0;color:var(--ink3);}
+.pc-list li::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:8px;}
+.pc-list .pro-list li::before{background:var(--grn);}
+.pc-list .con-list li::before{background:var(--red);}
+.pc-list h4{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin:8px 0 4px;color:var(--mut);}
+
+/* Shop button */
+.shop-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;border-radius:var(--r2);background:var(--acc);color:#fff;font-size:.9rem;font-weight:700;border:none;cursor:pointer;transition:.2s;text-decoration:none;margin-top:8px;}
+.shop-btn:hover{background:var(--accD);color:#fff;transform:translateY(-1px);box-shadow:0 4px 12px rgba(184,134,11,.3);}
+.shop-btn svg{width:18px;height:18px;}
+
+/* Configurator */
+.cfg-section{background:var(--s1);border:1px solid var(--brd);border-radius:var(--r2);padding:18px;margin-top:16px;}
+.cfg-section h3{font-size:.82rem;font-weight:700;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+.cfg-group{margin-bottom:14px;}
+.cfg-group-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);margin-bottom:6px;}
+.cfg-opt{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-radius:8px;border:1px solid var(--brd);background:var(--white);cursor:pointer;transition:.15s;margin-bottom:4px;}
+.cfg-opt:hover{border-color:var(--acc);}
+.cfg-opt.sel{border-color:var(--acc);background:var(--accBg);box-shadow:0 0 0 1px var(--acc);}
+.opt-left{display:flex;align-items:center;gap:10px;}
+.radio{width:16px;height:16px;border-radius:50%;border:2px solid var(--brd2);transition:.15s;flex-shrink:0;}
+.sel .radio{border-color:var(--acc);background:var(--acc);box-shadow:inset 0 0 0 3px var(--white);}
+.chk{width:16px;height:16px;border-radius:4px;border:2px solid var(--brd2);transition:.15s;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.sel .chk{border-color:var(--acc);background:var(--acc);}
+.sel .chk::after{content:'✓';color:#fff;font-size:10px;font-weight:700;}
+.opt-name{font-size:.8rem;font-weight:600;color:var(--ink);}
+.opt-desc{font-size:.7rem;color:var(--mut);}
+.opt-price{font-size:.8rem;font-weight:700;color:var(--acc);white-space:nowrap;}
+.cfg-total{display:flex;justify-content:space-between;align-items:center;padding:14px;background:var(--white);border-radius:8px;border:1px solid var(--brd);margin-top:8px;}
+.cfg-total .label{font-size:.82rem;font-weight:700;color:var(--ink);}
+.cfg-total .amount{font-size:1.1rem;font-weight:800;}
+.cfg-total .vs{font-size:.72rem;font-weight:600;margin-top:2px;}
+.under{color:var(--grn);}.over{color:var(--red);}
+
+/* Comparison */
+.cmp-wrap{overflow-x:auto;margin-top:20px;}
+.cmp-tbl{width:100%;border-collapse:collapse;min-width:700px;background:var(--white);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);}
+.cmp-tbl th,.cmp-tbl td{padding:12px 16px;text-align:left;font-size:.8rem;border-bottom:1px solid var(--s3);}
+.cmp-tbl th{background:var(--s2);font-weight:700;color:var(--ink);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;}
+.cmp-tbl td:first-child{font-weight:600;color:var(--ink2);background:var(--s1);width:180px;}
+.cmp-tbl tr:last-child td{border-bottom:none;}
+.cmp-tbl select{padding:4px 8px;border-radius:6px;border:1px solid var(--brd);font-size:.76rem;font-family:inherit;background:var(--white);cursor:pointer;}
+.cfg-row td{background:var(--accBg)!important;font-weight:700;}
+.diff-row td{font-weight:700;font-size:.82rem;}
+.diff-cheapest{color:var(--grn);}
+.diff-more{color:var(--red);}
+
+/* Rec panel */
+.rec-card{background:var(--white);border:1px solid var(--brd);border-radius:var(--r);padding:28px;margin-bottom:20px;box-shadow:var(--sh);}
+.rec-card h3{font-size:1.05rem;font-weight:800;margin-bottom:6px;color:var(--ink);}
+.rec-card .rec-tag{display:inline-block;padding:3px 10px;border-radius:100px;font-size:.68rem;font-weight:700;background:var(--accBg);color:var(--acc);margin-bottom:10px;}
+.rec-card p{font-size:.86rem;color:var(--ink3);line-height:1.6;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>CNC Router <span>Buyer's Guide</span></h1>
+  <p class="sub">Curated picks for woodworkers — $5,000 budget, 4×8 sheet support</p>
+  <div class="pills">
+    <span class="pill">💰 Budget: $5,000</span>
+    <span class="pill">📐 4×8 Sheet Support</span>
+    <span class="pill">🌀 Dust Collection</span>
+    <span class="pill">🔄 Tiling OK</span>
+  </div>
+</div>
+
+<div class="nav"><div class="nav-inner">
+  <div class="ntab on" onclick="showTab('browse')">Browse Machines</div>
+  <div class="ntab" onclick="showTab('compare')">Compare Side-by-Side</div>
+  <div class="ntab" onclick="showTab('recs')">Recommendations</div>
+</div></div>
+
+<!-- ========== BROWSE ========== -->
+<div class="pnl on" id="pnl-browse"><div class="wrap">
+  <div class="fbar">
+    <div class="fbtn on" data-f="all" onclick="filt(this)">All Machines</div>
+    <div class="fbtn" data-f="48" onclick="filt(this)">4×8 Bed</div>
+    <div class="fbtn" data-f="44" onclick="filt(this)">4×4 Bed (Tileable)</div>
+    <div class="fbtn" data-f="budget" onclick="filt(this)">Under $5K</div>
+    <div class="fbtn" data-f="dust" onclick="filt(this)">Dust Boot Available</div>
+    <div class="fbtn" data-f="closed" onclick="filt(this)">Closed-Loop Motors</div>
+    <div class="fbtn" data-f="ball" onclick="filt(this)">Ball Screws</div>
+    <div class="fbtn" data-f="sienci" onclick="filt(this)">Sienci Labs</div>
+    <div class="fbtn" data-f="onefinity" onclick="filt(this)">Onefinity</div>
+  </div>
+  <div class="cgrid" id="cgrid"></div>
+</div></div>
+
+<!-- ========== COMPARE ========== -->
+<div class="pnl" id="pnl-compare"><div class="wrap">
+  <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:6px;">Side-by-Side Comparison</h2>
+  <p style="font-size:.86rem;color:var(--mut);margin-bottom:20px;">Select machines and configure options to compare configured prices.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;">
+    <label style="font-size:.82rem;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:6px;">Machine A: <select id="cmpA" onchange="bldCmp()" style="padding:6px 10px;border-radius:8px;border:1px solid var(--brd);font-family:inherit;"></select></label>
+    <label style="font-size:.82rem;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:6px;">Machine B: <select id="cmpB" onchange="bldCmp()" style="padding:6px 10px;border-radius:8px;border:1px solid var(--brd);font-family:inherit;"></select></label>
+    <label style="font-size:.82rem;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:6px;">Machine C: <select id="cmpC" onchange="bldCmp()" style="padding:6px 10px;border-radius:8px;border:1px solid var(--brd);font-family:inherit;"></select></label>
+  </div>
+  <div class="cmp-wrap" id="cmpOut"></div>
+</div></div>
+
+<!-- ========== RECS ========== -->
+<div class="pnl" id="pnl-recs"><div class="wrap">
+  <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:20px;">Our Recommendations</h2>
+  <div class="rec-card">
+    <span class="rec-tag">🏆 Best Overall Value</span>
+    <h3>Sienci AltMill MK2 4×4</h3>
+    <p>The AltMill MK2 delivers industrial-grade rigidity with its all-steel frame, closed-loop NEMA 23 motors, and ball screw drives — all starting at $2,950. With tiling capability for 4×8 sheets and optional high-torque motors and spindle kits, it's the most feature-rich machine in its class. The dust shoe keeps your shop clean, and Sienci's active community and Canadian support are top-notch.</p>
+  </div>
+  <div class="rec-card">
+    <span class="rec-tag">🎯 Best Plug & Play</span>
+    <h3>Onefinity Elite Foreman Gen 2</h3>
+    <p>If you want a full 4×8 bed and minimal assembly, the Elite Foreman Gen 2 is a strong contender — but at $3,837+ (Ultimate package), it's a bigger investment. The Masso G3 controller, ball screws, and included surfacing bit make it genuinely ready to cut out of the box. Just note the bed isn't full 49×49 — it's 48×33 unless you go Foreman size.</p>
+  </div>
+  <div class="rec-card">
+    <span class="rec-tag">💎 Dream Machine (Over Budget)</span>
+    <h3>Sienci AltMill MK2 4×8</h3>
+    <p>Starting at $7,500, the full 4×8 AltMill eliminates tiling entirely with its massive work area. Same industrial-quality construction as the 4×4 with beefier linear rails. If budget allows in the future, this is the endgame for serious woodworkers processing full plywood sheets regularly.</p>
+  </div>
+  <div class="rec-card">
+    <span class="rec-tag">💡 Best Budget Entry</span>
+    <h3>Sienci LongMill MK2.5 48×30</h3>
+    <p>At $2,200, the LongMill gets you cutting quickly with a proven design, great community support, and enough bed size for most projects. It uses lead screws instead of ball screws and open-loop NEMA 23 motors, but for a hobbyist or small shop getting started, it's hard to beat the value.</p>
+  </div>
+</div></div>
+
+<script>
+const MACHINES=[
+{id:'altmill44',name:'AltMill MK2 4×4',brand:'Sienci Labs',base:2950,bed:'4×4 (Tileable to 4×8)',ws:'48″ × 48″',type:'44',
+ motors:'Closed-Loop NEMA 23',drive:'Ball Screws',ctrl:'grblHAL (Sienci)',frame:'All-Steel Welded',dust:true,closedLoop:true,ballScrew:true,brandKey:'sienci',
+ url:'https://siencilabs.com/products/altmill-cnc',img:'img-sienci',
+ summary:'The AltMill MK2 4×4 is Sienci Labs\' flagship mid-range CNC router, built on an all-steel welded frame with industrial-grade ball screw drives and closed-loop stepper motors. It supports tiling for full 4×8 plywood sheets, making it ideal for woodworkers who need large-format capability without the footprint of a full 4×8 machine. The active community and excellent documentation make it approachable even for CNC newcomers.',
+ pros:['Industrial all-steel frame','Closed-loop motors prevent missed steps','Ball screw precision','Tiling for 4×8 sheets','Active community & great docs','Dust shoe available','Canadian company with solid support'],
+ cons:['Tiling adds workflow steps','Assembly required (~8-12 hrs)','Spindle sold separately','Base doesn\'t include touch plate'],
+ opts:[
+  {group:'Motors',items:[{n:'Standard NEMA 23',p:0,d:'Included — closed-loop'},{n:'High-Torque Upgrade',p:210,d:'+30% torque for hardwoods'}]},
+  {group:'Spindle',items:[{n:'No Spindle (Router mount)',p:0,d:'Use your own router'},{n:'1.5kW VFD Spindle Kit',p:925,d:'Water-cooled, quieter'},{n:'2.2kW VFD Spindle Kit',p:1100,d:'More power for hardwoods'}]}
+ ]},
+{id:'altmill48',name:'AltMill MK2 4×8',brand:'Sienci Labs',base:7500,bed:'4×8 Full Sheet',ws:'96″ × 48″',type:'48',
+ motors:'Closed-Loop NEMA 34',drive:'Ball Screws',ctrl:'grblHAL (Sienci)',frame:'All-Steel Welded',dust:true,closedLoop:true,ballScrew:true,brandKey:'sienci',overBudget:true,
+ url:'https://siencilabs.com/products/altmill-cnc',img:'img-sienci',
+ summary:'The full-size AltMill MK2 4×8 eliminates the need for tiling entirely, handling complete 4\'×8\' plywood sheets in a single pass. Built with beefier NEMA 34 motors, heavier linear rails, and the same industrial all-steel frame as the 4×4, this machine is designed for professional shops that process full sheets regularly. It\'s over our $5K budget but included here as the aspirational upgrade path.',
+ pros:['Full 4×8 sheet — no tiling needed','NEMA 34 closed-loop motors','Heaviest, most rigid frame','Ball screws on all axes','Same great Sienci ecosystem'],
+ cons:['$7,500 base — over $5K budget','Requires significant shop space','Heavier assembly process','Spindle & accessories extra'],
+ opts:[
+  {group:'Spindle',type:'radio',items:[{n:'No Spindle (Router mount)',p:0,d:'Use your own router'},{n:'1.5kW VFD Spindle Kit',p:925,d:'Water-cooled, quieter'},{n:'2.2kW VFD Spindle Kit',p:1100,d:'More power for hardwoods'}]},
+  {group:'Accessories',type:'check',items:[{n:'Supplementary Wasteboard',p:150,d:'MDF wasteboard kit'},{n:'ATC Spindle Kit',p:3620,d:'Automatic tool changer'},{n:'Dust Shoe',p:50,d:'Dust collection boot'}]}
+ ]},
+{id:'longmill',name:'LongMill MK2.5 48×30',brand:'Sienci Labs',base:2200,bed:'48″ × 30″',ws:'48″ × 30″',type:'44',
+ motors:'Open-Loop NEMA 23',drive:'Lead Screws (Anti-Backlash)',ctrl:'grblHAL',frame:'Steel Gantry / Aluminum',dust:true,closedLoop:false,ballScrew:false,brandKey:'sienci',
+ url:'https://siencilabs.com/products/longmill-mk2',img:'img-sienci',
+ summary:'The LongMill MK2.5 is Sienci Labs\' proven workhorse for hobbyists and small shops. At $2,200, it offers excellent value with a 48×30 inch work area, anti-backlash lead screw drives, and compatibility with the full Sienci accessory ecosystem including touch plates, dust shoes, and laser modules. It\'s the best way to get into CNC routing without breaking the bank.',
+ pros:['Excellent price-to-performance','Huge community & tutorials','Compatible with Sienci accessories','Good for beginners','Dust shoe available','Laser module option'],
+ cons:['Lead screws (not ball screws)','Open-loop motors','Smaller work area','Less rigid than AltMill','Not ideal for metals'],
+ opts:[
+  {group:'Size',items:[{n:'48×30 (Standard)',p:0,d:'Most popular size'},{n:'32×32',p:-200,d:'Compact option'}]},
+  {group:'Add-ons',items:[{n:'No extras',p:0,d:'Base machine only'},{n:'Touch Plate',p:40,d:'Automatic Z-zeroing'},{n:'Dust Shoe',p:45,d:'Dust collection boot'}]}
+ ]},
+{id:'elite',name:'Elite Foreman Gen 2',brand:'Onefinity',base:2375,bed:'48″ × 33″',ws:'48.75″ × 33.75″',type:'44',
+ motors:'Closed-Loop Servos',drive:'Ball Screws',ctrl:'Masso G3 Touch',frame:'Aluminum Extrusion',dust:true,closedLoop:true,ballScrew:true,brandKey:'onefinity',
+ url:'https://www.onefinitycnc.com/elite',img:'img-onefinity',
+ summary:'The Onefinity Elite Foreman Gen 2 is a premium hobbyist CNC featuring the Masso G3 touchscreen controller, closed-loop servo motors, and ball screw drives. Its 48×33 inch bed handles most projects with room to spare. The "Ultimate" package bundles everything you need including a surfacing bit and touch probe for around $3,837. Known for fast setup and minimal fuss.',
+ pros:['Masso G3 touchscreen controller','Closed-loop servo motors','Ball screw drives','Quick assembly (<2 hrs)','Strong community','Touch probe included (Ultimate)'],
+ cons:['Aluminum frame (less rigid than steel)','33\" Y-axis limits sheet work','Accessories can be pricey','Proprietary controller ecosystem'],
+ opts:[
+  {group:'Package',items:[{n:'Base Machine',p:0,d:'Core machine only'},{n:'Essential Package',p:812,d:'+stiffy, touch probe'},{n:'Ultimate Package',p:1462,d:'+everything included'}]},
+  {group:'Spindle',items:[{n:'No Spindle (Router mount)',p:0,d:'Use your own router'},{n:'1.5kW VFD Spindle',p:899,d:'Water-cooled spindle'}]}
+ ]},
+{id:'machinist',name:'Machinist Gen 2',brand:'Onefinity',base:1675,bed:'32″ × 32″',ws:'32.75″ × 32.75″',type:'44',
+ motors:'Closed-Loop Servos',drive:'Ball Screws',ctrl:'Masso G3 Touch',frame:'Aluminum Extrusion',dust:true,closedLoop:true,ballScrew:true,brandKey:'onefinity',
+ url:'https://www.onefinitycnc.com/elite',img:'img-onefinity',
+ summary:'The Machinist Gen 2 is the compact version of the Onefinity Elite line, sharing the same Masso G3 controller, servo motors, and ball screws in a 32×32 inch footprint. Perfect for smaller shops or those who primarily work with project-sized pieces rather than full sheets. At $1,675 base, it leaves plenty of budget for a quality spindle and accessories.',
+ pros:['Same Elite quality, smaller footprint','Masso G3 controller','Servos + ball screws','Lowest entry for premium features','Fast assembly'],
+ cons:['32×32 bed limits sheet work','Cannot tile 4×8 easily','Aluminum frame','Smaller community than Foreman'],
+ opts:[
+  {group:'Package',items:[{n:'Base Machine',p:0,d:'Core machine only'},{n:'Ultimate Package',p:1462,d:'+everything included'}]},
+  {group:'Add-ons',items:[{n:'No extras',p:0,d:'Base configuration'},{n:'1.5kW Spindle',p:899,d:'Water-cooled VFD spindle'}]}
+ ]},
+{id:'avid',name:'Benchtop Pro 4848',brand:'Avid CNC',base:4815,bed:'48″ × 48″',ws:'48″ × 48″',type:'44',
+ motors:'NEMA 23 (Closed-Loop Opt)',drive:'Ball Screws & Rack/Pinion',ctrl:'Mach4 / Centroid',frame:'Steel & Aluminum',dust:true,closedLoop:false,ballScrew:true,brandKey:'avid',
+ url:'https://www.avidcnc.com/benchtop-pro-cnc-machine-4848-p-937.html',img:'img-avid',
+ summary:'The Avid CNC Benchtop Pro 4848 targets the semi-professional market with a hybrid ball screw and rack-and-pinion drive system and industrial Mach4/Centroid control. At $4,815, it sits right at budget but delivers a machine that can grow with your skills. Compatible with professional CAM software and widely used in small production shops.',
+ pros:['Industrial-grade build','Ball screw Z-axis','Rack & pinion for speed','Mach4 compatibility','Scalable to larger sizes','Good for production runs'],
+ cons:['Near budget ceiling at $4,815','Steeper learning curve','Base motors are open-loop','Assembly is more complex','Less beginner-friendly community'],
+ opts:[
+  {group:'Controller',items:[{n:'Standard (Mach4)',p:0,d:'Mach4 compatible'},{n:'Centroid Acorn',p:350,d:'Closed-loop capable'}]}
+ ]},
+{id:'printNC',name:'PrintNC v4',brand:'PrintNC (DIY)',base:2500,bed:'Custom (up to 4×8)',ws:'Custom',type:'48',
+ motors:'NEMA 23 / Servos (Choice)',drive:'Ball Screws',ctrl:'LinuxCNC / grblHAL',frame:'Steel Tube (Welded)',dust:false,closedLoop:false,ballScrew:true,brandKey:'printNC',
+ url:'https://wiki.printnc.info/en/home',img:'img-printNC',
+ summary:'The PrintNC is an open-source, DIY CNC router designed around a heavy steel tube frame and ball screw drives. You source the parts yourself, which means the price varies but typically lands around $2,500 for a 4×8 build. It\'s the most customizable option here — you choose your motors, controller, and even bed size. Ideal for makers who enjoy the build process as much as the cutting.',
+ pros:['Open-source & fully customizable','Steel frame — very rigid','Ball screw drives','Can build full 4×8','Active Discord community','Cheapest path to 4×8'],
+ cons:['Full DIY — no kit, no manual','Must source parts yourself','Welding may be needed','No commercial support','Longer build time (40+ hrs)'],
+ opts:[
+  {group:'Build',items:[{n:'Estimated Base Build',p:0,d:'Self-sourced components'},{n:'Premium Components',p:800,d:'Better rails, servos, etc.'}]}
+ ]},
+{id:'idc',name:'CNC4848 Pro',brand:'IDC Woodcraft',base:4499,bed:'48″ × 48″',ws:'48″ × 48″',type:'44',
+ motors:'NEMA 23 Closed-Loop',drive:'Ball Screws',ctrl:'Mach3/4',frame:'Steel',dust:true,closedLoop:true,ballScrew:true,brandKey:'idc',
+ url:'https://www.idcwoodcraft.com/',img:'img-idc',
+ summary:'The IDC Woodcraft CNC4848 Pro is a heavy-duty steel-frame machine designed for small commercial woodworking shops. With closed-loop NEMA 23 motors and ball screws on all axes, it delivers reliable precision for production work. At $4,499 it\'s within budget but leaves less room for accessories. Compatible with industry-standard Mach3/Mach4 software.',
+ pros:['Heavy steel frame','Closed-loop motors','Ball screws all axes','Mach3/4 compatible','Production-ready build quality'],
+ cons:['Less known brand','Smaller community','Near budget limit','Limited upgrade path','Documentation could be better'],
+ opts:[
+  {group:'Options',items:[{n:'Base Machine',p:0,d:'Standard configuration'},{n:'Spindle Bundle',p:450,d:'1.5kW spindle included'}]}
+ ]}
+];
+
+/* State */
+const cfg={};
+MACHINES.forEach(m=>{
+  if(m.id==='altmill48'){cfg[m.id]={base:m.base,radio:{},checks:{}};}
+  else{cfg[m.id]={base:m.base,adds:{}};}
+});
+
+/* TABS */
+function showTab(t){
+  document.querySelectorAll('.ntab').forEach((el,i)=>el.classList.toggle('on',['browse','compare','recs'][i]===t));
+  document.querySelectorAll('.pnl').forEach((el,i)=>el.classList.toggle('on',['browse','compare','recs'][i]===t));
+  if(t==='compare') bldCmp();
+}
+
+/* FILTERS */
+function filt(el){
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('on'));
+  el.classList.add('on');
+  const f=el.dataset.f;
+  document.querySelectorAll('.card').forEach(c=>{
+    if(f==='all'){c.style.display='';}
+    else if(f==='48'){c.style.display=c.dataset.type==='48'?'':'none';}
+    else if(f==='44'){c.style.display=c.dataset.type==='44'?'':'none';}
+    else if(f==='budget'){c.style.display=c.dataset.ob==='1'?'none':'';}
+    else if(f==='dust'){c.style.display=c.dataset.dust==='1'?'':'none';}
+    else if(f==='closed'){c.style.display=c.dataset.cl==='1'?'':'none';}
+    else if(f==='ball'){c.style.display=c.dataset.bs==='1'?'':'none';}
+    else if(f==='sienci'){c.style.display=c.dataset.brand==='sienci'?'':'none';}
+    else if(f==='onefinity'){c.style.display=c.dataset.brand==='onefinity'?'':'none';}
+  });
+}
+
+/* BUILD CARDS */
+function buildCards(){
+  const g=document.getElementById('cgrid');
+  g.innerHTML='';
+  MACHINES.forEach(m=>{
+    const card=document.createElement('div');
+    card.className='card'+(m.overBudget?' over-budget':'');
+    card.dataset.type=m.type;card.dataset.ob=m.overBudget?'1':'0';
+    card.dataset.dust=m.dust?'1':'0';card.dataset.cl=m.closedLoop?'1':'0';
+    card.dataset.bs=m.ballScrew?'1':'0';card.dataset.brand=m.brandKey;
+    card.innerHTML=`
+    <div class="cd-layout">
+      <div class="cd-img ${m.img}">
+        <div class="brand-label">${m.brand}</div>
+        <div class="model-label">${m.name}</div>
+        <a href="${m.url}" target="_blank" class="photo-link">📷 View Product Photos →</a>
+      </div>
+      <div class="cd-body">
+        <div class="cd-head">
+          <div><div class="cd-name">${m.name}</div><div class="cd-brand">${m.brand}</div></div>
+          <div class="cd-price-tag"><div class="from">from</div><div class="price">$${m.base.toLocaleString()}</div>
+          ${m.overBudget?'<div class="ob-badge">Over $5K Budget</div>':''}</div>
+        </div>
+        <div class="cd-summary">${m.summary}</div>
+        <div class="cd-specs">
+          <div class="spec"><b>Bed:</b> ${m.bed}</div>
+          <div class="spec"><b>Work Area:</b> ${m.ws}</div>
+          <div class="spec"><b>Motors:</b> ${m.motors}</div>
+          <div class="spec"><b>Drive:</b> ${m.drive}</div>
+          <div class="spec"><b>Controller:</b> ${m.ctrl}</div>
+          <div class="spec"><b>Frame:</b> ${m.frame}</div>
+        </div>
+        <div class="cd-tags">
+          ${m.closedLoop?'<span class="tag pro">Closed-Loop</span>':''}
+          ${m.ballScrew?'<span class="tag pro">Ball Screws</span>':''}
+          ${m.dust?'<span class="tag pro">Dust Boot</span>':''}
+          ${m.type==='48'?'<span class="tag">4×8 Bed</span>':'<span class="tag">Tileable</span>'}
+          ${m.overBudget?'<span class="tag con">Over Budget</span>':''}
+        </div>
+        <div class="pc-toggle" onclick="this.nextElementSibling.classList.toggle('open')">▸ Pros & Cons</div>
+        <div class="pc-list">
+          <h4>Pros</h4><ul class="pro-list">${m.pros.map(p=>'<li>'+p+'</li>').join('')}</ul>
+          <h4>Cons</h4><ul class="con-list">${m.cons.map(c=>'<li>'+c+'</li>').join('')}</ul>
+        </div>
+        ${buildConfigurator(m)}
+        <a href="${m.url}" target="_blank" class="shop-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+          Shop Now — ${m.brand}
+        </a>
+      </div>
+    </div>`;
+    g.appendChild(card);
+  });
+}
+
+function buildConfigurator(m){
+  if(!m.opts||!m.opts.length) return '';
+  let h='<div class="cfg-section"><h3>⚙️ Price Configurator</h3>';
+  m.opts.forEach((og,gi)=>{
+    const isCheck=(m.id==='altmill48' && og.type==='check');
+    h+=`<div class="cfg-group"><div class="cfg-group-title">${og.group}</div>`;
+    og.items.forEach((it,ii)=>{
+      if(isCheck){
+        h+=`<div class="cfg-opt" data-val="${it.p}" data-gidx="${gi}" data-iidx="${ii}" onclick="cfgChk(this,'${m.id}')">
+          <div class="opt-left"><div class="chk"></div><div><div class="opt-name">${it.n}</div><div class="opt-desc">${it.d}</div></div></div>
+          <div class="opt-price">${it.p>=0?'+':''}$${Math.abs(it.p).toLocaleString()}</div></div>`;
+      } else {
+        h+=`<div class="cfg-opt${ii===0?' sel':''}" data-val="${it.p}" data-gidx="${gi}" data-iidx="${ii}" onclick="cfgRadio(this,'${m.id}',${gi})">
+          <div class="opt-left"><div class="radio"></div><div><div class="opt-name">${it.n}</div><div class="opt-desc">${it.d}</div></div></div>
+          <div class="opt-price">${it.p>=0?'+':''}$${Math.abs(it.p).toLocaleString()}</div></div>`;
+      }
+    });
+    h+='</div>';
+  });
+  h+=`<div class="cfg-total" id="cfgtot-${m.id}"><div><div class="label">Configured Total</div><div class="vs" id="cfgvs-${m.id}"></div></div><div class="amount" id="cfgamt-${m.id}">$${m.base.toLocaleString()}</div></div></div>`;
+  return h;
+}
+
+function cfgRadio(el,mid,gi){
+  const parent=el.parentElement;
+  parent.querySelectorAll('.cfg-opt[data-gidx="'+gi+'"]').forEach(o=>o.classList.remove('sel'));
+  el.classList.add('sel');
+  updCfg(mid);
+}
+
+function cfgChk(el,mid){
+  el.classList.toggle('sel');
+  updCfg(mid);
+}
+
+function updCfg(mid){
+  const m=MACHINES.find(x=>x.id===mid);
+  const card=[...document.querySelectorAll('.card')].find(c=>c.querySelector('#cfgtot-'+mid));
+  if(!card) return;
+  let total=m.base;
+  card.querySelectorAll('.cfg-opt.sel').forEach(opt=>{
+    total+=parseInt(opt.dataset.val)||0;
+  });
+  cfg[mid].total=total;
+  document.getElementById('cfgamt-'+mid).textContent='$'+total.toLocaleString();
+  const diff=5000-total;
+  const vs=document.getElementById('cfgvs-'+mid);
+  if(diff>=0) vs.innerHTML='<span class="under">$'+diff.toLocaleString()+' under budget</span>';
+  else vs.innerHTML='<span class="over">$'+Math.abs(diff).toLocaleString()+' over budget</span>';
+}
+
+function getCfgTotal(mid){
+  const m=MACHINES.find(x=>x.id===mid);
+  if(!m) return 0;
+  // check if card exists in DOM
+  const card=[...document.querySelectorAll('.card')].find(c=>c.querySelector('#cfgtot-'+mid));
+  if(!card) return m.base;
+  let total=m.base;
+  card.querySelectorAll('.cfg-opt.sel').forEach(opt=>{
+    total+=parseInt(opt.dataset.val)||0;
+  });
+  return total;
+}
+
+/* COMPARISON TABLE */
+function bldCmp(){
+  const ids=[document.getElementById('cmpA').value,document.getElementById('cmpB').value,document.getElementById('cmpC').value].filter(Boolean);
+  const ms=ids.map(id=>MACHINES.find(m=>m.id===id)).filter(Boolean);
+  if(ms.length<2){document.getElementById('cmpOut').innerHTML='<p style="color:var(--mut);font-size:.86rem;">Select at least 2 machines to compare.</p>';return;}
+
+  const cmpCfg={};
+  ms.forEach(m=>{
+    cmpCfg[m.id]={base:m.base,adds:{}};
+  });
+
+  const rows=[
+    ['Brand',ms.map(m=>m.brand)],
+    ['Base Price',ms.map(m=>'$'+m.base.toLocaleString())],
+    ['Bed Size',ms.map(m=>m.bed)],
+    ['Work Area',ms.map(m=>m.ws)],
+    ['Motors',ms.map(m=>m.motors)],
+    ['Drive System',ms.map(m=>m.drive)],
+    ['Controller',ms.map(m=>m.ctrl)],
+    ['Frame',ms.map(m=>m.frame)],
+    ['Dust Boot',ms.map(m=>m.dust?'✅ Available':'❌ No')],
+    ['Closed-Loop',ms.map(m=>m.closedLoop?'✅ Yes':'❌ No')],
+    ['Ball Screws',ms.map(m=>m.ballScrew?'✅ Yes':'❌ No')],
+  ];
+
+  // Build option rows
+  let optRows='';
+  ms.forEach((m,mi)=>{
+    if(!m.opts) return;
+    m.opts.forEach((og,gi)=>{
+      const rowId='cmp_'+m.id+'_'+gi;
+      const opts=og.items.map((it,ii)=>`<option value="${it.p}" ${ii===0?'selected':''}>${it.n} (${it.p>=0?'+':''}$${Math.abs(it.p)})</option>`).join('');
+      // Will inject into cell
+      cmpCfg[m.id].adds[gi]=0;
+    });
+  });
+
+  let html='<table class="cmp-tbl"><thead><tr><th>Feature</th>';
+  ms.forEach(m=>{html+='<th>'+m.name+'</th>';});
+  html+='</tr></thead><tbody>';
+
+  rows.forEach(([label,vals])=>{
+    html+='<tr><td>'+label+'</td>';
+    vals.forEach(v=>{html+='<td>'+v+'</td>';});
+    html+='</tr>';
+  });
+
+  // Option selector rows
+  const maxOptGroups=Math.max(...ms.map(m=>(m.opts||[]).length));
+  for(let gi=0;gi<maxOptGroups;gi++){
+    const groupNames=ms.map(m=>(m.opts&&m.opts[gi])?m.opts[gi].group:'—');
+    const label=groupNames.find(g=>g!=='—')||'Option '+(gi+1);
+    html+='<tr><td>'+label+'</td>';
+    ms.forEach((m,mi)=>{
+      if(m.opts&&m.opts[gi]){
+        const selId='cmpsel_'+m.id+'_'+gi;
+        html+='<td><select id="'+selId+'" onchange="updCmpTotals()" style="padding:4px 8px;border-radius:6px;border:1px solid var(--brd);font-size:.76rem;font-family:inherit;">';
+        m.opts[gi].items.forEach((it,ii)=>{
+          html+=`<option value="${it.p}" ${ii===0?'selected':''}>${it.n} (${it.p>=0?'+':''}$${Math.abs(it.p)})</option>`;
+        });
+        html+='</select></td>';
+      } else {
+        html+='<td style="color:var(--mut);">—</td>';
+      }
+    });
+    html+='</tr>';
+  }
+
+  // Configured total row
+  html+='<tr class="cfg-row"><td>Configured Total</td>';
+  ms.forEach(m=>{html+='<td id="cmptot_'+m.id+'">$'+m.base.toLocaleString()+'</td>';});
+  html+='</tr>';
+
+  // vs Budget row
+  html+='<tr><td>vs. $5,000 Budget</td>';
+  ms.forEach(m=>{
+    const d=5000-m.base;
+    html+='<td id="cmpbud_'+m.id+'" class="'+(d>=0?'under':'over')+'">'+(d>=0?'$'+d.toLocaleString()+' under':'$'+Math.abs(d).toLocaleString()+' over')+'</td>';
+  });
+  html+='</tr>';
+
+  // Price difference row
+  html+='<tr class="diff-row"><td>Price Difference</td>';
+  ms.forEach(m=>{html+='<td id="cmpdiff_'+m.id+'">—</td>';});
+  html+='</tr>';
+
+  html+='</tbody></table>';
+  document.getElementById('cmpOut').innerHTML=html;
+  updCmpTotals();
+}
+
+function updCmpTotals(){
+  const ids=[document.getElementById('cmpA').value,document.getElementById('cmpB').value,document.getElementById('cmpC').value].filter(Boolean);
+  const ms=ids.map(id=>MACHINES.find(m=>m.id===id)).filter(Boolean);
+  const totals={};
+  ms.forEach(m=>{
+    let t=m.base;
+    const maxOG=(m.opts||[]).length;
+    for(let gi=0;gi<maxOG;gi++){
+      const sel=document.getElementById('cmpsel_'+m.id+'_'+gi);
+      if(sel) t+=parseInt(sel.value)||0;
+    }
+    totals[m.id]=t;
+    const el=document.getElementById('cmptot_'+m.id);
+    if(el) el.textContent='$'+t.toLocaleString();
+    const bel=document.getElementById('cmpbud_'+m.id);
+    if(bel){
+      const d=5000-t;
+      bel.className=d>=0?'under':'over';
+      bel.textContent=d>=0?'$'+d.toLocaleString()+' under':'$'+Math.abs(d).toLocaleString()+' over';
+    }
+  });
+  // Price difference
+  const vals=ms.map(m=>totals[m.id]);
+  const minVal=Math.min(...vals);
+  ms.forEach(m=>{
+    const del=document.getElementById('cmpdiff_'+m.id);
+    if(!del) return;
+    const t=totals[m.id];
+    if(t===minVal){del.className='diff-row diff-cheapest';del.innerHTML='✓ Cheapest';}
+    else{del.className='diff-row diff-more';del.innerHTML='+$'+(t-minVal).toLocaleString()+' more';}
+  });
+}
+
+/* INIT */
+function init(){
+  buildCards();
+  // Init configurator totals
+  MACHINES.forEach(m=>updCfg(m.id));
+  // Populate comparison selects
+  const opts='<option value="">— Select —</option>'+MACHINES.map(m=>`<option value="${m.id}">${m.name} (${m.brand})</option>`).join('');
+  document.getElementById('cmpA').innerHTML=opts;
+  document.getElementById('cmpB').innerHTML=opts;
+  document.getElementById('cmpC').innerHTML=opts;
+  // Default selections
+  document.getElementById('cmpA').value='altmill44';
+  document.getElementById('cmpB').value='elite';
+  document.getElementById('cmpC').value='altmill48';
+}
+init();
+</script>
+</body>
+</html>

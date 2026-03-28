@@ -17,3 +17,4 @@ last_updated: 2026-02-18
 |------|---------|------|
 | `README.md` | Directory overview — what domain research goes here | 2 |
 | `domain-research-template-v1.md` | Template for creating domain-specific research documents | 2 |
+| `woodworking-content-taxonomy-v1.md` | Comprehensive 10-category topic taxonomy for planning woodworking content (hobbyist audience) | 2 |

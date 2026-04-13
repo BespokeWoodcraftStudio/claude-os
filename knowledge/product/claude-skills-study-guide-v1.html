@@ -1,0 +1,2364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ultimate Claude Skills Study Guide | March 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+    :root {
+      --bg: #0f0f0f;
+      --bg-card: #1a1a1a;
+      --bg-sidebar: #141414;
+      --bg-code: #1e1e2e;
+      --text: #e4e4e7;
+      --text-muted: #a1a1aa;
+      --text-heading: #fafafa;
+      --accent: #c4956a;
+      --accent-light: #d4a574;
+      --accent-bg: rgba(196,149,106,0.1);
+      --border: #2a2a2a;
+      --success: #4ade80;
+      --warning: #fbbf24;
+      --info: #60a5fa;
+      --danger: #f87171;
+      --claude-orange: #da7756;
+      --claude-bg: #2b2521;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      display: flex;
+      min-height: 100vh;
+    }
+    /* Sidebar */
+    .sidebar {
+      width: 300px;
+      min-width: 300px;
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border);
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      overflow-y: auto;
+      z-index: 100;
+      transition: transform 0.3s ease;
+    }
+    .sidebar-header {
+      padding: 24px 20px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: var(--bg-sidebar);
+      z-index: 2;
+    }
+    .sidebar-header h1 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+    .sidebar-header p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .sidebar-search {
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sidebar-search input {
+      width: 100%;
+      padding: 8px 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-size: 0.85rem;
+      outline: none;
+    }
+    .sidebar-search input:focus { border-color: var(--accent); }
+    .sidebar-search input::placeholder { color: var(--text-muted); }
+    .nav-section { padding: 8px 0; }
+    .nav-section-title {
+      padding: 8px 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+    .nav-link {
+      display: block;
+      padding: 6px 20px 6px 28px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: all 0.15s;
+      border-left: 2px solid transparent;
+    }
+    .nav-link:hover { color: var(--text); background: rgba(255,255,255,0.03); }
+    .nav-link.active { color: var(--accent); border-left-color: var(--accent); background: var(--accent-bg); }
+    .nav-link.sub { padding-left: 44px; font-size: 0.8rem; }
+    /* Main Content */
+    .main {
+      margin-left: 300px;
+      flex: 1;
+      max-width: 900px;
+      padding: 48px 48px 120px;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin: 64px 0 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      letter-spacing: -0.02em;
+    }
+    h2:first-of-type { margin-top: 0; border-top: none; padding-top: 0; }
+    h3 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--text-heading);
+      margin: 40px 0 16px;
+    }
+    h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent-light);
+      margin: 28px 0 12px;
+    }
+    p { margin-bottom: 16px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 20px 0;
+    }
+    .card.highlight { border-left: 3px solid var(--accent); }
+    .card.info { border-left: 3px solid var(--info); }
+    .card.warning { border-left: 3px solid var(--warning); }
+    .card.success { border-left: 3px solid var(--success); }
+    .card-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    .card.highlight .card-title { color: var(--accent); }
+    .card.info .card-title { color: var(--info); }
+    .card.warning .card-title { color: var(--warning); }
+    .card.success .card-title { color: var(--success); }
+    /* Code blocks */
+    pre {
+      background: var(--bg-code);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      overflow-x: auto;
+      margin: 16px 0;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    code {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 0.85em;
+    }
+    :not(pre) > code {
+      background: var(--bg-code);
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.9rem;
+    }
+    th {
+      background: var(--bg-card);
+      font-weight: 600;
+      text-align: left;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      color: var(--accent-light);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    td {
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    /* UI Mockup styles */
+    .ui-mockup {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 24px 0;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .ui-titlebar {
+      background: #252525;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid #333;
+    }
+    .ui-dot { width: 12px; height: 12px; border-radius: 50%; }
+    .ui-dot.red { background: #ff5f57; }
+    .ui-dot.yellow { background: #febc2e; }
+    .ui-dot.green { background: #28c840; }
+    .ui-titlebar-text {
+      flex: 1;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #888;
+    }
+    .ui-content { padding: 20px; }
+    .ui-sidebar-mock {
+      width: 220px;
+      background: #111;
+      border-right: 1px solid #333;
+      padding: 12px;
+      float: left;
+      min-height: 300px;
+    }
+    .ui-sidebar-item {
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: #aaa;
+      cursor: default;
+      margin: 2px 0;
+    }
+    .ui-sidebar-item.active { background: rgba(196,149,106,0.15); color: var(--accent); }
+    .ui-chat-area {
+      margin-left: 232px;
+      padding: 16px;
+      min-height: 300px;
+    }
+    .ui-input-mock {
+      background: #222;
+      border: 1px solid #444;
+      border-radius: 20px;
+      padding: 12px 16px;
+      color: #666;
+      font-size: 0.85rem;
+      margin-top: 16px;
+    }
+    .ui-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+    .ui-badge.orange { background: rgba(218,119,86,0.2); color: var(--claude-orange); }
+    .ui-badge.green { background: rgba(74,222,128,0.2); color: var(--success); }
+    .ui-badge.blue { background: rgba(96,165,250,0.2); color: var(--info); }
+    /* Step indicator */
+    .step {
+      display: flex;
+      gap: 16px;
+      margin: 20px 0;
+      padding: 16px;
+      background: var(--bg-card);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      background: var(--accent);
+      color: #000;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    .step-content { flex: 1; }
+    .step-content h5 { font-weight: 600; margin-bottom: 4px; color: var(--text-heading); }
+    .step-content p { margin: 0; font-size: 0.9rem; color: var(--text-muted); }
+    /* Collapsible sections */
+    details { margin: 16px 0; }
+    details summary {
+      cursor: pointer;
+      padding: 12px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-weight: 600;
+      color: var(--text-heading);
+      list-style: none;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::before {
+      content: '\25B6';
+      display: inline-block;
+      margin-right: 8px;
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details[open] summary::before { transform: rotate(90deg); }
+    details[open] summary {
+      border-radius: 8px 8px 0 0;
+      border-bottom: 1px solid var(--border);
+    }
+    details .details-content {
+      padding: 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+    }
+    /* Progress tracker */
+    .progress-bar {
+      width: 100%;
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      margin: 8px 0;
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+      transition: width 0.3s;
+    }
+    /* Ecosystem grid */
+    .eco-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .eco-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+    .eco-card:hover { border-color: var(--accent); }
+    .eco-card .icon { font-size: 2rem; margin-bottom: 8px; }
+    .eco-card h5 { font-weight: 600; margin-bottom: 4px; }
+    .eco-card p { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
+    /* Architecture diagram */
+    .arch-diagram {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      margin: 24px 0;
+      text-align: center;
+    }
+    .arch-layer {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin: 8px auto;
+      max-width: 600px;
+      position: relative;
+    }
+    .arch-layer.user { background: rgba(96,165,250,0.1); border-color: var(--info); }
+    .arch-layer.model { background: rgba(196,149,106,0.1); border-color: var(--accent); }
+    .arch-layer.tools { background: rgba(74,222,128,0.1); border-color: var(--success); }
+    .arch-arrow {
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      margin: 4px 0;
+    }
+    /* Responsive */
+    .hamburger {
+      display: none;
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 200;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px;
+      cursor: pointer;
+      color: var(--text);
+    }
+    @media (max-width: 900px) {
+      .sidebar { transform: translateX(-100%); }
+      .sidebar.open { transform: translateX(0); }
+      .main { margin-left: 0; padding: 24px 16px 120px; }
+      .hamburger { display: block; }
+    }
+    /* Animation */
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    section { animation: fadeIn 0.4s ease; }
+    /* Glossary */
+    .glossary-term {
+      border-bottom: 1px dashed var(--accent);
+      cursor: help;
+    }
+    /* Source tag */
+    .source {
+      display: inline-block;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.05);
+      padding: 1px 6px;
+      border-radius: 3px;
+      margin-left: 4px;
+    }
+    .source a { color: var(--text-muted); }
+    .source a:hover { color: var(--accent); }
+    </style>
+</head>
+<body>
+
+<button class="hamburger" onclick="document.querySelector('.sidebar').classList.toggle('open')" aria-label="Toggle navigation">&#9776;</button>
+
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <h1>Claude Skills Guide</h1>
+    <p>The Definitive Reference &bull; March 2026</p>
+  </div>
+  <div class="sidebar-search">
+    <input type="text" id="searchInput" placeholder="Search guide..." oninput="filterNav(this.value)">
+  </div>
+  <div class="nav-section"><div class="nav-section-title">FOUNDATION</div><a href="#ecosystem" class="nav-link" data-section="ecosystem">The Claude Ecosystem</a><a href="#architecture" class="nav-link" data-section="architecture">Architecture & How It Connects</a><a href="#pricing" class="nav-link" data-section="pricing">Pricing & Access Tiers</a></div><div class="nav-section"><div class="nav-section-title">CORE CONCEPTS</div><a href="#concepts" class="nav-link" data-section="concepts">Skills vs Plugins vs MCP vs Hooks</a><a href="#when-to-use" class="nav-link" data-section="when-to-use">When to Use Each</a><a href="#how-together" class="nav-link" data-section="how-together">How They Work Together</a></div><div class="nav-section"><div class="nav-section-title">CLAUDE CODE SKILLS</div><a href="#skill-what" class="nav-link" data-section="skill-what">What is a Skill / SKILL.md</a><a href="#skill-create" class="nav-link" data-section="skill-create">Creating Your First Skill</a><a href="#skill-structure" class="nav-link" data-section="skill-structure">Directory Structure</a><a href="#skill-frontmatter" class="nav-link" data-section="skill-frontmatter">Frontmatter Reference</a><a href="#skill-arguments" class="nav-link" data-section="skill-arguments">Arguments & Dynamic Context</a><a href="#skill-builtin" class="nav-link" data-section="skill-builtin">Built-in vs Custom Skills</a><a href="#skill-hooks" class="nav-link" data-section="skill-hooks">Hooks System</a><a href="#skill-claude-md" class="nav-link" data-section="skill-claude-md">CLAUDE.md Files</a></div><div class="nav-section"><div class="nav-section-title">COWORK SKILLS &amp; PLUGINS</div><a href="#cowork-what" class="nav-link" data-section="cowork-what">What is Cowork Mode</a><a href="#cowork-skills-overview" class="nav-link" data-section="cowork-skills-overview">Skills in Cowork (Overview)</a><a href="#cowork-skills-install" class="nav-link" data-section="cowork-skills-install">Installing Skills in Cowork</a><a href="#cowork-skills-create" class="nav-link" data-section="cowork-skills-create">Creating Custom Skills in Cowork</a><a href="#cowork-skills-manage" class="nav-link" data-section="cowork-skills-manage">Managing &amp; Sharing Skills</a><a href="#cowork-plugins" class="nav-link" data-section="cowork-plugins">Plugin Architecture</a><a href="#cowork-install" class="nav-link" data-section="cowork-install">Installing Plugins</a><a href="#cowork-structure" class="nav-link" data-section="cowork-structure">Plugin File Structure</a><a href="#cowork-customize" class="nav-link" data-section="cowork-customize">Customizing Plugins</a><a href="#cowork-create" class="nav-link" data-section="cowork-create">Creating Custom Plugins</a><a href="#cowork-subagents" class="nav-link" data-section="cowork-subagents">Sub-Agents</a></div><div class="nav-section"><div class="nav-section-title">MCP PROTOCOL</div><a href="#mcp-what" class="nav-link" data-section="mcp-what">What is MCP</a><a href="#mcp-primitives" class="nav-link" data-section="mcp-primitives">Tools, Resources & Prompts</a><a href="#mcp-desktop" class="nav-link" data-section="mcp-desktop">MCP in Desktop App</a><a href="#mcp-code" class="nav-link" data-section="mcp-code">MCP in Claude Code</a><a href="#mcp-build" class="nav-link" data-section="mcp-build">Building Custom MCP Servers</a><a href="#mcp-debug" class="nav-link" data-section="mcp-debug">Debugging MCP</a></div><div class="nav-section"><div class="nav-section-title">CHAT & DESKTOP</div><a href="#chat-projects" class="nav-link" data-section="chat-projects">Projects & Custom Instructions</a><a href="#chat-styles" class="nav-link" data-section="chat-styles">Styles & Artifacts</a><a href="#desktop-config" class="nav-link" data-section="desktop-config">Desktop Configuration</a></div><div class="nav-section"><div class="nav-section-title">API & DEVELOPER</div><a href="#api-tools" class="nav-link" data-section="api-tools">Tool Use in the API</a><a href="#api-sdk" class="nav-link" data-section="api-sdk">Agent SDK</a><a href="#api-extended" class="nav-link" data-section="api-extended">Extended Thinking & Computer Use</a></div><div class="nav-section"><div class="nav-section-title">WALKTHROUGHS</div><a href="#walk-cowork-skill" class="nav-link" data-section="walk-cowork-skill">Install a Skill in Cowork</a><a href="#walk-cowork-plugin" class="nav-link" data-section="walk-cowork-plugin">Install a Plugin in Cowork</a><a href="#walk-create-skill" class="nav-link" data-section="walk-create-skill">Create a Custom Skill</a><a href="#walk-mcp-desktop" class="nav-link" data-section="walk-mcp-desktop">Connect MCP in Desktop</a><a href="#walk-build-plugin" class="nav-link" data-section="walk-build-plugin">Build & Publish a Plugin</a><a href="#walk-troubleshoot" class="nav-link" data-section="walk-troubleshoot">Troubleshooting Guide</a></div><div class="nav-section"><div class="nav-section-title">REFERENCE</div><a href="#ref-skillmd" class="nav-link" data-section="ref-skillmd">SKILL.md Complete Reference</a><a href="#ref-plugin-json" class="nav-link" data-section="ref-plugin-json">plugin.json Reference</a><a href="#ref-mcp-config" class="nav-link" data-section="ref-mcp-config">MCP Config Reference</a><a href="#ref-glossary" class="nav-link" data-section="ref-glossary">Glossary</a><a href="#ref-sources" class="nav-link" data-section="ref-sources">Bibliography (100+ Sources)</a></div>
+</nav>
+
+<main class="main">
+
+<section id="ecosystem">
+<h2>Part 1: The Claude Ecosystem</h2>
+
+<p>Claude is Anthropic's AI assistant, now distributed across <strong>eight interconnected products</strong>. Understanding the full ecosystem is essential before diving into skills and plugins, because where and how you use skills depends entirely on which Claude surface you're working with.</p>
+
+<div class="eco-grid">
+  <div class="eco-card">
+    <div class="icon">&#128172;</div>
+    <h5>Claude Chat</h5>
+    <p>Web &amp; mobile interface at claude.ai. Projects, artifacts, custom instructions.</p>
+  </div>
+  <div class="eco-card">
+    <div class="icon">&#128421;</div>
+    <h5>Claude Desktop</h5>
+    <p>Native macOS/Windows app. MCP servers, computer use, Cowork mode.</p>
+  </div>
+  <div class="eco-card">
+    <div class="icon">&#9000;</div>
+    <h5>Claude Code</h5>
+    <p>CLI agentic coding tool. Skills, hooks, plugins, MCP, direct filesystem access.</p>
+  </div>
+  <div class="eco-card">
+    <div class="icon">&#129309;</div>
+    <h5>Claude Cowork</h5>
+    <p>Autonomous task execution for non-coders. Plugins, skills, file tools, sandboxed VM.</p>
+  </div>
+  <div class="eco-card">
+    <div class="icon">&#128268;</div>
+    <h5>Claude API</h5>
+    <p>Programmatic access. Tool use, extended thinking, batches, computer use.</p>
+  </div>
+  <div class="eco-card">
+    <div class="icon">&#129302;</div>
+    <h5>Agent SDK</h5>
+    <p>Framework for building custom AI agents with Claude.</p>
+  </div>
+  <div class="eco-card">
+    <div class="icon">&#127760;</div>
+    <h5>Claude in Chrome</h5>
+    <p>Browser extension for web automation and browsing tasks.</p>
+  </div>
+  <div class="eco-card">
+    <div class="icon">&#128202;</div>
+    <h5>Claude in Excel</h5>
+    <p>Spreadsheet integration for data analysis and modeling.</p>
+  </div>
+</div>
+
+<div class="card info">
+  <div class="card-title">Key Stat</div>
+  <p>Claude Code reached <strong>$2.5B in annualized revenue</strong> by February 2026 &mdash; the fastest product ramp in enterprise software history. Anthropic's overall revenue hit a $14B run rate with 70% of Fortune 100 companies using Claude.</p>
+  <span class="source"><a href="https://www.businessofapps.com/data/claude-statistics/">businessofapps.com</a></span>
+</div>
+
+<h3>How the Products Connect</h3>
+
+<p>The glue holding these products together is the <strong>Model Context Protocol (MCP)</strong>. Think of MCP as a universal adapter &mdash; it lets any Claude surface connect to external tools and data sources through a standardized protocol. Skills sit on top of this, providing the "how-to" knowledge that tells Claude what to do with those connections.</p>
+
+<div class="arch-diagram">
+  <div class="arch-layer user">
+    <strong style="color:var(--info)">User Surfaces</strong><br>
+    <span style="font-size:0.85rem">Chat &bull; Desktop &bull; Code CLI &bull; Cowork &bull; Chrome &bull; Excel</span>
+  </div>
+  <div class="arch-arrow">&#8595;</div>
+  <div class="arch-layer model">
+    <strong style="color:var(--accent)">Intelligence Layer</strong><br>
+    <span style="font-size:0.85rem">Skills &bull; Plugins &bull; Custom Instructions &bull; CLAUDE.md &bull; Hooks</span>
+  </div>
+  <div class="arch-arrow">&#8595;</div>
+  <div class="arch-layer tools">
+    <strong style="color:var(--success)">Tools &amp; Connectivity</strong><br>
+    <span style="font-size:0.85rem">MCP Servers &bull; API Tool Use &bull; Computer Use &bull; File System &bull; Web</span>
+  </div>
+</div>
+
+</section>
+
+<section id="architecture">
+<h3>The Five Integration Layers</h3>
+
+<table>
+  <tr><th>Layer</th><th>What It Does</th><th>Where It Lives</th></tr>
+  <tr><td><strong>Custom Instructions</strong></td><td>Global behavioral preferences</td><td>claude.ai settings, CLAUDE.md files</td></tr>
+  <tr><td><strong>Skills</strong></td><td>Domain expertise &amp; workflows (the "how-to")</td><td><code>.claude/skills/</code>, plugin bundles</td></tr>
+  <tr><td><strong>MCP Servers</strong></td><td>External tool connections (the "hands")</td><td>Config files, plugin <code>.mcp.json</code></td></tr>
+  <tr><td><strong>Hooks</strong></td><td>Deterministic automation at lifecycle events</td><td><code>.claude/settings.json</code>, plugin hooks</td></tr>
+  <tr><td><strong>Plugins</strong></td><td>Bundles of skills + MCP + hooks + commands</td><td>Marketplace, custom <code>.plugin</code> files</td></tr>
+</table>
+
+<span class="source"><a href="https://alexop.dev/posts/understanding-claude-code-full-stack/">alexop.dev</a></span>
+</section>
+
+<section id="pricing">
+<h3>Pricing Tiers &amp; What Unlocks Skills</h3>
+
+<table>
+  <tr><th>Tier</th><th>Price</th><th>Skills/Plugins Access</th></tr>
+  <tr><td><strong>Free</strong></td><td>$0/mo</td><td>Basic chat, limited usage. No Cowork or Code.</td></tr>
+  <tr><td><strong>Pro</strong></td><td>$20/mo</td><td>Full chat, Projects, Cowork (research preview), plugins, desktop MCP.</td></tr>
+  <tr><td><strong>Max</strong></td><td>$100-200/mo</td><td>Everything in Pro + higher usage limits, priority access.</td></tr>
+  <tr><td><strong>Team</strong></td><td>$30/user/mo</td><td>Pro features + shared plugins, admin controls, org-level plugin management.</td></tr>
+  <tr><td><strong>Enterprise</strong></td><td>Custom</td><td>Everything + SSO, managed CLAUDE.md, custom plugins, SLA.</td></tr>
+</table>
+
+<div class="card warning">
+  <div class="card-title">Important</div>
+  <p><strong>Claude Code</strong> is billed separately via Anthropic API usage. Skills in Claude Code are free to create and use &mdash; you pay for the model tokens consumed. <strong>Cowork plugins</strong> require a Pro plan or higher.</p>
+</div>
+</section>
+
+<section id="concepts">
+<h2>Part 2: Skills vs Plugins vs MCP vs Hooks</h2>
+
+<p>This is the most important conceptual section of the guide. Getting these distinctions clear means you'll always know the right tool for the job.</p>
+
+<table>
+  <tr>
+    <th>Component</th>
+    <th>What It Is</th>
+    <th>Analogy</th>
+    <th>Invocation</th>
+    <th>Scope</th>
+  </tr>
+  <tr>
+    <td><strong>Skill</strong></td>
+    <td>Markdown instructions that teach Claude <em>how</em> to do something</td>
+    <td>A playbook or recipe</td>
+    <td>Auto-trigger or <code>/name</code></td>
+    <td>Claude Code, Cowork plugins</td>
+  </tr>
+  <tr>
+    <td><strong>MCP Server</strong></td>
+    <td>External program exposing tools, resources, and prompts via a protocol</td>
+    <td>A USB adapter for tools</td>
+    <td>Automatic (Claude decides)</td>
+    <td>All Claude surfaces</td>
+  </tr>
+  <tr>
+    <td><strong>Hook</strong></td>
+    <td>Shell command that runs at specific lifecycle events</td>
+    <td>A tripwire that fires reliably</td>
+    <td>Event-driven (automatic)</td>
+    <td>Claude Code, plugins</td>
+  </tr>
+  <tr>
+    <td><strong>Plugin</strong></td>
+    <td>Bundle of skills + MCP + hooks + commands in one package</td>
+    <td>An app from the app store</td>
+    <td>Install once, always active</td>
+    <td>Claude Code, Cowork</td>
+  </tr>
+  <tr>
+    <td><strong>Slash Command</strong></td>
+    <td>Template for a frequently-used prompt (legacy, merged into Skills)</td>
+    <td>A keyboard shortcut</td>
+    <td>Manual: <code>/name</code></td>
+    <td>Claude Code</td>
+  </tr>
+  <tr>
+    <td><strong>Custom Instructions</strong></td>
+    <td>Persistent behavioral preferences</td>
+    <td>Your personal settings</td>
+    <td>Always active</td>
+    <td>Chat, Desktop, CLAUDE.md</td>
+  </tr>
+</table>
+
+<span class="source"><a href="https://www.morphllm.com/claude-code-skills-mcp-plugins">morphllm.com</a></span>
+
+<div class="card highlight">
+  <div class="card-title">The Key Insight</div>
+  <p><strong>Skills are the AI's "playbook"</strong> (methodology). <strong>MCP servers are the AI's "hands"</strong> (connectivity). <strong>Hooks provide deterministic automation.</strong> They're complementary, not competing. Most real workflows use all three together.</p>
+</div>
+</section>
+
+<section id="when-to-use">
+<h3>When to Use Each</h3>
+
+<table>
+  <tr><th>Scenario</th><th>Use This</th><th>Why</th></tr>
+  <tr><td>Claude needs to follow your team's deploy process</td><td>Skill</td><td>Methodology &amp; workflow knowledge</td></tr>
+  <tr><td>Claude needs to read/write GitHub issues</td><td>MCP Server</td><td>External system connectivity</td></tr>
+  <tr><td>Tests must run after every file change</td><td>Hook</td><td>Deterministic, enforced behavior</td></tr>
+  <tr><td>Your team needs a complete "Sales" workflow with CRM + methodology</td><td>Plugin</td><td>Bundles skills + MCP + hooks together</td></tr>
+  <tr><td>Claude should always write in your brand voice</td><td>Custom Instructions / CLAUDE.md</td><td>Persistent behavioral preference</td></tr>
+  <tr><td>You want a quick prompt shortcut</td><td>Slash Command (via Skill)</td><td>Manual trigger for common actions</td></tr>
+</table>
+</section>
+
+<section id="how-together">
+<h3>How They Work Together: A Real Example</h3>
+
+<p>Imagine you're deploying a web app. Here's how all the pieces collaborate:</p>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h5>You type: <code>/deploy production</code></h5>
+    <p>This triggers a <strong>Skill</strong> at <code>.claude/skills/deploy/SKILL.md</code> that contains your team's deployment checklist.</p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h5>The skill instructs Claude to check CI status</h5>
+    <p>Claude uses the <strong>GitHub MCP server</strong> to call the GitHub API and check if all CI checks are passing.</p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <h5>Claude runs the deploy command</h5>
+    <p>A <strong>Hook</strong> fires on <code>PreToolUse</code> for the Bash tool, logging the command for audit purposes before it executes.</p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">4</div>
+  <div class="step-content">
+    <h5>Post-deploy, Claude notifies the team</h5>
+    <p>The skill instructs Claude to use the <strong>Slack MCP server</strong> to post a deployment notification to #engineering.</p>
+  </div>
+</div>
+</section>
+
+<section id="skill-what">
+<h2>Part 3: Skills in Claude Code</h2>
+
+<p>Skills are the heart of Claude Code's extensibility. They transform Claude from a general-purpose AI into a specialist who knows your team's workflows, standards, and preferences.</p>
+
+<h3>What is a Skill?</h3>
+
+<p>A <strong>Skill</strong> is a reusable, filesystem-based resource that provides Claude with domain-specific expertise: workflows, context, and best practices. Unlike prompts (one-off instructions), skills load on-demand and persist across conversations.</p>
+
+<p>Every skill lives in a directory and has one required file: <code>SKILL.md</code>. This Markdown file has two parts:</p>
+
+<ol style="margin-left:20px;margin-bottom:16px;">
+  <li><strong>YAML frontmatter</strong> (between <code>---</code> markers) &mdash; tells Claude <em>when</em> to use the skill</li>
+  <li><strong>Markdown body</strong> &mdash; tells Claude <em>what to do</em> when the skill is active</li>
+</ol>
+
+<span class="source"><a href="https://code.claude.com/docs/en/skills">code.claude.com</a></span>
+
+<pre><code>---
+name: explain-code
+description: Explains code with visual diagrams and analogies. Use when
+  explaining how code works, teaching about a codebase, or when the user
+  asks "how does this work?"
+---
+
+When explaining code, always include:
+
+1. **Start with an analogy** - Compare the code to something from everyday life
+2. **Draw a diagram** - Use ASCII art to show flow, structure, or relationships
+3. **Walk through step-by-step** - Explain what happens at each stage
+4. **Highlight a gotcha** - What's a common mistake or misconception?
+
+Keep explanations conversational. For complex concepts, use multiple analogies.</code></pre>
+
+<div class="card highlight">
+  <div class="card-title">Critical Insight</div>
+  <p>The <code>description</code> field is the <strong>most important part</strong> of a SKILL.md file. Claude scans descriptions to decide relevance. If your description doesn't match what users naturally say, Claude will never auto-trigger your skill. Front-load the key use case &mdash; descriptions longer than 250 characters are truncated.</p>
+</div>
+</section>
+
+<section id="skill-create">
+<h3>Creating Your First Skill: Step-by-Step Walkthrough</h3>
+
+<div class="ui-mockup">
+  <div class="ui-titlebar">
+    <div class="ui-dot red"></div>
+    <div class="ui-dot yellow"></div>
+    <div class="ui-dot green"></div>
+    <div class="ui-titlebar-text">Terminal &mdash; Claude Code</div>
+  </div>
+  <div class="ui-content" style="background:#1e1e2e;font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:#cdd6f4;padding:20px;">
+    <div style="color:#89b4fa;">~/my-project $</div>
+    <div><span style="color:#a6e3a1">mkdir -p</span> .claude/skills/review-pr</div>
+    <br>
+    <div style="color:#89b4fa;">~/my-project $</div>
+    <div><span style="color:#a6e3a1">cat</span> > .claude/skills/review-pr/SKILL.md << 'EOF'</div>
+    <div style="color:#f9e2af;">---</div>
+    <div style="color:#f9e2af;">name: review-pr</div>
+    <div style="color:#f9e2af;">description: Review pull requests for bugs, security issues, and</div>
+    <div style="color:#f9e2af;">  code quality. Use when reviewing PRs, checking code changes,</div>
+    <div style="color:#f9e2af;">  or when the user mentions "review" or "PR".</div>
+    <div style="color:#f9e2af;">---</div>
+    <br>
+    <div style="color:#cdd6f4;"># PR Review Checklist</div>
+    <div style="color:#cdd6f4;">When reviewing a PR, check these areas in order...</div>
+    <div style="color:#f9e2af;">EOF</div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h5>Choose where to put the skill</h5>
+    <p><strong>Personal skills</strong> (available across all projects): <code>~/.claude/skills/my-skill/</code><br>
+    <strong>Project skills</strong> (shared with your team via git): <code>.claude/skills/my-skill/</code></p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h5>Create the directory and SKILL.md</h5>
+    <p>Every skill is a directory with <code>SKILL.md</code> as the entry point. The name of the directory becomes the skill's invocation name.</p>
+    <pre><code>mkdir -p .claude/skills/review-pr
+# Then create SKILL.md inside with your preferred editor</code></pre>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <h5>Write the YAML frontmatter</h5>
+    <p>At minimum, include <code>name</code> and <code>description</code>. The description should include trigger keywords that match what users naturally say.</p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">4</div>
+  <div class="step-content">
+    <h5>Write the instructions body</h5>
+    <p>This is what Claude follows when the skill is active. Include step-by-step procedures, examples, edge cases, and quality standards.</p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">5</div>
+  <div class="step-content">
+    <h5>Test it</h5>
+    <p><strong>Auto-trigger:</strong> Ask Claude something that matches the description (e.g., "review this PR")<br>
+    <strong>Manual trigger:</strong> Type <code>/review-pr</code> in Claude Code</p>
+  </div>
+</div>
+
+<span class="source"><a href="https://code.claude.com/docs/en/skills">code.claude.com</a></span>
+<span class="source"><a href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills">support.claude.com</a></span>
+</section>
+
+<section id="skill-structure">
+<h3>Skill Directory Structure</h3>
+
+<pre><code>my-skill/
+&#9500;&#9472;&#9472; SKILL.md           # Main instructions (required)
+&#9500;&#9472;&#9472; scripts/           # Executable Python/Bash scripts
+&#9474;   &#9492;&#9472;&#9472; validate.sh
+&#9500;&#9472;&#9472; references/        # Documentation loaded into context
+&#9474;   &#9492;&#9472;&#9472; REFERENCE.md
+&#9492;&#9472;&#9472; assets/            # Templates, images, data files
+    &#9492;&#9472;&#9472; template.md</code></pre>
+
+<table>
+  <tr><th>Directory</th><th>Purpose</th><th>Guidance</th></tr>
+  <tr><td><code>scripts/</code></td><td>Executable code Claude can run</td><td>Self-contained, clear error messages, handle edge cases</td></tr>
+  <tr><td><code>references/</code></td><td>Additional docs loaded on-demand</td><td>Keep files focused and small &mdash; agents load these into context</td></tr>
+  <tr><td><code>assets/</code></td><td>Templates, images, data</td><td>Static resources the skill references</td></tr>
+</table>
+
+<div class="card info">
+  <div class="card-title">Size Recommendations</div>
+  <p>Keep <code>SKILL.md</code> under <strong>500 lines</strong> and target <strong>1,500&ndash;2,000 words</strong>. Move detailed reference material to separate files in <code>references/</code>. This keeps context costs manageable while maintaining thoroughness.</p>
+</div>
+
+<span class="source"><a href="https://agentskills.io/specification">agentskills.io</a></span>
+</section>
+
+<section id="skill-frontmatter">
+<h3>Complete Frontmatter Reference</h3>
+
+<table>
+  <tr><th>Field</th><th>Required</th><th>Description</th></tr>
+  <tr><td><code>name</code></td><td>No</td><td>Display name. Lowercase letters, numbers, hyphens. Max 64 chars. Defaults to directory name.</td></tr>
+  <tr><td><code>description</code></td><td>Recommended</td><td>What the skill does and when to use it. Max 1024 chars. Front-load key use case (truncated at 250 chars in listing).</td></tr>
+  <tr><td><code>argument-hint</code></td><td>No</td><td>Hint shown during autocomplete. E.g., <code>[issue-number]</code> or <code>[filename] [format]</code></td></tr>
+  <tr><td><code>disable-model-invocation</code></td><td>No</td><td>Set <code>true</code> to prevent auto-triggering. Use for manual-only workflows. Default: <code>false</code></td></tr>
+  <tr><td><code>user-invocable</code></td><td>No</td><td>Set <code>false</code> to hide from <code>/</code> menu. For background knowledge skills. Default: <code>true</code></td></tr>
+  <tr><td><code>allowed-tools</code></td><td>No</td><td>Tools Claude can use without asking permission when skill is active.</td></tr>
+  <tr><td><code>model</code></td><td>No</td><td>Model override when skill is active.</td></tr>
+  <tr><td><code>effort</code></td><td>No</td><td>Effort level: <code>low</code>, <code>medium</code>, <code>high</code>, <code>max</code> (Opus only). Overrides session level.</td></tr>
+  <tr><td><code>context</code></td><td>No</td><td>Set to <code>fork</code> to run in a forked subagent context.</td></tr>
+  <tr><td><code>agent</code></td><td>No</td><td>Subagent type when <code>context: fork</code>. E.g., <code>Explore</code>, <code>Plan</code>.</td></tr>
+  <tr><td><code>hooks</code></td><td>No</td><td>Hooks scoped to this skill's lifecycle.</td></tr>
+  <tr><td><code>paths</code></td><td>No</td><td>Glob patterns limiting when the skill activates.</td></tr>
+  <tr><td><code>shell</code></td><td>No</td><td>Shell for <code>!\`command\`</code> blocks: <code>bash</code> (default) or <code>powershell</code>.</td></tr>
+</table>
+
+<span class="source"><a href="https://code.claude.com/docs/en/skills">code.claude.com</a></span>
+</section>
+
+<section id="skill-arguments">
+<h3>Arguments &amp; Dynamic Context Injection</h3>
+
+<h4>Passing Arguments to Skills</h4>
+
+<p>Skills accept arguments via the <code>$ARGUMENTS</code> placeholder. When you run <code>/fix-issue 123</code>, Claude receives the skill body with <code>$ARGUMENTS</code> replaced by <code>123</code>.</p>
+
+<pre><code>---
+name: fix-issue
+description: Fix a GitHub issue
+disable-model-invocation: true
+argument-hint: [issue-number]
+---
+
+Fix GitHub issue $ARGUMENTS following our coding standards.
+
+1. Read the issue description
+2. Understand the requirements
+3. Implement the fix
+4. Write tests
+5. Create a commit</code></pre>
+
+<p>Access individual arguments with <code>$ARGUMENTS[0]</code>, <code>$ARGUMENTS[1]</code>, etc. &mdash; or the shorthand <code>$0</code>, <code>$1</code>, <code>$2</code>.</p>
+
+<h4>Dynamic Context with Shell Commands</h4>
+
+<p>Use <code>!\`command\`</code> syntax to run shell commands <em>before</em> the skill content is sent to Claude. This is preprocessing &mdash; Claude only sees the final output.</p>
+
+<pre><code>---
+name: pr-summary
+description: Summarize changes in a pull request
+context: fork
+agent: Explore
+allowed-tools: Bash(gh *)
+---
+
+## Pull request context
+- PR diff: !`gh pr diff`
+- PR comments: !`gh pr view --comments`
+- Changed files: !`gh pr diff --name-only`
+
+## Your task
+Summarize this pull request...</code></pre>
+
+<span class="source"><a href="https://code.claude.com/docs/en/skills">code.claude.com</a></span>
+</section>
+
+<section id="skill-builtin">
+<h3>Built-in vs Custom Skills</h3>
+
+<table>
+  <tr><th>Built-in Skill</th><th>What It Does</th></tr>
+  <tr><td><code>/batch</code></td><td>Orchestrate large-scale changes across a codebase in parallel</td></tr>
+  <tr><td><code>/claude-api</code></td><td>Load Claude API reference material</td></tr>
+  <tr><td><code>/debug</code></td><td>Enable debug logging and troubleshoot issues</td></tr>
+  <tr><td><code>/loop</code></td><td>Run a prompt repeatedly on an interval</td></tr>
+  <tr><td><code>/simplify</code></td><td>Review changed files for reuse and quality issues</td></tr>
+</table>
+
+<p>Built-in skills ship with Claude Code and are always available. They're prompt-based playbooks that can spawn parallel agents, read files, and adapt to your codebase. Custom skills extend this with <em>your</em> domain knowledge.</p>
+
+<div class="card success">
+  <div class="card-title">When to Build Custom</div>
+  <p>Build a custom skill when: the task involves knowledge specific to your context, your team does the same multi-step task more than twice a week, or you find yourself giving Claude the same instructions repeatedly.</p>
+</div>
+
+<span class="source"><a href="https://code.claude.com/docs/en/skills">code.claude.com</a></span>
+</section>
+
+<section id="skill-hooks">
+<h3>The Hooks System</h3>
+
+<p>Hooks are shell commands that execute at specific lifecycle points in Claude Code. Unlike skills (which Claude <em>can</em> follow), hooks are <strong>deterministic</strong> &mdash; they <em>always</em> run when their trigger fires.</p>
+
+<h4>Hook Events</h4>
+
+<table>
+  <tr><th>Event</th><th>When It Fires</th><th>Example Use</th></tr>
+  <tr><td><code>PreToolUse</code></td><td>Before Claude uses a tool</td><td>Validate file paths before writes</td></tr>
+  <tr><td><code>PostToolUse</code></td><td>After Claude uses a tool</td><td>Run tests after file changes</td></tr>
+  <tr><td><code>Notification</code></td><td>When Claude produces a notification</td><td>Send desktop alerts</td></tr>
+  <tr><td><code>Stop</code></td><td>When Claude finishes a response</td><td>Log completion metrics</td></tr>
+</table>
+
+<h4>Configuration</h4>
+
+<p>Hooks are configured in <code>.claude/settings.json</code>:</p>
+
+<pre><code>{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "command": "npm test 2>&1 | head -20"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "command": "echo 'About to run bash command'"
+      }
+    ]
+  }
+}</code></pre>
+
+<div class="card warning">
+  <div class="card-title">Hooks vs Skills</div>
+  <p><strong>Hooks</strong> are for enforcing rules deterministically (tests <em>must</em> run after writes). <strong>Skills</strong> are for providing guidance that Claude follows flexibly. If something must always happen, use a hook. If something should usually happen, use a skill.</p>
+</div>
+
+<span class="source"><a href="https://code.claude.com/docs/en/hooks-guide">code.claude.com</a></span>
+</section>
+
+<section id="skill-claude-md">
+<h3>CLAUDE.md Files: The Configuration Hierarchy</h3>
+
+<p><code>CLAUDE.md</code> files are persistent instructions that Claude reads at the start of every session. They work like a constitution &mdash; always active, always loaded.</p>
+
+<table>
+  <tr><th>Level</th><th>Location</th><th>Scope</th><th>Use For</th></tr>
+  <tr><td><strong>Enterprise</strong></td><td>Managed settings</td><td>All users in org</td><td>Security policies, compliance rules</td></tr>
+  <tr><td><strong>User</strong></td><td><code>~/.claude/CLAUDE.md</code></td><td>All your projects</td><td>Personal preferences, global style rules</td></tr>
+  <tr><td><strong>Project</strong></td><td><code>./CLAUDE.md</code></td><td>This repo</td><td>Project-specific context, tech stack, conventions</td></tr>
+  <tr><td><strong>Directory</strong></td><td><code>./src/CLAUDE.md</code></td><td>This directory tree</td><td>Module-specific rules for monorepos</td></tr>
+</table>
+
+<p>Claude loads these in order: Enterprise &rarr; User &rarr; Project &rarr; Directory. More specific files override more general ones.</p>
+
+<span class="source"><a href="https://code.claude.com/docs/en/claude-md">code.claude.com</a></span>
+</section>
+
+<section id="cowork-what">
+<h2>Part 4: Plugins in Claude Cowork</h2>
+
+<p>Cowork is where skills become <em>operational</em>. In Chat, skills influence replies. In Cowork, skills govern every file Claude creates, every process it follows, every output it delivers.</p>
+
+<h3>What is Cowork Mode?</h3>
+
+<p>Cowork is a research preview feature built into the Claude desktop app that brings agentic capabilities to knowledge work. Instead of responding to prompts one at a time, Cowork takes on complex, multi-step tasks and executes them autonomously.</p>
+
+<div class="card info">
+  <div class="card-title">Cowork vs Chat vs Code</div>
+  <p><strong>Chat</strong> = conversational, one response at a time.<br>
+  <strong>Code</strong> = command-line agent for developers, direct filesystem access.<br>
+  <strong>Cowork</strong> = autonomous task execution for everyone, sandboxed VM, plugins.</p>
+</div>
+
+<table>
+  <tr><th>Aspect</th><th>Chat</th><th>Cowork</th><th>Code</th></tr>
+  <tr><td>Response model</td><td>Responds to prompts</td><td>Executes tasks</td><td>Executes commands</td></tr>
+  <tr><td>Target users</td><td>Everyone</td><td>Knowledge workers</td><td>Developers</td></tr>
+  <tr><td>Execution</td><td>Browser-based</td><td>Sandboxed VM</td><td>Direct filesystem</td></tr>
+  <tr><td>Plugins/Skills</td><td>Projects only</td><td>Full plugin system</td><td>Full skill system</td></tr>
+</table>
+
+<span class="source"><a href="https://support.claude.com/en/articles/13345190-get-started-with-cowork">support.claude.com</a></span>
+</section>
+
+<section id="cowork-skills-overview">
+<h3>Skills in Cowork: How They Work</h3>
+
+<p>Skills in Cowork are <strong>not the same thing as plugins</strong>. This distinction matters. A <strong>skill</strong> handles one task &mdash; it's a set of instructions that teaches Claude how to do something specific. A <strong>plugin</strong> is a bundle of multiple skills, connectors, commands, and sub-agents packaged together.</p>
+
+<div class="card highlight">
+  <div class="card-title">Skills vs Plugins in Cowork</div>
+  <p><strong>Skill</strong> = a single SKILL.md file with instructions for one workflow (e.g., "write a blog post in our brand voice").<br>
+  <strong>Plugin</strong> = a complete toolkit bundling multiple skills + MCP connectors + sub-agents (e.g., the "Marketing" plugin with content creation, SEO, campaigns, and brand review skills all together).</p>
+</div>
+
+<p>Cowork comes with <strong>built-in skills</strong> that activate automatically: Excel processing, Word documents, PowerPoint presentations, PDF processing. Claude uses these without you needing to install anything. But the real power comes from installing additional skills or creating your own.</p>
+
+<h4>Two Ways Skills Trigger in Cowork</h4>
+
+<table>
+  <tr><th>Method</th><th>How It Works</th><th>Example</th></tr>
+  <tr><td><strong>Auto-trigger</strong></td><td>Claude recognizes when a skill applies based on your request and activates it automatically</td><td>Ask "create a PDF report" and Claude loads the PDF skill</td></tr>
+  <tr><td><strong>Explicit invocation</strong></td><td>Type <code>/</code> in the chat to see available skills and select one manually</td><td>Type <code>/deep-research</code> to invoke that specific skill</td></tr>
+</table>
+
+<p>Skills also <strong>adapt to the surface</strong> they're running on. A research skill may produce a Word document in Cowork, but detailed data breakdowns in Excel.</p>
+
+<span class="source"><a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude">support.claude.com</a></span>
+<span class="source"><a href="https://findskill.ai/blog/claude-cowork-guide/">findskill.ai</a></span>
+</section>
+
+<section id="cowork-skills-install">
+<h3>Installing Skills in Cowork: Step-by-Step Walkthrough</h3>
+
+<h4>Method 1: Install from the Directory (Recommended)</h4>
+
+<div class="ui-mockup">
+  <div class="ui-titlebar">
+    <div class="ui-dot red"></div>
+    <div class="ui-dot yellow"></div>
+    <div class="ui-dot green"></div>
+    <div class="ui-titlebar-text">Claude Desktop &mdash; Cowork &mdash; Customize</div>
+  </div>
+  <div class="ui-content" style="padding:0;">
+    <div class="ui-sidebar-mock" style="min-height:340px;">
+      <div style="font-size:0.75rem;color:#666;padding:8px 12px;font-weight:600;">CUSTOMIZE</div>
+      <div class="ui-sidebar-item active">&#128218; Skills</div>
+      <div class="ui-sidebar-item">&#128268; Connectors</div>
+      <div class="ui-sidebar-item">&#128230; Plugins</div>
+      <div class="ui-sidebar-item">&#128337; Scheduled Tasks</div>
+    </div>
+    <div class="ui-chat-area" style="min-height:340px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <div style="font-weight:600;">Your Skills</div>
+        <div style="padding:6px 14px;background:rgba(196,149,106,0.2);color:#c4956a;border-radius:6px;font-size:0.8rem;cursor:pointer;">+ Browse Skills</div>
+      </div>
+      <div style="border:1px solid #333;border-radius:8px;margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;">
+          <div>
+            <div style="font-weight:500;font-size:0.85rem;">&#128196; PDF Processing</div>
+            <div style="font-size:0.7rem;color:#888;">Built-in &bull; Extract, create, merge PDFs</div>
+          </div>
+          <div style="width:36px;height:20px;background:#4ade80;border-radius:10px;position:relative;"><div style="width:16px;height:16px;background:white;border-radius:50%;position:absolute;right:2px;top:2px;"></div></div>
+        </div>
+      </div>
+      <div style="border:1px solid #333;border-radius:8px;margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;">
+          <div>
+            <div style="font-weight:500;font-size:0.85rem;">&#128200; Deep Research</div>
+            <div style="font-size:0.7rem;color:#888;">Custom &bull; Multi-source research with citations</div>
+          </div>
+          <div style="width:36px;height:20px;background:#4ade80;border-radius:10px;position:relative;"><div style="width:16px;height:16px;background:white;border-radius:50%;position:absolute;right:2px;top:2px;"></div></div>
+        </div>
+      </div>
+      <div style="border:1px solid #333;border-radius:8px;margin-bottom:8px;opacity:0.6;">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;">
+          <div>
+            <div style="font-weight:500;font-size:0.85rem;">&#128221; Brand Voice</div>
+            <div style="font-size:0.7rem;color:#888;">Shared &bull; Apply brand guidelines to content</div>
+          </div>
+          <div style="width:36px;height:20px;background:#555;border-radius:10px;position:relative;"><div style="width:16px;height:16px;background:#888;border-radius:50%;position:absolute;left:2px;top:2px;"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h5>Open Customize</h5>
+    <p>In Cowork, click <strong>"Customize"</strong> in the left sidebar. This opens the centralized management panel for all your skills, connectors, plugins, and scheduled tasks.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h5>Click the "+" button or "Browse Skills"</h5>
+    <p>Click the <strong>"+"</strong> button to open the directory, then click the <strong>"Skills"</strong> tab. You'll see available skills organized by category.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <h5>Find and install a skill</h5>
+    <p>Browse or search for the skill you want. Click <strong>"Install"</strong>. The skill appears in <strong>Customize &gt; Skills</strong> and is <strong>enabled by default</strong>.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">4</div>
+  <div class="step-content">
+    <h5>Toggle on/off as needed</h5>
+    <p>Each skill has a <strong>toggle switch</strong>. Disabled skills won't be available to Claude. Skills remain in the directory so you can re-enable them later.</p>
+  </div>
+</div>
+
+<h4>Method 2: Upload a Custom .skill/.zip File</h4>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h5>Prepare your skill file</h5>
+    <p>Create a ZIP file containing your skill folder. The folder must contain a <code>SKILL.md</code> file. Folder name should match the skill name.</p>
+    <pre><code>my-skill.zip
+&#9492;&#9472;&#9472; my-skill/
+    &#9500;&#9472;&#9472; SKILL.md       # Required
+    &#9492;&#9472;&#9472; scripts/       # Optional</code></pre>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h5>Upload in Customize</h5>
+    <p>Go to <strong>Customize &gt; Skills</strong>, click <strong>"Upload"</strong>, and select your ZIP file. The skill is installed immediately.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <h5>Enable and test</h5>
+    <p>The skill appears in your personal skills list. Try invoking it with <code>/skill-name</code> or ask Claude something that should trigger it automatically.</p>
+  </div>
+</div>
+
+<h4>Method 3: Enable a Shared/Organization Skill</h4>
+
+<p>If a colleague shared a skill with you, or your org admin provisioned one:</p>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h5>Check your skills list</h5>
+    <p>Go to <strong>Customize &gt; Skills</strong>. Look for the <strong>"Shared with you"</strong> section. Shared skills appear grayed out until you enable them.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h5>Toggle it on</h5>
+    <p>Click the toggle to enable. Organization-provisioned skills may already be enabled by default (set by your admin).</p>
+  </div>
+</div>
+
+<div class="card info">
+  <div class="card-title">Three Categories in Your Skills List</div>
+  <p><strong>Personal skills:</strong> Skills you created or uploaded yourself.<br>
+  <strong>Shared with you:</strong> Skills colleagues shared directly (appear grayed until enabled).<br>
+  <strong>Organization skills:</strong> Admin-provisioned skills and org-wide published skills (installed from directory).</p>
+</div>
+
+<span class="source"><a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude">support.claude.com</a></span>
+<span class="source"><a href="https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory">support.claude.com</a></span>
+</section>
+
+<section id="cowork-skills-create">
+<h3>Creating Custom Skills for Cowork</h3>
+
+<h4>Method 1: Use the Skill Creator (Easiest)</h4>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h5>Type <code>/skill-creator</code> in Cowork</h5>
+    <p>Claude will guide you through designing your skill interactively. Describe a task you do every week and Claude will help structure it.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h5>Claude generates the SKILL.md</h5>
+    <p>Claude creates the frontmatter (name, description) and the instruction body based on your conversation.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <h5>Test and refine</h5>
+    <p>Try the skill with example prompts. Review Claude's thinking to confirm it loaded correctly. Refine the description if it's not triggering when expected.</p>
+  </div>
+</div>
+
+<h4>Method 2: Manual Creation</h4>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h5>Create the SKILL.md file</h5>
+    <pre><code>---
+name: weekly-report
+description: Generate a weekly status report with KPIs, accomplishments,
+  and blockers. Use when the user asks for a "weekly report", "status
+  update", or "what happened this week".
+---
+
+# Weekly Report Skill
+
+When creating a weekly report, follow this structure:
+
+1. **Summary** - 2-3 sentence overview of the week
+2. **KPIs** - Key metrics with week-over-week changes
+3. **Accomplishments** - What got done (with specifics)
+4. **Blockers** - What's stuck and what's needed
+5. **Next Week** - Top 3 priorities
+
+Format as a clean Word document with our company header.</code></pre>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h5>Package as a ZIP</h5>
+    <pre><code># Create skill directory
+mkdir weekly-report
+# Copy your SKILL.md and any supporting files into it
+cp SKILL.md weekly-report/
+# ZIP it (folder must be the root item)
+zip -r weekly-report.zip weekly-report/</code></pre>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <h5>Upload to Cowork</h5>
+    <p>Go to <strong>Customize &gt; Skills &gt; Upload</strong> and select your ZIP file. The skill is private to your account by default.</p>
+  </div>
+</div>
+
+<div class="card warning">
+  <div class="card-title">Common Upload Errors</div>
+  <p><strong>Folder name doesn't match skill name:</strong> The ZIP's root folder name must match the <code>name</code> field in SKILL.md.<br>
+  <strong>Files at ZIP root instead of in folder:</strong> Your SKILL.md must be inside a folder, not at the ZIP's top level.<br>
+  <strong>Missing SKILL.md:</strong> Every skill folder must contain a SKILL.md file &mdash; it's the only required file.<br>
+  <strong>Code execution disabled:</strong> Skills require code execution to be enabled in your org settings.</p>
+</div>
+
+<h4>SKILL.md Format for Cowork</h4>
+
+<pre><code>---
+name: my-skill-name          # Max 64 characters, lowercase + hyphens
+description: |                # Max 200 characters in Cowork
+  What this skill does and when Claude should use it.
+  Include trigger keywords users would naturally say.
+dependencies: python>=3.8    # Optional: required software
+---
+
+# Skill Title
+
+Your detailed instructions here. Claude follows these when the skill
+is active. Include:
+
+- Step-by-step procedures
+- Examples of good output
+- Edge cases to handle
+- Quality standards to maintain</code></pre>
+
+<span class="source"><a href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills">support.claude.com</a></span>
+<span class="source"><a href="https://findskill.ai/blog/claude-cowork-guide/">findskill.ai</a></span>
+</section>
+
+<section id="cowork-skills-manage">
+<h3>Managing &amp; Sharing Skills</h3>
+
+<h4>Sharing Skills with Colleagues</h4>
+
+<p>Sharing is <strong>off by default</strong>. An org owner must first enable it:</p>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h5>Admin enables sharing</h5>
+    <p>Navigate to <strong>Organization settings &gt; Skills</strong>. Enable the <strong>"Skill sharing"</strong> toggle (for specific colleagues) and/or <strong>"Share with organization"</strong> toggle (for the whole org).</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h5>Share your skill</h5>
+    <p>In <strong>Customize &gt; Skills</strong>, open your skill and click <strong>"Share"</strong>. Choose recipients: specific people or your entire organization.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <h5>Recipients enable it</h5>
+    <p>Shared skills appear in recipients' <strong>"Shared with you"</strong> section. They toggle it on to use it. <strong>Shared skills are view-only</strong> &mdash; recipients can't edit them.</p>
+  </div>
+</div>
+
+<h4>Organization-Level Provisioning (Admins)</h4>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h5>Go to Organization settings &gt; Skills</h5>
+    <p>Click <strong>"+ Add"</strong> in the Organization skills section.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h5>Upload the .zip skill file</h5>
+    <p>Select the packaged skill. Choose whether it's <strong>enabled by default</strong> (active for all users) or <strong>disabled by default</strong> (users opt in).</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <h5>Skill is live</h5>
+    <p>The skill appears for all organization members in their skills list with a visual indicator showing it's org-provisioned. Users can't delete it but can toggle it off individually.</p>
+  </div>
+</div>
+
+<div class="card info">
+  <div class="card-title">Organization Sharing Note</div>
+  <p>There is <strong>no approval workflow</strong> for org-wide sharing. When a member shares with the organization, it's immediately available. Admins can monitor sharing via audit logs (captured as <code>role_assignment</code> events).</p>
+</div>
+
+<span class="source"><a href="https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization">support.claude.com</a></span>
+<span class="source"><a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude">support.claude.com</a></span>
+</section>
+
+<section id="cowork-plugins">
+<h3>Plugin Architecture</h3>
+
+<p>A Cowork plugin bundles together multiple components into a single installable package:</p>
+
+<div class="eco-grid">
+  <div class="eco-card"><div class="icon">&#128218;</div><h5>Skills</h5><p>Domain knowledge &amp; workflows</p></div>
+  <div class="eco-card"><div class="icon">&#9889;</div><h5>Commands</h5><p>Slash commands for explicit actions</p></div>
+  <div class="eco-card"><div class="icon">&#128268;</div><h5>MCP Servers</h5><p>Tool integrations</p></div>
+  <div class="eco-card"><div class="icon">&#129302;</div><h5>Sub-Agents</h5><p>Specialized assistant instances</p></div>
+  <div class="eco-card"><div class="icon">&#9881;</div><h5>Hooks</h5><p>Event-driven automation</p></div>
+  <div class="eco-card"><div class="icon">&#127912;</div><h5>Output Styles</h5><p>Custom rendering (optional)</p></div>
+</div>
+
+<span class="source"><a href="https://code.claude.com/docs/en/plugins">code.claude.com</a></span>
+</section>
+
+<section id="cowork-install">
+<h3>Installing Plugins: Step-by-Step Walkthrough</h3>
+
+<h4>Method 1: Cowork Web UI (Recommended)</h4>
+
+<div class="ui-mockup">
+  <div class="ui-titlebar">
+    <div class="ui-dot red"></div>
+    <div class="ui-dot yellow"></div>
+    <div class="ui-dot green"></div>
+    <div class="ui-titlebar-text">Claude Desktop &mdash; Cowork</div>
+  </div>
+  <div class="ui-content" style="padding:0;">
+    <div class="ui-sidebar-mock">
+      <div style="font-size:0.75rem;color:#666;padding:8px 12px;font-weight:600;">PLUGINS</div>
+      <div class="ui-sidebar-item active">&#128269; Browse plugins</div>
+      <div class="ui-sidebar-item">&#128230; Installed (5)</div>
+      <div class="ui-sidebar-item">&#9881; Settings</div>
+    </div>
+    <div class="ui-chat-area">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div style="background:#222;border:1px solid #444;border-radius:8px;padding:16px;">
+          <div style="font-weight:600;font-size:0.9rem;margin-bottom:4px;">&#128200; Data Analysis</div>
+          <div style="font-size:0.75rem;color:#888;margin-bottom:8px;">Explore, visualize, and analyze data</div>
+          <div style="display:inline-block;padding:4px 12px;background:rgba(196,149,106,0.2);color:#c4956a;border-radius:4px;font-size:0.75rem;cursor:pointer;">Install</div>
+        </div>
+        <div style="background:#222;border:1px solid #444;border-radius:8px;padding:16px;">
+          <div style="font-weight:600;font-size:0.9rem;margin-bottom:4px;">&#128188; Sales</div>
+          <div style="font-size:0.75rem;color:#888;margin-bottom:8px;">Research, outreach, pipeline review</div>
+          <div style="display:inline-block;padding:4px 12px;background:rgba(196,149,106,0.2);color:#c4956a;border-radius:4px;font-size:0.75rem;cursor:pointer;">Install</div>
+        </div>
+        <div style="background:#222;border:1px solid #444;border-radius:8px;padding:16px;">
+          <div style="font-weight:600;font-size:0.9rem;margin-bottom:4px;">&#128736; Engineering</div>
+          <div style="font-size:0.75rem;color:#888;margin-bottom:8px;">Code review, architecture, debugging</div>
+          <div style="display:inline-block;padding:4px 12px;background:rgba(74,222,128,0.2);color:#4ade80;border-radius:4px;font-size:0.75rem;">Installed &#10003;</div>
+        </div>
+        <div style="background:#222;border:1px solid #444;border-radius:8px;padding:16px;">
+          <div style="font-weight:600;font-size:0.9rem;margin-bottom:4px;">&#128221; Marketing</div>
+          <div style="font-size:0.75rem;color:#888;margin-bottom:8px;">Content creation, SEO, campaigns</div>
+          <div style="display:inline-block;padding:4px 12px;background:rgba(196,149,106,0.2);color:#c4956a;border-radius:4px;font-size:0.75rem;cursor:pointer;">Install</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h5>Open the plugin browser</h5>
+    <p>In Cowork, click <strong>"Browse plugins"</strong> to open the marketplace modal showing all available plugins.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h5>Select and install</h5>
+    <p>Click <strong>"Install"</strong> on your chosen plugin. Review the permissions on the authorization screen.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <h5>Authorize</h5>
+    <p>Click <strong>"Authorize"</strong> to grant the plugin access to the tools it needs. The plugin is active immediately.</p>
+  </div>
+</div>
+
+<h4>Method 2: Claude Code CLI</h4>
+
+<pre><code># Install from official marketplace
+/plugin install data@claude-plugins-official
+
+# Browse available plugins interactively
+/plugin
+
+# View all plugins from a custom marketplace
+/plugin marketplace add owner/repository</code></pre>
+
+<span class="source"><a href="https://support.claude.com/en/articles/13837440-use-plugins-in-cowork">support.claude.com</a></span>
+<span class="source"><a href="https://code.claude.com/docs/en/discover-plugins">code.claude.com</a></span>
+</section>
+
+<section id="cowork-structure">
+<h3>Plugin File Structure</h3>
+
+<pre><code>plugin-name/
+&#9500;&#9472;&#9472; .claude-plugin/
+&#9474;   &#9492;&#9472;&#9472; plugin.json          # Manifest file (only this goes here)
+&#9500;&#9472;&#9472; skills/
+&#9474;   &#9500;&#9472;&#9472; skill-one/
+&#9474;   &#9474;   &#9492;&#9472;&#9472; SKILL.md
+&#9474;   &#9492;&#9472;&#9472; skill-two/
+&#9474;       &#9492;&#9472;&#9472; SKILL.md
+&#9500;&#9472;&#9472; commands/
+&#9474;   &#9492;&#9472;&#9472; my-command.md
+&#9500;&#9472;&#9472; agents/
+&#9474;   &#9492;&#9472;&#9472; specialist.md
+&#9500;&#9472;&#9472; hooks/
+&#9474;   &#9492;&#9472;&#9472; hooks.json
+&#9500;&#9472;&#9472; .mcp.json                # MCP server definitions
+&#9492;&#9472;&#9472; scripts/
+    &#9492;&#9472;&#9472; helper.sh</code></pre>
+
+<div class="card warning">
+  <div class="card-title">Critical Rule</div>
+  <p>All component directories (commands, agents, skills, hooks) <strong>MUST be at plugin root level</strong>, NOT nested inside <code>.claude-plugin/</code>. Only <code>plugin.json</code> goes inside <code>.claude-plugin/</code>.</p>
+</div>
+
+<h4>plugin.json Manifest</h4>
+
+<pre><code>{
+  "name": "my-plugin",
+  "version": "1.0.0",
+  "description": "What this plugin does",
+  "author": {
+    "name": "Your Name",
+    "email": "you@example.com"
+  },
+  "keywords": ["keyword1", "keyword2"],
+  "commands": "./commands",
+  "agents": "./agents",
+  "skills": "./skills",
+  "hooks": "./hooks",
+  "mcpServers": "./mcp-servers"
+}</code></pre>
+
+<span class="source"><a href="https://code.claude.com/docs/en/plugins-reference">code.claude.com</a></span>
+</section>
+
+<section id="cowork-customize">
+<h3>Customizing Plugins</h3>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h5>Open the plugin in settings</h5>
+    <p>Navigate to your installed plugin and click <strong>"Customize"</strong> in the upper right corner.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h5>Map connectors to your tools</h5>
+    <p>Plugins use generic labels ("CRM," "design tool"). During customization, map these to your actual tools (e.g., "CRM" &rarr; "HubSpot"). Edit <code>.mcp.json</code> to point at your tool stack.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <h5>Add company context</h5>
+    <p>Drop your terminology, org structure, and processes into skill files so Claude understands your world. Modify workflows to match how your team actually operates.</p>
+  </div>
+</div>
+
+<span class="source"><a href="https://claude.com/resources/tutorials/how-to-customize-plugins-in-cowork">claude.com</a></span>
+</section>
+
+<section id="cowork-create">
+<h3>Creating Custom Plugins</h3>
+
+<p>You can create plugins two ways: use the built-in <strong>Plugin Creator</strong> agent in Cowork, or build manually.</p>
+
+<h4>Using Plugin Creator (Easy)</h4>
+<pre><code># In Cowork, simply ask:
+"Create a plugin for managing our content calendar"
+
+# Claude will:
+# 1. Ask clarifying questions about your workflow
+# 2. Generate the plugin structure
+# 3. Create skills, commands, and MCP configurations
+# 4. Package it as a .plugin file</code></pre>
+
+<h4>Manual Creation</h4>
+<pre><code># 1. Create directory structure
+mkdir -p my-plugin/.claude-plugin
+mkdir -p my-plugin/skills/main-skill
+mkdir -p my-plugin/commands
+
+# 2. Create plugin.json
+cat > my-plugin/.claude-plugin/plugin.json << 'EOF'
+{
+  "name": "my-plugin",
+  "version": "1.0.0",
+  "description": "My custom plugin",
+  "skills": "./skills"
+}
+EOF
+
+# 3. Create your skills
+cat > my-plugin/skills/main-skill/SKILL.md << 'EOF'
+---
+name: main-skill
+description: What this skill does and when to use it
+---
+Your skill instructions here...
+EOF
+
+# 4. Package as .plugin (zip with different extension)
+cd my-plugin && zip -r ../my-plugin.plugin . -x '.*'</code></pre>
+
+<span class="source"><a href="https://code.claude.com/docs/en/plugins">code.claude.com</a></span>
+</section>
+
+<section id="cowork-subagents">
+<h3>Sub-Agents</h3>
+
+<p>Sub-agents are specialized assistant instances that plugins can delegate tasks to. They enable focused, parallel work on different aspects of a complex task.</p>
+
+<p>Define sub-agents in the <code>agents/</code> directory as Markdown files with specific instructions. The parent agent spawns sub-agents when needed, each operating with their own context and tool access.</p>
+
+<span class="source"><a href="https://code.claude.com/docs/en/plugins-reference">code.claude.com</a></span>
+</section>
+
+<section id="mcp-what">
+<h2>Part 5: Model Context Protocol (MCP)</h2>
+
+<p>MCP is the universal adapter that connects Claude to the outside world. Understanding it is essential because skills, plugins, and tool integrations all build on top of MCP.</p>
+
+<h3>What is MCP?</h3>
+
+<p>The Model Context Protocol is an <strong>open standard</strong> that enables developers to build secure, two-way connections between data sources and AI-powered tools. Think of it like USB-C for AI &mdash; one standardized protocol that connects to everything.</p>
+
+<div class="arch-diagram">
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+    <div class="arch-layer user" style="flex:1;min-width:150px;max-width:200px;">
+      <strong style="color:var(--info)">Hosts</strong><br>
+      <span style="font-size:0.75rem;">Claude Desktop<br>VS Code<br>Custom apps</span>
+    </div>
+    <div style="display:flex;align-items:center;font-size:1.5rem;color:var(--text-muted);">&#8596;</div>
+    <div class="arch-layer model" style="flex:1;min-width:150px;max-width:200px;">
+      <strong style="color:var(--accent)">Clients</strong><br>
+      <span style="font-size:0.75rem;">1:1 stateful sessions<br>JSON-RPC 2.0</span>
+    </div>
+    <div style="display:flex;align-items:center;font-size:1.5rem;color:var(--text-muted);">&#8596;</div>
+    <div class="arch-layer tools" style="flex:1;min-width:150px;max-width:200px;">
+      <strong style="color:var(--success)">Servers</strong><br>
+      <span style="font-size:0.75rem;">GitHub, Slack<br>Databases, APIs<br>File system</span>
+    </div>
+  </div>
+</div>
+
+<span class="source"><a href="https://www.anthropic.com/news/model-context-protocol">anthropic.com</a></span>
+<span class="source"><a href="https://modelcontextprotocol.io/">modelcontextprotocol.io</a></span>
+</section>
+
+<section id="mcp-primitives">
+<h3>The Three MCP Primitives</h3>
+
+<table>
+  <tr><th>Primitive</th><th>Control</th><th>What It Does</th><th>Analogy</th></tr>
+  <tr><td><strong>Tools</strong></td><td>Model-controlled</td><td>Actions the AI decides to take (write files, query databases, call APIs)</td><td>Function calls</td></tr>
+  <tr><td><strong>Resources</strong></td><td>App-controlled</td><td>Read-only data/context provided to the AI (file contents, schemas, docs)</td><td>GET endpoints</td></tr>
+  <tr><td><strong>Prompts</strong></td><td>User-invoked</td><td>Pre-defined templates for specific workflows (code review, analysis)</td><td>Workflow templates</td></tr>
+</table>
+
+<p>In Claude Desktop, you can access resources by typing <code>@</code> in the prompt. Tools are used automatically by Claude when needed. Prompts can be invoked explicitly.</p>
+
+<span class="source"><a href="https://code.claude.com/docs/en/mcp">code.claude.com</a></span>
+</section>
+
+<section id="mcp-desktop">
+<h3>Installing MCP Servers in the Desktop App</h3>
+
+<h4>Method 1: Built-in Connectors Panel (Easiest)</h4>
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h5>Open Settings &gt; Connectors</h5>
+    <p>Click the <strong>"+"</strong> button at the bottom of the chat window, then select <strong>"Connectors"</strong>.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h5>Browse and install</h5>
+    <p>Browse available MCP servers in the marketplace. Click <strong>"Install"</strong> on desired servers.</p>
+  </div>
+</div>
+
+<h4>Method 2: Desktop Extensions (.mcpb files)</h4>
+<p>Pre-configured MCP bundles. Download the <code>.mcpb</code> file, double-click to install. Zero JSON editing, automatic updates, verified and signed.</p>
+
+<h4>Method 3: Manual JSON Configuration</h4>
+
+<div class="card info">
+  <div class="card-title">Config File Location</div>
+  <p><strong>macOS:</strong> <code>~/Library/Application Support/Claude/claude_desktop_config.json</code><br>
+  <strong>Windows:</strong> <code>%APPDATA%\Claude\claude_desktop_config.json</code><br>
+  <strong>Linux:</strong> <code>~/.config/Claude/claude_desktop_config.json</code></p>
+</div>
+
+<pre><code>{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-filesystem",
+        "/path/to/allowed/directory"
+      ]
+    },
+    "github": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "your_token_here"
+      }
+    }
+  }
+}</code></pre>
+
+<div class="card warning">
+  <div class="card-title">Important</div>
+  <p>Always use <strong>absolute paths</strong> (not relative). Check JSON syntax carefully &mdash; a syntax error will prevent startup. <strong>Restart Claude Desktop</strong> after saving changes. You need <strong>Node.js</strong> installed for most MCP servers.</p>
+</div>
+
+<span class="source"><a href="https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop">support.claude.com</a></span>
+<span class="source"><a href="https://modelcontextprotocol.io/docs/develop/connect-local-servers">modelcontextprotocol.io</a></span>
+</section>
+
+<section id="mcp-code">
+<h3>MCP in Claude Code</h3>
+
+<pre><code># Add a remote MCP server
+claude mcp add --transport http --url https://example.com/mcp --name my-server
+
+# Add a local stdio server
+claude mcp add --transport stdio --command "npx" --args "@modelcontextprotocol/server-github" --name github
+
+# List configured servers
+claude mcp list
+
+# Remove a server
+claude mcp remove my-server</code></pre>
+
+<p>Claude Code also reads the same <code>claude_desktop_config.json</code> file, so servers configured for the Desktop app are automatically available in Claude Code.</p>
+
+<span class="source"><a href="https://code.claude.com/docs/en/mcp">code.claude.com</a></span>
+</section>
+
+<section id="mcp-build">
+<h3>Building Custom MCP Servers</h3>
+
+<details>
+  <summary>TypeScript Example</summary>
+  <div class="details-content">
+<pre><code>import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+
+const server = new McpServer({
+  name: "my-server",
+  version: "1.0.0",
+});
+
+// Define a tool
+server.tool("get-weather", { city: { type: "string" } }, async ({ city }) => {
+  const data = await fetchWeather(city);
+  return { content: [{ type: "text", text: JSON.stringify(data) }] };
+});
+
+// Start the server
+const transport = new StdioServerTransport();
+await server.connect(transport);</code></pre>
+  </div>
+</details>
+
+<details>
+  <summary>Python Example</summary>
+  <div class="details-content">
+<pre><code>from mcp.server import Server
+from mcp.server.stdio import stdio_server
+
+server = Server("my-server")
+
+@server.tool("get-weather")
+async def get_weather(city: str) -> str:
+    data = await fetch_weather(city)
+    return json.dumps(data)
+
+async def main():
+    async with stdio_server() as streams:
+        await server.run(streams[0], streams[1])
+
+asyncio.run(main())</code></pre>
+  </div>
+</details>
+
+<span class="source"><a href="https://modelcontextprotocol.io/">modelcontextprotocol.io</a></span>
+</section>
+
+<section id="mcp-debug">
+<h3>Debugging MCP Connections</h3>
+
+<table>
+  <tr><th>Problem</th><th>Cause</th><th>Solution</th></tr>
+  <tr><td>Server doesn't appear</td><td>JSON syntax error</td><td>Validate JSON with a linter. Check for trailing commas.</td></tr>
+  <tr><td>Server fails to start</td><td>Node.js not found</td><td>Install Node.js LTS from nodejs.org</td></tr>
+  <tr><td>Tools not showing up</td><td>Didn't restart Claude</td><td>Fully quit and reopen Claude Desktop</td></tr>
+  <tr><td>Permission errors</td><td>Path issues</td><td>Use absolute paths in config. Check file permissions.</td></tr>
+  <tr><td>Connection timeout</td><td>Server crash on startup</td><td>Test the server command directly in terminal first</td></tr>
+</table>
+
+<p>Use the <strong>MCP Inspector</strong> tool for debugging: <code>npx @modelcontextprotocol/inspector</code></p>
+
+<span class="source"><a href="https://modelcontextprotocol.io/docs/develop/connect-local-servers">modelcontextprotocol.io</a></span>
+</section>
+
+<section id="chat-projects">
+<h2>Part 6: Claude Chat &amp; Desktop Configuration</h2>
+
+<h3>Projects &amp; Custom Instructions</h3>
+
+<p><strong>Projects</strong> organize conversations around specific tasks or contexts. Each project includes custom instructions (up to 200,000 tokens of context), file uploads, and shared access for team members.</p>
+
+<p><strong>Custom Instructions</strong> work at two levels:</p>
+<ul style="margin-left:20px;margin-bottom:16px;">
+  <li><strong>User-level:</strong> Apply globally across all conversations (set in Settings)</li>
+  <li><strong>Project-level:</strong> Stack on top of user instructions for project-specific context</li>
+</ul>
+
+<span class="source"><a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects">support.claude.com</a></span>
+</section>
+
+<section id="chat-styles">
+<h3>Styles &amp; Artifacts</h3>
+
+<p><strong>Styles</strong> let you control Claude's communication style &mdash; formal, concise, explanatory, etc. Set these in your profile preferences.</p>
+
+<p><strong>Artifacts</strong> are self-contained, interactive content Claude creates in a dedicated side panel: React components, HTML pages, visualizations, documents, and more. Artifacts have 62 professional formatting templates and 10 pre-set themes.</p>
+
+<span class="source"><a href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them">support.claude.com</a></span>
+</section>
+
+<section id="desktop-config">
+<h3>Desktop App Configuration</h3>
+
+<p>The Claude Desktop app supports:</p>
+<ul style="margin-left:20px;margin-bottom:16px;">
+  <li><strong>MCP servers</strong> via <code>claude_desktop_config.json</code> (see MCP section)</li>
+  <li><strong>Connectors panel</strong> for one-click tool installation</li>
+  <li><strong>Desktop Extensions</strong> (.mcpb) for zero-config MCP servers</li>
+  <li><strong>Computer Use</strong> for controlling native apps</li>
+  <li><strong>Cowork mode</strong> for autonomous task execution</li>
+</ul>
+</section>
+
+<section id="api-tools">
+<h2>Part 7: API &amp; Developer Ecosystem</h2>
+
+<h3>Tool Use in the API</h3>
+
+<p>The Claude API supports <strong>tool use</strong> (function calling), enabling Claude to interact with external systems programmatically. You define tools with names, descriptions, and input schemas &mdash; Claude decides when to call them.</p>
+
+<pre><code># Python example with Anthropic SDK
+import anthropic
+
+client = anthropic.Anthropic()
+
+response = client.messages.create(
+    model="claude-sonnet-4-6",
+    max_tokens=1024,
+    tools=[{
+        "name": "get_weather",
+        "description": "Get the current weather in a location",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "location": {"type": "string", "description": "City name"}
+            },
+            "required": ["location"]
+        }
+    }],
+    messages=[{"role": "user", "content": "What's the weather in London?"}]
+)</code></pre>
+
+<span class="source"><a href="https://docs.claude.com/en/docs/build-with-claude/tool-use">docs.claude.com</a></span>
+</section>
+
+<section id="api-sdk">
+<h3>Claude Agent SDK</h3>
+
+<p>The Agent SDK provides a framework for building custom AI agents powered by Claude. Agents can use tools, maintain state, follow multi-step workflows, and delegate to sub-agents.</p>
+
+<span class="source"><a href="https://docs.claude.com/en/docs/agents-and-tools">docs.claude.com</a></span>
+</section>
+
+<section id="api-extended">
+<h3>Extended Thinking &amp; Computer Use</h3>
+
+<p><strong>Extended Thinking</strong> enables Claude to "think" before responding, producing higher-quality outputs for complex tasks. Available on Opus and Sonnet models.</p>
+
+<p><strong>Computer Use</strong> allows Claude to control a computer &mdash; taking screenshots, clicking, typing, and scrolling. Available via the API and in Cowork mode.</p>
+
+<span class="source"><a href="https://docs.claude.com/en/docs/build-with-claude/extended-thinking">docs.claude.com</a></span>
+</section>
+
+<section id="walk-cowork-skill">
+<h2>Part 8: Practical Walkthroughs</h2>
+
+<h3>Walkthrough 1: Install a Skill in Cowork</h3>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h5>Open Claude Desktop and enter Cowork</h5>
+    <p>Launch Claude Desktop. Start or open a Cowork session. You need a Pro plan or higher.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h5>Open Customize &gt; Skills</h5>
+    <p>Click <strong>"Customize"</strong> in the left sidebar. You'll see tabs for Skills, Connectors, Plugins, and Scheduled Tasks. Click the <strong>"Skills"</strong> tab.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <h5>Browse the directory</h5>
+    <p>Click the <strong>"+"</strong> button (or "Browse Skills"). The directory opens showing available skills. On Team/Enterprise plans, check the <strong>"Your organization"</strong> tab for skills provisioned by your admin.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">4</div>
+  <div class="step-content">
+    <h5>Install a skill</h5>
+    <p>Find the skill you want and click <strong>"Install"</strong>. It appears immediately in your Skills list, <strong>enabled by default</strong>.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">5</div>
+  <div class="step-content">
+    <h5>Use the skill</h5>
+    <p>Claude will <strong>auto-trigger</strong> the skill when your request matches its description. Or type <strong><code>/</code></strong> in the chat to see all available skills and pick one manually.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">6</div>
+  <div class="step-content">
+    <h5>Upload your own (optional)</h5>
+    <p>To add a custom skill, click <strong>"Upload"</strong> in Customize &gt; Skills. Select a <strong>.zip file</strong> containing your skill folder with SKILL.md inside. Or type <strong><code>/skill-creator</code></strong> and Claude will build one with you interactively.</p>
+  </div>
+</div>
+
+<div class="card success">
+  <div class="card-title">Pro Tip</div>
+  <p>Use <code>/skill-creator</code> to create your first skill. Describe a task you do every week, and Claude will generate a properly-formatted SKILL.md for you. This is the fastest way to get started without writing YAML frontmatter by hand.</p>
+</div>
+
+<span class="source"><a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude">support.claude.com</a></span>
+<span class="source"><a href="https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory">support.claude.com</a></span>
+</section>
+
+<section id="walk-cowork-plugin">
+
+<h3>Walkthrough 2: Install a Plugin in Cowork</h3>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h5>Open Claude Desktop</h5>
+    <p>Launch the Claude desktop app. You need a Pro plan or higher for Cowork access.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h5>Enter Cowork mode</h5>
+    <p>Start a new Cowork session (look for the Cowork option in the interface).</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <h5>Browse plugins</h5>
+    <p>Click <strong>"Browse plugins"</strong> to open the marketplace. You'll see categories like Data, Sales, Engineering, Marketing, Finance, Operations, and more.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">4</div>
+  <div class="step-content">
+    <h5>Install your chosen plugin</h5>
+    <p>Click <strong>"Install"</strong> on a plugin. Review the authorization screen showing what tools and permissions the plugin needs.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">5</div>
+  <div class="step-content">
+    <h5>Authorize and use</h5>
+    <p>Click <strong>"Authorize"</strong>. The plugin is active immediately. Claude will now use its skills automatically when relevant, or you can invoke them with <code>/</code>.</p>
+  </div>
+</div>
+</section>
+
+<section id="walk-create-skill">
+<h3>Walkthrough 3: Create a Custom Skill for Claude Code</h3>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h5>Decide the scope</h5>
+    <p><strong>Personal</strong> (all projects): <code>~/.claude/skills/</code><br>
+    <strong>Project</strong> (team-shared): <code>.claude/skills/</code> in your repo</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h5>Create the directory</h5>
+    <pre><code>mkdir -p .claude/skills/my-workflow</code></pre>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <h5>Write SKILL.md</h5>
+    <pre><code>---
+name: my-workflow
+description: Guides through our team's specific workflow. Use when
+  the user mentions "deploy", "release", or "ship".
+---
+
+# My Workflow
+
+Follow these steps exactly:
+1. Run the test suite
+2. Check for lint errors
+3. Build the production bundle
+4. Deploy to staging first
+5. Run smoke tests
+6. Deploy to production</code></pre>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">4</div>
+  <div class="step-content">
+    <h5>Test auto-trigger</h5>
+    <p>Ask Claude: "Help me deploy this." Claude should automatically detect and load your skill based on the description keywords.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">5</div>
+  <div class="step-content">
+    <h5>Test manual trigger</h5>
+    <p>Type <code>/my-workflow</code> in Claude Code. The skill should activate immediately.</p>
+  </div>
+</div>
+</section>
+
+<section id="walk-mcp-desktop">
+<h3>Walkthrough 4: Connect an MCP Server in Desktop</h3>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h5>Install Node.js</h5>
+    <p>Download and install from <a href="https://nodejs.org">nodejs.org</a> (LTS version recommended).</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h5>Open the config file</h5>
+    <p><strong>macOS:</strong> <code>~/Library/Application Support/Claude/claude_desktop_config.json</code><br>
+    Or in Claude Desktop: Settings &gt; Developer &gt; Edit Config</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <h5>Add your MCP server</h5>
+    <pre><code>{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/ahmed/Documents"
+      ]
+    }
+  }
+}</code></pre>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">4</div>
+  <div class="step-content">
+    <h5>Restart Claude Desktop</h5>
+    <p><strong>Fully quit</strong> (not just close the window) and reopen. The MCP server should now appear in your connectors.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">5</div>
+  <div class="step-content">
+    <h5>Verify</h5>
+    <p>Type <code>@</code> in the chat input &mdash; you should see resources from your new MCP server listed.</p>
+  </div>
+</div>
+</section>
+
+<section id="walk-build-plugin">
+<h3>Walkthrough 5: Build &amp; Publish a Plugin</h3>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h5>Create the structure</h5>
+    <pre><code>mkdir -p my-plugin/.claude-plugin
+mkdir -p my-plugin/skills/main-skill
+mkdir -p my-plugin/commands</code></pre>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h5>Write plugin.json</h5>
+    <pre><code>cat > my-plugin/.claude-plugin/plugin.json << 'EOF'
+{
+  "name": "content-calendar",
+  "version": "1.0.0",
+  "description": "Manage content calendars for social media",
+  "skills": "./skills",
+  "commands": "./commands"
+}
+EOF</code></pre>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <h5>Create skills and commands</h5>
+    <p>Add <code>SKILL.md</code> files in the skills directory and command <code>.md</code> files in the commands directory.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">4</div>
+  <div class="step-content">
+    <h5>Package as .plugin</h5>
+    <pre><code>cd my-plugin && zip -r ../content-calendar.plugin . -x '.*'</code></pre>
+  </div>
+</div>
+<div class="step">
+  <div class="step-num">5</div>
+  <div class="step-content">
+    <h5>Test locally</h5>
+    <pre><code>/plugin install ./content-calendar.plugin</code></pre>
+  </div>
+</div>
+</section>
+
+<section id="walk-troubleshoot">
+<h3>Troubleshooting Guide</h3>
+
+<table>
+  <tr><th>Issue</th><th>Product</th><th>Solution</th></tr>
+  <tr><td>Skill doesn't auto-trigger</td><td>Claude Code</td><td>Check the <code>description</code> field &mdash; include specific keywords users would say. Make descriptions "pushy."</td></tr>
+  <tr><td>Plugin not showing after install</td><td>Cowork</td><td>Run <code>/reload-plugins</code> in Claude Code, or restart the Cowork session.</td></tr>
+  <tr><td>MCP server won't connect</td><td>Desktop</td><td>Validate JSON syntax. Use absolute paths. Check Node.js is installed. Restart Claude fully.</td></tr>
+  <tr><td><code>/skill-name</code> not recognized</td><td>Claude Code</td><td>Check the skill is in <code>.claude/skills/</code> or <code>~/.claude/skills/</code>. Directory name must match the command name.</td></tr>
+  <tr><td>Hook not firing</td><td>Claude Code</td><td>Check <code>.claude/settings.json</code> syntax. Verify the matcher pattern matches the tool name exactly.</td></tr>
+  <tr><td>Plugin permissions error</td><td>Cowork/Code</td><td>Check <code>.claude/settings.json</code> for team installation permissions.</td></tr>
+  <tr><td>"Command not found" for npx</td><td>Desktop MCP</td><td>Install Node.js. Run <code>which npx</code> to verify it's in PATH. Use full path in config if needed.</td></tr>
+</table>
+</section>
+
+<section id="ref-skillmd">
+<h2>Reference</h2>
+
+<h3>SKILL.md Complete Reference</h3>
+
+<pre><code>---
+# REQUIRED/RECOMMENDED
+name: skill-name                    # Lowercase, hyphens, max 64 chars
+description: |                      # Max 1024 chars. THE most important field.
+  What this skill does and WHEN to use it. Include trigger keywords.
+  Front-load the key use case (truncated at 250 chars in listings).
+
+# INVOCATION CONTROL
+disable-model-invocation: false     # true = manual only (/name)
+user-invocable: true                # false = hidden from / menu
+argument-hint: "[issue-number]"     # Shown during autocomplete
+
+# EXECUTION
+allowed-tools: Bash(npm *), Read    # Tools without permission prompts
+model: claude-sonnet-4-6              # Model override
+effort: high                        # low | medium | high | max (Opus only)
+context: fork                       # Run in forked subagent context
+agent: Explore                      # Subagent type (Explore, Plan, etc.)
+shell: bash                         # bash (default) or powershell
+
+# SCOPING
+paths: ["src/**/*.ts", "*.config"]  # Glob patterns for activation
+hooks:                              # Skill-scoped hooks
+  PostToolUse:
+    - matcher: Write
+      command: "npm test"
+---
+
+# Skill Instructions
+
+Your markdown instructions here. Claude follows these when the skill is active.
+
+## Dynamic Context
+- Current branch: !`git branch --show-current`
+- Changed files: !`git diff --name-only`
+
+## Steps
+1. First step
+2. Second step using $ARGUMENTS
+3. Third step with $0 (first arg) and $1 (second arg)</code></pre>
+</section>
+
+<section id="ref-plugin-json">
+<h3>plugin.json Complete Reference</h3>
+
+<pre><code>{
+  "name": "plugin-name",              // Required: unique identifier
+  "version": "1.0.0",                 // Semantic versioning
+  "description": "What this plugin does",
+  "author": {
+    "name": "Author Name",
+    "email": "email@example.com",
+    "url": "https://example.com"
+  },
+  "homepage": "https://plugin-homepage.com",
+  "repository": "https://github.com/user/repo",
+  "license": "MIT",
+  "keywords": ["keyword1", "keyword2"],
+  "commands": "./commands",           // Path to commands directory
+  "agents": "./agents",               // Path to agents/subagents
+  "skills": "./skills",               // Path to skills directory
+  "hooks": "./hooks",                 // Path to hooks configuration
+  "mcpServers": "./mcp-servers",      // MCP server definitions
+  "outputStyles": "./output-styles"   // Custom output rendering
+}</code></pre>
+</section>
+
+<section id="ref-mcp-config">
+<h3>MCP Config Reference (claude_desktop_config.json)</h3>
+
+<pre><code>{
+  "mcpServers": {
+    // Local stdio server
+    "filesystem": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-filesystem", "/path/to/dir"]
+    },
+    // Server with environment variables
+    "github": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "ghp_xxxx"
+      }
+    },
+    // Remote HTTP server
+    "remote-api": {
+      "url": "https://api.example.com/mcp",
+      "type": "http"
+    },
+    // Python server
+    "custom-python": {
+      "command": "python",
+      "args": ["-m", "my_mcp_server"],
+      "env": {
+        "API_KEY": "your-key"
+      }
+    }
+  }
+}</code></pre>
+
+<div class="card info">
+  <div class="card-title">Config File Locations</div>
+  <p><strong>macOS:</strong> <code>~/Library/Application Support/Claude/claude_desktop_config.json</code><br>
+  <strong>Windows:</strong> <code>%APPDATA%\Claude\claude_desktop_config.json</code><br>
+  <strong>Linux:</strong> <code>~/.config/Claude/claude_desktop_config.json</code></p>
+</div>
+</section>
+
+<section id="ref-glossary">
+<h3>Glossary</h3>
+
+<table>
+  <tr><th>Term</th><th>Definition</th></tr>
+  <tr><td><strong>Skill</strong></td><td>A markdown-based instruction package that teaches Claude domain-specific workflows. Lives in <code>SKILL.md</code>.</td></tr>
+  <tr><td><strong>Plugin</strong></td><td>A bundle of skills, commands, MCP servers, hooks, and sub-agents packaged for distribution.</td></tr>
+  <tr><td><strong>MCP</strong></td><td>Model Context Protocol &mdash; an open standard for connecting AI to external tools and data.</td></tr>
+  <tr><td><strong>MCP Server</strong></td><td>A standalone program that exposes tools, resources, and prompts to Claude via MCP.</td></tr>
+  <tr><td><strong>Hook</strong></td><td>A shell command that runs at specific lifecycle events (PreToolUse, PostToolUse, etc.).</td></tr>
+  <tr><td><strong>Slash Command</strong></td><td>A manually-triggered prompt template. Legacy concept now merged into the Skills system.</td></tr>
+  <tr><td><strong>CLAUDE.md</strong></td><td>A persistent instruction file that Claude reads at session start. Works at user, project, or directory level.</td></tr>
+  <tr><td><strong>Frontmatter</strong></td><td>YAML metadata at the top of a SKILL.md file (between <code>---</code> markers) that controls behavior.</td></tr>
+  <tr><td><strong>Sub-Agent</strong></td><td>A specialized agent instance that a plugin can delegate tasks to for focused work.</td></tr>
+  <tr><td><strong>Cowork</strong></td><td>Claude Desktop's autonomous task execution mode for non-technical knowledge work.</td></tr>
+  <tr><td><strong>Artifact</strong></td><td>Self-contained interactive content (React, HTML, visualizations) created by Claude in a side panel.</td></tr>
+  <tr><td><strong>Connector</strong></td><td>A pre-built MCP integration available through the Claude Desktop UI.</td></tr>
+  <tr><td><strong>Desktop Extension</strong></td><td>A <code>.mcpb</code> file that installs an MCP server with zero configuration.</td></tr>
+  <tr><td><strong>Agent Skills Standard</strong></td><td>An open specification at agentskills.io making skills portable across AI platforms.</td></tr>
+</table>
+</section>
+
+<section id="ref-sources">
+<h3>Bibliography</h3>
+
+<p>This guide was synthesized from 100+ sources including:</p>
+
+<h4>Official Anthropic Documentation</h4>
+<ul style="margin-left:20px;font-size:0.85rem;line-height:2;">
+  <li><a href="https://code.claude.com/docs/en/skills">Extend Claude with skills &mdash; Claude Code Docs</a></li>
+  <li><a href="https://code.claude.com/docs/en/plugins">Create plugins &mdash; Claude Code Docs</a></li>
+  <li><a href="https://code.claude.com/docs/en/plugins-reference">Plugins reference &mdash; Claude Code Docs</a></li>
+  <li><a href="https://code.claude.com/docs/en/discover-plugins">Discover and install prebuilt plugins</a></li>
+  <li><a href="https://code.claude.com/docs/en/mcp">Connect Claude Code to tools via MCP</a></li>
+  <li><a href="https://code.claude.com/docs/en/hooks-guide">Automate workflows with hooks</a></li>
+  <li><a href="https://code.claude.com/docs/en/claude-md">CLAUDE.md configuration</a></li>
+  <li><a href="https://support.claude.com/en/articles/13345190-get-started-with-cowork">Get started with Cowork</a></li>
+  <li><a href="https://support.claude.com/en/articles/13837440-use-plugins-in-cowork">Use plugins in Cowork</a></li>
+  <li><a href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills">How to create custom Skills</a></li>
+  <li><a href="https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop">Getting Started with Local MCP Servers</a></li>
+  <li><a href="https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization">Manage Cowork plugins for your organization</a></li>
+  <li><a href="https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp">Custom connectors using remote MCP</a></li>
+  <li><a href="https://docs.claude.com/en/docs/build-with-claude/tool-use">Tool use &mdash; Claude Docs</a></li>
+  <li><a href="https://docs.claude.com/en/docs/mcp">Model Context Protocol &mdash; Claude Docs</a></li>
+  <li><a href="https://www.anthropic.com/news/model-context-protocol">Introducing the Model Context Protocol</a></li>
+  <li><a href="https://www.anthropic.com/engineering/desktop-extensions">Desktop Extensions for Claude</a></li>
+  <li><a href="https://claude.com/blog/cowork-research-preview">Introducing Cowork</a></li>
+  <li><a href="https://claude.com/blog/cowork-plugins">Customize Cowork with plugins</a></li>
+  <li><a href="https://claude.com/blog/skills-explained">Skills explained</a></li>
+  <li><a href="https://claude.com/resources/tutorials/how-to-customize-plugins-in-cowork">How to customize plugins in Cowork</a></li>
+</ul>
+
+<h4>MCP Specification &amp; Resources</h4>
+<ul style="margin-left:20px;font-size:0.85rem;line-height:2;">
+  <li><a href="https://modelcontextprotocol.io/">Model Context Protocol &mdash; Official Site</a></li>
+  <li><a href="https://github.com/modelcontextprotocol">MCP GitHub Organization</a></li>
+  <li><a href="https://agentskills.io/specification">Agent Skills Specification</a></li>
+</ul>
+
+<h4>Community &amp; Developer Resources</h4>
+<ul style="margin-left:20px;font-size:0.85rem;line-height:2;">
+  <li><a href="https://mikhail.io/2025/10/claude-code-skills/">Inside Claude Code Skills &mdash; Mikhail Shilkov</a></li>
+  <li><a href="https://alexop.dev/posts/understanding-claude-code-full-stack/">Understanding Claude Code's Full Stack &mdash; alexop.dev</a></li>
+  <li><a href="https://www.morphllm.com/claude-code-skills-mcp-plugins">Claude Code Skills vs MCP vs Plugins: Complete Guide</a></li>
+  <li><a href="https://dev.to/alanwest/how-to-build-custom-claude-code-skills-that-actually-work-2e1f">How to Build Custom Claude Code Skills &mdash; DEV Community</a></li>
+  <li><a href="https://blog.dailydoseofds.com/p/anatomy-of-the-claude-folder">Anatomy of the .claude/ Folder &mdash; Avi Chawla</a></li>
+  <li><a href="https://karozieminski.substack.com/p/claude-cowork-guide-plugins-memory-sub-agents-tips">Claude Cowork Guide for Power Users</a></li>
+  <li><a href="https://www.codecademy.com/article/how-to-use-model-context-protocol-mcp-with-claude-step-by-step-guide-with-examples">How to Use MCP with Claude &mdash; Codecademy</a></li>
+  <li><a href="https://www.businessofapps.com/data/claude-statistics/">Claude Revenue and Usage Statistics</a></li>
+</ul>
+
+<p style="margin-top:32px;font-size:0.8rem;color:var(--text-muted);">
+  <em>Guide compiled March 31, 2026. Research synthesized from 100+ sources across official documentation, developer blogs, community forums, and technical tutorials. All source URLs were verified at time of compilation.</em>
+</p>
+</section>
+
+</main>
+
+<script>
+// Sidebar navigation highlighting
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id]');
+
+function updateActiveNav() {
+  let current = '';
+  sections.forEach(section => {
+    const top = section.offsetTop - 100;
+    if (window.scrollY >= top) current = section.id;
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('data-section') === current) link.classList.add('active');
+  });
+}
+
+window.addEventListener('scroll', updateActiveNav);
+updateActiveNav();
+
+// Search functionality
+function filterNav(query) {
+  query = query.toLowerCase();
+  navLinks.forEach(link => {
+    const text = link.textContent.toLowerCase();
+    const section = link.closest('.nav-section');
+    link.style.display = text.includes(query) || query === '' ? 'block' : 'none';
+  });
+}
+
+// Smooth scroll for nav links
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    if (window.innerWidth <= 900) {
+      document.querySelector('.sidebar').classList.remove('open');
+    }
+  });
+});
+
+// Close sidebar on mobile when clicking outside
+document.querySelector('.main').addEventListener('click', () => {
+  if (window.innerWidth <= 900) {
+    document.querySelector('.sidebar').classList.remove('open');
+  }
+});
+</script>
+
+</body>
+</html>

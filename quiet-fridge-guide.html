@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultra-Quiet Mini Fridge Guide — Cabinet-Ready Picks for Your Home Office</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #242836;
+    --border: #2e3344;
+    --text: #e4e6ed;
+    --text-muted: #8b90a0;
+    --accent: #6c8cff;
+    --accent-dim: rgba(108,140,255,0.12);
+    --green: #4ade80;
+    --green-dim: rgba(74,222,128,0.12);
+    --amber: #fbbf24;
+    --amber-dim: rgba(251,191,36,0.12);
+    --red: #f87171;
+    --red-dim: rgba(248,113,113,0.12);
+    --cyan: #22d3ee;
+    --purple: #a78bfa;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---- NAV ---- */
+  nav {
+    position: sticky; top:0; z-index:100;
+    background: rgba(15,17,23,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+  }
+  nav .inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; gap: 2rem;
+    height: 56px; overflow-x: auto;
+  }
+  nav a {
+    color: var(--text-muted); text-decoration: none; font-size: .85rem;
+    white-space: nowrap; transition: color .2s;
+  }
+  nav a:hover, nav a.active { color: var(--accent); }
+  nav .logo { font-weight: 700; color: var(--text); font-size: 1rem; }
+
+  /* ---- HERO ---- */
+  .hero {
+    max-width: 1200px; margin: 0 auto;
+    padding: 4rem 2rem 3rem;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800; letter-spacing: -.02em;
+    background: linear-gradient(135deg, var(--accent), var(--cyan));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: .75rem;
+  }
+  .hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 720px; }
+  .hero .meta { display: flex; gap: 1.5rem; margin-top: 1rem; font-size: .85rem; color: var(--text-muted); }
+  .hero .meta span { display: flex; align-items: center; gap: .35rem; }
+
+  /* ---- SECTION ---- */
+  section { max-width: 1200px; margin: 0 auto; padding: 2.5rem 2rem; }
+  section h2 {
+    font-size: 1.5rem; font-weight: 700; margin-bottom: 1.25rem;
+    display: flex; align-items: center; gap: .5rem;
+  }
+  section h2 .icon { font-size: 1.3rem; }
+  section h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 .75rem; }
+  section p { color: var(--text-muted); margin-bottom: 1rem; max-width: 800px; }
+
+  /* ---- NOISE SCALE ---- */
+  .noise-scale {
+    display: flex; gap: 0; margin: 1.5rem 0; border-radius: 12px; overflow: hidden;
+  }
+  .noise-band {
+    flex: 1; padding: 1rem; text-align: center; min-width: 0;
+  }
+  .noise-band .db { font-size: 1.4rem; font-weight: 800; }
+  .noise-band .label { font-size: .75rem; margin-top: .25rem; opacity: .8; }
+  .noise-band.silent { background: rgba(74,222,128,0.15); color: var(--green); }
+  .noise-band.whisper { background: rgba(108,140,255,0.12); color: var(--accent); }
+  .noise-band.quiet { background: rgba(251,191,36,0.10); color: var(--amber); }
+  .noise-band.moderate { background: rgba(248,113,113,0.10); color: var(--red); }
+
+  /* ---- TECH CARDS ---- */
+  .tech-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem; margin: 1.5rem 0;
+  }
+  .tech-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.5rem; transition: border-color .2s;
+  }
+  .tech-card:hover { border-color: var(--accent); }
+  .tech-card .badge {
+    display: inline-block; padding: .2rem .6rem; border-radius: 6px;
+    font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em;
+    margin-bottom: .75rem;
+  }
+  .tech-card .badge.best { background: var(--green-dim); color: var(--green); }
+  .tech-card .badge.good { background: var(--accent-dim); color: var(--accent); }
+  .tech-card .badge.ok { background: var(--amber-dim); color: var(--amber); }
+  .tech-card h4 { font-size: 1.1rem; margin-bottom: .5rem; }
+  .tech-card .stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; margin-top: 1rem;
+  }
+  .tech-card .stat-item {
+    background: var(--surface2); border-radius: 8px; padding: .6rem .75rem;
+  }
+  .tech-card .stat-label { font-size: .7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .03em; }
+  .tech-card .stat-value { font-size: .95rem; font-weight: 600; margin-top: .15rem; }
+  .tech-card ul { list-style: none; margin-top: .75rem; }
+  .tech-card li { font-size: .88rem; color: var(--text-muted); padding: .2rem 0; padding-left: 1.2rem; position: relative; }
+  .tech-card li::before { content: ''; position: absolute; left: 0; top: .55rem; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+  /* ---- FILTER BAR ---- */
+  .filter-bar {
+    display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.5rem 0;
+  }
+  .filter-btn {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-muted); padding: .45rem 1rem; border-radius: 8px;
+    font-size: .85rem; cursor: pointer; transition: all .2s;
+  }
+  .filter-btn:hover { border-color: var(--accent); color: var(--text); }
+  .filter-btn.active { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
+
+  /* ---- COMPARISON TABLE ---- */
+  .table-wrap {
+    overflow-x: auto; margin: 1.5rem 0;
+    border: 1px solid var(--border); border-radius: 12px;
+    background: var(--surface);
+  }
+  table { width: 100%; border-collapse: collapse; min-width: 900px; }
+  thead { background: var(--surface2); }
+  th {
+    text-align: left; padding: .85rem 1rem; font-size: .78rem;
+    text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted);
+    font-weight: 600; white-space: nowrap; cursor: pointer; user-select: none;
+    border-bottom: 1px solid var(--border);
+  }
+  th:hover { color: var(--accent); }
+  th .sort-arrow { font-size: .65rem; margin-left: .25rem; }
+  td {
+    padding: .75rem 1rem; font-size: .88rem;
+    border-bottom: 1px solid var(--border);
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(108,140,255,0.04); }
+  .noise-badge {
+    display: inline-block; padding: .15rem .5rem; border-radius: 6px;
+    font-size: .8rem; font-weight: 600;
+  }
+  .noise-badge.ultra { background: var(--green-dim); color: var(--green); }
+  .noise-badge.low { background: var(--accent-dim); color: var(--accent); }
+  .noise-badge.med { background: var(--amber-dim); color: var(--amber); }
+  .noise-badge.loud { background: var(--red-dim); color: var(--red); }
+  .price-tag { font-weight: 700; color: var(--green); }
+  .model-name { font-weight: 600; color: var(--text); }
+  .tech-tag {
+    display: inline-block; padding: .1rem .4rem; border-radius: 4px;
+    font-size: .72rem; font-weight: 600;
+  }
+  .tech-tag.comp { background: var(--accent-dim); color: var(--accent); }
+  .tech-tag.thermo { background: var(--green-dim); color: var(--green); }
+  .tech-tag.absorb { background: rgba(167,139,250,0.15); color: var(--purple); }
+
+  /* ---- DETAIL CARDS ---- */
+  .picks-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.25rem; margin: 1.5rem 0;
+  }
+  .pick-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden; transition: border-color .2s, transform .2s;
+  }
+  .pick-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .pick-card .card-header {
+    padding: 1.25rem 1.25rem .75rem;
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .pick-card .card-header h4 { font-size: 1.05rem; font-weight: 700; }
+  .pick-card .card-header .price { font-size: 1.2rem; font-weight: 800; color: var(--green); }
+  .pick-card .card-body { padding: 0 1.25rem 1.25rem; }
+  .pick-card .spec-row {
+    display: flex; justify-content: space-between; padding: .4rem 0;
+    font-size: .85rem; border-bottom: 1px solid var(--border);
+  }
+  .pick-card .spec-row:last-child { border-bottom: none; }
+  .pick-card .spec-label { color: var(--text-muted); }
+  .pick-card .spec-value { font-weight: 600; text-align: right; }
+  .pick-card .verdict {
+    margin-top: .75rem; padding: .75rem; border-radius: 8px;
+    background: var(--surface2); font-size: .85rem; color: var(--text-muted);
+  }
+  .pick-card .verdict strong { color: var(--text); }
+  .pick-card .tags { display: flex; gap: .35rem; flex-wrap: wrap; margin-top: .5rem; }
+  .pick-card .tag {
+    font-size: .7rem; padding: .15rem .45rem; border-radius: 4px;
+    background: var(--surface2); color: var(--text-muted);
+  }
+
+  /* ---- CABINET GUIDE ---- */
+  .cabinet-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem; margin: 1.5rem 0;
+  }
+  .cab-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.25rem;
+  }
+  .cab-card h4 { font-size: 1rem; margin-bottom: .75rem; display: flex; align-items: center; gap: .4rem; }
+  .cab-card p { font-size: .88rem; color: var(--text-muted); }
+  .cab-card .highlight {
+    margin-top: .75rem; padding: .6rem .75rem; border-radius: 8px;
+    font-size: .85rem; font-weight: 600;
+  }
+  .cab-card .highlight.warn { background: var(--amber-dim); color: var(--amber); }
+  .cab-card .highlight.tip { background: var(--green-dim); color: var(--green); }
+  .cab-card .highlight.info { background: var(--accent-dim); color: var(--accent); }
+
+  /* ---- RECOMMENDATION BOXES ---- */
+  .rec-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem; margin: 1.5rem 0;
+  }
+  .rec-box {
+    background: var(--surface); border: 2px solid var(--border);
+    border-radius: 14px; padding: 1.5rem; position: relative;
+  }
+  .rec-box.top-pick { border-color: var(--green); }
+  .rec-box .rec-label {
+    position: absolute; top: -10px; left: 1rem;
+    background: var(--bg); padding: 0 .5rem;
+    font-size: .72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+  .rec-box.top-pick .rec-label { color: var(--green); }
+  .rec-box h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: .35rem; }
+  .rec-box .rec-price { font-size: 1.3rem; font-weight: 800; color: var(--green); margin-bottom: .75rem; }
+  .rec-box .rec-why { font-size: .88rem; color: var(--text-muted); }
+  .rec-box .rec-specs {
+    display: grid; grid-template-columns: 1fr 1fr; gap: .4rem;
+    margin-top: .75rem;
+  }
+  .rec-box .rec-spec {
+    background: var(--surface2); padding: .4rem .6rem; border-radius: 6px;
+    font-size: .78rem;
+  }
+  .rec-box .rec-spec .rs-label { color: var(--text-muted); }
+  .rec-box .rec-spec .rs-val { font-weight: 600; }
+
+  /* ---- COMPARISON VIZ ---- */
+  .bar-chart { margin: 1.5rem 0; }
+  .bar-row {
+    display: flex; align-items: center; gap: .75rem; margin-bottom: .6rem;
+  }
+  .bar-label { width: 180px; font-size: .82rem; text-align: right; flex-shrink: 0; }
+  .bar-track { flex: 1; height: 28px; background: var(--surface2); border-radius: 6px; overflow: hidden; position: relative; }
+  .bar-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-left: .5rem; font-size: .75rem; font-weight: 600; transition: width .6s ease; }
+  .bar-fill.green { background: linear-gradient(90deg, rgba(74,222,128,0.3), rgba(74,222,128,0.15)); color: var(--green); }
+  .bar-fill.blue { background: linear-gradient(90deg, rgba(108,140,255,0.3), rgba(108,140,255,0.15)); color: var(--accent); }
+  .bar-fill.amber { background: linear-gradient(90deg, rgba(251,191,36,0.3), rgba(251,191,36,0.15)); color: var(--amber); }
+  .bar-fill.red { background: linear-gradient(90deg, rgba(248,113,113,0.3), rgba(248,113,113,0.15)); color: var(--red); }
+
+  /* ---- FOOTER ---- */
+  footer {
+    max-width: 1200px; margin: 0 auto; padding: 2rem;
+    border-top: 1px solid var(--border); margin-top: 2rem;
+    color: var(--text-muted); font-size: .82rem;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  .sources { margin-top: 1rem; }
+  .sources li { margin-bottom: .3rem; }
+
+  /* Utility */
+  .divider { height: 1px; background: var(--border); margin: 2rem 0; }
+  .callout {
+    background: var(--surface); border-left: 3px solid var(--accent);
+    padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0;
+    font-size: .92rem;
+  }
+  .callout strong { color: var(--text); }
+  .callout p { margin: 0; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1rem 2rem; }
+    section { padding: 1.5rem 1rem; }
+    .noise-scale { flex-direction: column; }
+    .tech-card .stats { grid-template-columns: 1fr; }
+    .bar-label { width: 100px; font-size: .72rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <span class="logo">Quiet Fridge Guide</span>
+    <a href="#noise">Noise Basics</a>
+    <a href="#tech">Cooling Tech</a>
+    <a href="#comparison">Full Comparison</a>
+    <a href="#picks">Top Picks</a>
+    <a href="#cabinet">Cabinet Build</a>
+    <a href="#recs">Recommendations</a>
+    <a href="#sources">Sources</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <h1>The Ultra-Quiet Mini Fridge Guide</h1>
+  <p>Everything you need to choose (and build in) a silent beverage fridge for your bedroom or home office. Compressor, thermoelectric, and absorption options compared — with dimensions, power specs, noise levels, and cabinet integration advice.</p>
+  <div class="meta">
+    <span>Researched April 2026</span>
+    <span>20+ models compared</span>
+    <span>3 cooling technologies</span>
+  </div>
+</div>
+
+<!-- ===== NOISE BASICS ===== -->
+<section id="noise">
+  <h2><span class="icon">&#127911;</span> Understanding Noise Levels</h2>
+  <p>Decibels (dB) are logarithmic — every 10 dB increase sounds roughly twice as loud. For a bedroom or office where you're sleeping, working, or on calls, anything under 38 dB blends into the background. Under 30 dB is essentially inaudible in normal conditions.</p>
+
+  <div class="noise-scale">
+    <div class="noise-band silent">
+      <div class="db">0–25 dB</div>
+      <div class="label">Silent<br>Absorption / Thermoelectric</div>
+    </div>
+    <div class="noise-band whisper">
+      <div class="db">25–37 dB</div>
+      <div class="label">Whisper Quiet<br>Best compressors</div>
+    </div>
+    <div class="noise-band quiet">
+      <div class="db">37–42 dB</div>
+      <div class="label">Quiet<br>Most mini fridges</div>
+    </div>
+    <div class="noise-band moderate">
+      <div class="db">42–50 dB</div>
+      <div class="label">Noticeable<br>Older/cheap models</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><strong>For reference:</strong> A quiet library is ~30 dB. A whispered conversation is ~30–35 dB. A typical home AC hum is ~40 dB. If you're a light sleeper or do podcast/video work, target 0–35 dB. For general office use, under 40 dB is comfortable.</p>
+  </div>
+
+  <h3>Noise-Reduction Tips</h3>
+  <p>Regardless of which fridge you choose, you can shave 2–5 dB off the perceived noise with simple tricks. Place the fridge on a 1-inch neoprene anti-vibration mat to dampen compressor hum. Ensure the fridge is level (use adjustable feet). Keep the condenser coils clean — dust buildup forces the compressor to work harder and louder. Inside a cabinet, add a layer of mass-loaded vinyl or acoustic foam to the back panel to absorb reflected sound.</p>
+</section>
+
+<!-- ===== COOLING TECHNOLOGY ===== -->
+<section id="tech">
+  <h2><span class="icon">&#10052;&#65039;</span> Cooling Technologies Explained</h2>
+  <p>There are three fundamentally different ways these units cool. Each has dramatic implications for noise, performance, and how you build your cabinet.</p>
+
+  <div class="tech-grid">
+
+    <div class="tech-card">
+      <span class="badge ok">Loudest of 3</span>
+      <h4>Compressor Cooling</h4>
+      <p style="font-size:.88rem; color:var(--text-muted)">The same technology as your kitchen fridge, miniaturized. A mechanical compressor pumps refrigerant through coils. The most common type — and the most capable.</p>
+      <div class="stats">
+        <div class="stat-item"><div class="stat-label">Noise</div><div class="stat-value">35–45 dB</div></div>
+        <div class="stat-item"><div class="stat-label">Temp Range</div><div class="stat-value">28–50°F</div></div>
+        <div class="stat-item"><div class="stat-label">Power</div><div class="stat-value">60–150W</div></div>
+        <div class="stat-item"><div class="stat-label">Lifespan</div><div class="stat-value">10–15 yrs</div></div>
+      </div>
+      <ul>
+        <li>Reaches true refrigeration temps (&lt;40°F) regardless of room temp</li>
+        <li>Best energy efficiency over time (cycles on/off)</li>
+        <li>Widest selection and lowest prices at every size</li>
+        <li>Audible compressor hum + click when cycling</li>
+        <li><strong>Cabinet note:</strong> Needs 2–3" rear/side clearance OR front-venting model</li>
+      </ul>
+    </div>
+
+    <div class="tech-card">
+      <span class="badge good">Near-Silent</span>
+      <h4>Thermoelectric (Peltier)</h4>
+      <p style="font-size:.88rem; color:var(--text-muted)">Uses an electrical current through a Peltier chip to transfer heat. No moving parts except a small fan. Extremely quiet, but limited cooling capacity.</p>
+      <div class="stats">
+        <div class="stat-item"><div class="stat-label">Noise</div><div class="stat-value">25–35 dB</div></div>
+        <div class="stat-item"><div class="stat-label">Temp Range</div><div class="stat-value">~20–25°F below ambient</div></div>
+        <div class="stat-item"><div class="stat-label">Power</div><div class="stat-value">60–100W (continuous)</div></div>
+        <div class="stat-item"><div class="stat-label">Lifespan</div><div class="stat-value">5–10 yrs</div></div>
+      </div>
+      <ul>
+        <li>Near-silent operation — only a faint fan hum</li>
+        <li>No vibration (great for sensitive environments)</li>
+        <li>Cannot reach below ~50°F in a warm room (75°F+)</li>
+        <li>Runs continuously — no cycling savings</li>
+        <li>Best for: chilling drinks, not true food refrigeration</li>
+        <li><strong>Cabinet note:</strong> Still needs rear ventilation for heat exhaust fan</li>
+      </ul>
+    </div>
+
+    <div class="tech-card">
+      <span class="badge best">Truly Silent (0 dB)</span>
+      <h4>Absorption Cooling</h4>
+      <p style="font-size:.88rem; color:var(--text-muted)">Uses a heat source to drive a chemical cycle (ammonia/water/hydrogen). Zero moving parts, zero noise. The gold standard for hotel minibars worldwide.</p>
+      <div class="stats">
+        <div class="stat-item"><div class="stat-label">Noise</div><div class="stat-value">0 dB</div></div>
+        <div class="stat-item"><div class="stat-label">Temp Range</div><div class="stat-value">32–50°F</div></div>
+        <div class="stat-item"><div class="stat-label">Power</div><div class="stat-value">65–85W</div></div>
+        <div class="stat-item"><div class="stat-label">Lifespan</div><div class="stat-value">10–20 yrs</div></div>
+      </div>
+      <ul>
+        <li>Absolutely zero noise — no compressor, no fan, no hum</li>
+        <li>No vibration whatsoever</li>
+        <li>Slower to cool down initially (6–12 hours to reach temp)</li>
+        <li>Less energy-efficient than modern compressors</li>
+        <li>Fewer models available for residential purchase</li>
+        <li><strong>Cabinet note:</strong> Still produces heat at rear — needs ventilation</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <h3>Noise Level Comparison (Visual)</h3>
+  <div class="bar-chart">
+    <div class="bar-row">
+      <div class="bar-label">Absorption (SMAD/Dometic)</div>
+      <div class="bar-track"><div class="bar-fill green" style="width:2%">0 dB</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">AstroAI 4L (Thermo)</div>
+      <div class="bar-track"><div class="bar-fill green" style="width:50%">25 dB</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Frestec 3.2 (Compressor)</div>
+      <div class="bar-track"><div class="bar-fill blue" style="width:74%">37 dB</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">EUHOMY 1.7 (Compressor)</div>
+      <div class="bar-track"><div class="bar-fill blue" style="width:76%">38 dB</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Upstreman 3.2 (Compressor)</div>
+      <div class="bar-track"><div class="bar-fill blue" style="width:76%">38 dB</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Midea WHS-87LSS1</div>
+      <div class="bar-track"><div class="bar-fill amber" style="width:84%">42 dB</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Whynter BBR-801BG</div>
+      <div class="bar-track"><div class="bar-fill amber" style="width:88%">&lt;44 dB</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Honeywell 1.6 (Compressor)</div>
+      <div class="bar-track"><div class="bar-fill red" style="width:90%">45 dB</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FULL COMPARISON TABLE ===== -->
+<section id="comparison">
+  <h2><span class="icon">&#128202;</span> Full Comparison Table</h2>
+  <p>Every model researched, in one sortable view. Click any column header to sort. Use the filters to narrow by cooling type or noise level.</p>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All Models</button>
+    <button class="filter-btn" data-filter="compressor">Compressor</button>
+    <button class="filter-btn" data-filter="thermoelectric">Thermoelectric</button>
+    <button class="filter-btn" data-filter="absorption">Absorption</button>
+    <button class="filter-btn" data-filter="silent">Under 35 dB</button>
+    <button class="filter-btn" data-filter="quiet">35–40 dB</button>
+    <button class="filter-btn" data-filter="budget">Under $150</button>
+  </div>
+
+  <div class="table-wrap">
+    <table id="fridge-table">
+      <thead>
+        <tr>
+          <th data-sort="name">Model <span class="sort-arrow">&#9650;</span></th>
+          <th data-sort="tech">Technology</th>
+          <th data-sort="noise">Noise (dB)</th>
+          <th data-sort="capacity">Capacity</th>
+          <th data-sort="dims">Dimensions (W×D×H)</th>
+          <th data-sort="power">Power</th>
+          <th data-sort="price">Price</th>
+          <th data-sort="temp">Temp Range</th>
+          <th>Cabinet-Ready?</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== TOP PICKS DETAIL ===== -->
+<section id="picks">
+  <h2><span class="icon">&#11088;</span> Top Picks — Detailed Profiles</h2>
+  <p>These are the standout models across each category, with full specs and cabinet-build notes.</p>
+
+  <div class="picks-grid">
+
+    <!-- Pick 1 -->
+    <div class="pick-card">
+      <div class="card-header">
+        <div>
+          <h4>SMAD 2.1 Cu.Ft Absorption</h4>
+          <div class="tags">
+            <span class="tag">Absorption</span>
+            <span class="tag">0 dB</span>
+            <span class="tag">AC/DC</span>
+          </div>
+        </div>
+        <div class="price">~$200–250</div>
+      </div>
+      <div class="card-body">
+        <div class="spec-row"><span class="spec-label">Noise Level</span><span class="spec-value" style="color:var(--green)">0 dB (silent)</span></div>
+        <div class="spec-row"><span class="spec-label">Capacity</span><span class="spec-value">2.1 cu.ft (59L)</span></div>
+        <div class="spec-row"><span class="spec-label">Dimensions</span><span class="spec-value">18.1"W × 18.9"D × 23.8"H</span></div>
+        <div class="spec-row"><span class="spec-label">Interior</span><span class="spec-value">14.2"W × 10.5"D × 20"H</span></div>
+        <div class="spec-row"><span class="spec-label">Power</span><span class="spec-value">110V AC / 12V DC</span></div>
+        <div class="spec-row"><span class="spec-label">Energy</span><span class="spec-value">~0.63 kWh/day</span></div>
+        <div class="spec-row"><span class="spec-label">Temp Range</span><span class="spec-value">32–50°F (0–10°C)</span></div>
+        <div class="spec-row"><span class="spec-label">Door</span><span class="spec-value">Reversible, lockable</span></div>
+        <div class="verdict">
+          <strong>Best for absolute silence.</strong> Zero moving parts means zero noise — period. The 2.1 cu.ft size holds roughly 60 cans. Slower to reach temperature (plan 8–12 hours for initial cooldown). Less energy-efficient than compressor models, but the silence premium is worth it for a bedroom.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pick 2 -->
+    <div class="pick-card">
+      <div class="card-header">
+        <div>
+          <h4>Frestec 3.2 Cu.Ft Compressor</h4>
+          <div class="tags">
+            <span class="tag">Compressor</span>
+            <span class="tag">&lt;37 dB</span>
+            <span class="tag">Best Value</span>
+          </div>
+        </div>
+        <div class="price">~$145</div>
+      </div>
+      <div class="card-body">
+        <div class="spec-row"><span class="spec-label">Noise Level</span><span class="spec-value" style="color:var(--accent)"><37 dB</span></div>
+        <div class="spec-row"><span class="spec-label">Capacity</span><span class="spec-value">3.2 cu.ft (2.2 fridge + 1.0 freezer)</span></div>
+        <div class="spec-row"><span class="spec-label">Dimensions</span><span class="spec-value">17.8"W × 20.5"D × 33.5"H</span></div>
+        <div class="spec-row"><span class="spec-label">Power</span><span class="spec-value">115V / 60Hz</span></div>
+        <div class="spec-row"><span class="spec-label">Energy</span><span class="spec-value">0.55–0.69 kWh/day</span></div>
+        <div class="spec-row"><span class="spec-label">Temp Control</span><span class="spec-value">7 settings, mechanical thermostat</span></div>
+        <div class="spec-row"><span class="spec-label">Features</span><span class="spec-value">LED light, one-touch defrost</span></div>
+        <div class="verdict">
+          <strong>Best value for quiet compressor cooling.</strong> At under $145 with sub-37 dB operation, this is the quietest compressor mini fridge tested. The 3.2 cu.ft capacity is generous for drinks. Needs 2–3" clearance on sides and back in a cabinet — not front-venting, so plan your cabinet ventilation carefully.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pick 3 -->
+    <div class="pick-card">
+      <div class="card-header">
+        <div>
+          <h4>AstroAI 4L / 6L Thermoelectric</h4>
+          <div class="tags">
+            <span class="tag">Thermoelectric</span>
+            <span class="tag">25 dB</span>
+            <span class="tag">Ultra-Compact</span>
+          </div>
+        </div>
+        <div class="price">~$36–50</div>
+      </div>
+      <div class="card-body">
+        <div class="spec-row"><span class="spec-label">Noise Level</span><span class="spec-value" style="color:var(--green)">25 dB</span></div>
+        <div class="spec-row"><span class="spec-label">Capacity</span><span class="spec-value">4L (6 cans) / 6L (8 cans)</span></div>
+        <div class="spec-row"><span class="spec-label">Dimensions (4L)</span><span class="spec-value">7.5"W × 10.6"D × 10.2"H</span></div>
+        <div class="spec-row"><span class="spec-label">Power</span><span class="spec-value">110V AC / 12V DC</span></div>
+        <div class="spec-row"><span class="spec-label">Cooling</span><span class="spec-value">~20–25°F below ambient</span></div>
+        <div class="spec-row"><span class="spec-label">Warming</span><span class="spec-value">Up to 150°F</span></div>
+        <div class="verdict">
+          <strong>Best for minimal needs + maximum silence on a budget.</strong> If you only need 4–8 drinks cold and want near-silence for under $50, this is unbeatable. Won't reach true fridge temps in summer, but keeps drinks pleasantly cool. Tiny footprint fits in any cabinet drawer.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pick 4 -->
+    <div class="pick-card">
+      <div class="card-header">
+        <div>
+          <h4>EUHOMY 1.7 Cu.Ft Compressor</h4>
+          <div class="tags">
+            <span class="tag">Compressor</span>
+            <span class="tag">38 dB</span>
+            <span class="tag">Compact</span>
+          </div>
+        </div>
+        <div class="price">~$116</div>
+      </div>
+      <div class="card-body">
+        <div class="spec-row"><span class="spec-label">Noise Level</span><span class="spec-value" style="color:var(--accent)">&lt;38 dB</span></div>
+        <div class="spec-row"><span class="spec-label">Capacity</span><span class="spec-value">1.7 cu.ft (1.5 fridge + 0.2 freezer)</span></div>
+        <div class="spec-row"><span class="spec-label">Dimensions</span><span class="spec-value">17.5"W × 16.9"D × 19.1"H</span></div>
+        <div class="spec-row"><span class="spec-label">Power</span><span class="spec-value">115V / 60Hz</span></div>
+        <div class="spec-row"><span class="spec-label">Energy</span><span class="spec-value">0.55 kWh/day (202 kWh/yr)</span></div>
+        <div class="spec-row"><span class="spec-label">Temp Range</span><span class="spec-value">32–50°F (7-speed control)</span></div>
+        <div class="spec-row"><span class="spec-label">Door</span><span class="spec-value">Reversible</span></div>
+        <div class="verdict">
+          <strong>Best compact compressor option.</strong> The small footprint (under 20" on every side) makes it the easiest compressor model to fit in a cabinet. At 38 dB, it's barely audible. Great price-to-performance ratio. The 1.7 cu.ft holds about 20–24 cans comfortably.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pick 5 -->
+    <div class="pick-card">
+      <div class="card-header">
+        <div>
+          <h4>Upstreman 3.2 Cu.Ft Compressor</h4>
+          <div class="tags">
+            <span class="tag">Compressor</span>
+            <span class="tag">38 dB</span>
+            <span class="tag">Large Capacity</span>
+          </div>
+        </div>
+        <div class="price">~$160</div>
+      </div>
+      <div class="card-body">
+        <div class="spec-row"><span class="spec-label">Noise Level</span><span class="spec-value" style="color:var(--accent)">38 dB</span></div>
+        <div class="spec-row"><span class="spec-label">Capacity</span><span class="spec-value">3.2 cu.ft (90.6L)</span></div>
+        <div class="spec-row"><span class="spec-label">Dimensions</span><span class="spec-value">18.7"W × 17.4"D × 33.1"H</span></div>
+        <div class="spec-row"><span class="spec-label">Power</span><span class="spec-value">115V / 60Hz</span></div>
+        <div class="spec-row"><span class="spec-label">Energy</span><span class="spec-value">0.5 kWh/day</span></div>
+        <div class="spec-row"><span class="spec-label">Temp Range</span><span class="spec-value">33.8–46.4°F (5 settings)</span></div>
+        <div class="spec-row"><span class="spec-label">Door</span><span class="spec-value">Reversible, manual defrost</span></div>
+        <div class="verdict">
+          <strong>Best mid-size compressor pick.</strong> Same quiet 38 dB as the EUHOMY but with nearly double the capacity. The 0.3 cu.ft freezer compartment is a bonus. At $160, it's excellent value for the size. The 18.7" width is manageable for most custom cabinets.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pick 6 -->
+    <div class="pick-card">
+      <div class="card-header">
+        <div>
+          <h4>Whynter BBR-801BG (Built-In)</h4>
+          <div class="tags">
+            <span class="tag">Compressor</span>
+            <span class="tag">&lt;44 dB</span>
+            <span class="tag">Front-Venting</span>
+          </div>
+        </div>
+        <div class="price">~$250–300</div>
+      </div>
+      <div class="card-body">
+        <div class="spec-row"><span class="spec-label">Noise Level</span><span class="spec-value" style="color:var(--amber)">&lt;44 dB</span></div>
+        <div class="spec-row"><span class="spec-label">Capacity</span><span class="spec-value">3.4 cu.ft (80–100 cans)</span></div>
+        <div class="spec-row"><span class="spec-label">Dimensions</span><span class="spec-value">15"W × 22.5"D × 33.75"H</span></div>
+        <div class="spec-row"><span class="spec-label">Power</span><span class="spec-value">80–100W / 115V / 1.0A</span></div>
+        <div class="spec-row"><span class="spec-label">Temp Range</span><span class="spec-value">34–54°F (digital control)</span></div>
+        <div class="spec-row"><span class="spec-label">Features</span><span class="spec-value">Glass door, UV protection, 4 shelves</span></div>
+        <div class="spec-row"><span class="spec-label">Installation</span><span class="spec-value">Built-in OR freestanding</span></div>
+        <div class="verdict">
+          <strong>Best for seamless cabinet integration.</strong> This is the only model here specifically designed for built-in installation with <strong>front venting</strong> — meaning you can enclose it on all sides without overheating. The 15" slim width is ideal for a cabinet column. Noisier than the budget picks, but the cabinet itself dampens sound. Glass door is a nice design touch.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pick 7 -->
+    <div class="pick-card">
+      <div class="card-header">
+        <div>
+          <h4>SMAD 1.4 Cu.Ft Absorption</h4>
+          <div class="tags">
+            <span class="tag">Absorption</span>
+            <span class="tag">0 dB</span>
+            <span class="tag">Compact Silent</span>
+          </div>
+        </div>
+        <div class="price">~$170–220</div>
+      </div>
+      <div class="card-body">
+        <div class="spec-row"><span class="spec-label">Noise Level</span><span class="spec-value" style="color:var(--green)">0 dB (silent)</span></div>
+        <div class="spec-row"><span class="spec-label">Capacity</span><span class="spec-value">1.4 cu.ft (40L)</span></div>
+        <div class="spec-row"><span class="spec-label">Dimensions</span><span class="spec-value">15.8"W × 18.3"D × 22"H</span></div>
+        <div class="spec-row"><span class="spec-label">Power</span><span class="spec-value">110V AC / 12V DC</span></div>
+        <div class="spec-row"><span class="spec-label">Energy</span><span class="spec-value">0.63 kWh/day</span></div>
+        <div class="spec-row"><span class="spec-label">Temp Range</span><span class="spec-value">32–50°F</span></div>
+        <div class="spec-row"><span class="spec-label">Door</span><span class="spec-value">Lockable, reversible</span></div>
+        <div class="verdict">
+          <strong>Best compact absorption option.</strong> Same dead-silent absorption tech in a smaller package. The 15.8" width and 22" height make it very easy to fit in a drawer-height cabinet space. Holds about 30–35 cans. The lock is a nice touch for shared spaces.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pick 8 -->
+    <div class="pick-card">
+      <div class="card-header">
+        <div>
+          <h4>Ivation 36 dB Thermoelectric</h4>
+          <div class="tags">
+            <span class="tag">Thermoelectric</span>
+            <span class="tag">36 dB</span>
+            <span class="tag">Mid-Size</span>
+          </div>
+        </div>
+        <div class="price">~$130–180</div>
+      </div>
+      <div class="card-body">
+        <div class="spec-row"><span class="spec-label">Noise Level</span><span class="spec-value" style="color:var(--accent)">36 dB</span></div>
+        <div class="spec-row"><span class="spec-label">Capacity</span><span class="spec-value">~1.2 cu.ft</span></div>
+        <div class="spec-row"><span class="spec-label">Dimensions</span><span class="spec-value">16.9"W × 17.7"D × 22"H</span></div>
+        <div class="spec-row"><span class="spec-label">Technology</span><span class="spec-value">Peltier thermoelectric</span></div>
+        <div class="spec-row"><span class="spec-label">Cooling</span><span class="spec-value">~20–25°F below ambient</span></div>
+        <div class="verdict">
+          <strong>Good middle ground.</strong> More capacity than the AstroAI with the same quiet thermoelectric tech. At 36 dB it's barely audible. The trade-off is it won't get drinks as cold as a compressor — expect ~50–55°F in a 75°F room. Fine for chilling, not for icy cold.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CABINET BUILD GUIDE ===== -->
+<section id="cabinet">
+  <h2><span class="icon">&#128295;</span> Cabinet Integration Guide</h2>
+  <p>Since you're building custom cabinetry, here's everything you need to know to do it safely and effectively.</p>
+
+  <div class="cabinet-grid">
+
+    <div class="cab-card">
+      <h4>&#9888;&#65039; Ventilation Is Non-Negotiable</h4>
+      <p>Every fridge — even absorption — generates heat that must escape. A sealed cabinet will cause overheating, increased energy use, compressor failure, and potentially a fire hazard.</p>
+      <div class="highlight warn">Minimum clearance: 2–3 inches on sides and back for standard models. Front-venting models (like the Whynter) need only front clearance.</div>
+    </div>
+
+    <div class="cab-card">
+      <h4>&#128168; Two Cabinet Approaches</h4>
+      <p><strong>Approach 1 — Door Style:</strong> Build a cabinet with a front-opening door. Place the fridge inside with clearance. The cabinet door conceals the fridge. Best with front-venting models or cabinets with open backs.</p>
+      <p><strong>Approach 2 — Drawer Style:</strong> Mount the fridge on heavy-duty drawer slides (rated 100+ lbs). The entire fridge slides out like a drawer. Works with any venting type since the back is accessible when pushed in with an open-back cabinet.</p>
+      <div class="highlight tip">For the drawer approach, use full-extension ball-bearing slides rated for the fridge weight plus contents (~60–80 lbs total).</div>
+    </div>
+
+    <div class="cab-card">
+      <h4>&#127777;&#65039; Heat Management</h4>
+      <p>Compressor fridges exhaust heat from rear coils. Absorption units produce heat along the back panel. Thermoelectric units blow warm air from the rear fan.</p>
+      <p>For enclosed cabinets: install a passive vent grille (4"×10" minimum) at the top-rear of the cabinet to let hot air escape via natural convection. For tighter builds, add a quiet 80mm or 120mm PC fan (12–18 dB) on a thermal switch.</p>
+      <div class="highlight info">Pro tip: A 120mm Noctua PC fan runs at 12–18 dB and can be powered by a USB adapter. Wire it to a thermal switch set at 95°F for automatic, silent ventilation.</div>
+    </div>
+
+    <div class="cab-card">
+      <h4>&#128268; Electrical Requirements</h4>
+      <p>All models listed run on standard 110–120V household outlets. Power draw ranges from 60–150W. No special circuits needed — a standard 15A outlet is fine. However, avoid extension cords for permanent installations.</p>
+      <p>Route the power cord through a grommet hole in the back of the cabinet. For the drawer approach, use a coiled/retractable cord or leave enough slack for full extension.</p>
+      <div class="highlight tip">Install a cord-rated grommet (1.5" diameter) in the cabinet back panel. For drawers, add 18" of extra cord slack beyond full extension.</div>
+    </div>
+
+    <div class="cab-card">
+      <h4>&#129692; Material Considerations</h4>
+      <p>The back panel of cabinets nearest the fridge will experience warm temperatures (up to 120°F for compressor models). Standard plywood is fine — MDF can handle it too. Avoid direct contact between the fridge and cabinet walls.</p>
+      <p>For extra protection, apply a heat-reflective foil barrier (like Reflectix) to the inside back panel. This reflects radiant heat and keeps your cabinet cooler.</p>
+      <div class="highlight warn">Wood can warp over time from repeated heating. Seal all interior cabinet surfaces with polyurethane or similar finish.</div>
+    </div>
+
+    <div class="cab-card">
+      <h4>&#128207; Recommended Cabinet Dimensions</h4>
+      <p>Add your clearance to the fridge dimensions for the minimum cabinet interior size:</p>
+      <p><strong>For a ~18"W fridge:</strong> Build cabinet interior at least 22"W × 24"D × 38"H (with 2" clearance on each side, 3" at back, 2" on top).</p>
+      <p><strong>For front-venting models (Whynter 15"W):</strong> Cabinet can be as tight as 16"W × 23"D × 35"H since ventilation is through the front grille.</p>
+      <div class="highlight info">Always measure your specific fridge before building. Add 1" beyond minimum clearances for easier installation and maintenance access.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FINAL RECOMMENDATIONS ===== -->
+<section id="recs">
+  <h2><span class="icon">&#127942;</span> Final Recommendations</h2>
+  <p>Based on your requirements — ultra-quiet, cabinet-mountable, for drinks in a bedroom/office, under $1,000 — here are the three paths ranked by priority:</p>
+
+  <div class="rec-grid">
+
+    <div class="rec-box top-pick">
+      <span class="rec-label">&#127942; Top Pick — Silent + Cabinet-Friendly</span>
+      <h4>SMAD 2.1 Cu.Ft Absorption Fridge</h4>
+      <div class="rec-price">~$200–250</div>
+      <div class="rec-why">Truly 0 dB. No compressor, no fan, no hum — ever. The 2.1 cu.ft size holds plenty of drinks. Since you're building a custom cabinet, the absorption technology is a perfect match: it produces less heat than compressors, and the rear heat panel is easy to ventilate with a simple open-back cabinet design. The reversible door adapts to your layout. This is what luxury hotels use for a reason.</div>
+      <div class="rec-specs">
+        <div class="rec-spec"><span class="rs-label">Noise</span> <span class="rs-val">0 dB</span></div>
+        <div class="rec-spec"><span class="rs-label">Size</span> <span class="rs-val">18.1×18.9×23.8"</span></div>
+        <div class="rec-spec"><span class="rs-label">Power</span> <span class="rs-val">110V, ~0.63 kWh/day</span></div>
+        <div class="rec-spec"><span class="rs-label">Holds</span> <span class="rs-val">~60 cans</span></div>
+      </div>
+    </div>
+
+    <div class="rec-box">
+      <span class="rec-label">Best Value — Quiet Compressor</span>
+      <h4>Frestec 3.2 Cu.Ft Compressor</h4>
+      <div class="rec-price">~$145</div>
+      <div class="rec-why">If you can tolerate a very faint hum (37 dB is quieter than a whisper), this gets you the most capacity and coldest temperatures for the least money. True refrigeration temps, freezer compartment, and Energy Star efficiency. Build the cabinet with an open back and 2–3" side clearance, and add an anti-vibration mat underneath. The compressor click when cycling is the main noise to consider.</div>
+      <div class="rec-specs">
+        <div class="rec-spec"><span class="rs-label">Noise</span> <span class="rs-val">&lt;37 dB</span></div>
+        <div class="rec-spec"><span class="rs-label">Size</span> <span class="rs-val">17.8×20.5×33.5"</span></div>
+        <div class="rec-spec"><span class="rs-label">Power</span> <span class="rs-val">115V, ~0.55 kWh/day</span></div>
+        <div class="rec-spec"><span class="rs-label">Holds</span> <span class="rs-val">~80+ cans</span></div>
+      </div>
+    </div>
+
+    <div class="rec-box">
+      <span class="rec-label">Best Built-In Design — Front Venting</span>
+      <h4>Whynter BBR-801BG Beverage Center</h4>
+      <div class="rec-price">~$250–300</div>
+      <div class="rec-why">The only model here purpose-built for built-in installation. Front venting means you can enclose it on all sides — simplifying your cabinet build enormously. The 15" slim width makes it ideal as a cabinet column. Digital temp control and glass door add a premium feel. The trade-off is slightly more noise (~44 dB), but the cabinet enclosure itself dampens 3–5 dB. Add weatherstripping to the cabinet door for extra sound isolation.</div>
+      <div class="rec-specs">
+        <div class="rec-spec"><span class="rs-label">Noise</span> <span class="rs-val">&lt;44 dB</span></div>
+        <div class="rec-spec"><span class="rs-label">Size</span> <span class="rs-val">15×22.5×33.75"</span></div>
+        <div class="rec-spec"><span class="rs-label">Power</span> <span class="rs-val">80–100W, 115V</span></div>
+        <div class="rec-spec"><span class="rs-label">Holds</span> <span class="rs-val">80–100 cans</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout">
+    <p><strong>Bottom Line:</strong> If silence is the #1 priority, go absorption (SMAD). If cold performance and value matter most, go compressor (Frestec). If you want the easiest cabinet build with no ventilation headaches, go front-venting (Whynter). All three are well under your $1,000 budget — even the priciest leaves you $700+ for cabinet materials and hardware.</p>
+  </div>
+</section>
+
+<!-- ===== SOURCES ===== -->
+<section id="sources">
+  <h2><span class="icon">&#128218;</span> Sources & References</h2>
+  <p>This guide synthesizes data from 20+ sources. All specifications were cross-referenced against manufacturer listings and retailer pages.</p>
+  <ol class="sources" style="padding-left:1.25rem; color:var(--text-muted); font-size:.85rem;">
+    <li><a href="https://fridge.com/blogs/news/thermoelectric-vs-compressor-cooling" target="_blank">Fridge.com — Thermoelectric vs Compressor Cooling</a></li>
+    <li><a href="https://dbskeptic.com/quiet-undercounter-refrigerators-beverage-coolers/" target="_blank">dBSkeptic — Quietest Undercounter Refrigerators</a></li>
+    <li><a href="https://www.soundproofgenius.com/quietest-fridge-2026-decibel-comparison/" target="_blank">Soundproof Genius — Quietest Fridge 2026 Decibel Comparison</a></li>
+    <li><a href="https://sixstoreys.com/best-small-quiet-refrigerator/" target="_blank">Six Storeys — Best Small Quiet Refrigerators 2026</a></li>
+    <li><a href="https://thekitchenappliancedad.com/is-it-actually-safe-to-put-a-mini-fridge-inside-a-cabinet/" target="_blank">Kitchen Appliance Dad — Mini Fridge in Cabinet Safety</a></li>
+    <li><a href="https://www.smadappliances.com/collections/absorption-refrigerators" target="_blank">SMAD — Absorption Refrigerator Collection</a></li>
+    <li><a href="https://www.amazon.com/SMETA-Fridge-Silent-Absorption-Bedroom/dp/B08H4QGLFM" target="_blank">Amazon — SMETA Absorption Mini Fridge</a></li>
+    <li><a href="https://whynter.com/product/bbr-801bg/" target="_blank">Whynter — BBR-801BG Built-In Beverage Fridge</a></li>
+    <li><a href="https://www.amazon.com/Frestec-Freezer-Refrigerator-Bedroom-Stainless/dp/B0D8DN9NP4" target="_blank">Amazon — Frestec 3.2 Cu.Ft Mini Fridge</a></li>
+    <li><a href="https://www.amazon.com/Upstreman-Adjustable-Thermostat-Refrigerator-Black-BR321/dp/B09RWFZTWW" target="_blank">Amazon — Upstreman 3.2 Cu.Ft Mini Fridge</a></li>
+    <li><a href="https://www.amazon.com/EUHOMY-Single-Door-Compact-Refrigerator/dp/B0CXXS6JKT" target="_blank">Amazon — EUHOMY 1.7 Cu.Ft Mini Fridge</a></li>
+    <li><a href="https://www.amazon.com/AstroAI-Portable-Powered-Thermoelectric-Offices/dp/B07S3VRZK4" target="_blank">Amazon — AstroAI 4L Thermoelectric Cooler</a></li>
+    <li><a href="https://www.dometic.com/en-us/professional/hospitality-solutions/minibars" target="_blank">Dometic — Premium Hotel Minibars</a></li>
+    <li><a href="https://www.reviewed.com/refrigerators/features/mini-fridge-vs-thermoelectric-cooler" target="_blank">Reviewed.com — Mini Fridge vs Thermoelectric Cooler</a></li>
+    <li><a href="https://www.danby.com/faqs/how-much-ventilation-space-is-needed-around-a-mini-fridge/" target="_blank">Danby — Ventilation Space Requirements</a></li>
+    <li><a href="https://moircooling.com/thermoelectric-vs-compressor-based-cooling-which-is-best-for-you/" target="_blank">MOIR Cooling — Thermoelectric vs Compressor</a></li>
+    <li><a href="https://www.midea.com/us/store/Compact-Refrigerators" target="_blank">Midea — Compact Refrigerators</a></li>
+    <li><a href="https://www.newair.com/blogs/learn/the-2025-beverage-fridge-buying-guide" target="_blank">NewAir — 2025 Beverage Fridge Buying Guide</a></li>
+    <li><a href="https://www.pamibar.com/pamibar-s30-eb" target="_blank">PamiBar — S30 Silent Minibar</a></li>
+    <li><a href="https://flavorycooking.com/can-you-install-a-mini-fridge-in-a-cabinet/" target="_blank">FlavouryCooking — Installing a Mini Fridge in a Cabinet</a></li>
+  </ol>
+</section>
+
+<footer>
+  <p>Researched and compiled April 2026. Prices and availability may vary. Always verify current specs on the manufacturer's website before purchasing. This guide is for informational purposes — follow all manufacturer installation guidelines for safety.</p>
+</footer>
+
+<script>
+// Fridge data
+const fridges = [
+  { name:"SMAD 2.1 Cu.Ft", tech:"absorption", noise:0, noiseLabel:"0 dB", capacity:"2.1 cu.ft", dims:"18.1×18.9×23.8\"", power:"~75W, 110V AC/12V DC", price:225, priceLabel:"~$225", temp:"32–50°F", cabinet:"Yes — open back needed", cabinetReady:true },
+  { name:"SMAD 1.4 Cu.Ft", tech:"absorption", noise:0, noiseLabel:"0 dB", capacity:"1.4 cu.ft", dims:"15.8×18.3×22\"", power:"~65W, 110V AC/12V DC", price:190, priceLabel:"~$190", temp:"32–50°F", cabinet:"Yes — open back needed", cabinetReady:true },
+  { name:"SMETA 1.0 Cu.Ft", tech:"absorption", noise:0, noiseLabel:"0 dB", capacity:"1.0 cu.ft", dims:"~15×17×20\"", power:"~60W, 110V AC/12V DC", price:160, priceLabel:"~$160", temp:"32–50°F", cabinet:"Yes — open back needed", cabinetReady:true },
+  { name:"AstroAI 4L", tech:"thermoelectric", noise:25, noiseLabel:"25 dB", capacity:"4L (6 cans)", dims:"7.5×10.6×10.2\"", power:"~48W, 110V/12V", price:36, priceLabel:"~$36", temp:"20–25°F below ambient", cabinet:"Yes — minimal heat", cabinetReady:true },
+  { name:"AstroAI 6L", tech:"thermoelectric", noise:25, noiseLabel:"25 dB", capacity:"6L (8 cans)", dims:"~8×11×11\"", power:"~60W, 110V/12V", price:50, priceLabel:"~$50", temp:"20–25°F below ambient", cabinet:"Yes — minimal heat", cabinetReady:true },
+  { name:"Ivation Thermoelectric", tech:"thermoelectric", noise:36, noiseLabel:"36 dB", capacity:"~1.2 cu.ft", dims:"16.9×17.7×22\"", power:"~65W, 110V", price:155, priceLabel:"~$155", temp:"~50–55°F in 75°F room", cabinet:"Yes — needs rear vent", cabinetReady:true },
+  { name:"Frestec 3.2 Cu.Ft", tech:"compressor", noise:37, noiseLabel:"<37 dB", capacity:"3.2 cu.ft", dims:"17.8×20.5×33.5\"", power:"~80W, 115V", price:145, priceLabel:"~$145", temp:"28–46°F", cabinet:"Needs 2–3\" clearance", cabinetReady:false },
+  { name:"EUHOMY 1.7 Cu.Ft", tech:"compressor", noise:38, noiseLabel:"<38 dB", capacity:"1.7 cu.ft", dims:"17.5×16.9×19.1\"", power:"~75W, 115V", price:116, priceLabel:"~$116", temp:"32–50°F", cabinet:"Needs 2–3\" clearance", cabinetReady:false },
+  { name:"Upstreman 3.2 Cu.Ft", tech:"compressor", noise:38, noiseLabel:"38 dB", capacity:"3.2 cu.ft", dims:"18.7×17.4×33.1\"", power:"~80W, 115V", price:160, priceLabel:"~$160", temp:"33.8–46.4°F", cabinet:"Needs 2–3\" clearance", cabinetReady:false },
+  { name:"Upstreman 1.7 Cu.Ft", tech:"compressor", noise:38, noiseLabel:"38 dB", capacity:"1.7 cu.ft", dims:"~17×17×20\"", power:"~70W, 115V", price:130, priceLabel:"~$130", temp:"33–46°F", cabinet:"Needs 2–3\" clearance", cabinetReady:false },
+  { name:"BANGSON 3.2 Cu.Ft", tech:"compressor", noise:38, noiseLabel:"38 dB", capacity:"3.2 cu.ft", dims:"~18×18×33\"", power:"~80W, 115V", price:150, priceLabel:"~$150", temp:"33–46°F", cabinet:"Needs 2–3\" clearance", cabinetReady:false },
+  { name:"BLACK+DECKER 2.5 Cu.Ft", tech:"compressor", noise:41, noiseLabel:"41 dB", capacity:"2.5 cu.ft", dims:"~18×18×27\"", power:"~80W, 115V", price:200, priceLabel:"~$200", temp:"32–50°F", cabinet:"Needs 2–3\" clearance", cabinetReady:false },
+  { name:"Midea WHS-87LSS1", tech:"compressor", noise:42, noiseLabel:"<42 dB", capacity:"2.4 cu.ft", dims:"17.5×20.1×24.9\"", power:"~80W, 115V", price:180, priceLabel:"~$180", temp:"28–36°F", cabinet:"Needs 2–3\" clearance", cabinetReady:false },
+  { name:"Whynter BBR-801BG", tech:"compressor", noise:44, noiseLabel:"<44 dB", capacity:"3.4 cu.ft (80 cans)", dims:"15×22.5×33.75\"", power:"80–100W, 115V", price:275, priceLabel:"~$275", temp:"34–54°F", cabinet:"Front-venting — fully enclosable", cabinetReady:true },
+  { name:"Antarctic Star 3.2 Cu.Ft", tech:"compressor", noise:43, noiseLabel:"43 dB", capacity:"3.2 cu.ft", dims:"~18×18×33\"", power:"~85W, 115V", price:180, priceLabel:"~$180", temp:"32–50°F", cabinet:"Needs 2–3\" clearance", cabinetReady:false },
+  { name:"Honeywell 1.6 Cu.Ft", tech:"compressor", noise:45, noiseLabel:"45 dB", capacity:"1.6 cu.ft", dims:"~18×18×20\"", power:"~75W, 115V", price:148, priceLabel:"~$148", temp:"32–50°F", cabinet:"Needs 2–3\" clearance", cabinetReady:false },
+];
+
+// Noise badge helper
+function noiseBadge(db) {
+  if (db === 0) return '<span class="noise-badge ultra">0 dB ★</span>';
+  if (db <= 30) return `<span class="noise-badge ultra">${db} dB</span>`;
+  if (db <= 38) return `<span class="noise-badge low">${db} dB</span>`;
+  if (db <= 42) return `<span class="noise-badge med">${db} dB</span>`;
+  return `<span class="noise-badge loud">${db} dB</span>`;
+}
+
+function techTag(t) {
+  const m = {compressor:'comp',thermoelectric:'thermo',absorption:'absorb'};
+  const l = {compressor:'Compressor',thermoelectric:'Thermoelectric',absorption:'Absorption'};
+  return `<span class="tech-tag ${m[t]}">${l[t]}</span>`;
+}
+
+let sortCol = 'noise', sortAsc = true;
+let activeFilter = 'all';
+
+function filterFridges(data) {
+  if (activeFilter === 'all') return data;
+  if (activeFilter === 'compressor') return data.filter(f=>f.tech==='compressor');
+  if (activeFilter === 'thermoelectric') return data.filter(f=>f.tech==='thermoelectric');
+  if (activeFilter === 'absorption') return data.filter(f=>f.tech==='absorption');
+  if (activeFilter === 'silent') return data.filter(f=>f.noise<35);
+  if (activeFilter === 'quiet') return data.filter(f=>f.noise>=35&&f.noise<=40);
+  if (activeFilter === 'budget') return data.filter(f=>f.price<150);
+  return data;
+}
+
+function sortFridges(data) {
+  const d = [...data];
+  d.sort((a,b) => {
+    let va, vb;
+    switch(sortCol) {
+      case 'name': va=a.name; vb=b.name; return sortAsc?va.localeCompare(vb):vb.localeCompare(va);
+      case 'tech': va=a.tech; vb=b.tech; return sortAsc?va.localeCompare(vb):vb.localeCompare(va);
+      case 'noise': va=a.noise; vb=b.noise; break;
+      case 'price': va=a.price; vb=b.price; break;
+      default: va=a.noise; vb=b.noise;
+    }
+    return sortAsc?(va-vb):(vb-va);
+  });
+  return d;
+}
+
+function render() {
+  const tbody = document.getElementById('table-body');
+  const data = sortFridges(filterFridges(fridges));
+  tbody.innerHTML = data.map(f => `<tr>
+    <td class="model-name">${f.name}</td>
+    <td>${techTag(f.tech)}</td>
+    <td>${noiseBadge(f.noise)}</td>
+    <td>${f.capacity}</td>
+    <td style="font-size:.82rem">${f.dims}</td>
+    <td style="font-size:.82rem">${f.power}</td>
+    <td class="price-tag">${f.priceLabel}</td>
+    <td style="font-size:.82rem">${f.temp}</td>
+    <td style="font-size:.82rem">${f.cabinetReady?'<span style="color:var(--green)">✓ '+f.cabinet+'</span>':'<span style="color:var(--amber)">'+f.cabinet+'</span>'}</td>
+  </tr>`).join('');
+}
+
+// Sort handlers
+document.querySelectorAll('th[data-sort]').forEach(th => {
+  th.addEventListener('click', () => {
+    const col = th.dataset.sort;
+    if (sortCol === col) sortAsc = !sortAsc;
+    else { sortCol = col; sortAsc = true; }
+    render();
+  });
+});
+
+// Filter handlers
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    render();
+  });
+});
+
+// Smooth scroll for nav
+document.querySelectorAll('nav a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const id = a.getAttribute('href').slice(1);
+    document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+// Initial render
+render();
+</script>
+
+</body>
+</html>

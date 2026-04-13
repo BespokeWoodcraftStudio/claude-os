@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How a Slip Ring Works in a Cord Reel</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #1a1a2e;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    min-height: 100vh;
+  }
+  h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #f5c542;
+    text-align: center;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .diagram-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 800px;
+    width: 100%;
+  }
+  .section-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #f5c542;
+    margin-bottom: 10px;
+  }
+  svg { width: 100%; height: auto; }
+  .note-box {
+    background: #16213e;
+    border: 1px solid #334;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-top: 10px;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+  .note-box strong { color: #f5c542; }
+  .note-box .warn { color: #e74c3c; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<h1>How a Slip Ring Works Inside a Cord Reel</h1>
+<p class="subtitle">The component that transfers power from a fixed mount to a spinning spool</p>
+
+<div class="diagram-container">
+
+  <!-- Cross-section diagram -->
+  <div>
+    <div class="section-label">Cross-Section View</div>
+    <svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+      <!-- Background -->
+      <rect width="700" height="420" fill="#1a1a2e" rx="8"/>
+
+      <!-- Reel Housing (stationary) -->
+      <rect x="60" y="40" width="580" height="340" rx="16" fill="none" stroke="#445" stroke-width="2" stroke-dasharray="8,4"/>
+      <text x="350" y="30" text-anchor="middle" fill="#667" font-size="13" font-family="sans-serif">REEL HOUSING (stationary, bolted to wall/ceiling)</text>
+
+      <!-- Center axle -->
+      <rect x="335" y="80" width="30" height="260" rx="4" fill="#334" stroke="#556" stroke-width="1.5"/>
+      <text x="350" y="365" text-anchor="middle" fill="#778" font-size="11" font-family="sans-serif">AXLE</text>
+
+      <!-- Slip Ring Assembly - center area -->
+      <!-- Ring 1 (Hot 1) -->
+      <rect x="290" y="130" width="120" height="24" rx="12" fill="#c0392b" fill-opacity="0.3" stroke="#e74c3c" stroke-width="2"/>
+      <text x="350" y="147" text-anchor="middle" fill="#e74c3c" font-size="11" font-weight="600" font-family="sans-serif">RING 1 (HOT)</text>
+
+      <!-- Ring 2 (Hot 2 / Neutral) -->
+      <rect x="290" y="174" width="120" height="24" rx="12" fill="#2980b9" fill-opacity="0.3" stroke="#3498db" stroke-width="2"/>
+      <text x="350" y="191" text-anchor="middle" fill="#3498db" font-size="11" font-weight="600" font-family="sans-serif">RING 2 (HOT 2)</text>
+
+      <!-- Ring 3 (Ground) -->
+      <rect x="290" y="218" width="120" height="24" rx="12" fill="#27ae60" fill-opacity="0.3" stroke="#2ecc71" stroke-width="2"/>
+      <text x="350" y="235" text-anchor="middle" fill="#2ecc71" font-size="11" font-weight="600" font-family="sans-serif">RING 3 (GND)</text>
+
+      <!-- Brushes on left side (attached to rotating spool) -->
+      <!-- Brush 1 -->
+      <rect x="258" y="133" width="30" height="18" rx="3" fill="#f5c542" stroke="#d4a832" stroke-width="1.5"/>
+      <line x1="258" y1="142" x2="220" y2="142" stroke="#f5c542" stroke-width="2"/>
+
+      <!-- Brush 2 -->
+      <rect x="258" y="177" width="30" height="18" rx="3" fill="#f5c542" stroke="#d4a832" stroke-width="1.5"/>
+      <line x1="258" y1="186" x2="220" y2="186" stroke="#f5c542" stroke-width="2"/>
+
+      <!-- Brush 3 -->
+      <rect x="258" y="221" width="30" height="18" rx="3" fill="#f5c542" stroke="#d4a832" stroke-width="1.5"/>
+      <line x1="258" y1="230" x2="220" y2="230" stroke="#f5c542" stroke-width="2"/>
+
+      <!-- Brush label -->
+      <text x="200" y="125" text-anchor="end" fill="#f5c542" font-size="11" font-weight="600" font-family="sans-serif">BRUSHES</text>
+      <text x="200" y="139" text-anchor="end" fill="#999" font-size="10" font-family="sans-serif">(rotate with spool)</text>
+
+      <!-- Spring contact arrows -->
+      <text x="273" y="162" text-anchor="middle" fill="#f5c542" font-size="10" font-family="sans-serif">↔</text>
+      <text x="273" y="206" text-anchor="middle" fill="#f5c542" font-size="10" font-family="sans-serif">↔</text>
+      <text x="273" y="250" text-anchor="middle" fill="#f5c542" font-size="10" font-family="sans-serif">↔</text>
+
+      <!-- Fixed wires from rings to input (right side) -->
+      <line x1="412" y1="142" x2="520" y2="142" stroke="#e74c3c" stroke-width="2"/>
+      <line x1="412" y1="186" x2="520" y2="186" stroke="#3498db" stroke-width="2"/>
+      <line x1="412" y1="230" x2="520" y2="230" stroke="#2ecc71" stroke-width="2"/>
+
+      <!-- Input cable bundle -->
+      <line x1="520" y1="142" x2="560" y2="170" stroke="#e74c3c" stroke-width="2"/>
+      <line x1="520" y1="186" x2="560" y2="180" stroke="#3498db" stroke-width="2"/>
+      <line x1="520" y1="230" x2="560" y2="190" stroke="#2ecc71" stroke-width="2"/>
+
+      <!-- Input cable -->
+      <rect x="555" y="162" width="80" height="36" rx="18" fill="#334" stroke="#556" stroke-width="2"/>
+      <text x="595" y="184" text-anchor="middle" fill="#ccc" font-size="10" font-weight="600" font-family="sans-serif">INPUT</text>
+
+      <!-- Input label -->
+      <text x="595" y="215" text-anchor="middle" fill="#888" font-size="10" font-family="sans-serif">To wall plug</text>
+      <text x="595" y="228" text-anchor="middle" fill="#888" font-size="10" font-family="sans-serif">(NEMA 6-20P)</text>
+      <text x="595" y="248" text-anchor="middle" fill="#667" font-size="10" font-style="italic" font-family="sans-serif">STATIONARY</text>
+
+      <!-- Spool wires from brushes to output (left side) -->
+      <line x1="220" y1="142" x2="160" y2="142" stroke="#e74c3c" stroke-width="2" stroke-dasharray="6,3"/>
+      <line x1="220" y1="186" x2="160" y2="186" stroke="#3498db" stroke-width="2" stroke-dasharray="6,3"/>
+      <line x1="220" y1="230" x2="160" y2="230" stroke="#2ecc71" stroke-width="2" stroke-dasharray="6,3"/>
+
+      <!-- Output cable bundle -->
+      <line x1="160" y1="142" x2="130" y2="170" stroke="#e74c3c" stroke-width="2" stroke-dasharray="6,3"/>
+      <line x1="160" y1="186" x2="130" y2="180" stroke="#3498db" stroke-width="2" stroke-dasharray="6,3"/>
+      <line x1="160" y1="230" x2="130" y2="190" stroke="#2ecc71" stroke-width="2" stroke-dasharray="6,3"/>
+
+      <!-- Output cable -->
+      <rect x="70" y="162" width="65" height="36" rx="18" fill="#334" stroke="#556" stroke-width="2"/>
+      <text x="102" y="184" text-anchor="middle" fill="#ccc" font-size="10" font-weight="600" font-family="sans-serif">OUTPUT</text>
+
+      <!-- Output label -->
+      <text x="102" y="215" text-anchor="middle" fill="#888" font-size="10" font-family="sans-serif">Cord on spool</text>
+      <text x="102" y="228" text-anchor="middle" fill="#888" font-size="10" font-family="sans-serif">(NEMA 6-20R)</text>
+      <text x="102" y="248" text-anchor="middle" fill="#667" font-size="10" font-style="italic" font-family="sans-serif">ROTATES</text>
+
+      <!-- Rotation arrow around spool side -->
+      <path d="M 155 280 A 60 60 0 0 1 155 290" fill="none" stroke="#f5c542" stroke-width="1.5"/>
+      <path d="M 100 285 C 100 260 210 260 210 285 C 210 310 100 310 100 285" fill="none" stroke="#f5c542" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <polygon points="104,278 100,290 112,288" fill="#f5c542"/>
+      <text x="155" y="320" text-anchor="middle" fill="#f5c542" font-size="10" font-family="sans-serif">spool rotates</text>
+
+      <!-- Power flow arrow -->
+      <defs>
+        <marker id="arrowR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="#f5c542"/>
+        </marker>
+        <marker id="arrowL" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+          <polygon points="8 0, 0 3, 8 6" fill="#f5c542"/>
+        </marker>
+      </defs>
+
+      <line x1="560" y1="80" x2="140" y2="80" stroke="#f5c542" stroke-width="1.5" marker-end="url(#arrowL)" stroke-dasharray="6,3"/>
+      <text x="350" y="75" text-anchor="middle" fill="#f5c542" font-size="12" font-weight="600" font-family="sans-serif">⚡ POWER FLOW ⚡</text>
+
+      <!-- Legend -->
+      <rect x="80" y="350" width="540" height="50" rx="6" fill="#16213e" stroke="#334" stroke-width="1"/>
+      <circle cx="110" cy="375" r="6" fill="#e74c3c"/>
+      <text x="122" y="379" fill="#ccc" font-size="11" font-family="sans-serif">Hot 1 (L1)</text>
+      <circle cx="220" cy="375" r="6" fill="#3498db"/>
+      <text x="232" y="379" fill="#ccc" font-size="11" font-family="sans-serif">Hot 2 (L2)</text>
+      <circle cx="340" cy="375" r="6" fill="#2ecc71"/>
+      <text x="352" y="379" fill="#ccc" font-size="11" font-family="sans-serif">Ground</text>
+      <rect x="440" y="369" width="16" height="12" rx="2" fill="#f5c542"/>
+      <text x="462" y="379" fill="#ccc" font-size="11" font-family="sans-serif">Brush (spring-loaded contact)</text>
+    </svg>
+  </div>
+
+  <!-- Why it matters for 240V -->
+  <div class="note-box">
+    <strong>Why this matters for your 240V project:</strong><br><br>
+    On a 120V reel, the three conductors are Hot, Neutral, and Ground. On your 240V/20A circuit (NEMA 6-20), those same three conductors become <span style="color:#e74c3c">Hot 1 (L1)</span>, <span style="color:#3498db">Hot 2 (L2)</span>, and <span style="color:#2ecc71">Ground</span> — no neutral needed. The slip ring doesn't know or care what voltage is passing through it. What matters is:<br><br>
+    <strong>1. Insulation rating</strong> — the gap between the rings must handle 240V without arcing. Consumer reels are typically insulated for 300V+, so this is usually fine.<br><br>
+    <strong>2. Current rating</strong> — the brushes and rings must handle 20A continuous. A reel already rated for 20A at 120V handles the same 20A at 240V.<br><br>
+    <strong>3. Contact quality</strong> — worn brushes create resistance, which creates heat. This is true at any voltage but gets worse under higher loads. Inspect brushes periodically.<br><br>
+    <span class="warn">⚠ The slip ring is the only electrical component in the reel that matters for your voltage question.</span> The spring, spool, housing, and bracket are purely mechanical.
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undercounter Drawer Fridges Under $1,000 — With Noise Levels</title>
+<style>
+  :root {
+    --bg: #0c0e14;
+    --surface: #161923;
+    --surface2: #1e2230;
+    --border: #282d3e;
+    --text: #e2e4eb;
+    --muted: #7f8597;
+    --accent: #5b8af5;
+    --accent-dim: rgba(91,138,245,0.12);
+    --green: #34d399;
+    --green-dim: rgba(52,211,153,0.12);
+    --amber: #f59e0b;
+    --amber-dim: rgba(245,158,11,0.10);
+    --red: #ef4444;
+    --red-dim: rgba(239,68,68,0.10);
+    --purple: #a78bfa;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg); color: var(--text);
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(12,14,20,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border); padding: 0 2rem;
+  }
+  nav .inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; gap: 1.5rem; height: 52px;
+  }
+  nav .logo { font-weight: 700; font-size: .95rem; }
+  nav a { color: var(--muted); text-decoration: none; font-size: .82rem; transition: color .2s; }
+  nav a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    max-width: 1100px; margin: 0 auto; padding: 3.5rem 2rem 2rem;
+  }
+  .hero h1 {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--green));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: .5rem;
+  }
+  .hero p { color: var(--muted); font-size: 1.05rem; max-width: 680px; }
+  .hero .badges { display: flex; gap: .5rem; margin-top: 1rem; flex-wrap: wrap; }
+  .hero .badge {
+    font-size: .75rem; font-weight: 600; padding: .25rem .65rem;
+    border-radius: 6px; background: var(--surface); border: 1px solid var(--border);
+  }
+
+  /* SECTIONS */
+  section { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+  section h2 {
+    font-size: 1.35rem; font-weight: 700; margin-bottom: .5rem;
+    display: flex; align-items: center; gap: .4rem;
+  }
+  section > p { color: var(--muted); margin-bottom: 1.25rem; max-width: 720px; }
+  .divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
+
+  /* NOISE CONTEXT */
+  .noise-ctx {
+    display: flex; gap: 0; border-radius: 10px; overflow: hidden; margin-bottom: 1.5rem;
+  }
+  .noise-ctx .band {
+    flex: 1; padding: .75rem .5rem; text-align: center; font-size: .8rem;
+  }
+  .noise-ctx .band .val { font-size: 1.1rem; font-weight: 800; }
+  .noise-ctx .band.g { background: rgba(52,211,153,0.12); color: var(--green); }
+  .noise-ctx .band.b { background: rgba(91,138,245,0.10); color: var(--accent); }
+  .noise-ctx .band.a { background: rgba(245,158,11,0.08); color: var(--amber); }
+
+  /* CARDS */
+  .card-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+    gap: 1.25rem; margin: 1.25rem 0;
+  }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; overflow: hidden; transition: border-color .2s, transform .15s;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card.pick { border-color: var(--green); }
+  .card .card-top {
+    padding: 1.25rem 1.25rem .75rem;
+    display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: .5rem;
+  }
+  .card .card-top h3 { font-size: 1.1rem; font-weight: 700; }
+  .card .card-top .price-tag {
+    font-size: 1.25rem; font-weight: 800; color: var(--green);
+  }
+  .card .card-top .pick-badge {
+    display: inline-block; font-size: .68rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .04em;
+    padding: .15rem .5rem; border-radius: 5px;
+    background: var(--green-dim); color: var(--green);
+  }
+  .card .tags { display: flex; gap: .3rem; flex-wrap: wrap; padding: 0 1.25rem .5rem; }
+  .card .tag {
+    font-size: .7rem; padding: .12rem .4rem; border-radius: 4px;
+    background: var(--surface2); color: var(--muted);
+  }
+
+  /* SPEC GRID inside card */
+  .specs {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px; margin: 0 1.25rem; border-radius: 8px; overflow: hidden;
+    background: var(--border);
+  }
+  .spec-cell {
+    background: var(--surface2); padding: .55rem .7rem;
+  }
+  .spec-cell .label { font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; }
+  .spec-cell .value { font-size: .9rem; font-weight: 600; margin-top: .1rem; }
+  .spec-cell .value.noise-green { color: var(--green); }
+  .spec-cell .value.noise-blue { color: var(--accent); }
+  .spec-cell .value.noise-amber { color: var(--amber); }
+
+  /* VERDICT */
+  .verdict {
+    margin: .75rem 1.25rem 1.25rem; padding: .75rem .85rem;
+    background: var(--surface2); border-radius: 8px;
+    font-size: .85rem; color: var(--muted);
+  }
+  .verdict strong { color: var(--text); }
+
+  /* QUICK COMPARE TABLE */
+  .table-wrap {
+    overflow-x: auto; border: 1px solid var(--border);
+    border-radius: 10px; background: var(--surface); margin: 1.25rem 0;
+  }
+  table { width: 100%; border-collapse: collapse; min-width: 760px; }
+  thead { background: var(--surface2); }
+  th {
+    text-align: left; padding: .7rem .85rem; font-size: .72rem;
+    text-transform: uppercase; letter-spacing: .04em; color: var(--muted);
+    font-weight: 600; border-bottom: 1px solid var(--border); white-space: nowrap;
+  }
+  td {
+    padding: .65rem .85rem; font-size: .85rem;
+    border-bottom: 1px solid var(--border);
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(91,138,245,0.03); }
+  .nb { display: inline-block; padding: .1rem .4rem; border-radius: 5px; font-weight: 600; font-size: .8rem; }
+  .nb.g { background: var(--green-dim); color: var(--green); }
+  .nb.b { background: var(--accent-dim); color: var(--accent); }
+  .nb.a { background: var(--amber-dim); color: var(--amber); }
+  .model-name { font-weight: 600; }
+  .price-col { font-weight: 700; color: var(--green); }
+
+  /* CALLOUT */
+  .callout {
+    background: var(--surface); border-left: 3px solid var(--accent);
+    padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin: 1.25rem 0;
+  }
+  .callout strong { color: var(--text); }
+  .callout p { color: var(--muted); margin: 0; font-size: .9rem; }
+
+  /* OVER BUDGET SECTION */
+  .over-budget { opacity: .6; }
+  .over-budget .card { border-style: dashed; }
+
+  /* SOURCES */
+  .sources { list-style: decimal; padding-left: 1.25rem; }
+  .sources li { margin-bottom: .3rem; font-size: .82rem; color: var(--muted); }
+  .sources a { color: var(--accent); text-decoration: none; }
+
+  footer {
+    max-width: 1100px; margin: 0 auto; padding: 2rem;
+    border-top: 1px solid var(--border); margin-top: 1.5rem;
+    font-size: .8rem; color: var(--muted);
+  }
+
+  @media (max-width: 560px) {
+    .card-grid { grid-template-columns: 1fr; }
+    .specs { grid-template-columns: 1fr; }
+    .noise-ctx { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <span class="logo">Drawer Fridge Finder</span>
+    <a href="#context">Noise Guide</a>
+    <a href="#under1k">Under $1,000</a>
+    <a href="#compare">Quick Compare</a>
+    <a href="#over">Over Budget</a>
+    <a href="#tips">Install Tips</a>
+    <a href="#sources">Sources</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Undercounter Drawer Fridges Under $1,000</h1>
+  <p>Double-drawer refrigerators that slide under your counter, with noise levels for every model. These are true drawer-pull units — not standard mini fridges — designed for built-in or freestanding installation.</p>
+  <div class="badges">
+    <span class="badge">24" Standard Width</span>
+    <span class="badge">Double Drawer</span>
+    <span class="badge">Front-Venting</span>
+    <span class="badge">All Under $1,000</span>
+  </div>
+</div>
+
+<!-- NOISE CONTEXT -->
+<section id="context">
+  <h2>&#127911; Noise Level Context</h2>
+  <p>All drawer fridges use compressors (no thermoelectric or absorption options exist in this form factor). Here's what the dB numbers mean in practice:</p>
+  <div class="noise-ctx">
+    <div class="band g"><div class="val">&le;38 dB</div>Barely audible<br>Quieter than a whisper</div>
+    <div class="band b"><div class="val">39–40 dB</div>Very quiet<br>Soft background hum</div>
+    <div class="band a"><div class="val">41–44 dB</div>Quiet but noticeable<br>Like a quiet library</div>
+  </div>
+</section>
+
+<!-- UNDER $1,000 OPTIONS -->
+<section id="under1k">
+  <h2>&#10052;&#65039; Drawer Fridges Under $1,000</h2>
+  <p>These are the models that meet your budget. All are 24" wide, double-drawer, front-venting (cabinet-safe), and available now.</p>
+
+  <div class="card-grid">
+
+    <!-- TYLZA -->
+    <div class="card pick">
+      <div class="card-top">
+        <div>
+          <span class="pick-badge">&#127942; Quietest + Best Value</span>
+          <h3>Tylza/Nipus 24" Double Drawer</h3>
+        </div>
+        <div class="price-tag">~$579</div>
+      </div>
+      <div class="tags">
+        <span class="tag">Compressor</span>
+        <span class="tag">Front-Venting</span>
+        <span class="tag">Built-In or Freestanding</span>
+        <span class="tag">Wheels Included</span>
+      </div>
+      <div class="specs">
+        <div class="spec-cell"><div class="label">Noise Level</div><div class="value noise-green">38 dB</div></div>
+        <div class="spec-cell"><div class="label">Capacity</div><div class="value">4.24 cu.ft / 133 cans</div></div>
+        <div class="spec-cell"><div class="label">Dimensions (W×D×H)</div><div class="value">23.5" × 22.7" × 33.7"</div></div>
+        <div class="spec-cell"><div class="label">Power</div><div class="value">120W / 115V</div></div>
+        <div class="spec-cell"><div class="label">Temp Range</div><div class="value">37–65°F</div></div>
+        <div class="spec-cell"><div class="label">Construction</div><div class="value">Stainless Steel, IPX4</div></div>
+        <div class="spec-cell"><div class="label">Installation</div><div class="value">Built-in or Freestanding</div></div>
+        <div class="spec-cell"><div class="label">Features</div><div class="value">Digital controls, LED, mesh organizers</div></div>
+      </div>
+      <div class="verdict">
+        <strong>Why this is the top pick:</strong> At 38 dB, it's the quietest drawer fridge under $1,000 — tied with the best mini fridges on the market. The $579 price is exceptional for a double-drawer unit. The 133-can capacity covers serious drink storage. Wheels are included for freestanding use, and it converts to built-in with the included adjustable legs. The single-zone cooling (37–65°F) is the only limitation — you can't freeze.
+      </div>
+    </div>
+
+    <!-- MOJGAR -->
+    <div class="card">
+      <div class="card-top">
+        <div><h3>Mojgar 24" Double Drawer (Foam Door)</h3></div>
+        <div class="price-tag">~$640</div>
+      </div>
+      <div class="tags">
+        <span class="tag">Compressor</span>
+        <span class="tag">Front-Venting</span>
+        <span class="tag">304 Stainless</span>
+        <span class="tag">Auto-Close Doors</span>
+      </div>
+      <div class="specs">
+        <div class="spec-cell"><div class="label">Noise Level</div><div class="value noise-blue">&lt;40 dB</div></div>
+        <div class="spec-cell"><div class="label">Capacity</div><div class="value">5.3 cu.ft / 100 cans</div></div>
+        <div class="spec-cell"><div class="label">Dimensions (W×D×H)</div><div class="value">23.4" × 22.6" × 34.3"</div></div>
+        <div class="spec-cell"><div class="label">Power</div><div class="value">~110W / 115V</div></div>
+        <div class="spec-cell"><div class="label">Temp Range</div><div class="value">32–65°F</div></div>
+        <div class="spec-cell"><div class="label">Construction</div><div class="value">304 Stainless, IPX4</div></div>
+        <div class="spec-cell"><div class="label">Installation</div><div class="value">Built-in or Freestanding</div></div>
+        <div class="spec-cell"><div class="label">Features</div><div class="value">Auto-close, blue LED, auto-defrost, digital touch</div></div>
+      </div>
+      <div class="verdict">
+        <strong>Best capacity per dollar.</strong> At 5.3 cu.ft with 100-can capacity, this is the largest drawer fridge under $1,000. The auto-closing drawers are a standout feature — no more accidentally leaving it cracked open. The foam door (vs. glass) provides better insulation. The <40 dB spec is solid. The lower temp range (32°F) means it can get drinks colder than the Tylza.
+      </div>
+    </div>
+
+    <!-- GARVEE -->
+    <div class="card">
+      <div class="card-top">
+        <div><h3>Garvee 24" Double Drawer</h3></div>
+        <div class="price-tag">~$550–700</div>
+      </div>
+      <div class="tags">
+        <span class="tag">Compressor</span>
+        <span class="tag">Front-Venting</span>
+        <span class="tag">Eco Refrigerant</span>
+        <span class="tag">Auto-Close</span>
+      </div>
+      <div class="specs">
+        <div class="spec-cell"><div class="label">Noise Level</div><div class="value noise-blue">&lt;39 dB</div></div>
+        <div class="spec-cell"><div class="label">Capacity</div><div class="value">~5.1 cu.ft</div></div>
+        <div class="spec-cell"><div class="label">Dimensions (W×D×H)</div><div class="value">23.4" × 22" × 32.3"</div></div>
+        <div class="spec-cell"><div class="label">Power</div><div class="value">~100W / 115V</div></div>
+        <div class="spec-cell"><div class="label">Temp Range</div><div class="value">33–50°F</div></div>
+        <div class="spec-cell"><div class="label">Construction</div><div class="value">Stainless Steel, IPX4</div></div>
+        <div class="spec-cell"><div class="label">Installation</div><div class="value">Built-in or Freestanding</div></div>
+        <div class="spec-cell"><div class="label">Features</div><div class="value">Temp alarm, auto-close, dividers, touch LED</div></div>
+      </div>
+      <div class="verdict">
+        <strong>Most compact height — easiest fit.</strong> At only 32.3" tall, this is the shortest drawer fridge in the group, making it the easiest to fit under low counters or in tight cabinet spaces. The high/low temperature alarm is a useful feature that alerts you if the door was left open. The narrower temp range (33–50°F) is beverage-focused. Eco-friendly refrigerant is a nice touch.
+      </div>
+    </div>
+
+    <!-- ICYGLEE -->
+    <div class="card">
+      <div class="card-top">
+        <div><h3>Icyglee 24" Double Drawer</h3></div>
+        <div class="price-tag">~$600–750</div>
+      </div>
+      <div class="tags">
+        <span class="tag">Compressor</span>
+        <span class="tag">Front-Venting</span>
+        <span class="tag">Self-Locking Rails</span>
+      </div>
+      <div class="specs">
+        <div class="spec-cell"><div class="label">Noise Level</div><div class="value noise-amber">&le;42 dB</div></div>
+        <div class="spec-cell"><div class="label">Capacity</div><div class="value">~5.1 cu.ft / 21 bottles + 70 cans</div></div>
+        <div class="spec-cell"><div class="label">Dimensions (W×D×H)</div><div class="value">23.4" × 22.6" × 34.3"</div></div>
+        <div class="spec-cell"><div class="label">Power</div><div class="value">~87W / 115V</div></div>
+        <div class="spec-cell"><div class="label">Temp Range</div><div class="value">32–65°F</div></div>
+        <div class="spec-cell"><div class="label">Construction</div><div class="value">Stainless Steel, ETL Certified</div></div>
+        <div class="spec-cell"><div class="label">Installation</div><div class="value">Built-in or Freestanding</div></div>
+        <div class="spec-cell"><div class="label">Features</div><div class="value">Blue LED, power failure memory, self-locking rails</div></div>
+      </div>
+      <div class="verdict">
+        <strong>Best for wine + cans combo.</strong> The split storage (top drawer: 21 wine bottles, bottom drawer: 70 cans) makes this unique if you want both wine and sodas/beer. Power failure memory restarts at your set temp after an outage. Self-locking rails keep drawers from sliding open accidentally. At 42 dB it's the loudest here, but still quiet enough for an office. The lowest wattage (87W) means the lowest energy bill.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUICK COMPARE -->
+<section id="compare">
+  <h2>&#128202; Side-by-Side Comparison</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Noise</th>
+          <th>Price</th>
+          <th>Capacity</th>
+          <th>Dimensions (W×D×H)</th>
+          <th>Temp Range</th>
+          <th>Power</th>
+          <th>Standout Feature</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="model-name">Tylza/Nipus 24"</td>
+          <td><span class="nb g">38 dB</span></td>
+          <td class="price-col">~$579</td>
+          <td>4.24 cu.ft / 133 cans</td>
+          <td>23.5×22.7×33.7"</td>
+          <td>37–65°F</td>
+          <td>120W</td>
+          <td>Quietest + cheapest</td>
+        </tr>
+        <tr>
+          <td class="model-name">Garvee 24"</td>
+          <td><span class="nb b">&lt;39 dB</span></td>
+          <td class="price-col">~$550–700</td>
+          <td>~5.1 cu.ft</td>
+          <td>23.4×22×32.3"</td>
+          <td>33–50°F</td>
+          <td>~100W</td>
+          <td>Shortest height (32.3")</td>
+        </tr>
+        <tr>
+          <td class="model-name">Mojgar 24"</td>
+          <td><span class="nb b">&lt;40 dB</span></td>
+          <td class="price-col">~$640</td>
+          <td>5.3 cu.ft / 100 cans</td>
+          <td>23.4×22.6×34.3"</td>
+          <td>32–65°F</td>
+          <td>~110W</td>
+          <td>Largest capacity + auto-close</td>
+        </tr>
+        <tr>
+          <td class="model-name">Icyglee 24"</td>
+          <td><span class="nb a">&le;42 dB</span></td>
+          <td class="price-col">~$600–750</td>
+          <td>~5.1 cu.ft / 21 btl + 70 cans</td>
+          <td>23.4×22.6×34.3"</td>
+          <td>32–65°F</td>
+          <td>87W</td>
+          <td>Wine + cans combo, lowest wattage</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <p><strong>Key takeaway:</strong> All four models operate under 42 dB — quieter than a typical conversation. They're all 24" wide, front-venting, and designed for built-in installation. The main decision comes down to: <strong>quietest?</strong> → Tylza. <strong>Largest?</strong> → Mojgar. <strong>Shortest for tight spaces?</strong> → Garvee. <strong>Wine + beer?</strong> → Icyglee.</p>
+  </div>
+</section>
+
+<!-- OVER BUDGET REFERENCE -->
+<section id="over" class="over-budget">
+  <h2>&#128184; Over Budget — Premium Options (For Reference)</h2>
+  <p>These are excellent drawer fridges that exceed $1,000 but are worth knowing about if your budget is flexible.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Noise</th>
+          <th>Price</th>
+          <th>Capacity</th>
+          <th>Dimensions (W×D×H)</th>
+          <th>Why It's Premium</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="model-name">VEVOR 24" Dual Zone</td>
+          <td><span class="nb b">39 dB</span></td>
+          <td style="color:var(--amber)">~$1,130</td>
+          <td>5.12 cu.ft (145L)</td>
+          <td>23.6×25.6×32.3–34.3"</td>
+          <td>Dual zone: upper fridge (37–50°F) + lower freezer (-0.4–37°F). The only drawer unit with a true freezer.</td>
+        </tr>
+        <tr>
+          <td class="model-name">ICEJUNGLE 24"</td>
+          <td><span class="nb b">&lt;39 dB</span></td>
+          <td style="color:var(--amber)">~$1,400</td>
+          <td>5.12 cu.ft / 142 cans</td>
+          <td>23.4×23×32.3"</td>
+          <td>Pro-grade damping slides, 2-year warranty, premium build quality.</td>
+        </tr>
+        <tr>
+          <td class="model-name">THOR Kitchen TRF24U</td>
+          <td><span class="nb a">41–44 dB</span></td>
+          <td style="color:var(--red)">~$1,900–2,700</td>
+          <td>5.4 cu.ft</td>
+          <td>23.4×24×34.3"</td>
+          <td>Brand-name quality, soft-close drawers, convection cooling, indoor/outdoor rated.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <p><strong>Note on the VEVOR at $1,130:</strong> If you can stretch $130 over budget, this is the only drawer fridge with a <strong>true freezer drawer</strong>. The dual-zone capability (fridge + freezer in separate drawers) is unique in this category. At 39 dB it's very quiet. It's only $130 over your $1,000 limit and may be worth the stretch.</p>
+  </div>
+</section>
+
+<!-- INSTALL TIPS -->
+<section id="tips">
+  <h2>&#128295; Installation Tips for Your Cabinet</h2>
+
+  <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));">
+
+    <div class="card" style="border-color: var(--border);">
+      <div class="card-top"><h3>&#9989; All These Are Front-Venting</h3></div>
+      <div class="verdict">Every drawer fridge in this list vents from the front grille — meaning you <strong>can fully enclose them in a cabinet</strong> on the top, sides, and back. No rear clearance needed. This is a major advantage over standard mini fridges, which require 2–3" gaps on all sides.</div>
+    </div>
+
+    <div class="card" style="border-color: var(--border);">
+      <div class="card-top"><h3>&#128207; Cabinet Opening Size</h3></div>
+      <div class="verdict">For these 24" units, build your cabinet opening at minimum <strong>24" wide × 23" deep × 34.5" tall</strong>. Add an extra 0.5" on each side for easier installation. The front face of the drawers should sit flush with (or slightly recessed from) your cabinet face frame.</div>
+    </div>
+
+    <div class="card" style="border-color: var(--border);">
+      <div class="card-top"><h3>&#128268; Power Requirements</h3></div>
+      <div class="verdict">Standard <strong>115V / 15A household outlet</strong> — nothing special needed. Power draw ranges from 87W to 120W across these models. Route the outlet cord through the back of the cabinet. Avoid extension cords for permanent installation — have an outlet inside or directly behind the cabinet.</div>
+    </div>
+
+    <div class="card" style="border-color: var(--border);">
+      <div class="card-top"><h3>&#128263; Noise Reduction</h3></div>
+      <div class="verdict">The cabinet itself dampens 2–4 dB of compressor noise. To go further: add a <strong>neoprene anti-vibration mat</strong> under the fridge (~$15), and apply <strong>peel-and-stick acoustic foam</strong> to the inside top panel of the cabinet. Combined, these can bring a 40 dB unit down to ~35 dB perceived.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SOURCES -->
+<section id="sources">
+  <h2>&#128218; Sources</h2>
+  <ol class="sources">
+    <li><a href="https://itylza.com/products/24-inch-black-two-drawer-beverage-refrigerator-with-four-locking-swivel-casters" target="_blank">Tylza — 24" Two-Drawer Beverage Refrigerator</a></li>
+    <li><a href="https://www.mojgar.com/products/mojgar-24-inch-under-counter-double-drawer-fridge-foam-door" target="_blank">Mojgar — 24" Double Drawer Fridge</a></li>
+    <li><a href="https://www.amazon.com/inch-Undercounter-Refrigerators-Weatherproof-Refrigerator/dp/B0CWCSCBY7" target="_blank">Amazon — Garvee 24" Undercounter Refrigerator</a></li>
+    <li><a href="https://www.amazon.com/Counter-Stainless-Beverage-Refrigerator-Commercial/dp/B0D724Z5SR" target="_blank">Amazon — Icyglee 24" Under Counter Drawer Fridge</a></li>
+    <li><a href="https://dbskeptic.com/quiet-undercounter-refrigerators-beverage-coolers/" target="_blank">dBSkeptic — Quietest Undercounter Refrigerators 2026</a></li>
+    <li><a href="https://www.vevor.com/compact-built-in-refrigerators-c_10721/vevor-24-inch-undercounter-refrigerator-2-drawer-refrigerator-with-different-temperature-4-87-cu-ft-capacity-waterproof-indoor-and-outdoor-under-counter-freezer-fridge-for-home-and-commercial-use-p_010133728578" target="_blank">VEVOR — 24" Undercounter Dual Zone Drawer Refrigerator</a></li>
+    <li><a href="https://www.amazon.com/Refrigerator-Stainless-ICEJUNGLE-Freestanding-Beverage/dp/B099HZCL4L" target="_blank">Amazon — ICEJUNGLE 24" Double Drawer</a></li>
+    <li><a href="https://www.bestbuy.com/site/thor-kitchen-5-4-cu-ft-indoor-outdoor-refrigerator-drawers-silver/6530969.p" target="_blank">Best Buy — THOR Kitchen TRF24U</a></li>
+    <li><a href="https://www.edealinfo.com/d/06976003000894/Mojgar-24-Inch-Under-Counter-Stainless-Steel-Double-Drawer" target="_blank">eDealInfo — Mojgar 24" Drawer Fridge Pricing</a></li>
+    <li><a href="https://www.ajmadison.com/learn/refrigeration/top-picks/best-refrigerator-drawers/" target="_blank">AJ Madison — Best Refrigerator Drawers 2025</a></li>
+  </ol>
+</section>
+
+<footer>
+  <p>Researched April 2026. Prices fluctuate — check retailer links for current pricing. All models are 24" wide and designed for standard undercounter installation. Noise levels are manufacturer-rated; real-world may vary ±2 dB.</p>
+</footer>
+
+</body>
+</html>

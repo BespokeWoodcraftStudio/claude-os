@@ -11,7 +11,7 @@ related: README.md
 domain: company
 confidence: canonical
 context_tier: 1
-last_updated: 2026-02-18
+last_updated: 2026-04-14
 </metadata>
 
 | File | Summary | Tier |
@@ -20,3 +20,4 @@ last_updated: 2026-02-18
 | `async-communication.md` | Guide to async-first communication in a distributed team | 2 |
 | `documentation.md` | Why and how we maintain a culture of documentation | 2 |
 | `meetings.md` | How to run effective meetings — agendas, formats, and cadences | 2 |
+| `ai-meeting-stack-decision.md` | Granola vs Notion vs NotebookLM — chosen stack for automated meeting capture and client archive | 2 |

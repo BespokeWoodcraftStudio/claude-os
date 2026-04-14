@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Woodwiki Agents, Pipelines, Skills & Scripts — Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #11100e;
+    --bg-card: #1a1815;
+    --bg-sidebar: #15130f;
+    --bg-code: #1e1c18;
+    --bg-elevated: #201d18;
+    --text: #e9e2d6;
+    --text-muted: #9b9285;
+    --text-heading: #fbf6ec;
+    --accent: #c99a66;
+    --accent-light: #e0b587;
+    --accent-bg: rgba(201,154,102,0.12);
+    --accent-border: rgba(201,154,102,0.28);
+    --border: #2a2621;
+    --border-soft: #221f1a;
+    --success: #86c79b;
+    --warning: #e7b465;
+    --info: #8aafd1;
+    --danger: #dd8a73;
+    --walnut: #6b4a2b;
+    --oak: #b4864a;
+    --sand: #d9c19b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 24px; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    display: flex;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(1200px 600px at 70% -10%, rgba(201,154,102,0.06), transparent 60%),
+                radial-gradient(900px 500px at 10% 100%, rgba(107,74,43,0.08), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: 300px;
+    min-width: 300px;
+    background: var(--bg-sidebar);
+    border-right: 1px solid var(--border);
+    position: fixed;
+    top: 0; left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 100;
+  }
+  .sidebar-header {
+    padding: 26px 22px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .sidebar-header .mark {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--accent-light);
+    letter-spacing: -0.01em;
+  }
+  .sidebar-header .sub {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .nav-group { padding: 14px 0 8px; }
+  .nav-group-title {
+    padding: 4px 22px 8px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+  }
+  .nav-link {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 7px 22px;
+    font-size: 0.87rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    transition: all 0.15s ease;
+  }
+  .nav-link .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    opacity: 0.7;
+    min-width: 22px;
+  }
+  .nav-link:hover {
+    color: var(--text-heading);
+    background: var(--accent-bg);
+    border-left-color: var(--accent);
+  }
+  .nav-link.sub { padding-left: 46px; font-size: 0.8rem; }
+
+  /* Main */
+  .main {
+    flex: 1;
+    margin-left: 300px;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 56px 56px 120px;
+  }
+
+  /* Hero */
+  .hero {
+    margin-bottom: 56px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--border);
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-border);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--accent-light);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  h1.title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    line-height: 1.08;
+    color: var(--text-heading);
+    letter-spacing: -0.02em;
+    margin-bottom: 22px;
+  }
+  h1.title .accent { color: var(--accent-light); font-style: italic; }
+  .lede {
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--text);
+    max-width: 72ch;
+  }
+  .one-liner {
+    margin-top: 22px;
+    padding: 18px 22px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+  .one-liner strong { color: var(--accent-light); font-weight: 600; }
+
+  /* Sections */
+  section { margin-top: 72px; scroll-margin-top: 24px; }
+  section > h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.95rem;
+    color: var(--text-heading);
+    letter-spacing: -0.015em;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  section > h2 .sec-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-border);
+    padding: 3px 10px;
+    border-radius: 6px;
+    align-self: center;
+  }
+  h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.35rem;
+    color: var(--text-heading);
+    margin-top: 42px;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-light);
+    margin-top: 24px;
+    margin-bottom: 10px;
+    letter-spacing: 0.01em;
+  }
+  p { margin-bottom: 16px; color: var(--text); }
+  p + p { margin-top: -4px; }
+
+  a { color: var(--accent-light); text-decoration-color: rgba(224,181,135,0.35); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--accent-light); }
+
+  strong { color: var(--text-heading); font-weight: 600; }
+  em { color: var(--accent-light); font-style: italic; }
+
+  /* Lists */
+  ul, ol {
+    margin: 12px 0 20px 0;
+    padding-left: 22px;
+  }
+  li { margin-bottom: 8px; color: var(--text); }
+  li::marker { color: var(--accent); }
+  ul ul, ol ol, ol ul, ul ol { margin: 8px 0; }
+
+  /* Code */
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85em;
+    background: var(--bg-code);
+    color: var(--accent-light);
+    padding: 1px 6px;
+    border-radius: 4px;
+    border: 1px solid var(--border-soft);
+  }
+  pre {
+    background: var(--bg-code);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    overflow-x: auto;
+    margin: 18px 0 24px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    position: relative;
+  }
+  pre::before {
+    content: attr(data-lang);
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--text);
+    font-size: inherit;
+  }
+  .cmt { color: #7d7466; font-style: italic; }
+  .kw { color: var(--accent-light); }
+  .str { color: #b5c9a3; }
+
+  /* Tables */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 20px 0 26px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg-card);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  th {
+    background: var(--bg-elevated);
+    color: var(--text-heading);
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  td {
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--border-soft);
+    vertical-align: top;
+    color: var(--text);
+  }
+  tr:last-child td { border-bottom: none; }
+  td code { font-size: 0.78em; }
+
+  /* Callouts */
+  .callout {
+    margin: 22px 0;
+    padding: 18px 22px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+  }
+  .callout .label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-light);
+    margin-bottom: 8px;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* Cards */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 14px;
+    margin: 18px 0 26px;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .card:hover { border-color: var(--accent-border); transform: translateY(-1px); }
+  .card .card-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .card .card-title {
+    font-weight: 600;
+    color: var(--text-heading);
+    margin-bottom: 8px;
+    font-size: 0.98rem;
+  }
+  .card .card-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  /* Stage pipeline viz */
+  .pipeline-viz {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 20px 0 28px;
+  }
+  .stage {
+    flex: 1;
+    min-width: 130px;
+    padding: 14px 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    position: relative;
+  }
+  .stage .stage-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .stage .stage-name {
+    font-weight: 600;
+    color: var(--text-heading);
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+  }
+  .stage .stage-folder {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+  }
+
+  /* ASCII diagram */
+  .ascii-diagram {
+    background: var(--bg-code);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    white-space: pre;
+    overflow-x: auto;
+    color: var(--text);
+    margin: 18px 0 26px;
+  }
+  .ascii-diagram .box { color: var(--accent-light); font-weight: 500; }
+  .ascii-diagram .arrow { color: var(--text-muted); }
+
+  /* Anchors */
+  .anchor-link {
+    opacity: 0;
+    margin-left: 8px;
+    font-weight: 400;
+    font-size: 0.7em;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+  h2:hover .anchor-link, h3:hover .anchor-link { opacity: 0.6; }
+
+  hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 56px 0;
+  }
+
+  /* TOC at top */
+  .toc-top {
+    display: none;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 80px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Mobile */
+  .menu-btn { display: none; }
+  @media (max-width: 960px) {
+    .sidebar { transform: translateX(-100%); transition: transform 0.3s ease; }
+    .sidebar.open { transform: translateX(0); }
+    .main { margin-left: 0; }
+    .container { padding: 30px 22px 80px; }
+    .menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 14px; left: 14px;
+      width: 42px; height: 42px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--accent-light);
+      cursor: pointer;
+      z-index: 200;
+      font-size: 1rem;
+    }
+    section > h2 { font-size: 1.6rem; }
+    h1.title { font-size: 2rem; }
+  }
+
+  /* Accent divider between major sections */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 60px 0 0;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .section-divider::before, .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+</style>
+</head>
+<body>
+
+<button class="menu-btn" onclick="document.querySelector('.sidebar').classList.toggle('open')" aria-label="Menu">☰</button>
+
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <div class="mark">Woodwiki</div>
+    <div class="sub">Automation Study Guide</div>
+  </div>
+  <nav class="nav-group">
+    <div class="nav-group-title">Contents</div>
+    <a href="#overview" class="nav-link"><span class="num">01</span>System Overview</a>
+    <a href="#agents" class="nav-link"><span class="num">02</span>Agents</a>
+    <a href="#skills" class="nav-link"><span class="num">03</span>Skills Library</a>
+    <a href="#scripts" class="nav-link"><span class="num">04</span>Scripts</a>
+    <a href="#stages" class="nav-link"><span class="num">05</span>Pipeline Stages</a>
+    <a href="#context" class="nav-link"><span class="num">06</span>Context Files</a>
+    <a href="#pattern" class="nav-link"><span class="num">07</span>Pattern Library</a>
+    <a href="#runbook" class="nav-link"><span class="num">08</span>Quick Runbook</a>
+    <a href="#file-map" class="nav-link"><span class="num">09</span>File Map</a>
+    <a href="#not-covered" class="nav-link"><span class="num">10</span>Not Covered</a>
+  </nav>
+</aside>
+
+<main class="main">
+<div class="container">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="eyebrow">Internal Blueprint · v1</div>
+    <h1 class="title">Woodwiki Agents,<br>Pipelines, Skills &amp; <span class="accent">Scripts</span></h1>
+    <p class="lede">A complete reference for the automation that runs the Woodwiki project. Every agent, every skill, every script — plus the supporting pipeline stages and editorial context files. Read it as a blueprint: enough detail to rebuild a similar content-automation system on a different topic.</p>
+    <div class="one-liner">
+      <strong>In one sentence:</strong> raw SEO data becomes prioritized assignments, assignments move through a 13-step guide-production pipeline, and a parallel diagram pipeline adds inline SVGs — all driven by Claude agents reading from shared context files and calling purpose-built scripts.
+    </div>
+  </header>
+
+  <!-- 1. SYSTEM OVERVIEW -->
+  <section id="overview">
+    <h2><span class="sec-num">01</span>System Overview</h2>
+    <p>Woodwiki is a Next.js MDX wiki, but the interesting part isn't the runtime — it's the content-production machine layered over it. That machine has four kinds of moving parts.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Part</th><th>Where it lives</th><th>What it is</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Agent runners</strong></td><td><code>.claude/*.sh</code><br><code>.claude/parallel/*.sh</code></td><td>Bash orchestrators that invoke the <code>claude</code> CLI in a loop with a prompt file, with optional parallelism.</td></tr>
+          <tr><td><strong>Agent prompts</strong></td><td><code>.claude/*-prompt.md</code><br><code>.claude/parallel/*-prompt.md</code></td><td>Long Markdown prompts that tell Claude exactly how to run one cycle of a pipeline.</td></tr>
+          <tr><td><strong>Skills</strong></td><td><code>.agents/skills/**/SKILL.md</code><br><code>.claude/skills/**/SKILL.md</code></td><td>Reusable instruction sets the agents read. Each has a <code>SKILL.md</code> and often sub-skills, scripts, and references.</td></tr>
+          <tr><td><strong>Scripts</strong></td><td><code>scripts/*.mjs</code>, <code>.claude/*.sh</code>, <code>.claude/parallel/*.py</code>, <code>.agents/skills/keyword-gap-to-assignments/scripts/*.js</code></td><td>Deterministic tools: validators, CSV processors, index builders.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Two independent pipelines run on this substrate:</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">Pipeline 1</div>
+        <div class="card-title">Guide Production</div>
+        <div class="card-desc">13 steps. Turns an assignment into a published, cross-linked guide.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Pipeline 2</div>
+        <div class="card-title">Diagram Retrofit</div>
+        <div class="card-desc">7 steps. Adds inline SVG diagrams to existing guides.</div>
+      </div>
+    </div>
+    <p>Both pipelines have a serial runner and a parallel runner. The parallel runners fan out to N workers and a coordinator.</p>
+  </section>
+
+  <!-- 2. AGENTS -->
+  <section id="agents">
+    <h2><span class="sec-num">02</span>Agents — Claude-driven Pipelines</h2>
+    <p>"Agent" here means a Claude session invoked non-interactively from the command line with <code>claude -p "$PROMPT" --dangerously-skip-permissions</code>. Each agent is defined by the pair <em>(prompt file, shell runner)</em>.</p>
+
+    <h3 id="agent-21">2.1 Guide Production Pipeline — Serial Runner</h3>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><th>Runner</th><td><code>.claude/run-pipeline.sh</code></td></tr>
+          <tr><th>Prompt</th><td><code>.claude/pipeline-prompt.md</code></td></tr>
+          <tr><th>Logs</th><td><code>.claude/pipeline-logs/run-YYYY-MM-DD_HH-MM-SS.log</code></td></tr>
+          <tr><th>Stop file</th><td><code>.claude/stop-pipeline</code></td></tr>
+          <tr><th>Model</th><td><code>sonnet</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>What it does.</strong> Loops forever. Each cycle picks one assignment from <code>assignments/02-ready-to-start/</code>, runs it through Steps 2–13 of the guide pipeline, waits five minutes, then picks the next one.</p>
+
+    <h4>The loop</h4>
+    <ol>
+      <li>Launch — <code>bash .claude/run-pipeline.sh</code>.</li>
+      <li>On each iteration, check for <code>.claude/stop-pipeline</code>. If present, delete it and exit.</li>
+      <li>Timestamp the run, create a log file under <code>.claude/pipeline-logs/</code>.</li>
+      <li>Invoke <code>claude --dangerously-skip-permissions --verbose --model sonnet -p "$PROMPT"</code> with the prompt file piped through <code>tee</code> to the log.</li>
+      <li>Sleep 300 seconds (cooldown), checking for the stop file every 10 seconds.</li>
+      <li>Repeat.</li>
+    </ol>
+
+    <h4>What the prompt tells Claude to do</h4>
+    <ol>
+      <li>List <code>assignments/02-ready-to-start/</code>, read each, pick the highest-impact topic (volume, KD, breadth, gap-fill value).</li>
+      <li>Read the orchestrator skill at <code>.agents/skills/guide-pipeline/SKILL.md</code>.</li>
+      <li>Run Steps 2 through 13, loading each step's <code>SKILL.md</code> before executing.</li>
+      <li>Enforce the <code>## Part N:</code> heading convention before committing. Exempt ancillary H2s: How to Use, At a Glance, Quick Reference, Sources.</li>
+      <li>Read editorial context in order: <code>audience.md</code> → <code>writing-style.md</code> → <code>manifesto.md</code>.</li>
+      <li>Apply <code>stop-slop</code> to kill AI writing patterns.</li>
+      <li>Commit and push. Never trigger Vercel manually — it deploys automatically from the push.</li>
+      <li>If an MCP tool is missing, fall back to web search / Exa / Perplexity.</li>
+      <li>Summarize the run: slug processed, steps completed, commit hash.</li>
+    </ol>
+
+    <div class="callout">
+      <div class="label">Graceful Stop</div>
+      <p><code>touch $HOME/Documents/GitHub/woodwiki/.claude/stop-pipeline</code>. The runner checks between cycles and inside the cooldown sleep loop.</p>
+    </div>
+
+    <h3 id="agent-22">2.2 Diagram Pipeline — Serial Runner</h3>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><th>Runner</th><td><code>.claude/run-diagram-pipeline.sh</code></td></tr>
+          <tr><th>Prompt</th><td><code>.claude/diagram-pipeline-prompt.md</code></td></tr>
+          <tr><th>Logs</th><td><code>.claude/pipeline-logs/diagrams/</code></td></tr>
+          <tr><th>Stop file</th><td><code>.claude/stop-diagram-pipeline</code></td></tr>
+          <tr><th>Model</th><td><code>claude-sonnet-4-6</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Same loop shape as the guide runner, but targets one guide per cycle and adds inline SVG diagrams. Includes a safety-net <code>git push origin main</code> after the Claude call returns, so changes reach GitHub even if Claude's session ended before it pushed.</p>
+
+    <h4>How Claude picks a target</h4>
+    <ol>
+      <li><strong>Priority 1 — fix under-diagrammed guides.</strong> For each guide marked ✅ in <code>GUIDE-INVENTORY.md</code>, count H2 sections (excluding Sources/References) and count <code>&lt;figure&gt;</code> blocks. If figures &lt; H2s, this guide is under-diagrammed. Pick the largest gap.</li>
+      <li><strong>Priority 2 — pick a new ⬜ guide.</strong> Read the inventory and <code>TRACKING.md</code>. Favor longer guides, technique/process guides, and guides with spatial/structural concepts.</li>
+    </ol>
+
+    <h4>Steps the agent runs</h4>
+    <ol>
+      <li>Read <code>SVG-STYLE-GUIDE.md</code> and <code>SKILL.md</code>; read reference diagrams in <code>content/guides/sheet-goods-for-cabinets.mdx</code> (lines 48–185, 247–384).</li>
+      <li>Analyze the target guide and plan diagrams per H2.</li>
+      <li>Generate SVGs following the style guide (viewBox math, zone-based text layout, polygon winding, unique IDs).</li>
+      <li>Insert diagrams wrapped in <code>&lt;figure&gt;...&lt;figcaption&gt;</code>, with zero blank lines inside <code>&lt;figure&gt;</code> blocks.</li>
+      <li>Code-level verification: unique IDs, viewBox overflow math, accessibility attributes.</li>
+      <li>Domain accuracy: re-read the prose, confirm SVG geometry matches real-world mechanics.</li>
+      <li>Visual verification: extract figures into a standalone HTML file, serve with <code>python3 -m http.server 8888</code>, screenshot every diagram in Chrome, fix anything broken, clean up temp file.</li>
+      <li>Update <code>TRACKING.md</code> and flip the guide's ⬜ to ✅ in <code>GUIDE-INVENTORY.md</code>.</li>
+      <li>Commit and push.</li>
+    </ol>
+
+    <h3 id="agent-23">2.3 Parallel Guide Pipeline</h3>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><th>Runner</th><td><code>.claude/parallel/run-guide-pipeline-parallel.sh</code></td></tr>
+          <tr><th>Prompts</th><td><code>guide-worker-phase1-prompt.md</code>, <code>crosslink-prompt.md</code>, <code>guide-worker-phase3-prompt.md</code></td></tr>
+          <tr><th>Logs</th><td><code>.claude/pipeline-logs/parallel/run-&lt;timestamp&gt;/</code></td></tr>
+          <tr><th>State</th><td><code>.claude/parallel/state/</code></td></tr>
+          <tr><th>Stop file</th><td><code>.claude/stop-parallel-pipeline</code></td></tr>
+          <tr><th>Config</th><td><code>MAX_PARALLEL</code> (default 5), <code>MODEL</code> (default <code>sonnet</code>)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Why three phases.</strong> Cross-linking must see the full set of new guides at once, so it can't run per-worker in parallel.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Phase</th><th>Scope</th><th>Parallelism</th></tr></thead>
+        <tbody>
+          <tr><td>Phase 1 — Steps 2–9</td><td>Research, outline, draft, content edit, copy edit, stop-slop, citations (per guide)</td><td>Parallel, one worker per slug</td></tr>
+          <tr><td>Phase 2 — Step 10</td><td>Cross-link audit across the whole batch + existing published guides</td><td>Sequential, one coordinator</td></tr>
+          <tr><td>Phase 3 — Steps 11–13</td><td>Diagrams, metadata preflight, publish (per guide)</td><td>Parallel, one worker per slug</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Usage</h4>
+<pre data-lang="bash"><code><span class="cmt"># auto-pick top N</span>
+bash .claude/parallel/run-guide-pipeline-parallel.sh
+
+<span class="cmt"># specific slugs</span>
+bash .claude/parallel/run-guide-pipeline-parallel.sh slug1 slug2 slug3
+
+<span class="cmt"># override concurrency</span>
+MAX_PARALLEL=10 bash .claude/parallel/run-guide-pipeline-parallel.sh</code></pre>
+
+    <div class="callout">
+      <div class="label">Crash Safety</div>
+      <p>Every worker launch writes a state file. On the next run, a pre-flight cleanup detects orphaned assignments (workers killed mid-run) and resets them so nothing gets stuck at a stage.</p>
+    </div>
+
+    <h4>Worker prompts — what each one tells Claude</h4>
+    <ul>
+      <li><code>guide-worker-phase1-prompt.md</code> — "Your assignment is <code>{{SLUG}}</code>. Run Steps 2–9 end-to-end on just this guide. Do NOT cross-link; the coordinator handles that next."</li>
+      <li><code>crosslink-prompt.md</code> — "Here's the batch: <code>{{SLUG_LIST}}</code>. For each, run the cross-link audit skill. Link bi-directionally to every other published guide, including the rest of this batch. One git commit at the end; don't push (coordinator pushes)."</li>
+      <li><code>guide-worker-phase3-prompt.md</code> — "Your guide is <code>{{SLUG}}</code>. Run Steps 11–13. Before planning diagrams, run the section classifier to see which H2s actually need one."</li>
+    </ul>
+
+    <h3 id="agent-24">2.4 Parallel Diagram Pipeline</h3>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><th>Runner</th><td><code>.claude/parallel/run-diagram-pipeline-parallel.sh</code></td></tr>
+          <tr><th>Worker prompt</th><td><code>.claude/parallel/diagram-worker-prompt.md</code></td></tr>
+          <tr><th>Logs</th><td><code>.claude/pipeline-logs/parallel-diagrams/</code></td></tr>
+          <tr><th>Stop file</th><td><code>.claude/stop-parallel-diagrams</code></td></tr>
+          <tr><th>Config</th><td><code>MAX_PARALLEL</code> (default 5), <code>MODEL</code> (default <code>claude-sonnet-4-6</code>)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Fans out the diagram pipeline across N guides at once. Each worker runs Steps 1–6 on exactly one guide; the coordinator commits in aggregate at the end.</p>
+    <p><strong>Crash safety.</strong> <code>GUIDE-INVENTORY.md</code> is only updated after a worker finishes. Ctrl+C a worker mid-run and the guide stays ⬜, picked up on the next run. Partial SVG writes are detected by the under-diagrammed heuristic.</p>
+
+<pre data-lang="bash"><code><span class="cmt"># auto-pick from inventory</span>
+bash .claude/parallel/run-diagram-pipeline-parallel.sh
+
+<span class="cmt"># specific slugs</span>
+bash .claude/parallel/run-diagram-pipeline-parallel.sh slug1 slug2</code></pre>
+
+    <h3 id="agent-25">2.5 Fix-Parts Pipeline (heading-format repair)</h3>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><th>Runner</th><td><code>.claude/parallel/run-fix-parts-parallel.sh</code></td></tr>
+          <tr><th>Worker prompt</th><td><code>.claude/parallel/fix-parts-worker-prompt.md</code></td></tr>
+          <tr><th>Validator</th><td><code>.claude/validate-parts.sh</code></td></tr>
+          <tr><th>Logs</th><td><code>.claude/pipeline-logs/fix-parts/</code></td></tr>
+          <tr><th>Stop file</th><td><code>.claude/stop-fix-parts</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Enforces the <code>## Part N: Title</code> heading convention across existing guides. For each target, a worker rewrites every non-ancillary H2 to carry a sequential <code>Part N:</code> prefix. After all workers finish, the coordinator runs the validator, commits, and pushes.</p>
+
+<pre data-lang="bash"><code><span class="cmt"># fix every failing guide</span>
+bash .claude/parallel/run-fix-parts-parallel.sh
+
+<span class="cmt"># fix specific slugs</span>
+bash .claude/parallel/run-fix-parts-parallel.sh applying-polyurethane
+
+<span class="cmt"># rewrite every published guide</span>
+bash .claude/parallel/run-fix-parts-parallel.sh --all</code></pre>
+
+    <h4>Classification logic</h4>
+    <ul>
+      <li><strong>Ancillary H2s (no prefix):</strong> How to Use This Guide, <em>[Topic] at a Glance</em>, Quick Reference, Sources, Where This Fits, Related Guides, FAQ / Frequently Asked Questions, Glossary, About This Guide.</li>
+      <li><strong>Content H2s (must become <code>## Part N: Title</code>):</strong> every other H2, numbered sequentially from 1 in document order.</li>
+    </ul>
+  </section>
+
+  <!-- 3. SKILLS -->
+  <section id="skills">
+    <h2><span class="sec-num">03</span>Skills — the Instruction Library</h2>
+    <p>Two skill roots:</p>
+    <ul>
+      <li><code>.agents/skills/</code> — skills invoked by the pipeline agents. Each has a <code>SKILL.md</code> and sometimes sub-skills, prompts, scripts, or references.</li>
+      <li><code>.claude/skills/</code> — slash-command skills the user invokes directly in a Claude Code session.</li>
+    </ul>
+
+    <h3 id="skill-31">3.1 <code>guide-pipeline/</code> — the 13-step orchestrator</h3>
+    <p>The master skill that wraps the whole guide-production pipeline. Each step is its own sub-skill in a numbered folder.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Sub-skill</th><th>Input → Output</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><code>01-assignment-to-brief</code></td><td><code>01-backlog/[slug].md</code> → <code>02-ready-to-start/[slug].md</code></td><td>SEO research, intent classification, keyword expansion, SERP analysis, persona ID, proposed H2s. Reject-gate for low-quality topics.</td></tr>
+          <tr><td>2</td><td><code>02-plan-research</code></td><td>brief → <code>03-in-progress/[slug].md</code></td><td>Translates brief to learner profile + prioritized research questions.</td></tr>
+          <tr><td>3</td><td><code>03-research-to-study-guide</code></td><td>plan → <code>pipeline/outputs/[slug]-study-guide-v1.md</code></td><td>Wraps the <code>research-to-study-guide</code> skill. Deep web research, source eval, synthesis.</td></tr>
+          <tr><td>4</td><td><code>04-plan-outline</code></td><td>guide + brief → scratchpad outline</td><td>Maps research to sections. Sets word counts, planned tables, keyword targets.</td></tr>
+          <tr><td>5</td><td><code>05-write-draft</code></td><td>outline + guide + brief → <code>content/guides/[slug].mdx</code></td><td>Writes full MDX. Loads <code>audience.md</code> → <code>writing-style.md</code> → <code>manifesto.md</code>.</td></tr>
+          <tr><td>6</td><td><code>06-content-edit</code></td><td>draft → edited</td><td>Structural review: does the guide match its content-type pattern and serve the personas?</td></tr>
+          <tr><td>7</td><td><code>07-copy-edit</code></td><td>edited → polished</td><td>Sentence-level pass against <code>writing-style.md</code>.</td></tr>
+          <tr><td>8</td><td><code>08-stop-slop</code></td><td>polished → de-slopped</td><td>Strips AI writing patterns while preserving technical specifics.</td></tr>
+          <tr><td>9</td><td><code>09-integrate-citations</code></td><td>de-slopped + guide → cited</td><td>Two-layer citations: inline links at point of claim, plus Sources section.</td></tr>
+          <tr><td>10</td><td><code>10-cross-link-audit</code></td><td>cited → cited + siblings updated</td><td>Bi-directional internal links; updates <code>relatedGuides</code> frontmatter on both sides.</td></tr>
+          <tr><td>11</td><td><em>(diagram-pipeline)</em></td><td>guide → guide + SVGs</td><td>Invokes the separate diagram-pipeline skill.</td></tr>
+          <tr><td>12</td><td><code>12-metadata-preflight</code></td><td>cross-linked → publication-ready</td><td>Frontmatter validation, build check, SEO verification, removes <code>comingSoon</code>.</td></tr>
+          <tr><td>13</td><td><code>13-push-to-live</code></td><td>ready → live</td><td>Moves assignment, rebuilds INDEX, commits, pushes, verifies deployment.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <div class="label">Why every step is its own folder</div>
+      <p>Separation keeps prompts short enough for workers to load only what they need. Workers in the parallel runner typically load 3–4 step skills, not all 13.</p>
+    </div>
+
+    <h3 id="skill-32">3.2 <code>diagram-pipeline/</code></h3>
+    <p>Generates inline SVG diagrams matching the style set by <code>sheet-goods-for-cabinets.mdx</code>. Includes three reference files:</p>
+    <ul>
+      <li><code>SKILL.md</code> — the 7-step pipeline.</li>
+      <li><code>SVG-STYLE-GUIDE.md</code> — visual rules (font sizes, color palette, class prefixing, zone-based layout, viewBox math).</li>
+      <li><code>GUIDE-INVENTORY.md</code> — the ⬜/✅ status table of every guide.</li>
+      <li><code>TRACKING.md</code> — log of completed diagram jobs.</li>
+    </ul>
+
+    <h4>The seven steps</h4>
+    <ol>
+      <li><strong>Analyze and plan.</strong> Read the guide, identify H2 sections, classify each (concept / comparison / sequence / decision tree / dimensional / exploded view), decide placement.</li>
+      <li><strong>Generate SVGs.</strong> Build each SVG following the style guide. Use <code>section-needs-diagram.py</code> to confirm which sections actually need one.</li>
+      <li><strong>Insert into MDX.</strong> Wrap each in <code>&lt;figure&gt;...&lt;figcaption&gt;</code>. Zero blank lines inside <code>&lt;figure&gt;</code> (blank lines break MDX rendering).</li>
+      <li><strong>Code-level verification.</strong> Unique IDs across the whole file, accessibility (<code>role="img"</code> + <code>aria-label</code>), no viewBox overflow, no narrow rects cutting into text zones.</li>
+      <li><strong>Domain accuracy.</strong> Re-read the prose; every geometry in the SVG must match the mechanics described.</li>
+      <li><strong>Visual verification.</strong> Extract figures to a standalone HTML file, serve locally, screenshot every diagram in Chrome, fix issues, clean up the temp HTML.</li>
+      <li><strong>Commit.</strong> Update <code>TRACKING.md</code> and <code>GUIDE-INVENTORY.md</code>, then <code>git commit &amp;&amp; git push</code>.</li>
+    </ol>
+
+    <h3 id="skill-33">3.3 <code>keyword-gap-to-assignments/</code></h3>
+    <p>Three-stage pipeline that turns a SEMrush Keyword Gap CSV into a prioritized backlog of content assignments. Full script details in <a href="#scripts">Section 4</a>.</p>
+    <p><strong>What the <code>SKILL.md</code> adds on top of the scripts:</strong></p>
+    <ul>
+      <li>Specifies the three stages and their CSV inputs/outputs.</li>
+      <li>Defines the priority scoring formula: <code>volume × 0.5 + (1 − KD/100) × 0.3 + keyword_breadth × 0.2</code>.</li>
+      <li>Defines content-type inference rules (concept / technique / tool-guide / reference) from search-intent signals.</li>
+      <li>Defines difficulty inference (Beginner / Intermediate / Advanced).</li>
+      <li>Describes 13-category taxonomy auto-categorization against <code>lib/taxonomy.ts</code>.</li>
+    </ul>
+
+    <h3 id="skill-34">3.4 <code>research-to-study-guide/</code></h3>
+    <p>Generic deep-research skill. Used directly (e.g. a user asks "research topic X") and also wrapped by guide-pipeline Step 3.</p>
+    <h4>Phases</h4>
+    <ul>
+      <li><strong>Phase 0 — Setup.</strong> Get topic + learner profile. Answer five audience questions (WHO, WHAT they care about vs noise, WHY, WHAT sources they trust, WHAT to exclude).</li>
+      <li><strong>Phase 1 — Generate research questions.</strong> 3–5 per category across Foundations, Frameworks &amp; Models, Key Practitioners, Source Discovery, Real Examples.</li>
+      <li><strong>Phase 2 — Execute research.</strong> Web search, source evaluation, iterate until gaps close.</li>
+      <li><strong>Phase 3 — Synthesize.</strong> Organize by theme, filter for the audience, produce <code>pipeline/outputs/[topic]-study-guide-v1.md</code>.</li>
+    </ul>
+    <p><em>Sub-folder:</em> <code>prompts/</code> — full prompt templates for each phase.</p>
+
+    <h3 id="skill-35">3.5 <code>stop-slop/</code></h3>
+    <p>Removes predictable AI writing patterns. 8 core rules, quick-check list, 1–10 scoring across 5 dimensions (Directness, Rhythm, Trust, Authenticity, Density). References: <code>phrases.md</code>, <code>structures.md</code>, <code>examples.md</code>.</p>
+    <h4>The 8 rules in one line each</h4>
+    <ol>
+      <li>Cut filler phrases (throat-clearing openers, emphasis crutches, adverbs).</li>
+      <li>Break formulaic structures (binary contrasts, rhetorical setups, false agency).</li>
+      <li>Active voice with a human subject.</li>
+      <li>Be specific (name the thing, no vague extremes).</li>
+      <li>Put the reader in the room ("you" beats "people").</li>
+      <li>Vary rhythm (mix sentence lengths, no em dashes).</li>
+      <li>Trust readers (state facts directly).</li>
+      <li>Cut quotables (pull-quote tone means rewrite).</li>
+    </ol>
+
+    <h3 id="skill-36">3.6 <code>writing/</code></h3>
+    <p>Lightweight writing skill (separate from stop-slop). Emphasizes: lead with the point, minimum words, write like you talk, ground in specifics. Voice anchors: Paul Graham, Naval, Derek Sivers, Morgan Housel, Hemingway. Review-flag system: 🔴 must-fix, 🟡 improve, 🟢 optional.</p>
+
+    <h3 id="skill-37">3.7 <code>shadcn/</code> and <code>vercel-react-best-practices/</code></h3>
+    <p>Technical skills loaded when working on UI code. The shadcn skill covers CLI usage (<code>npx shadcn@latest init -d</code>), component composition, theming, Tailwind v4 integration. The Vercel skill contains 65 React/Next.js performance rules across 8 prioritized categories.</p>
+
+    <h3 id="skill-38">3.8 <code>ship/</code> and <code>push-commit/</code> (slash commands)</h3>
+    <p><strong><code>/ship</code></strong> runs sequentially:</p>
+    <ol>
+      <li><code>npx pnpm tsc --noEmit</code> — type check.</li>
+      <li><code>npx pnpm lint</code> — ESLint.</li>
+      <li><code>npx pnpm build</code> — full Next.js build.</li>
+      <li>Inline <code>npx tsx</code> SEO audit: every <code>app/**/page.tsx</code> has canonical URL metadata, OG image, and is included in the sitemap.</li>
+      <li>Commit (user-supplied or derived from diff) and push.</li>
+    </ol>
+    <p>Stops at the first failing step. Never bypasses <code>ignoreBuildErrors: true</code> by editing <code>next.config.mjs</code> — type errors must be fixed.</p>
+    <p><strong><code>/push-commit</code></strong> is an alias that delegates to <code>/ship</code>.</p>
+
+    <h3 id="skill-39">3.9 <code>refresh-youtube-list/</code></h3>
+    <p>Scheduled monthly task. Updates <code>content/lists/youtube-channels.mdx</code>:</p>
+    <ol>
+      <li>Roster lives in <code>channels.json</code> (slug, name, url, ytdlp URL, description).</li>
+      <li>Script <code>update.py</code> fetches <code>channel_follower_count</code> via <code>yt-dlp</code>.</li>
+      <li>Sorts by subscriber count, keeps top 20.</li>
+      <li>Downloads missing avatars to <code>public/images/lists/youtube-channels/&lt;slug&gt;.jpg</code>.</li>
+      <li>Rewrites the MDX in place with refreshed counts, ranking, and image paths.</li>
+      <li>Stamps "Counts verified &lt;Month YYYY&gt;" into the frontmatter.</li>
+      <li>Prints a diff summary (rank deltas, count deltas, additions/drops).</li>
+    </ol>
+    <p>Invoked via the <code>schedule</code> skill on the 1st of each month.</p>
+
+    <h3 id="skill-310">3.10 <code>deep-research/</code></h3>
+    <p>Wraps the deep-research capability with citation tracking and source credibility scoring. Triggers on "deep research", "comprehensive analysis", "research report", "compare X vs Y". Not used inside the content pipeline (which uses <code>research-to-study-guide</code> instead) — this one is for direct user requests.</p>
+  </section>
+
+  <!-- 4. SCRIPTS -->
+  <section id="scripts">
+    <h2><span class="sec-num">04</span>Scripts — Deterministic Tools</h2>
+
+    <h3 id="script-41">4.1 <code>scripts/validate-svg-viewbox.mjs</code></h3>
+    <p><strong>Purpose.</strong> Catches the three most common SVG bugs across every guide MDX.</p>
+    <h4>Checks</h4>
+    <ol>
+      <li><strong>viewBox overflow.</strong> Computes absolute bottom-Y of every SVG element (including nested translated <code>&lt;g&gt;</code> groups). Errors if content extends past viewBox.</li>
+      <li><strong>Text collision.</strong> Finds text elements at the same y-band (±4px) and measures horizontal gap using a char-width estimate. Overlap &gt; 20px = error, &gt; 4px = warning.</li>
+      <li><strong>Rect-over-text overlap.</strong> Narrow tall rects (width ≤ 20, height ≥ 80) whose vertical extent reaches the text zone get flagged.</li>
+    </ol>
+<pre data-lang="javascript"><code><span class="kw">const</span> VIEWBOX_OVERFLOW_THRESHOLD = <span class="str">0</span>
+<span class="kw">const</span> VIEWBOX_WARNING_THRESHOLD  = <span class="str">-5</span>
+<span class="kw">const</span> VIEWBOX_PADDING            = <span class="str">16</span>
+<span class="kw">const</span> TEXT_Y_BAND                = <span class="str">4</span>
+<span class="kw">const</span> COLLISION_ERROR_PX         = <span class="str">-20</span>
+<span class="kw">const</span> COLLISION_WARN_PX          = <span class="str">4</span>
+<span class="kw">const</span> NARROW_RECT_MAX_WIDTH      = <span class="str">20</span>
+<span class="kw">const</span> NARROW_RECT_MIN_HEIGHT     = <span class="str">80</span></code></pre>
+<pre data-lang="bash"><code>pnpm validate:svg                             <span class="cmt"># run on all guides</span>
+node scripts/validate-svg-viewbox.mjs --fix   <span class="cmt"># auto-fix overflow</span></code></pre>
+    <p>Wired into <code>package.json</code> as both <code>validate:svg</code> and <code>prebuild</code>, so <code>pnpm build</code> can't succeed with a broken SVG.</p>
+
+    <h3 id="script-42">4.2 <code>scripts/fix-svg-viewbox.mjs</code></h3>
+    <p><strong>Purpose.</strong> Auto-repairs viewBox height overflow. Walks every SVG in <code>content/guides/</code>, calculates max Y of all content (with translate awareness), adds 16px padding, writes the new viewBox back if it's taller than the declared height.</p>
+    <p><strong>Element handlers.</strong> <code>rect</code> (y + height), <code>circle</code> (cy + r), <code>ellipse</code>, <code>line</code>, <code>polygon</code> (max y of points), <code>text</code> (y + ~14px for descenders), nested <code>&lt;g transform="translate(x, y)"&gt;</code> (recurses with accumulated offset).</p>
+<pre data-lang="bash"><code>node scripts/fix-svg-viewbox.mjs</code></pre>
+
+    <h3 id="script-43">4.3 <code>.claude/validate-parts.sh</code></h3>
+    <p><strong>Purpose.</strong> Enforces the <code>## Part N:</code> heading convention.</p>
+    <p><strong>Pass criteria</strong> for every non-<code>comingSoon</code> guide:</p>
+    <ul>
+      <li>At least one <code>## Part N: Title</code> heading (N = integer).</li>
+      <li>Every H2 is either <code>## Part N: Title</code> OR one of the allowed ancillary headings: How to Use This Guide, <em>[Topic] at a Glance</em>, Quick Reference, Sources, Where This Fits, Related Guides, FAQ, Frequently Asked Questions, Glossary, About This Guide.</li>
+    </ul>
+    <p><strong>Awk trick.</strong> Skips H2-looking lines inside fenced code blocks so <code>## Foo</code> inside a fenced markdown block doesn't trip the check.</p>
+<pre data-lang="bash"><code>.claude/validate-parts.sh path/to/guide.mdx        <span class="cmt"># validate one</span>
+.claude/validate-parts.sh content/guides/*.mdx     <span class="cmt"># validate many</span>
+.claude/validate-parts.sh --all                    <span class="cmt"># whole corpus</span></code></pre>
+    <p>Exits 0 if all pass, 1 if any fail. The fix-parts parallel runner uses this as its acceptance test before committing.</p>
+
+    <h3 id="script-44">4.4 <code>.claude/parallel/section-needs-diagram.py</code></h3>
+    <p><strong>Purpose.</strong> Tells the diagram pipeline which H2 sections actually need a diagram and which to skip.</p>
+    <p><strong>Classification rules.</strong> Headings that never need a diagram:</p>
+    <ul>
+      <li>Exact matches: Sources, References, Bibliography, Related Guides, How to Use This Guide, Quick Reference.</li>
+      <li>Regex matches: <code>Where .+ fits?</code>, <code>Where to go</code>, <code>Where to learn</code>, <code>What to learn next</code>, <code>Part N: Research .* Sources</code>.</li>
+    </ul>
+    <p>Everything else needs a diagram. Matches the diagram skill's rule: every teaching H2 gets at least one diagram.</p>
+<pre data-lang="bash"><code>python3 .claude/parallel/section-needs-diagram.py content/guides/[slug].mdx            <span class="cmt"># human report</span>
+python3 .claude/parallel/section-needs-diagram.py content/guides/[slug].mdx --check    <span class="cmt"># exit 0/1</span>
+python3 .claude/parallel/section-needs-diagram.py content/guides/[slug].mdx --json     <span class="cmt"># machine-readable</span>
+python3 .claude/parallel/section-needs-diagram.py content/guides/[slug].mdx --missing  <span class="cmt"># sections missing a diagram</span></code></pre>
+
+    <h3 id="script-45">4.5 <code>keyword-gap-to-assignments/scripts/</code></h3>
+    <p>Four scripts, run in order, that turn a raw SEMrush CSV into an initialized backlog.</p>
+
+    <h4>cluster-keywords-by-url.js <span style="color:var(--text-muted);font-weight:400;">— Stage 1 of 3</span></h4>
+    <p>Groups keywords by the competitor URL that ranks for them.</p>
+    <p><strong>Inputs:</strong> raw SEMrush Keyword Gap export CSV. <strong>Outputs:</strong> <code>*-url-summary.csv</code> (one row per URL: total volume, keyword count, avg KD, top keywords), <code>*-url-keywords.csv</code> (every keyword with URL-level summary attached).</p>
+<pre data-lang="bash"><code>node .agents/skills/keyword-gap-to-assignments/scripts/cluster-keywords-by-url.js &lt;raw-gap.csv&gt; --out downloads</code></pre>
+
+    <h4>generate-content-assignments.js <span style="color:var(--text-muted);font-weight:400;">— Stage 2 of 3</span></h4>
+    <p>Turns URL clusters into prioritized editorial assignments. Five things:</p>
+    <ol>
+      <li>Auto-categorizes each URL cluster against the 13 Woodwiki categories + subcategories.</li>
+      <li>Merges URL clusters covering the same topic within the same subcategory.</li>
+      <li>Filters clusters below a volume threshold (default 500, <code>--min-volume</code> overrides).</li>
+      <li>Scores priority: <code>volume × 0.5 + (1 − KD/100) × 0.3 + keyword_breadth × 0.2</code>.</li>
+      <li>Infers content type and difficulty from keyword signals.</li>
+    </ol>
+    <p><strong>Outputs:</strong> <code>*-content-assignments.csv</code> (categorized, priority-sorted), <code>*-uncategorized.csv</code> (off-topic clusters).</p>
+<pre data-lang="bash"><code>node .agents/skills/keyword-gap-to-assignments/scripts/generate-content-assignments.js &lt;url-keywords.csv&gt; --out downloads</code></pre>
+
+    <h4>csv-to-backlog.js <span style="color:var(--text-muted);font-weight:400;">— Stage 3 of 3</span></h4>
+    <p>Converts the assignments CSV into one <code>.md</code> file per row in <code>assignments/01-backlog/</code> with YAML frontmatter and sections for target keywords, competitor URLs, and editorial notes. Also (re)generates <code>README.md</code> and <code>INDEX.md</code>.</p>
+<pre data-lang="bash"><code>node .agents/skills/keyword-gap-to-assignments/scripts/csv-to-backlog.js &lt;content-assignments.csv&gt;</code></pre>
+
+    <h4>build-assignment-index.js <span style="color:var(--text-muted);font-weight:400;">— index rebuilder</span></h4>
+    <p>Scans all six stage folders, reads each <code>.md</code> file's frontmatter, and writes a summary table to <code>assignments/INDEX.md</code>. Run after any bulk move between stages.</p>
+<pre data-lang="bash"><code>node .agents/skills/keyword-gap-to-assignments/scripts/build-assignment-index.js</code></pre>
+
+    <h3 id="script-46">4.6 Root taxonomy sanity scripts — <code>check.mts</code>, <code>check2.mjs</code>, <code>check3.mjs</code></h3>
+    <p>Three small scripts that verify how guides map to taxonomy subtopics via <code>lib/subtopic-keywords.ts</code>. They differ in how they load data (TypeScript imports vs gray-matter file reads vs eval'd regex parse) but all report the same thing: how many subtopics have at least one guide matched, and which guides match no subtopic.</p>
+    <p>These are ad-hoc diagnostics, not CI checks. Keep them as a pattern for "quick taxonomy coverage audit"; replace with a real test when the subtopic system is promoted into the guide data model.</p>
+  </section>
+
+  <!-- 5. STAGES -->
+  <section id="stages">
+    <h2><span class="sec-num">05</span>Content Pipeline Stages</h2>
+    <p>Assignments move through six folders under <code>assignments/</code>. Each folder is a stage; a stage transition is just a <code>mv</code> plus a <code>status:</code> frontmatter update.</p>
+
+    <div class="pipeline-viz">
+      <div class="stage"><div class="stage-num">00</div><div class="stage-name">Archived</div><div class="stage-folder">00-archived/</div></div>
+      <div class="stage"><div class="stage-num">01</div><div class="stage-name">Backlog</div><div class="stage-folder">01-backlog/</div></div>
+      <div class="stage"><div class="stage-num">02</div><div class="stage-name">Ready to Start</div><div class="stage-folder">02-ready-to-start/</div></div>
+      <div class="stage"><div class="stage-num">03</div><div class="stage-name">In Progress</div><div class="stage-folder">03-in-progress/</div></div>
+      <div class="stage"><div class="stage-num">04</div><div class="stage-name">Ready to Publish</div><div class="stage-folder">04-ready-to-publish/</div></div>
+      <div class="stage"><div class="stage-num">05</div><div class="stage-name">Published</div><div class="stage-folder">05-published/</div></div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Stage</th><th>Enters from</th><th>Work that happens here</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Archived</strong></td><td>any stage</td><td>Rejected during enrichment (zero volume, branded, wrong intent, off-topic). File retained with rejection brief.</td></tr>
+          <tr><td><strong>Backlog</strong></td><td><code>csv-to-backlog.js</code> output</td><td>Raw assignments, prioritized but not committed to.</td></tr>
+          <tr><td><strong>Ready to Start</strong></td><td>Step 1 (assignment-to-brief)</td><td>Enriched brief: SEO data, intent, persona, proposed H2s.</td></tr>
+          <tr><td><strong>In Progress</strong></td><td>Step 2 (plan-research)</td><td>Research plan appended. Study guide being written in <code>pipeline/outputs/</code>.</td></tr>
+          <tr><td><strong>Ready to Publish</strong></td><td>Step 12 (metadata-preflight)</td><td>Guide written, edited, cited, cross-linked, diagrammed. Build passes.</td></tr>
+          <tr><td><strong>Published</strong></td><td>Step 13 (push-to-live)</td><td>Live on site. Record retained linking the SEO opportunity to the published URL.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <div class="label">Rules</div>
+      <ul style="margin:8px 0 0;">
+        <li>Every assignment has a unique <code>assignment_id</code> (<code>WW-NNNN</code> categorized, <code>UC-NNNN</code> uncategorized). IDs are permanent across stage moves.</li>
+        <li>Bulk additions only in backlog. Every other transition is deliberate and one-at-a-time.</li>
+        <li>Never delete — always move to <code>05-published/</code> or <code>00-archived/</code>.</li>
+        <li><code>INDEX.md</code> is generated. Never hand-edit; rerun <code>build-assignment-index.js</code> after moves.</li>
+      </ul>
+    </div>
+
+    <h4>Working directories outside <code>assignments/</code></h4>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Directory</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>pipeline/scratchpad/</code></td><td>Research working files: notes, sources, findings, outlines. <code>[date]-[slug]-*.md</code> naming.</td></tr>
+          <tr><td><code>pipeline/outputs/</code></td><td>Intermediate deliverables. Primarily <code>[slug]-study-guide-v1.md</code>.</td></tr>
+          <tr><td><code>pipeline/runs/</code></td><td>Dated batch outputs: enrichment reports, completion summaries. Never in project root, never in <code>assignments/</code>.</td></tr>
+          <tr><td><code>knowledge/</code></td><td>Final research study-guide deliverables (the reusable ones, not per-guide).</td></tr>
+          <tr><td><code>content/guides/</code></td><td>Published MDX guide source files. Filename = slug = URL path.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 6. CONTEXT -->
+  <section id="context">
+    <h2><span class="sec-num">06</span>Context Files — the Editorial OS</h2>
+    <p>The <code>context/</code> directory is what the agents read to behave consistently. Every writing skill loads some subset of these before producing content.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">6.1 audience.md</div>
+        <div class="card-title">Three Personas</div>
+        <div class="card-desc"><strong>Matt</strong> — hobbyist DIYer. <strong>Jess</strong> — learning enthusiast. <strong>Derek</strong> — the professional. Every guide states which persona it's for.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">6.2 writing-style.md</div>
+        <div class="card-title">Voice &amp; Sentence Rules</div>
+        <div class="card-desc">Voice anchors, sentence-level rules, quality checks, the "read it aloud" test. Mandatory before Steps 5 and 7.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">6.3 manifesto.md</div>
+        <div class="card-title">Publication Principles</div>
+        <div class="card-desc">Five principles that shape what and why Woodwiki publishes. Editorial models and content-type standards. Loaded before every writing step.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">6.4 content-types.md</div>
+        <div class="card-title">Seven Content Types</div>
+        <div class="card-desc">concept · technique · project · tool-guide · reference · troubleshooting · glossary. Includes a "Choosing the Right Type" decision tree.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">6.5 taxonomy.md</div>
+        <div class="card-title">13-category Taxonomy</div>
+        <div class="card-desc">Canonical taxonomy with subcategories. Source of truth when <code>lib/taxonomy.ts</code> disagrees. Documents URL structure.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">6.6 assignments-pipeline.md</div>
+        <div class="card-title">Assignment Lifecycle</div>
+        <div class="card-desc">User-facing version of Section 5: what an assignment is, stage rules, YAML frontmatter schema, ID assignment.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">6.7 guide-production-pipeline.md</div>
+        <div class="card-title">13-step Narrative</div>
+        <div class="card-desc">Narrative version of the 13-step guide pipeline, cross-referenced with executable skills in <code>.agents/skills/guide-pipeline/</code>.</div>
+      </div>
+    </div>
+
+    <h4>Content-type patterns at a glance</h4>
+    <ul>
+      <li><strong>concept</strong> — principle explained in physical terms, forward links to technique guides.</li>
+      <li><strong>technique</strong> — skill level up front, why before how, numbered steps, troubleshooting for 2–3 common problems.</li>
+      <li><strong>project</strong> — plan, cut list, step-by-step, common pitfalls.</li>
+      <li><strong>tool-guide</strong> — one recommendation up front, budget tiers, setup/tuning, what it unlocks.</li>
+      <li><strong>reference</strong> — table at top, prose below, bookmarkable.</li>
+      <li><strong>troubleshooting</strong> — symptom, diagnoses by likelihood, fix per cause.</li>
+      <li><strong>glossary</strong> — alphabetized, plain language.</li>
+    </ul>
+  </section>
+
+  <!-- 7. PATTERN LIBRARY -->
+  <section id="pattern">
+    <h2><span class="sec-num">07</span>Pattern Library — How to Build a Similar Project</h2>
+    <p>If you're building a content-automation system on a different topic (cooking, gardening, law — anything with a knowable taxonomy and a supply of keyword data), here's the reusable pattern.</p>
+
+    <h3>7.1 The four-layer architecture</h3>
+<div class="ascii-diagram"><span class="box">[ Shell runner ]</span>  bash loop with stop-file support, log rotation, cooldown
+       <span class="arrow">│</span>
+       <span class="arrow">▼</span>
+<span class="box">[ Agent prompt ]</span>  long Markdown prompt that orchestrates one cycle
+       <span class="arrow">│</span>
+       <span class="arrow">▼</span>
+<span class="box">[ Skills       ]</span>  modular SKILL.md files the agent reads mid-run
+       <span class="arrow">│</span>
+       <span class="arrow">▼</span>
+<span class="box">[ Scripts      ]</span>  deterministic tools (validators, processors, index builders)</div>
+    <p>Each layer is independently testable. The shell runner doesn't know what the agent does; the agent doesn't know what the runner does; skills compose; scripts are pure functions on files.</p>
+
+    <h3>7.2 What to build first, in order</h3>
+    <ol>
+      <li><strong>Taxonomy.</strong> Categories and subcategories codified in both a reference doc and a TypeScript source. Decision tree every other piece depends on.</li>
+      <li><strong>Persona profiles.</strong> 2–4 named personas with frustrations, motivations, trust builders/destroyers. Short, specific, memorable.</li>
+      <li><strong>Writing style guide.</strong> Voice rules. One paragraph of don'ts, one of do's, a handful of before/after examples.</li>
+      <li><strong>Content-type patterns.</strong> 5–7 types covering the output. Each with a one-paragraph structural pattern.</li>
+      <li><strong>Assignment pipeline folders.</strong> Six stages under <code>assignments/</code>. Start empty with a README and generated <code>INDEX.md</code>.</li>
+      <li><strong>Keyword-gap scripts.</strong> Three-stage CSV processing (cluster → generate → backlog) plus index rebuilder.</li>
+      <li><strong>Per-step skills.</strong> 10–15 small <code>SKILL.md</code> files. Each has inputs, outputs, context-files-to-load, and a process.</li>
+      <li><strong>Orchestrator skill.</strong> One <code>SKILL.md</code> that links to all the step skills in order.</li>
+      <li><strong>Serial runner + prompt.</strong> Bash loop, stop-file, log rotation. Prompt tells Claude to pick a target, read the orchestrator, run each step.</li>
+      <li><strong>Validators.</strong> Any invariant you want maintained (viewBox math, heading conventions, frontmatter shape) gets a script. Wire at least one into <code>prebuild</code> so the build fails when it breaks.</li>
+      <li><strong>Parallel runner.</strong> Once the serial runner is stable, split the pipeline into phases where parallel workers make sense. Almost always there's one sequential middle step (cross-linking here) separating two parallel phases.</li>
+    </ol>
+
+    <h3>7.3 Non-obvious design choices worth copying</h3>
+    <ul>
+      <li><strong>Stop files, not signals.</strong> <code>touch .claude/stop-pipeline</code> is easier to reason about than SIGTERM handling. Every loop checks for the file in both the work phase and the sleep phase.</li>
+      <li><strong>State files for crash recovery.</strong> Parallel workers write state at launch, clean up on completion. Next run's pre-flight detects orphans. Eliminates "stuck assignment" recovery.</li>
+      <li><strong>One file per concern.</strong> 13 <code>SKILL.md</code> files instead of one 1000-line monster. Workers load only the 2–4 they need — context windows stay small.</li>
+      <li><strong>Bi-directional rules.</strong> Cross-linking touches both the new guide AND every existing guide it references. Make that explicit so you don't end up with orphaned back-references.</li>
+      <li><strong>Read order matters.</strong> Writing steps always load <code>audience.md</code> → <code>writing-style.md</code> → <code>manifesto.md</code>. WHO before HOW before WHY. Codify load order in every writing skill.</li>
+      <li><strong>Validate in CI, fix in pipeline.</strong> <code>validate:svg</code> runs as <code>prebuild</code> so you can't ship broken. <code>fix:svg</code> auto-repairs during the pipeline. Separate tools for separate jobs.</li>
+      <li><strong>Section classifiers as Python.</strong> The "does this need a diagram?" logic is a 30-line Python script, not 30 lines of prompt. Deterministic judgment stays deterministic.</li>
+      <li><strong>Template substitution in worker prompts.</strong> Workers read a Markdown prompt with <code>{{SLUG}}</code> tokens and substitute before passing to <code>claude -p</code>. Cheap parameterization.</li>
+      <li><strong>Two skill roots.</strong> <code>.agents/skills/</code> for pipeline-invoked skills. <code>.claude/skills/</code> for slash commands the user invokes directly. Same file format, different contexts.</li>
+    </ul>
+
+    <h3>7.4 Invariants to enforce from day one</h3>
+    <ul>
+      <li><strong>Filename = slug = URL path.</strong> No mapping tables. <code>content/guides/track-saw.mdx</code> is <code>/guides/track-saw</code>.</li>
+      <li><strong>Frontmatter matches a TypeScript interface.</strong> A single source-of-truth interface (<code>GuideFrontmatter</code> in <code>lib/guides.ts</code>) that frontmatter is validated against.</li>
+      <li><strong>Generated files have generator scripts.</strong> <code>INDEX.md</code>, <code>sitemap.xml</code>, <code>robots.txt</code> are all generated. Never hand-edit.</li>
+      <li><strong>Pipeline run outputs belong in <code>pipeline/runs/</code>.</strong> Not in project root, not in <code>assignments/</code>. Dated filenames.</li>
+    </ul>
+  </section>
+
+  <!-- 8. RUNBOOK -->
+  <section id="runbook">
+    <h2><span class="sec-num">08</span>Quick Reference — Runbook</h2>
+
+    <h4>Add new topics to the backlog</h4>
+<pre data-lang="bash"><code><span class="cmt"># Export Keyword Gap CSV from SEMrush, save as downloads/raw-gap.csv</span>
+node .agents/skills/keyword-gap-to-assignments/scripts/cluster-keywords-by-url.js downloads/raw-gap.csv --out downloads
+node .agents/skills/keyword-gap-to-assignments/scripts/generate-content-assignments.js downloads/raw-gap-url-keywords.csv --out downloads
+node .agents/skills/keyword-gap-to-assignments/scripts/csv-to-backlog.js downloads/raw-gap-content-assignments.csv</code></pre>
+
+    <h4>Start the serial guide pipeline</h4>
+<pre data-lang="bash"><code>bash .claude/run-pipeline.sh
+<span class="cmt"># Stop: touch .claude/stop-pipeline</span></code></pre>
+
+    <h4>Start the parallel guide pipeline for five specific slugs</h4>
+<pre data-lang="bash"><code>MAX_PARALLEL=5 bash .claude/parallel/run-guide-pipeline-parallel.sh \
+  track-saw dado-stack dovetail-saw jointer-vs-planer sanding-basics</code></pre>
+
+    <h4>Retrofit diagrams across the corpus</h4>
+<pre data-lang="bash"><code>bash .claude/parallel/run-diagram-pipeline-parallel.sh
+<span class="cmt"># Stop: touch .claude/stop-parallel-diagrams</span></code></pre>
+
+    <h4>Repair heading formats</h4>
+<pre data-lang="bash"><code>bash .claude/parallel/run-fix-parts-parallel.sh --all</code></pre>
+
+    <h4>Validate SVGs and headings locally before a commit</h4>
+<pre data-lang="bash"><code>pnpm validate:svg
+.claude/validate-parts.sh --all</code></pre>
+
+    <h4>Ship</h4>
+<pre data-lang="bash"><code><span class="cmt"># Inside a Claude Code session:</span>
+/ship "Add track saw guide"</code></pre>
+
+    <h4>Rebuild the assignment index after manual moves</h4>
+<pre data-lang="bash"><code>node .agents/skills/keyword-gap-to-assignments/scripts/build-assignment-index.js</code></pre>
+  </section>
+
+  <!-- 9. FILE MAP -->
+  <section id="file-map">
+    <h2><span class="sec-num">09</span>File Map</h2>
+
+    <h3>Agent runners and prompts</h3>
+    <ul>
+      <li><code>.claude/run-pipeline.sh</code> — serial loop for the guide pipeline.</li>
+      <li><code>.claude/pipeline-prompt.md</code> — the prompt the loop feeds to Claude.</li>
+      <li><code>.claude/run-diagram-pipeline.sh</code> — serial loop for diagrams, with safety-net <code>git push</code>.</li>
+      <li><code>.claude/diagram-pipeline-prompt.md</code> — diagram-pipeline prompt with priority-1 (fix under-diagrammed) and priority-2 (new guide) target selection.</li>
+      <li><code>.claude/parallel/run-guide-pipeline-parallel.sh</code> — three-phase parallel guide pipeline with state-based crash recovery.</li>
+      <li><code>.claude/parallel/run-diagram-pipeline-parallel.sh</code> — parallel diagram pipeline with inventory-based progress tracking.</li>
+      <li><code>.claude/parallel/run-fix-parts-parallel.sh</code> — parallel heading-format repair.</li>
+      <li><code>guide-worker-phase1-prompt.md</code> — per-worker prompt for Steps 2–9.</li>
+      <li><code>crosslink-prompt.md</code> — coordinator prompt for Step 10 across a batch.</li>
+      <li><code>guide-worker-phase3-prompt.md</code> — per-worker prompt for Steps 11–13.</li>
+      <li><code>diagram-worker-prompt.md</code> — per-worker diagram-pipeline prompt (Steps 1–6).</li>
+      <li><code>fix-parts-worker-prompt.md</code> — per-worker heading-repair prompt.</li>
+    </ul>
+
+    <h3>Skills — <code>.agents/skills/</code></h3>
+    <ul>
+      <li><code>guide-pipeline/SKILL.md</code> — orchestrator for the 13-step guide pipeline.</li>
+      <li><code>guide-pipeline/01-assignment-to-brief/SKILL.md</code> through <code>13-push-to-live/SKILL.md</code> — the twelve step-skills.</li>
+      <li><code>diagram-pipeline/SKILL.md</code> — 7-step diagram pipeline.</li>
+      <li><code>diagram-pipeline/SVG-STYLE-GUIDE.md</code> — visual rules.</li>
+      <li><code>diagram-pipeline/GUIDE-INVENTORY.md</code> — ⬜/✅ status table.</li>
+      <li><code>diagram-pipeline/TRACKING.md</code> — completed-diagram log.</li>
+      <li><code>keyword-gap-to-assignments/SKILL.md</code> — three-stage keyword-gap pipeline.</li>
+      <li><code>research-to-study-guide/SKILL.md</code> — deep research skill.</li>
+      <li><code>stop-slop/SKILL.md</code> + <code>references/</code> — AI-writing-pattern stripper.</li>
+      <li><code>writing/SKILL.md</code> — general writing skill.</li>
+      <li><code>shadcn/SKILL.md</code> — shadcn/ui CLI and patterns.</li>
+      <li><code>vercel-react-best-practices/SKILL.md</code> + <code>rules/</code> — 65 React/Next.js performance rules.</li>
+    </ul>
+
+    <h3>Skills — <code>.claude/skills/</code></h3>
+    <ul>
+      <li><code>ship/SKILL.md</code> — pre-flight checks + commit + push + SEO audit.</li>
+      <li><code>push-commit/SKILL.md</code> — alias for <code>/ship</code>.</li>
+      <li><code>refresh-youtube-list/SKILL.md</code> + <code>update.py</code> + <code>channels.json</code> — monthly YouTube refresh.</li>
+      <li><code>deep-research/SKILL.md</code> — user-facing deep-research skill.</li>
+      <li><code>vercel-react-best-practices/SKILL.md</code> — mirror of the one in <code>.agents/skills/</code>.</li>
+    </ul>
+
+    <h3>Scripts</h3>
+    <ul>
+      <li><code>scripts/validate-svg-viewbox.mjs</code> — three-check SVG validator; runs on <code>prebuild</code>.</li>
+      <li><code>scripts/fix-svg-viewbox.mjs</code> — auto-repair viewBox overflow.</li>
+      <li><code>.claude/validate-parts.sh</code> — <code>## Part N:</code> heading convention validator.</li>
+      <li><code>.claude/parallel/section-needs-diagram.py</code> — H2-section classifier for diagram planning.</li>
+      <li><code>keyword-gap-to-assignments/scripts/cluster-keywords-by-url.js</code> — Stage 1.</li>
+      <li><code>keyword-gap-to-assignments/scripts/generate-content-assignments.js</code> — Stage 2.</li>
+      <li><code>keyword-gap-to-assignments/scripts/csv-to-backlog.js</code> — Stage 3.</li>
+      <li><code>keyword-gap-to-assignments/scripts/build-assignment-index.js</code> — index rebuilder.</li>
+      <li><code>check.mts</code>, <code>check2.mjs</code>, <code>check3.mjs</code> — ad-hoc taxonomy-coverage diagnostics (root).</li>
+    </ul>
+
+    <h3>Context files</h3>
+    <ul>
+      <li><code>context/audience.md</code> — three personas (Matt, Jess, Derek).</li>
+      <li><code>context/writing-style.md</code> — voice and sentence rules.</li>
+      <li><code>context/manifesto.md</code> — five publication principles.</li>
+      <li><code>context/content-types.md</code> — seven content-type patterns.</li>
+      <li><code>context/taxonomy.md</code> — 13-category canonical taxonomy.</li>
+      <li><code>context/assignments-pipeline.md</code> — assignment lifecycle and YAML schema.</li>
+      <li><code>context/guide-production-pipeline.md</code> — narrative version of the 13-step pipeline.</li>
+    </ul>
+
+    <h3>Pipeline directories</h3>
+    <ul>
+      <li><code>assignments/00-archived/</code> through <code>05-published/</code> — six-stage assignment pipeline.</li>
+      <li><code>assignments/INDEX.md</code> — generated summary table.</li>
+      <li><code>pipeline/scratchpad/</code> — research working files.</li>
+      <li><code>pipeline/outputs/</code> — intermediate deliverables (study guides).</li>
+      <li><code>pipeline/runs/</code> — dated batch outputs (enrichment reports, completion summaries).</li>
+      <li><code>knowledge/</code> — reusable research study-guide deliverables.</li>
+      <li><code>content/guides/</code> — published MDX guide source (filename = slug).</li>
+    </ul>
+  </section>
+
+  <!-- 10. NOT COVERED -->
+  <section id="not-covered">
+    <h2><span class="sec-num">10</span>What This Guide Doesn't Cover</h2>
+    <ul>
+      <li>The Next.js app itself (covered in <code>CLAUDE.md</code>).</li>
+      <li>SEO infrastructure details — sitemap, robots, OG images, JSON-LD. Covered in <code>knowledge/seo-sitemap-best-practices-study-guide-v1.md</code>.</li>
+      <li>Specific SVG style conventions — font sizes, color palette, class prefixing. See <code>.agents/skills/diagram-pipeline/SVG-STYLE-GUIDE.md</code>.</li>
+      <li>Per-step editorial rubrics inside each guide-pipeline sub-skill — each step's <code>SKILL.md</code> has its own detailed rubric.</li>
+    </ul>
+    <p>Read those when you need them. This document's job is to explain the automation that sits on top of all of it.</p>
+  </section>
+
+  <footer>
+    <div>Woodwiki — Agents, Pipelines, Skills &amp; Scripts · Study Guide v1</div>
+    <div>Bespoke Woodcraft Studio · <span style="color:var(--accent);">context-os</span></div>
+  </footer>
+</div>
+</main>
+
+<script>
+  // Highlight active nav on scroll
+  const links = document.querySelectorAll('.nav-link');
+  const sections = [...links].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  function onScroll() {
+    const y = window.scrollY + 120;
+    let current = sections[0];
+    for (const s of sections) { if (s.offsetTop <= y) current = s; }
+    links.forEach(l => {
+      const active = current && l.getAttribute('href') === '#' + current.id;
+      l.style.color = active ? 'var(--text-heading)' : '';
+      l.style.background = active ? 'var(--accent-bg)' : '';
+      l.style.borderLeftColor = active ? 'var(--accent)' : 'transparent';
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Close mobile nav on link tap
+  document.querySelectorAll('.nav-link').forEach(a => {
+    a.addEventListener('click', () => document.querySelector('.sidebar').classList.remove('open'));
+  });
+</script>
+
+</body>
+</html>
